@@ -38,7 +38,7 @@ def parse_msg():
  
 def query_movie_info():
     movieurlbase = "http://api.douban.com/v2/movie/subject/"
-    DOUBAN_APIKEY = "******"
+    DOUBAN_APIKEY = "zhouchaoweixin"
     id = parse_msg()
     url = '%s%s?apikey=%s' % (movieurlbase, id["Content"], DOUBAN_APIKEY)
     # header = {'Referer': url, 'Content-Type': 'application/json'}
