@@ -40,7 +40,7 @@ def checkSignature(request):
     hashstr = hashlib.sha1(tmpstr).hexdigest()
     # return "echostr: %s" % echostr
     if hashstr == signature:
-        return echostr
+        return True
     else:
         return None
  
