@@ -22,11 +22,11 @@ def responseMsg(request):
     msg = {}
     for child in root:
         msg[child.tag] = child.text
-    if msg[Content] =='text':
+    if msg['Content'] == 'text':
         textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>";
         Content = 'zhouchao'
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['Content'])
-    if msg[Content] =='image':
+    if msg['Content'] == 'image':
         textTpl = """<xml>
                     <ToUserName><![CDATA[%s]]></ToUserName>
                     <FromUserName><![CDATA[%s]]></FromUserName>
