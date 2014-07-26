@@ -24,18 +24,11 @@ def parse_msg():
 
 def responseMsg(request):
     msg = parse_msg()
-    textTpl = """<xml>
-             <ToUserName><![CDATA[%s]]></ToUserName>
-             <FromUserName><![CDATA[%s]]></FromUserName>
-             <CreateTime>%s</CreateTime>
-             <MsgType><![CDATA[%s]]></MsgType>
-             <Content><![CDATA[%s]]></Content>
-             <FuncFlag>0</FuncFlag>
-             </xml>"""
+    textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>";
     Content = 'zhouchao'
  
     # if Content is not False:
-    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), 'text', Content)
+    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), 'text', 'zhochao')
     #fileHandle = open('log.log', 'w')
     #fileHandle.write (echostr)
     #fileHandle.close()
