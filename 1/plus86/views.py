@@ -15,7 +15,8 @@ import json
  
  
 def parse_msg(request):
-    recvmsg = request.body.read()
+    #recvmsg = request.body.read()
+    recvmsg = smart_str(request.raw_post_data)
     root = ET.fromstring(recvmsg)
     msg = {}
     for child in root:
@@ -32,10 +33,10 @@ def responseMsg():
              <Content><![CDATA[%s]]></Content>
              <FuncFlag>0</FuncFlag>
              </xml>"""
-    Content = "zhouchao"
+    Content = 'zhouchao'
  
     # if Content is not False:
-    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], Content)
+    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), 'text', Content)
     return echostr
     # else:
     #     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], "Content")
