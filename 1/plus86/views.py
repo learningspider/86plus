@@ -34,7 +34,7 @@ def responseMsg(request):
                     <CreateTime>%s</CreateTime>
                     <MsgType><![CDATA[%s]]></MsgType>
                     <Image>
-                    <MediaId><![CDATA[media_id]]></MediaId>
+                    <MediaId><![CDATA[%s]]></MediaId>
                     </Image>
                     </xml>"""
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['media_id'])
