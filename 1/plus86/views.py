@@ -37,9 +37,9 @@ def responseMsg(request):
  
     # if Content is not False:
     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), 'text', Content)
-    fileHandle = open('log.log', 'w')
-    fileHandle.write (echostr)
-    fileHandle.close()
+    #fileHandle = open('log.log', 'w')
+    #fileHandle.write (echostr)
+    #fileHandle.close()
     return echostr
     # else:
     #     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], "Content")
