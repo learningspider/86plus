@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-# Create your views here.
-#! /usr/bin/env python
+#!/usr/bin/env python
 
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
