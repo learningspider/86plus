@@ -14,17 +14,17 @@ import urllib2,urllib,time
 import json
  
  
-def parse_msg(request):
-    #recvmsg = request.body.read()
-    recvmsg = smart_str(request.raw_post_data)
-    root = ET.fromstring(recvmsg)
-    msg = {}
-    for child in root:
-        msg[child.tag] = child.text
-    return msg
+def paraseMsgXml(rootElem):  
+    msg = {}  
+    if rootElem.tag == 'xml':  
+        for child in rootElem:  
+            msg[child.tag] = smart_str(child.text)  
+    return msg  
 
-def responseMsg():
-    msg = parse_msg(request)
+def responseMsg(request):
+    rawStr = smart_str(request.raw_post_data)  
+    #rawStr = smart_str(request.POST['XML'])  
+    msg = paraseMsgXml(ET.fromstring(rawStr))
     textTpl = """<xml>
              <ToUserName><![CDATA[%s]]></ToUserName>
              <FromUserName><![CDATA[%s]]></FromUserName>
