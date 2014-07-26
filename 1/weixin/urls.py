@@ -1,14 +1,13 @@
 from django.conf.urls import patterns, include, url
-from weixin import plus86
-
+import plus86.views
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    #url(r'^$', 'weixin.views.home', name='home'),
-    #url(r'^weixin/', include('weixin.foo.urls')),
+    # url(r'^$', 'weixin.views.home', name='home'),
+    # url(r'^weixin/', include('weixin.foo.urls')),
     url(r'^weixin/', plus86.views.checkSignature),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
