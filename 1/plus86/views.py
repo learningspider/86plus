@@ -60,7 +60,7 @@ def checkSignature(request):
     else:
         return None
  
-
+@csrf_exempt 
 def handleRequest(request):  
     if request.method == 'GET':  
         #response = HttpResponse(request.GET['echostr'],content_type="text/plain")  
