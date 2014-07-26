@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 # Create your views here.
 #! /usr/bin/env python
-# coding=utf-8
+
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext, Template
@@ -75,3 +76,50 @@ def handleRequest(request):
         return response  
     else:  
         return None  
+
+
+def paraseYouDaoXml(rootElem):  
+    replyContent = ''  
+    if rootElem.tag == 'youdao-fanyi':  
+        for child in rootElem:  
+             
+            if child.tag == 'errorCode':  
+                if child.text == '20':  
+                    return 'too long to translate\n'  
+                elif child.text == '30':  
+                    return 'can not be able to translate with effect\n'  
+                elif child.text == '40':  
+                    return 'can not be able to support this language\n'  
+                elif child.text == '50':  
+                    return 'invalid key\n'  
+  
+            
+            elif child.tag == 'query':  
+                replyContent = "%s%s\n" % (replyContent, child.text)  
+  
+              
+            elif child.tag == 'translation':   
+                replyContent = '%s%s\n%s\n' % (replyContent, '-' * 3 + u'有道翻译' + '-' * 3, child[0].text)  
+  
+             
+            elif child.tag == 'basic':   
+                replyContent = "%s%s\n" % (replyContent, '-' * 3 + u'基本词典' + '-' * 3)  
+                for c in child:  
+                    if c.tag == 'phonetic':  
+                        replyContent = '%s%s\n' % (replyContent, c.text)  
+                    elif c.tag == 'explains':  
+                        for ex in c.findall('ex'):  
+                            replyContent = '%s%s\n' % (replyContent, ex.text)  
+  
+             
+            elif child.tag == 'web':   
+                replyContent = "%s%s\n" % (replyContent, '-' * 3 + u'网络释义' + '-' * 3)  
+                for explain in child.findall('explain'):  
+                    for key in explain.findall('key'):  
+                        replyContent = '%s%s\n' % (replyContent, key.text)  
+                    for value in explain.findall('value'):  
+                        for ex in value.findall('ex'):  
+                            replyContent = '%s%s\n' % (replyContent, ex.text)  
+                    replyContent = '%s%s\n' % (replyContent,'--')  
+    return replyContent  
+  
