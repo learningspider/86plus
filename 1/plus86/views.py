@@ -27,18 +27,7 @@ def responseMsg(request):
     Content = 'zhouchao'
     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['Content'])
     return echostr
-    '''if msg['MsgType'] == 'image':
-        textTpl = """<xml>
-                    <ToUserName><![CDATA[%s]]></ToUserName>
-                    <FromUserName><![CDATA[%s]]></FromUserName>
-                    <CreateTime>%s</CreateTime>
-                    <MsgType><![CDATA[%s]]></MsgType>
-                    <Image>
-                    <MediaId><![CDATA[%s]]></MediaId>
-                    </Image>
-                    </xml>"""
-        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['media_id'])
-        return echostr'''
+   
     #fileHandle = open('log.log', 'w')
     #fileHandle.write (echostr)
     #fileHandle.close()
