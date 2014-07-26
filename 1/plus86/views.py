@@ -10,6 +10,32 @@ import urllib2
 import json
  
  
+def parse_msg():
+    recvmsg = request.body.read()
+    root = ET.fromstring(recvmsg)
+    msg = {}
+    for child in root:
+        msg[child.tag] = child.text
+    return msg
+
+def response_msg():
+    msg = parse_msg()
+    textTpl = """<xml>
+             <ToUserName><![CDATA[%s]]></ToUserName>
+             <FromUserName><![CDATA[%s]]></FromUserName>
+             <CreateTime>%s</CreateTime>
+             <MsgType><![CDATA[%s]]></MsgType>
+             <Content><![CDATA[%s]]></Content>
+             <FuncFlag>0</FuncFlag>
+             </xml>"""
+    Content = "zhouchao"
+ 
+    # if Content is not False:
+    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], Content)
+    return HttpResponse(echostr)
+    # else:
+    #     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], "Content")
+    #     return echostr
 
 def checkSignature(request):
     token = "zhouchaoweixin"
@@ -21,6 +47,8 @@ def checkSignature(request):
     tmpList.sort()
     tmpstr = "%s%s%s" % tuple(tmpList)
     hashstr = hashlib.sha1(tmpstr).hexdigest()
+    if request.method == 'POST':
+        response_msg()
     # return "echostr: %s" % echostr
     if hashstr == signature:
         return HttpResponse(echostr)
