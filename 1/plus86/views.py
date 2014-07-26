@@ -11,7 +11,7 @@ import hashlib
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 # import requests
-import json
+
  
  
 
@@ -26,7 +26,7 @@ def responseMsg(request):
     Content = 'zhouchao'
  
     # if Content is not False:
-    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), 'text', 'zhochao')
+    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['Content'])
     #fileHandle = open('log.log', 'w')
     #fileHandle.write (echostr)
     #fileHandle.close()
