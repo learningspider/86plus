@@ -22,12 +22,12 @@ def responseMsg(request):
     msg = {}
     for child in root:
         msg[child.tag] = child.text
-    if msg['MsgType'] == 'text':
-        textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>";
-        Content = 'zhouchao'
-        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['Content'])
-        return echostr
-    if msg['MsgType'] == 'image':
+    #if msg['MsgType'] == 'text':
+    textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>";
+    Content = 'zhouchao'
+    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['Content'])
+    return echostr
+    '''if msg['MsgType'] == 'image':
         textTpl = """<xml>
                     <ToUserName><![CDATA[%s]]></ToUserName>
                     <FromUserName><![CDATA[%s]]></FromUserName>
@@ -38,7 +38,7 @@ def responseMsg(request):
                     </Image>
                     </xml>"""
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['media_id'])
-        return echostr
+        return echostr'''
     #fileHandle = open('log.log', 'w')
     #fileHandle.write (echostr)
     #fileHandle.close()
