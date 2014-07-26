@@ -14,16 +14,14 @@ import urllib2,urllib,time
 import json
  
  
-def parse_msg():
+
+
+def responseMsg(request):
     recvmsg = request.body.read()
     root = ET.fromstring(recvmsg)
     msg = {}
     for child in root:
         msg[child.tag] = child.text
-    return msg 
-
-def responseMsg(request):
-    msg = parse_msg()
     textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>";
     Content = 'zhouchao'
  
