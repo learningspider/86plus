@@ -17,7 +17,7 @@ import json
 
 
 def responseMsg(request):
-    recvmsg = request.body.read()
+    recvmsg = smart_str(request.raw_post_data)
     root = ET.fromstring(recvmsg)
     msg = {}
     for child in root:
