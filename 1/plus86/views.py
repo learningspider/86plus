@@ -56,7 +56,7 @@ def responseMsg(request):
     De1 = u'华北黄淮等地将一口气热到月底!'
     De2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱!'
     De3 = u'杭州风雨晚来急 1小时降下90毫米雨!'
-    pic1 = 'https://mp.weixin.qq.com/cgi-bin/getimgdata?token=1896539239&msgid=&mode=small&source=file&fileId=200658083&ow=-1'
+    pic1 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/814284E37EF400D973A7A81C5BBE627A.jpg'
     pic2 = 'https://mp.weixin.qq.com/cgi-bin/getimgdata?token=1896539239&msgid=&mode=small&source=file&fileId=200658081&ow=-1'
     pic3 = 'https://mp.weixin.qq.com/cgi-bin/getimgdata?token=1896539239&msgid=&mode=small&source=file&fileId=200658082&ow=-1'
     url1 = 'http://news.weather.com.cn/2014/07/2164829.shtml'
