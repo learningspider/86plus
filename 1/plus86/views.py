@@ -22,9 +22,47 @@ def responseMsg(request):
     msg = {}
     for child in root:
         msg[child.tag] = child.text
-    textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>"
-    Content = 'zhouchao'
-    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), msg['MsgType'], msg['Content'])
+    #textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>"
+    textTpl = """<xml>
+                <ToUserName><![CDATA[%s]]></ToUserName>
+                <FromUserName><![CDATA[%s]]></FromUserName>
+                <CreateTime>%s</CreateTime>
+                <MsgType><![CDATA[news]]></MsgType>
+                <ArticleCount>3</ArticleCount>
+                <Articles>
+                <item>
+                <Title><![CDATA[%s]]></Title> 
+                <Description><![CDATA[%s]]></Description>
+                <PicUrl><![CDATA[%s]]></PicUrl>
+                <Url><![CDATA[%s]]></Url>
+                </item>
+                <item>
+                <Title><![CDATA[%s]]></Title>
+                <Description><![CDATA[%s]]></Description>
+                <PicUrl><![CDATA[%s]]></PicUrl>
+                <Url><![CDATA[%s]]></Url>
+                </item>
+                <item>
+                <Title><![CDATA[%s]]></Title>
+                <Description><![CDATA[%s]]></Description>
+                <PicUrl><![CDATA[%s]]></PicUrl>
+                <Url><![CDATA[%s]]></Url>
+                </item>
+                </Articles>
+                </xml> """
+    Title1 = u'华北黄淮等地将一口气热到月底'
+    Title2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱'
+    Title3 = u'杭州风雨晚来急 1小时降下90毫米雨'
+    De1 = u'华北黄淮等地将一口气热到月底!'
+    De2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱!'
+    De3 = u'杭州风雨晚来急 1小时降下90毫米雨!'
+    pic1 = 'https://mp.weixin.qq.com/cgi-bin/getimgdata?token=1896539239&msgid=&mode=small&source=file&fileId=200658083&ow=-1'
+    pic2 = 'https://mp.weixin.qq.com/cgi-bin/getimgdata?token=1896539239&msgid=&mode=small&source=file&fileId=200658081&ow=-1'
+    pic3 = 'https://mp.weixin.qq.com/cgi-bin/getimgdata?token=1896539239&msgid=&mode=small&source=file&fileId=200658082&ow=-1'
+    url1 = 'http://news.weather.com.cn/2014/07/2164829.shtml'
+    url2 = 'http://news.weather.com.cn/2014/07/2164872.shtml'
+    url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
+    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, Title2, De2, pic2, url2, Title3, De3, pic3, url3)
     return echostr
    
 
