@@ -1,6 +1,11 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf8 -*-
+
+
 #!/usr/bin/env python
 
+import sys 
+reload(sys) 
+sys.setdefaultencoding('utf8')
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext, Template
@@ -10,6 +15,8 @@ from django.utils.encoding import smart_str, smart_unicode
 import hashlib
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
+import json
+
 # import requests
 
  
@@ -81,6 +88,96 @@ def checkSignature(request):
         return echostr
     else:
         return None
+
+def creatmenu(request):
+    appid="wx5346a6f59b5e4dd8"
+    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
+    response = urllib2.urlopen(url)
+    html = response.read()
+    tokeninfo = json.loads(html)
+    token=tokeninfo['access_token']
+    post='''
+ {
+     "button":[
+     {	
+          "type":"click",
+          "name":"歌曲",
+           "sub_button":[
+           {	
+               "type":"view",
+               "name":"搜索",
+               "url":"http://www.soso.com/"
+            },
+            {
+               "type":"view",
+               "name":"视频",
+               "url":"http://v.qq.com/"
+            },
+            {
+               "type":"click",
+               "name":"赞一下我们",
+               "key":"V1001_GOOD6"
+            }]
+      },
+      {
+           "type":"click",
+           "name":"歌曲简介",
+           "sub_button":[
+           {	
+               "type":"view",
+               "name":"搜索",
+               "url":"http://www.soso.com/"
+            },
+            {
+               "type":"view",
+               "name":"视频",
+               "url":"http://v.qq.com/"
+            },
+            {
+               "type":"click",
+               "name":"赞一下我们",
+               "key":"V1001_GOOD5"
+            }]
+      },
+      {
+           "name":"菜单",
+           "sub_button":[
+           {	
+               "type":"view",
+               "name":"搜索",
+               "url":"http://www.soso.com/"
+            },
+            {
+               "type":"view",
+               "name":"视频",
+               "url":"http://v.qq.com/"
+            },
+            {
+               "type":"click",
+               "name":"赞一下我们",
+               "key":"V1001_GOOD"
+            }]
+       }]
+ }'''
+    url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+token
+    req = urllib2.Request(url, post)
+    response = urllib2.urlopen(req)
+    return response
+
+
+def deletemenu():
+    appid="wx5346a6f59b5e4dd8"
+    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
+    response = urllib2.urlopen(url)
+    html = response.read()
+    tokeninfo = json.loads(html)
+    token=tokeninfo['access_token']       
+    url = 'https://api.weixin.qq.com/cgi-bin/menu/delete?access_token='+token
+    req = urllib2.Request(url)
+    response = urllib2.urlopen(req)
+    return response
  
 @csrf_exempt 
 def handleRequest(request):  
