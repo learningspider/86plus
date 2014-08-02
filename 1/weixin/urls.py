@@ -17,8 +17,8 @@ urlpatterns = patterns('',
     url(r'^create/createmenu', 'plus86.views.creatmenu'),
     url(r'^create/deletemenu', 'plus86.views.creatmenu'),
     url(r'^membercard/', 'plus86.views.membercard'),
-    url(r'^static/(?P<path>.*)', 'django.views.static.serve',
-        {'document_root': os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/')}),
+    #url(r'^static/(?P<path>.*)', 'django.views.static.serve',
+    #   {'document_root': os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/')}),
     
 
     # Uncomment the next line to enable the admin:
