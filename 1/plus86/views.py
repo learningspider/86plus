@@ -102,7 +102,7 @@ def creatmenu(request):
      "button":[
      {	
           "type":"click",
-          "name":"歌曲",
+          "name":"搜索",
            "sub_button":[
            {	
                "type":"view",
@@ -122,12 +122,12 @@ def creatmenu(request):
       },
       {
            "type":"click",
-           "name":"歌曲简介",
+           "name":"百度搜索",
            "sub_button":[
            {	
                "type":"view",
                "name":"搜索",
-               "url":"http://www.soso.com/"
+               "url":"http://www.baidu.com/"
             },
             {
                "type":"view",
@@ -143,16 +143,6 @@ def creatmenu(request):
       {
            "name":"菜单",
            "sub_button":[
-           {	
-               "type":"view",
-               "name":"搜索",
-               "url":"http://www.soso.com/"
-            },
-            {
-               "type":"view",
-               "name":"视频",
-               "url":"http://v.qq.com/"
-            },
             {
                "type":"click",
                "name":"赞一下我们",
