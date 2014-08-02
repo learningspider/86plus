@@ -142,8 +142,13 @@ def creatmenu(request):
             }]
       },
       {
-           "name":"菜单",
+           "name":"会员",
            "sub_button":[
+           {
+               "type":"view",
+               "name":"会员卡",
+               "url":"http://86plus.sinaapp.com/membercard/"
+            },
             {
                "type":"click",
                "name":"赞一下我们",
