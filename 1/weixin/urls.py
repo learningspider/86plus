@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 import plus86.views
 import bew.views
+import settings,os
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -15,6 +16,11 @@ urlpatterns = patterns('',
     url(r'^$', 'bew.views.current_datetime'),
     url(r'^create/createmenu', 'plus86.views.creatmenu'),
     url(r'^create/deletemenu', 'plus86.views.creatmenu'),
+    url(r'^membercard/', 'plus86.views.membercard'),
+    url(r'^static/(?P<path>.*)', 'django.views.static.serve',
+        {'document_root': os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/')}),
+    
+
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 )
