@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext, Template
 from django.utils.encoding import smart_str, smart_unicode
+from django.shortcuts import render_to_response
 
 
 import hashlib
@@ -184,6 +185,8 @@ def handleRequest(request):
     else:  
         return None  
 
-
+def membercard(request):
+    
+    return render_to_response('index2.html')
 
   
