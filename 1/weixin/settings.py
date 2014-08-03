@@ -18,60 +18,41 @@ ADMINS = (
 MANAGERS = ADMINS
 
 if 'SERVER_SOFTWARE' in os.environ:
+     from sae.const import (
+         MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
+     )
+ else:
+      MYSQL_HOST = '192.168.56.101'
+      MYSQL_PORT = '3306'
+      MYSQL_USER = 'root'
+      MYSQL_PASS = '123456'
+      MYSQL_DB   = 'app_86plus'
 
-    DOMAIN='http://86plus.sinaapp.com'
-
-    DB_HOST='w.rdc.sae.sina.com.cn'
-
-    MYSQL_HOST = 'w.rdc.sae.sina.com.cn'
-    MYSQL_PORT = '3307'
-    MYSQL_USER = '525n14oznm'
-    MYSQL_PASS = '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm'
-    MYSQL_DB   = 'app_86plus'
-
-    #CACHES_BACKEND=
-
-    UEDITOR_UPLOAD={
-
-        'BACKEND':'DjangoUeditor.saebackend',
-
-        'DOMAIN':'86plus',
-
-        }
-
-else:
-
-    DOMAIN = 'http://localhost:8000'
-
-    CACHES_BACKEND = 'django.core.cache.backends.memcached.MemcachedCache'
-
-    if False:
-        DB_HOST='localhost'
-        DB_PORT=''
-        DB_USER=''
-        DB_PASS=''
-        DB_DB=''
-    else:
-        #from sae._restful_mysql import monkey
-        #monkey.patch()
-        MYSQL_HOST = 'w.rdc.sae.sina.com.cn'
-        MYSQL_PORT = '3307'
-        MYSQL_USER = '525n14oznm'
-        MYSQL_PASS = '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm'
-        MYSQL_DB   = 'app_86plus'
-
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'app_86plus',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': '525n14oznm',
+        'PASSWORD': '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm',
+        #'HOST': 'MYSQL_HOST',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'HOST':'w.rdc.sae.sina.com.cn',
+        'PORT': '3307',                      # Set to empty string for default.
+        
+    }
+}'''
+     
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'MYSQL_DB',                      # Or path to database file if using sqlite3.
+        'NAME': MYSQL_DB,                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'MYSQL_USER',
-        'PASSWORD': 'MYSQL_PASS',
-        'HOST': 'MYSQL_HOST',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '3307',                      # Set to empty string for default.
-        'HOST':'w.rdc.sae.sina.com.cn',
+        'USER': MYSQL_USER,
+        'PASSWORD': MYSQL_PASS,
+        'HOST': MYSQL_HOST,                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': MYSQL_PORT,                      # Set to empty string for default.
     }
-}
+ }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
