@@ -2,9 +2,8 @@ from django.db import models
 
 # Create your models here.
 class memberCard(models.Model):
-    name = models.CharField(max_length=30)
-    address = models.CharField(max_length=50)
-    city = models.CharField(max_length=60)
-    state_province = models.CharField(max_length=30)
-    country = models.CharField(max_length=50)
-    website = models.URLField()
+    openid = models.CharField(max_length=60)
+    phonenumber = models.IntegerField(max_length=11)
+    name = models.CharField(max_length=60)
+    IDcard = models.CharField(max_length=18)
+    
