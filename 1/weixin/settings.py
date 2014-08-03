@@ -1,15 +1,12 @@
+# -*- coding: utf8 -*-
 # Django settings for weixin project.
 
 import os
+#from sae._restful_mysql import monkey
 
 
-MYSQL_HOST = 'w.rdc.sae.sina.com.cn'
-MYSQL_PORT = '3307'
-MYSQL_USER = '525n14oznm'
-MYSQL_PASS = '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm'
-MYSQL_DB   = 'app_86plus'
-from sae._restful_mysql import monkey
-monkey.patch()
+
+#monkey.patch()
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -19,6 +16,49 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+if 'SERVER_SOFTWARE' in os.environ:
+
+    DOMAIN='http://86plus.sinaapp.com'
+
+    DB_HOST='w.rdc.sae.sina.com.cn'
+
+    MYSQL_HOST = 'w.rdc.sae.sina.com.cn'
+    MYSQL_PORT = '3307'
+    MYSQL_USER = '525n14oznm'
+    MYSQL_PASS = '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm'
+    MYSQL_DB   = 'app_86plus'
+
+    #CACHES_BACKEND=
+
+    UEDITOR_UPLOAD={
+
+        'BACKEND':'DjangoUeditor.saebackend',
+
+        'DOMAIN':'86plus',
+
+        }
+
+else:
+
+    DOMAIN = 'http://localhost:8000'
+
+    CACHES_BACKEND = 'django.core.cache.backends.memcached.MemcachedCache'
+
+    if False:
+        DB_HOST='localhost'
+        DB_PORT=''
+        DB_USER=''
+        DB_PASS=''
+        DB_DB=''
+    else:
+        #from sae._restful_mysql import monkey
+        #monkey.patch()
+        MYSQL_HOST = 'w.rdc.sae.sina.com.cn'
+        MYSQL_PORT = '3307'
+        MYSQL_USER = '525n14oznm'
+        MYSQL_PASS = '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm'
+        MYSQL_DB   = 'app_86plus'
 
 DATABASES = {
     'default': {
