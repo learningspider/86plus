@@ -68,7 +68,8 @@ DATABASES = {
         'USER': 'MYSQL_USER',
         'PASSWORD': 'MYSQL_PASS',
         'HOST': 'MYSQL_HOST',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': 'MYSQL_PORT',                      # Set to empty string for default.
+        'PORT': '3307',                      # Set to empty string for default.
+        'HOST':'w.rdc.sae.sina.com.cn',
     }
 }
 
@@ -181,7 +182,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'weixin.plus86'
+    'plus86'
 )
 
 # A sample logging configuration. The only tangible logging
