@@ -3,6 +3,14 @@
 import os
 
 
+MYSQL_HOST = 'w.rdc.sae.sina.com.cn'
+MYSQL_PORT = '3307'
+MYSQL_USER = '525n14oznm'
+MYSQL_PASS = '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm'
+MYSQL_DB   = '86plus'
+from sae._restful_mysql import monkey
+monkey.patch()
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -14,13 +22,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'MYSQL_DB',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'USER': 'MYSQL_USER',
+        'PASSWORD': 'MYSQL_PASS',
+        'HOST': 'MYSQL_HOST',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': 'MYSQL_PORT',                      # Set to empty string for default.
     }
 }
 
