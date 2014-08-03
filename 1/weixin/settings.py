@@ -7,7 +7,7 @@ MYSQL_HOST = 'w.rdc.sae.sina.com.cn'
 MYSQL_PORT = '3307'
 MYSQL_USER = '525n14oznm'
 MYSQL_PASS = '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm'
-MYSQL_DB   = '86plus'
+MYSQL_DB   = 'app_86plus'
 from sae._restful_mysql import monkey
 monkey.patch()
 
