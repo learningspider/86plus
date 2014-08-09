@@ -79,6 +79,13 @@ def responseMsg(request):
                 </item>
                 </Articles>
                 </xml> """
+    text1='''<xml>
+             <ToUserName><![CDATA[%s]]></ToUserName>
+             <FromUserName><![CDATA[%s]]></FromUserName>
+             <CreateTime>%s</CreateTime>
+             <MsgType><![CDATA[text]]></MsgType>
+             <Content><![CDATA[%s]]></Content>
+             </xml>'''
     Title1 = u'华北黄淮等地将一口气热到月底'
     Title2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱'
     Title3 = u'杭州风雨晚来急 1小时降下90毫米雨'
@@ -95,8 +102,12 @@ def responseMsg(request):
     MsgType=msg['MsgType']
     if MsgType=="text":
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
-    elif MsgType=="event" and msg['Event']=="CLICK" and msg['EventKey']=="V1001_GOOD":
-        echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', De1, pic1, 'http://86plus.sinaapp.com/register?openid='+openid)
+    elif MsgType=="event":
+        if msg['Event']=="CLICK":
+            if msg['EventKey']=="V1001_GOOD":
+                echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', De1, pic1, 'http://86plus.sinaapp.com/register?openid='+openid)
+        elif  msg['Event']=="subscribe":
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活！')
         '''if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
                 #try:
