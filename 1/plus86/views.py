@@ -241,7 +241,7 @@ def register(request):
 	
 @csrf_exempt 	
 def reg(request):
-    '''idname = request.POST.get( 'username', None )
+    idname = request.POST.get( 'username', None )
     email = request.POST.get( 'email', None)
     phonenum = request.POST.get( 'phonenum', None)
     openid = request.POST.get( 'ExPws', None)
@@ -249,8 +249,8 @@ def reg(request):
          phonenumber=phonenum,
          name=email,
          IDcard=idname)
-    p.save()'''
-    return render_to_response('404.html')
+    p.save()
+    return render_to_response('index2.html')
 
 def checkmember(request):
     #fromusername=request.session.get('fromusername',None)
