@@ -239,11 +239,11 @@ def register(request):
     return render_to_response('register.html',{"openid":openid})
 	
 def registercheck(request):
-    idname = request.POST.get( 'username', None )
+    '''idname = request.POST.get( 'username', None )
     email = request.POST.get( 'email', None)
     phonenum = request.POST.get( 'phonenum', None)
     openid = request.POST.get( 'ExPws', None)
-    '''p = Publisher(openid=openid,
+    p = Publisher(openid=openid,
          phonenumber=phonenum,
          name=email,
          IDcard=idname)
