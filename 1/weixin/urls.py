@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^membercard/', 'plus86.views.membercard'),
     url(r'^register', 'plus86.views.register'),
     url(r'^checkmember/', 'plus86.views.checkmember'),
-    url(r'^registercheck/', 'plus86.views.registercheck'),
+    url(r'^registercheck/', 'plus86.views.reg'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
