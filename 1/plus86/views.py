@@ -250,7 +250,5 @@ def checkmember(request):
         return render_to_response('register.html')
     except MultipleObjectsReturned:
         return render_to_response('404.html')
-    if user[openid]!='':
-        return render_to_response('index2.html')
     return render_to_response('404.html')
   
