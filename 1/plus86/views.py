@@ -239,15 +239,15 @@ def register(request):
     return render_to_response('register.html',{"openid":openid})
 	
 def registercheck(request):
-    idname = request.POST.get( 'username', '' )
-    email = request.POST.get( 'email', '' )
-    phonenum = request.POST.get( 'phonenum', '' )
-    openid = request.POST.get( 'ExPws', '' )
-    p = Publisher(openid=openid,
+    idname = request.POST.get( 'username', None )
+    email = request.POST.get( 'email', None)
+    phonenum = request.POST.get( 'phonenum', None)
+    openid = request.POST.get( 'ExPws', None)
+    '''p = Publisher(openid=openid,
          phonenumber=phonenum,
          name=email,
          IDcard=idname)
-    p.save()
+    p.save()'''
     return render_to_response('index2.html')
 
 def checkmember(request):
