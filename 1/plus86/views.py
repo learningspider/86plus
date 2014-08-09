@@ -228,7 +228,8 @@ def handleRequest(request):
         return response  
     else:  
         return None  
-
+		
+@csrf_exempt 
 def membercard(request):
     
     return render_to_response('index2.html')
