@@ -26,11 +26,13 @@ from plus86.models import memberCard
 
 def responseMsg(request):
     recvmsg = smart_str(request.raw_post_data)
-    root = ET.fromstring(recvmsg)
+    '''root = ET.fromstring(recvmsg)
     msg={}
     
     for child in root:
-        msg[child.tag] = child.text
+        msg[child.tag] = child.text'''
+    root=ET.parse(recvmsg)
+    MsgType=root.findtext(".//MsgType")
     #request.session["fromusername"] = msg[FromUserName]
     
                 
@@ -90,11 +92,10 @@ def responseMsg(request):
     url2 = 'http://news.weather.com.cn/2014/07/2164872.shtml'
     url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
     openid= msg['FromUserName']
-    msgt=msg['MsgTpye']
-    if msgt=='text':
-        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, msg['MsgType'], De2, pic2, url2, Title3, De3, pic3, url3)
+    if MsgType=='text':
+        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
     else:
-        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, msg['MsgType'], De2, pic2, url2, Title3, De3, pic3, url3)
+        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, '1', De2, pic2, url2, Title3, De3, pic3, url3)
         '''if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
                 #try:
