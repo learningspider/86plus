@@ -22,14 +22,14 @@ from plus86.models import memberCard
 # import requests
 
  
- 
+msg={} 
 
 
 def responseMsg(request):
     recvmsg = smart_str(request.raw_post_data)
     root = ET.fromstring(recvmsg)
     global msg
-    msg = {}
+    
     for child in root:
         msg[child.tag] = child.text
     '''if msg[MsgTpye]=='event':
