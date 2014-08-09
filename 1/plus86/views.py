@@ -28,6 +28,7 @@ from plus86.models import memberCard
 def responseMsg(request):
     recvmsg = smart_str(request.raw_post_data)
     root = ET.fromstring(recvmsg)
+    global msg
     msg = {}
     for child in root:
         msg[child.tag] = child.text
@@ -160,7 +161,7 @@ def creatmenu(request):
            {
                "type":"click",
                "name":"会员卡",
-               "key":"V1001_GOOD"
+               "url":"http://86plus.sinaapp.com/checkmember/"
             },
             {
                "type":"click",
@@ -223,12 +224,8 @@ def registercheck(request):
     return render_to_response('index2.html')
 
 def checkmember(request):
-    recvmsg = smart_str(request.raw_post_data)
-    root = ET.fromstring(recvmsg)
     
-    msg = {}
-    for child in root:
-        msg[child.tag] = child.text
+    
     try:
         user=memberCard.objects.get(openid=msg['FromUserName'])
     except DoesNotExist:
