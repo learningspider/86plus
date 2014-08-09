@@ -233,6 +233,7 @@ def membercard(request):
     
     return render_to_response('index2.html')
 
+@csrf_exempt 
 def register(request):
     openid = request.GET.get('openid', None)
     return render_to_response('register.html',{"openid":openid})
