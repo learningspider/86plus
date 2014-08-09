@@ -104,7 +104,7 @@ def responseMsg(request):
     elif MsgType=="event":
         if msg['Event']=="CLICK":
             if msg['EventKey']=="V1001_GOOD":
-                #request.session['fromusername'] = msg[FromUserName]
+                request.session['fromusername'] = msg[FromUserName]
                 echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', De1, pic1, 'http://86plus.sinaapp.com/register?openid='+openid)
         elif  msg['Event']=="subscribe":
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活！')
