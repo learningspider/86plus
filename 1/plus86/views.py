@@ -108,7 +108,7 @@ def responseMsg(request):
                     return echostr
                 except MultipleObjectsReturned:
                     return render_to_response('404.html')'''
-    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, msg['MsgType'], De2, pic2, url2, Title3, De3, pic3, url3)
+    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
 
     return echostr
    
