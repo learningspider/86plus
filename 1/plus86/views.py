@@ -159,7 +159,7 @@ def creatmenu(request):
            "name":"会员",
            "sub_button":[
            {
-               "type":"click",
+               "type":"view",
                "name":"会员卡",
                "url":"http://86plus.sinaapp.com/checkmember/"
             },
