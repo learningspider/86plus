@@ -234,7 +234,8 @@ def membercard(request):
     return render_to_response('index2.html')
 
 def register(request):
-    return render_to_response('register.html')
+    openid = request.GET.get('openid', None)
+    return render_to_response('register.html',{"openid":openid})
 	
 def registercheck(request):
     idname = request.POST.get( 'username', '' )
