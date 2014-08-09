@@ -244,9 +244,9 @@ def registercheck(request):
 def checkmember(request):
     #fromusername=request.session.get('fromusername',None)
     try:
-        user=memberCard.objects.get(openid=fromusername)
+        #user=memberCard.objects.get(openid=fromusername)
     except DoesNotExist:
-        return render_to_response('register.html',{'msguser':'fromusername'})
+        #return render_to_response('register.html',{'msguser':'fromusername'})
     except MultipleObjectsReturned:
         return render_to_response('404.html')
     if user[openid]!='':
