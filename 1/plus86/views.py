@@ -95,7 +95,9 @@ def responseMsg(request):
         if msg[Event]=='CLICK':
             if msg[EventKey]=='V1001_GOOD':
                 try:
-                    user=memberCard.objects.get(openid=fromusername)
+                    user=memberCard.objects.filter(openid=fromusername)
+                    if user='':
+                        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
                 except DoesNotExist:
                     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
                     return echostr
