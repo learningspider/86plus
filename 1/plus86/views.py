@@ -194,4 +194,7 @@ def membercard(request):
     
     return render_to_response('index2.html')
 
+def register(request):
+    return render_to_response('register.html')
+
   
