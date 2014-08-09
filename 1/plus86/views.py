@@ -176,7 +176,7 @@ def creatmenu(request):
     return response
 
 
-def deletemenu():
+def deletemenu(request):
     appid="wx5346a6f59b5e4dd8"
     secret="3079a01e4c7b9b61da0cbf7808047d7c"
     url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
