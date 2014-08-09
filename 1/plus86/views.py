@@ -239,6 +239,7 @@ def register(request):
     openid = request.GET.get('openid', None)
     return render_to_response('register.html',{"openid":openid})
 	
+@csrf_exempt 	
 def registercheck(request):
     '''idname = request.POST.get( 'username', None )
     email = request.POST.get( 'email', None)
