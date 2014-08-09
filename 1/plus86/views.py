@@ -101,11 +101,11 @@ def responseMsg(request):
                     #user=memberCard.objects.filter(openid=fromusername)
                 echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1)
                 #'http://86plus.sinaapp.com/registor?openid='+openid
-                except DoesNotExist:
+                '''except DoesNotExist:
                     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
                     return echostr
                 except MultipleObjectsReturned:
-                    return render_to_response('404.html')
+                    return render_to_response('404.html')'''
     #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, msg['MsgType'], De2, pic2, url2, Title3, De3, pic3, url3)
 
     return echostr
