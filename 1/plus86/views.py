@@ -31,6 +31,18 @@ def responseMsg(request):
     msg = {}
     for child in root:
         msg[child.tag] = child.text
+    if msg[MsgTpye]=='event':
+        if msg[Event]=='CLICK':
+            if msg[EventKey]=='V1001_GOOD':
+                try:
+                    user=memberCard.objects.get(openid=msg['FromUserName'])
+                except DoesNotExist:
+                    return render_to_response('register.html',{'msguser':msg['FromUserName']})
+                except MultipleObjectsReturned:
+                    return render_to_response('404.html')
+                if user[openid]!='':
+                    return render_to_response('index2.html')
+                '''return render_to_response('404.html')'''
     #textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>"
     textTpl = """<xml>
                 <ToUserName><![CDATA[%s]]></ToUserName>
@@ -186,25 +198,6 @@ def handleRequest(request):
         #c = RequestContext(request,{'result':responseMsg(request)})  
         #t = Template('{{result}}')  
         #response = HttpResponse(t.render(c),content_type="application/xml")
-        recvmsg = smart_str(request.raw_post_data)
-        root = ET.fromstring(recvmsg)
-    
-        msg = {}
-        for child in root:
-            msg[child.tag] = child.text
-        '''if msg[MsgTpye]=='event':
-            if msg[Event]=='CLICK':
-                if msg[EventKey]=='V1001_GOOD':
-                    try:
-                        user=memberCard.objects.get(openid=msg['FromUserName'])
-                    except DoesNotExist:
-                        return render_to_response('register.html',{'msguser':msg['FromUserName']})
-                    except MultipleObjectsReturned:
-                        return render_to_response('404.html')
-                    if user[openid]!='':
-                        return render_to_response('index2.html')
-                    return render_to_response('404.html')'''
-        
         response = HttpResponse(responseMsg(request),content_type="application/xml")  
         return response  
     else:  
