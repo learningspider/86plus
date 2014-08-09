@@ -146,14 +146,14 @@ def creatmenu(request):
            "name":"会员",
            "sub_button":[
            {
-               "type":"view",
+               "type":"click",
                "name":"会员卡",
-               "url":"http://86plus.sinaapp.com/checkmember/"
+               "key":"V1001_GOOD"
             },
             {
                "type":"click",
                "name":"赞一下我们",
-               "key":"V1001_GOOD"
+               "key":"V1009_GOOD"
             }]
        }]
  }'''
@@ -185,7 +185,24 @@ def handleRequest(request):
     elif request.method == 'POST':  
         #c = RequestContext(request,{'result':responseMsg(request)})  
         #t = Template('{{result}}')  
-        #response = HttpResponse(t.render(c),content_type="application/xml")  
+        #response = HttpResponse(t.render(c),content_type="application/xml")
+        recvmsg = smart_str(request.raw_post_data)
+        root = ET.fromstring(recvmsg)
+    
+        msg = {}
+        for child in root:
+            msg[child.tag] = child.text
+        if msg[Event]=='CLICK':
+            if msg[EventKey]=='V1001_GOOD':
+                try:
+                    user=memberCard.objects.get(openid=msg['FromUserName'])
+                except DoesNotExist:
+                    return render_to_response('register.html',{'msguser':msg['FromUserName']})
+                except MultipleObjectsReturned:
+                    return render_to_response('404.html')
+                if user[openid]!='':
+                    return render_to_response('index2.html')
+                 return render_to_response('404.html')
         response = HttpResponse(responseMsg(request),content_type="application/xml")  
         return response  
     else:  
