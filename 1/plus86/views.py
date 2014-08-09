@@ -94,6 +94,8 @@ def responseMsg(request):
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, Title2, De2, pic2, url2, Title3, De3, pic3, url3)
     elif  msg['MsgTpye']=='voice':
         echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1)
+    else:
+        echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1)
     '''if msg['MsgTpye']=='event':
         if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
