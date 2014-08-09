@@ -94,14 +94,14 @@ def responseMsg(request):
     if msg[MsgTpye]=='event':
         if msg[Event]=='CLICK':
             if msg[EventKey]=='V1001_GOOD':
-                try:
+                #try:
                     #user=memberCard.objects.filter(openid=fromusername)
-                    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
-                except DoesNotExist:
+                echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
+                '''except DoesNotExist:
                     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
                     return echostr
                 except MultipleObjectsReturned:
-                    return render_to_response('404.html')
+                    return render_to_response('404.html')'''
     return echostr
    
 
