@@ -93,11 +93,11 @@ def responseMsg(request):
     url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
     openid= msg['FromUserName']
     MsgType=msg['MsgType']
-    '''if MsgType=='text':
+    if MsgType=="text":
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
     else:
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, '1', De2, pic2, url2, Title3, De3, pic3, url3)
-        if msg['Event']=='CLICK':
+        '''if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
                 #try:
                     #user=memberCard.objects.filter(openid=fromusername)
@@ -108,7 +108,7 @@ def responseMsg(request):
                     return echostr
                 except MultipleObjectsReturned:
                     return render_to_response('404.html')'''
-    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
+    #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
 
     return echostr
    
