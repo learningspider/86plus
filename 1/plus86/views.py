@@ -202,7 +202,7 @@ def handleRequest(request):
                     return render_to_response('404.html')
                 if user[openid]!='':
                     return render_to_response('index2.html')
-                 return render_to_response('404.html')
+                return render_to_response('404.html')
         response = HttpResponse(responseMsg(request),content_type="application/xml")  
         return response  
     else:  
