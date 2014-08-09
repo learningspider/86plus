@@ -224,8 +224,6 @@ def registercheck(request):
     return render_to_response('index2.html')
 
 def checkmember(request):
-    
-    
     try:
         user=memberCard.objects.get(openid=msg['FromUserName'])
     except DoesNotExist:
