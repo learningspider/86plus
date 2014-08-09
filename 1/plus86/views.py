@@ -192,7 +192,7 @@ def handleRequest(request):
         msg = {}
         for child in root:
             msg[child.tag] = child.text
-        if msg[MsgTpye]=='event':
+        '''if msg[MsgTpye]=='event':
             if msg[Event]=='CLICK':
                 if msg[EventKey]=='V1001_GOOD':
                     try:
@@ -203,10 +203,10 @@ def handleRequest(request):
                         return render_to_response('404.html')
                     if user[openid]!='':
                         return render_to_response('index2.html')
-                    return render_to_response('404.html')
-        else:
-            response = HttpResponse(responseMsg(request),content_type="application/xml")  
-            return response  
+                    return render_to_response('404.html')'''
+        
+        response = HttpResponse(responseMsg(request),content_type="application/xml")  
+        return response  
     else:  
         return None  
 
