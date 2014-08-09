@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^create/createmenu', 'plus86.views.creatmenu'),
     url(r'^create/deletemenu', 'plus86.views.creatmenu'),
     url(r'^membercard/', 'plus86.views.membercard'),
+    url(r'^register/', 'plus86.views.register'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
