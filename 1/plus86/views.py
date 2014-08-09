@@ -90,7 +90,7 @@ def responseMsg(request):
     url2 = 'http://news.weather.com.cn/2014/07/2164872.shtml'
     url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
     openid= msg['FromUserName']
-   ''' msgt=msg['MsgTpye']
+    ''' msgt=msg['MsgTpye']
     if msgt=='text':
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, msg['MsgType'], De2, pic2, url2, Title3, De3, pic3, url3)
     else:
