@@ -208,7 +208,7 @@ def registercheck(request):
          name=email,
          IDcard=idname)
     p.save()
-    return None
+    return render_to_response('index2.html')
 
 def checkmember(request):
     recvmsg = smart_str(request.raw_post_data)
