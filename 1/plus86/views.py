@@ -31,8 +31,7 @@ def responseMsg(request):
     
     for child in root:
         msg[child.tag] = child.text
-    '''root=ET.parse(recvmsg)
-    MsgType=root.findtext(".//MsgType")'''
+
     #request.session["fromusername"] = msg[FromUserName]
     
                 
@@ -105,6 +104,7 @@ def responseMsg(request):
     elif MsgType=="event":
         if msg['Event']=="CLICK":
             if msg['EventKey']=="V1001_GOOD":
+                request.session['fromusername'] = msg[FromUserName]
                 echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', De1, pic1, 'http://86plus.sinaapp.com/register?openid='+openid)
         elif  msg['Event']=="subscribe":
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活！')
@@ -252,6 +252,7 @@ def register(request):
 	
 @csrf_exempt 	
 def reg(request):
+    fromuser=request.session.get('fromusername','')
     '''idname = request.POST.get( 'username', None )
     email = request.POST.get( 'email', None)
     phonenum = request.POST.get( 'phonenum', None)
@@ -261,7 +262,7 @@ def reg(request):
          name=email,
          IDcard=idname)
     p.save()'''
-    return render_to_response('index2.html')
+    return render_to_response('index2.html',{'fromuser':fromuser})
 
 def checkmember(request):
     #fromusername=request.session.get('fromusername',None)
