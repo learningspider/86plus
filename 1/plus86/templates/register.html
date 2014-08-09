@@ -56,13 +56,13 @@
 <fieldset id=account> 
 <legend>个人信息</legend> 
 <label for=username>身份证号:</label> 
-<input id=username class=textbox type=text name=username required placeholder="身份证号" /> <br>
+<input id=username class=textbox type=text name=username required placeholder={{openid}}/> <br>
 <label for=email>邮箱地址:</label>
 <input id=email class=textbox type=email name=email required placeholder="sd@www.csdn.com" />  <br>
 <label for=username>手机号:</label>
 &nbsp&nbsp&nbsp&nbsp
 <input id=phonenum class=textbox type=text name=phonenum required placeholder="手机号" /> <br>
-<input type="hidden" name="ExPws" value={{msguser}}>
+<input type="hidden" name="ExPws" value={{openid}}>
 </fieldset> 
 <fieldset id=personal> 
 
