@@ -52,23 +52,18 @@
 
       <div id="vip" style=""> 
       <small><em>尊贵会员, 尽享如下特权:</em></small> 
-      <form action="/registercheck/" method="post"> 
+      <form action="/registercheck" method="post"> 
 <fieldset id=account> 
 <legend>个人信息</legend> 
 <label for=username>身份证号:</label> 
-<input id=username class=textbox type=text name=username required placeholder={{openid}}/> <br>
+<input id=username class=textbox type=text name=username required placeholder="身份证号"/> <br>
 <label for=email>邮箱地址:</label>
 <input id=email class=textbox type=email name=email required placeholder="sd@www.csdn.com" />  <br>
 <label for=username>手机号:</label>
 &nbsp&nbsp&nbsp&nbsp
 <input id=phonenum class=textbox type=text name=phonenum required placeholder="手机号" /> <br>
 <input type="hidden" name="ExPws" value={{openid}}>
-</fieldset> 
-<fieldset id=personal> 
-
-<fieldset align="center" id=confirm> 
-<input type=submit value="提交" /> 
-<div class="clearfix"></div> 
+<input type="submit" value="Submit" />
 </fieldset> 
 </form> 
       </div>
