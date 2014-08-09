@@ -21,8 +21,7 @@ from plus86.models import memberCard
 
 # import requests
 
-global msg1 
-msg1={}
+
 
 
 def responseMsg(request):
@@ -32,7 +31,7 @@ def responseMsg(request):
     
     for child in root:
         msg[child.tag] = child.text
-    msg1=msg
+    request.session["fromusername"] = msg[FromUserName]
     '''if msg[MsgTpye]=='event':
         if msg[Event]=='CLICK':
             if msg[EventKey]=='V1001_GOOD':
@@ -225,11 +224,11 @@ def registercheck(request):
     return render_to_response('index2.html')
 
 def checkmember(request):
-    msg6=msg1
+    fromusername=request.session["fromusername"]
     try:
-        user=memberCard.objects.get(openid=msg6['FromUserName'])
+        user=memberCard.objects.get(openid=fromusername)
     except DoesNotExist:
-        return render_to_response('register.html',{'msguser':msg6['FromUserName']})
+        return render_to_response('register.html',{'msguser':fromusername})
     except MultipleObjectsReturned:
         return render_to_response('404.html')
     if user[openid]!='':
