@@ -248,7 +248,7 @@ def registercheck(request):
          name=email,
          IDcard=idname)
     p.save()'''
-    return render_to_response('index2.html')
+    return render_to_response('404.html')
 
 def checkmember(request):
     #fromusername=request.session.get('fromusername',None)
