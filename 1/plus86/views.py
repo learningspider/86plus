@@ -90,14 +90,9 @@ def responseMsg(request):
     url2 = 'http://news.weather.com.cn/2014/07/2164872.shtml'
     url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
     openid= msg['FromUserName']
-    '''if 'MsgType' in msg.keys() and msg.get(MsgType)=='text':
-        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, Title2, De2, pic2, url2, Title3, De3, pic3, url3)
-    elif  msg.get(MsgType)=='voice':
-        echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1)
-    else:
-        echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1)
-    if msg['MsgTpye']=='event':
-        if msg['Event']=='CLICK':
+    if msg['MsgTpye']=='text':
+        echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
+        '''if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
                 #try:
                     #user=memberCard.objects.filter(openid=fromusername)
@@ -107,8 +102,9 @@ def responseMsg(request):
                     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
                     return echostr
                 except MultipleObjectsReturned:
-                    return render_to_response('404.html')'''
+                    return render_to_response('404.html')
     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, msg['MsgType'], De2, pic2, url2, Title3, De3, pic3, url3)
+'''
     return echostr
    
 
