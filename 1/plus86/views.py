@@ -148,7 +148,7 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"会员卡",
-               "url":"http://86plus.sinaapp.com/membercard/"
+               "url":"http://86plus.sinaapp.com/checkmember/"
             },
             {
                "type":"click",
