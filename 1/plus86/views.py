@@ -31,7 +31,7 @@ def responseMsg(request):
     msg = {}
     for child in root:
         msg[child.tag] = child.text
-    if msg[MsgTpye]=='event':
+    '''if msg[MsgTpye]=='event':
         if msg[Event]=='CLICK':
             if msg[EventKey]=='V1001_GOOD':
                 try:
@@ -42,7 +42,7 @@ def responseMsg(request):
                     return render_to_response('404.html')
                 if user[openid]!='':
                     return render_to_response('index2.html')
-                '''return render_to_response('404.html')'''
+                return render_to_response('404.html')'''
     #textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>"
     textTpl = """<xml>
                 <ToUserName><![CDATA[%s]]></ToUserName>
