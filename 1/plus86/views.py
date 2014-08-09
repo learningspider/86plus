@@ -96,7 +96,7 @@ def responseMsg(request):
     if MsgType=="text":
         echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
     elif MsgType=="event" and msg['Event']=="CLICK" and msg['EventKey']=="V1001_GOOD":
-        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
+        echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', De1, pic1, 'http://86plus.sinaapp.com/registor?openid='+openid)
         '''if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
                 #try:
