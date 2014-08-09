@@ -205,8 +205,6 @@ def checkmember(request):
     msg = {}
     for child in root:
         msg[child.tag] = child.text
-    if msg['FromUserName']='':
-        return render_to_response('404.html')
     try:
         user=memberCard.objects.get(openid=msg['FromUserName'])
     except DoesNotExist:
