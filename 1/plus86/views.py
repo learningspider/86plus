@@ -252,7 +252,7 @@ def register(request):
 	
 @csrf_exempt 	
 def reg(request):
-    fromuser=request.session.get('fromusername','')
+    #fromuser=request.session.get('fromusername','')
     '''idname = request.POST.get( 'username', None )
     email = request.POST.get( 'email', None)
     phonenum = request.POST.get( 'phonenum', None)
