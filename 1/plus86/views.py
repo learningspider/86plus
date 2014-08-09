@@ -17,6 +17,7 @@ import hashlib
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
+from plus86.models import memberCard
 
 # import requests
 
@@ -197,4 +198,22 @@ def membercard(request):
 def register(request):
     return render_to_response('register.html')
 
+def checkmember(request):
+    recvmsg = smart_str(request.raw_post_data)
+    root = ET.fromstring(recvmsg)
+    
+    msg = {}
+    for child in root:
+        msg[child.tag] = child.text
+    if msg['FromUserName']="":
+        return render_to_response('404.html')
+    try:
+        user=memberCard.objects.get(openid=msg['FromUserName'])
+    except DoesNotExist:
+        return render_to_response('register.html')
+    except MultipleObjectsReturned:
+        return render_to_response('404.html')
+    if user[openid]!='':
+        return render_to_response('index2.html')
+    return render_to_response('404.html')
   
