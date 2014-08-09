@@ -91,9 +91,9 @@ def responseMsg(request):
     url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
     openid= msg['FromUserName']
     if msg['MsgTpye']=='text':
-        echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
+        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, msg['MsgType'], De2, pic2, url2, Title3, De3, pic3, url3)
     else:
-        echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
+        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, msg['MsgType'], De2, pic2, url2, Title3, De3, pic3, url3)
         '''if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
                 #try:
