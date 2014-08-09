@@ -89,6 +89,7 @@ def responseMsg(request):
     url1 = 'http://news.weather.com.cn/2014/07/2164829.shtml'
     url2 = 'http://news.weather.com.cn/2014/07/2164872.shtml'
     url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
+	openid= msg[FromUserName]
     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, Title2, De2, pic2, url2, Title3, De3, pic3, url3)
     if msg[MsgTpye]=='event':
         if msg[Event]=='CLICK':
@@ -96,7 +97,7 @@ def responseMsg(request):
                 try:
                     user=memberCard.objects.get(openid=fromusername)
                 except DoesNotExist:
-                    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+msg[FromUserName]')
+                    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+openid)
                     return echostr
                 except MultipleObjectsReturned:
                     return render_to_response('404.html')
