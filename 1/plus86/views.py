@@ -225,11 +225,11 @@ def registercheck(request):
     return render_to_response('index2.html')
 
 def checkmember(request):
-    
+    msg6=msg1
     try:
-        user=memberCard.objects.get(openid=msg1['FromUserName'])
+        user=memberCard.objects.get(openid=msg6['FromUserName'])
     except DoesNotExist:
-        return render_to_response('register.html',{'msguser':msg1['FromUserName']})
+        return render_to_response('register.html',{'msguser':msg6['FromUserName']})
     except MultipleObjectsReturned:
         return render_to_response('404.html')
     if user[openid]!='':
