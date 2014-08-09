@@ -31,19 +31,9 @@ def responseMsg(request):
     
     for child in root:
         msg[child.tag] = child.text
-    request.session["fromusername"] = msg[FromUserName]
-    '''if msg[MsgTpye]=='event':
-        if msg[Event]=='CLICK':
-            if msg[EventKey]=='V1001_GOOD':
-                try:
-                    user=memberCard.objects.get(openid=msg['FromUserName'])
-                except DoesNotExist:
-                    return render_to_response('register.html',{'msguser':msg['FromUserName']})
-                except MultipleObjectsReturned:
-                    return render_to_response('404.html')
-                if user[openid]!='':
-                    return render_to_response('index2.html')
-                return render_to_response('404.html')'''
+    #request.session["fromusername"] = msg[FromUserName]
+    
+                
     #textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>"
     textTpl = """<xml>
                 <ToUserName><![CDATA[%s]]></ToUserName>
@@ -72,6 +62,21 @@ def responseMsg(request):
                 </item>
                 </Articles>
                 </xml> """
+    textTp6 = """<xml>
+                <ToUserName><![CDATA[%s]]></ToUserName>
+                <FromUserName><![CDATA[%s]]></FromUserName>
+                <CreateTime>%s</CreateTime>
+                <MsgType><![CDATA[news]]></MsgType>
+                <ArticleCount>1</ArticleCount>
+                <Articles>
+                <item>
+                <Title><![CDATA[%s]]></Title> 
+                <Description><![CDATA[%s]]></Description>
+                <PicUrl><![CDATA[%s]]></PicUrl>
+                <Url><![CDATA[%s]]></Url>
+                </item>
+                </Articles>
+                </xml> """
     Title1 = u'华北黄淮等地将一口气热到月底'
     Title2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱'
     Title3 = u'杭州风雨晚来急 1小时降下90毫米雨'
@@ -85,6 +90,16 @@ def responseMsg(request):
     url2 = 'http://news.weather.com.cn/2014/07/2164872.shtml'
     url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
     echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, Title2, De2, pic2, url2, Title3, De3, pic3, url3)
+    if msg[MsgTpye]=='event':
+        if msg[Event]=='CLICK':
+            if msg[EventKey]=='V1001_GOOD':
+                try:
+                    user=memberCard.objects.get(openid=fromusername)
+                except DoesNotExist:
+                    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/registor?openid='+msg[FromUserName]')
+                    return echostr
+                except MultipleObjectsReturned:
+                    return render_to_response('404.html')
     return echostr
    
 
@@ -159,9 +174,9 @@ def creatmenu(request):
            "name":"会员",
            "sub_button":[
            {
-               "type":"view",
-               "name":"会员",
-               "url":"http://86plus.sinaapp.com/checkmember/"
+               "type":"click",
+               "name":"会员卡",
+               "key":"V1001_GOOD"
             },
             {
                "type":"click",
@@ -224,7 +239,7 @@ def registercheck(request):
     return render_to_response('index2.html')
 
 def checkmember(request):
-    fromusername=request.session.get('fromusername',None)
+    #fromusername=request.session.get('fromusername',None)
     try:
         user=memberCard.objects.get(openid=fromusername)
     except DoesNotExist:
