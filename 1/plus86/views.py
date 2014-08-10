@@ -104,8 +104,12 @@ def responseMsg(request):
     elif MsgType=="event":
         if msg['Event']=="CLICK":
             if msg['EventKey']=="V1001_GOOD":
+                u1=memberCard.objects.filter(openid=msg['FromUserName'])
+                if u1.openid=='':
                 #request.session['fromusername'] = msg[FromUserName]
-                echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
+                else:
+                   echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '您的会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard‘) 
         elif  msg['Event']=="subscribe":
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活！')
         '''if msg['Event']=='CLICK':
