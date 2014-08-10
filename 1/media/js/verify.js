@@ -26,6 +26,7 @@ return false;
 function isEmail( str ){  
 var myReg = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/; 
 if(myReg.test(str)) return true; 
+form.email.focus()
 return false; 
 } 
 
