@@ -6,7 +6,7 @@
 import sys 
 reload(sys) 
 sys.setdefaultencoding('utf8')
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext, Template
 from django.utils.encoding import smart_str, smart_unicode
@@ -248,6 +248,11 @@ def handleRequest(request):
 def membercard(request):
     
     return render_to_response('index2.html')
+
+@csrf_exempt 
+def asdfasdf(request):
+    openid = request.GET.get('openid', None)
+    return render_to_response('register.html',{"openid":openid})
 
 @csrf_exempt 
 def register(request):
