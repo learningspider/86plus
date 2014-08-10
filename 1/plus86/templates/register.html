@@ -8,7 +8,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>番茄田</title>
     <link href='/site_media/css/style.css' rel="stylesheet" type="text/css">
-    <script type="text/javascript" src='/site_media/js/_meishi_wei_html5_v3.2.9.js'></script>
+    <script type="text/javascript" src='/site_media/js/verify.js'></script>
     <style>
       abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, figcaption, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, small, time, video {
         display:block;
@@ -53,9 +53,9 @@
       <div id="vip" style=""> 
       <small><em>尊贵会员, 尽享如下特权:</em></small> 
       <form action="/reg/" method="post"> 
-<p>身份证号: <input type="text" name="IDcard" /></p>
-  <p>手机号: <input type="text" name="phonenumber" /></p>
-  <p>邮箱: <input type="text" name="email" /></p>
+<p>身份证号: <input type="text" name="IDcard" maxlength="18" onblur="isTrueValidateCodeBy18IdCard(this.value.toLowerCase())"/></p>
+  <p>手机号: <input type="text" name="phonenumber" maxlength="11" onBlur="checkMobile(this.value)" /></p>
+  <p>邮箱: <input type="text" name="email" maxlength="60" onBlur="isEmail(this.value)"/></p>
  <input type="hidden" name="ExPws" value="{{openid}}">
   <input type="submit" value="Submit" align="middle" />
 
