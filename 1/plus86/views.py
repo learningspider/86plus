@@ -280,7 +280,7 @@ def reg(request):
          name=email,
          IDcard=idname)
     p.save()
-    return render_to_response('index2.html')
+    return render_to_response('index2.html',{'us':request.session.items()})
 
 def checkmember(request):
     #fromusername=request.session.get('fromusername',None)
