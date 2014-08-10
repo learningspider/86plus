@@ -257,16 +257,16 @@ def register(request):
 @csrf_exempt 	
 def reg(request):
     #fromuser=request.session.get('fromusername','')
-    '''idname = request.POST.get( 'username', None )
+    idname = request.POST.get( 'IDcard', None )
     email = request.POST.get( 'email', None)
-    phonenum = request.POST.get( 'phonenum', None)
+    phonenum = request.POST.get( 'phonenumber', None)
     openid = request.POST.get( 'ExPws', None)
     p = Publisher(openid=openid,
          phonenumber=phonenum,
          name=email,
          IDcard=idname)
-    p.save()'''
-    return render_to_response('index2.html',{'fromuser':fromuser})
+    p.save()
+    return render_to_response('index2.html')
 
 def checkmember(request):
     #fromusername=request.session.get('fromusername',None)
