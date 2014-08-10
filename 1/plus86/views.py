@@ -105,7 +105,7 @@ def responseMsg(request):
         if msg['Event']=="CLICK":
             if msg['EventKey']=="V1001_GOOD":
                 u1=memberCard.objects.filter(openid=msg['FromUserName'])
-                if u1.openid=='':
+                if len(u1)==0:
                 #request.session['fromusername'] = msg[FromUserName]
                     echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
                 else:
