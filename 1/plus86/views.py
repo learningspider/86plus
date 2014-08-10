@@ -275,7 +275,7 @@ def reg(request):
     email = request.POST.get( 'email', None)
     phonenum = request.POST.get( 'phonenumber', None)
     openid = request.POST.get( 'ExPws', None)
-    p = memberCard(openid=openid,
+    p = memberCard(openid=fromuser,
          phonenumber=phonenum,
          name=email,
          IDcard=idname)
