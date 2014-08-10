@@ -32,10 +32,10 @@ def responseMsg(request):
     
     for child in root:
         msg[child.tag] = child.text
-    if 'openid' in request.session:
+    '''if 'openid' in request.session:
         print request.session["openid"]
     else:
-        request.session['openid'] = msg['FromUserName']
+        request.session['openid'] = msg['FromUserName']'''
         
     #request.session["fromusername"] = msg[FromUserName]
     
@@ -90,12 +90,12 @@ def responseMsg(request):
              <MsgType><![CDATA[text]]></MsgType>
              <Content><![CDATA[%s]]></Content>
              </xml>'''
-    Title1 = u'华北黄淮等地将一口气热到月底'
-    Title2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱'
-    Title3 = u'杭州风雨晚来急 1小时降下90毫米雨'
-    De1 = u'华北黄淮等地将一口气热到月底!'
-    De2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱!'
-    De3 = u'杭州风雨晚来急 1小时降下90毫米雨!'
+    Title1 = u'鍗庡寳榛勬樊绛夊湴灏嗕竴鍙ｆ皵鐑埌鏈堝簳'
+    Title2 = u'娌冲崡6鏈堟潵闄嶆按鍋忓皯6鎴� 杩戝崐鍦板尯鐜伴噸鏃辩骇姘旇薄骞叉棻'
+    Title3 = u'鏉窞椋庨洦鏅氭潵鎬� 1灏忔椂闄嶄笅90姣背闆�'
+    De1 = u'鍗庡寳榛勬樊绛夊湴灏嗕竴鍙ｆ皵鐑埌鏈堝簳!'
+    De2 = u'娌冲崡6鏈堟潵闄嶆按鍋忓皯6鎴� 杩戝崐鍦板尯鐜伴噸鏃辩骇姘旇薄骞叉棻!'
+    De3 = u'鏉窞椋庨洦鏅氭潵鎬� 1灏忔椂闄嶄笅90姣背闆�!'
     pic1 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/814284E37EF400D973A7A81C5BBE627A.jpg'
     pic2 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/7FBDABDBAECFE8395DCC4B7C6CEAFF5D.jpg'
     pic3 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/85A6D03788AE64849402ABE5E28CE78E.jpg'
@@ -112,11 +112,11 @@ def responseMsg(request):
                 u1=memberCard.objects.filter(openid=msg['FromUserName'])
                 if len(u1)==0:
                 #request.session['fromusername'] = msg[FromUserName]
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '鐢宠浼氬憳鍗�', '鐢宠浼氬憳鍗�', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
                 else:
-                   echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), request.session['openid'], '您的会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard') 
+                   echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), request.session['openid'], '鎮ㄧ殑浼氬憳鍗�', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard') 
         elif  msg['Event']=="subscribe":
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活！')
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'鍏虫敞86plus,鍏虫敞鐢熸椿锛�')
         '''if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
                 #try:
@@ -124,7 +124,7 @@ def responseMsg(request):
                 echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1)
                 #'http://86plus.sinaapp.com/registor?openid='+openid
                 except DoesNotExist:
-                    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡',url1, 'http://86plus.sinaapp.com/register?openid='+openid)
+                    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '鐢宠浼氬憳鍗�', '鐢宠浼氬憳鍗�',url1, 'http://86plus.sinaapp.com/register?openid='+openid)
                     return echostr
                 except MultipleObjectsReturned:
                     return render_to_response('404.html')'''
@@ -162,55 +162,55 @@ def creatmenu(request):
      "button":[
      {	
           "type":"click",
-          "name":"搜索",
+          "name":"鎼滅储",
            "sub_button":[
            {	
                "type":"view",
-               "name":"搜索",
+               "name":"鎼滅储",
                "url":"http://www.soso.com/"
             },
             {
                "type":"view",
-               "name":"视频",
+               "name":"瑙嗛",
                "url":"http://v.qq.com/"
             },
             {
                "type":"click",
-               "name":"赞一下我们",
+               "name":"璧炰竴涓嬫垜浠�",
                "key":"V1001_GOOD6"
             }]
       },
       {
            "type":"click",
-           "name":"百度搜索",
+           "name":"鐧惧害鎼滅储",
            "sub_button":[
            {	
                "type":"view",
-               "name":"搜索",
+               "name":"鎼滅储",
                "url":"http://www.baidu.com/"
             },
             {
                "type":"view",
-               "name":"视频",
+               "name":"瑙嗛",
                "url":"http://v.qq.com/"
             },
             {
                "type":"click",
-               "name":"赞一下我们",
+               "name":"璧炰竴涓嬫垜浠�",
                "key":"V1001_GOOD5"
             }]
       },
       {
-           "name":"会员",
+           "name":"浼氬憳",
            "sub_button":[
            {
                "type":"click",
-               "name":"会员卡",
+               "name":"浼氬憳鍗�",
                "key":"V1001_GOOD"
             },
             {
                "type":"click",
-               "name":"赞一下我们",
+               "name":"璧炰竴涓嬫垜浠�",
                "key":"V1009_GOOD"
             }]
        }]
@@ -267,15 +267,15 @@ def register(request):
 @csrf_exempt	
 def reg(request):
     #if request.session['openid']:
-    if "openid" in request.session:
+    '''if "openid" in request.session:
         fromuser=request.session['openid']
     else:
-        fromuser="zhou"
+        fromuser="zhou"'''
     idname = request.POST.get( 'IDcard', None )
     email = request.POST.get( 'email', None)
     phonenum = request.POST.get( 'phonenumber', None)
     openid = request.POST.get( 'ExPws', None)
-    p = memberCard(openid=fromuser,
+    p = memberCard(openid=openid,
          phonenumber=phonenum,
          name=email,
          IDcard=idname)
