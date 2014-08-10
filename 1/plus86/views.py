@@ -28,7 +28,7 @@ def responseMsg(request):
     recvmsg = smart_str(request.raw_post_data)
     root = ET.fromstring(recvmsg)
     msg={}
-    
+    request.session["openid"] = msg['FromUserName']
     for child in root:
         msg[child.tag] = child.text
 
