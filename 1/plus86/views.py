@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext, Template
 from django.utils.encoding import smart_str, smart_unicode
 from django.shortcuts import render_to_response
+from django.contrib.sessions.models import Session
 
 
 import hashlib
@@ -263,7 +264,7 @@ def register(request):
     openid = request.GET.get('openid', None)
     return render_to_response('register.html',{"openid":openid})
 	
-@csrf_exempt 	
+@csrf_exempt	
 def reg(request):
     #if request.session['openid']:
     if "openid" in request.session:
