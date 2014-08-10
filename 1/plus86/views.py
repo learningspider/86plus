@@ -265,7 +265,10 @@ def register(request):
 	
 @csrf_exempt 	
 def reg(request):
-    fromuser=request.session.get('openid','')
+    if "openid" in request.session:
+        fromuser=request.session.get('openid','')
+    else:
+        fromuser="zhou"
     idname = request.POST.get( 'IDcard', None )
     email = request.POST.get( 'email', None)
     phonenum = request.POST.get( 'phonenumber', None)
