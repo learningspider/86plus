@@ -28,10 +28,14 @@ def responseMsg(request):
     recvmsg = smart_str(request.raw_post_data)
     root = ET.fromstring(recvmsg)
     msg={}
-    request.session["openid"] = msg['FromUserName']
+    
     for child in root:
         msg[child.tag] = child.text
-
+    if 'openid' in request.session:
+        print request.session["openid"]
+    else:
+        request.session['openid'] = 'sfdasf'
+        
     #request.session["fromusername"] = msg[FromUserName]
     
                 
@@ -109,7 +113,7 @@ def responseMsg(request):
                 #request.session['fromusername'] = msg[FromUserName]
                     echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
                 else:
-                   echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '您的会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard') 
+                   echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), request.session['openid'], '您的会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard') 
         elif  msg['Event']=="subscribe":
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活！')
         '''if msg['Event']=='CLICK':
