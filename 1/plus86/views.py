@@ -34,7 +34,7 @@ def responseMsg(request):
     if 'openid' in request.session:
         print request.session["openid"]
     else:
-        request.session['openid'] = 'sfdasf'
+        request.session['openid'] = msg['FromUserName']
         
     #request.session["fromusername"] = msg[FromUserName]
     
