@@ -6,7 +6,7 @@ s：字符串
 如果通过验证返回true,否则返回false 
 
 */ 
-function checkMobile( s ){   
+function checkMobile(s){   
 var regu =/^[1][3][0-9]{9}$/; 
 var re = new RegExp(regu); 
 if (re.test(s)) { 
@@ -25,7 +25,7 @@ return false;
 返回：如果通过验证返回true,否则返回false 
 
 */ 
-function isEmail( str ){  
+function isEmail(str){  
 var myReg = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/; 
 if(myReg.test(str)) return true; 
 form.email.focus()
@@ -35,7 +35,7 @@ return false;
 
 var Wi = [ 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2, 1 ];    // 加权因子   
 var ValideCode = [ 1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2 ];            // 身份证验证位值.10代表X   
-function IdCardValidate(idCard) { 
+function IdCardValidate(idCard){ 
     idCard = trim(idCard.replace(/ /g, ""));               //去掉字符串头尾空格                     
     if (idCard.length == 15) {   
         return isValidityBrithBy15IdCard(idCard);       //进行15位身份证的验证    
