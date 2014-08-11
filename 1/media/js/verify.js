@@ -12,6 +12,8 @@ var re = new RegExp(regu);
 if (re.test(s)) { 
 return true; 
 }else{ 
+form.phonenumber.focus()
+alert("请输入正确的手机号!");
 return false; 
 } 
 } 
@@ -27,6 +29,7 @@ function isEmail( str ){
 var myReg = /^[-_A-Za-z0-9]+@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/; 
 if(myReg.test(str)) return true; 
 form.email.focus()
+alert("请输入正确的邮箱地址!");
 return false; 
 } 
 
@@ -41,9 +44,13 @@ function IdCardValidate(idCard) {
         if(isValidityBrithBy18IdCard(idCard)&&isTrueValidateCodeBy18IdCard(a_idCard)){   //进行18位身份证的基本验证和第18位的验证
             return true;   
         }else {   
+			form.IDcard.focus()
+			alert("请输入正确的身份证号!");
             return false;   
         }   
-    } else {   
+    } else { 
+		form.IDcard.focus()
+		alert("请输入正确的身份证号!");  
         return false;   
     }   
 }   
@@ -99,7 +106,9 @@ function isValidityBrithBy18IdCard(idCard18){
       // 对于老身份证中的你年龄则不需考虑千年虫问题而使用getYear()方法   
       if(temp_date.getYear()!=parseFloat(year)   
               ||temp_date.getMonth()!=parseFloat(month)-1   
-              ||temp_date.getDate()!=parseFloat(day)){   
+              ||temp_date.getDate()!=parseFloat(day)){
+				form.IDcard.focus()
+				alert("请输入正确的身份证号!");   
                 return false;   
         }else{   
             return true;   
@@ -108,4 +117,21 @@ function isValidityBrithBy18IdCard(idCard18){
 //去掉字符串头尾空格   
 function trim(str) {   
     return str.replace(/(^\s*)|(\s*$)/g, "");   
+}  
+
+
+function checkdata() {  
+      var ssn=form.IDcard.value.toLowerCase();  
+       
+      if (!IdCardValidate(ssn)) return false;  //用户名检查  
+       
+      var phonenum=form.phonenumber.value;  
+       
+      if (!checkMobile(phonenum)) return false; 
+      
+	  var email=form.email.value;  
+       
+      if (!isEmail(phonenum)) return false; 
+      
+      return true;  
 }  
