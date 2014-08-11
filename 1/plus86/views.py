@@ -249,8 +249,8 @@ def membercard(request):
         dic['email']=str(blog.name)
         dic['IDcard']=str(blog.IDcard)
         dic['username']=str(blog.username)
-    return render_to_response('index2.html',{'u':dic['username']})
-
+    #return render_to_response('index2.html',{'u':dic['username']})
+    return render_to_response('405.html',{'u':dic})
 @csrf_exempt 
 def asdfasdf(request):
     openid = request.GET.get('openid', None)
