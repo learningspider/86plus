@@ -249,7 +249,7 @@ def membercard(request):
         dic['email']=str(blog.name)
         dic['IDcard']=str(blog.IDcard)
         dic['username']=str(blog.username)
-    return render_to_response('index2.html',{'u':dic})
+    return render_to_response('index2.html',{'u':dic['username']})
 
 @csrf_exempt 
 def asdfasdf(request):
