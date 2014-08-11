@@ -893,7 +893,9 @@ function checkusername(str){
 function checkdata() {  
       var ssn=form.IDcard.value;  
        
-      if (!IdCardValidate(ssn)) return false;  //用户名检查  
+      if (!IdCardValidate(ssn)) return false;  //用户名检查
+	  
+	  if (!checkusername(username)) return false;  
        
       var phonenum=form.phonenumber.value;  
        
@@ -904,7 +906,7 @@ function checkdata() {
       if (!isEmail(email)) return false; 
 	  var username=form.username.value;  
        
-      if (!checkusername(username)) return false;
+      
       
       return true;  
 }  
