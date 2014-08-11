@@ -242,7 +242,7 @@ def handleRequest(request):
 def membercard(request):
     open = request.GET.get('openid', None)
     u1=memberCard.objects.filter(openid=open)
-    u=[u1.openid,u1.phonenumber,u1.name,u1.IDcard,u1.username]
+    u=[open,u1.phonenumber,u1.name,u1.IDcard,u1.username]
     return render_to_response('index2.html',{'u':u})
 
 @csrf_exempt 
