@@ -264,8 +264,8 @@ def reg(request):
     email = request.POST.get( 'email', None)
     phonenum = request.POST.get( 'phonenumber', None)
     openid = request.POST.get( 'ExPws', None)
-    if openid is None:
-        return render_to_response('404.html')
+    '''if openid is None:
+        return render_to_response('404.html')'''
     p = memberCard(openid=openid,
          phonenumber=phonenum,
          name=email,
