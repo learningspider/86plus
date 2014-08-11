@@ -12,7 +12,7 @@ var re = new RegExp(regu);
 if (re.test(s)) { 
 return true; 
 }else{ 
-form.phonenumber.focus()
+form.phonenumber.focus();
 alert("请输入正确的手机号!");
 return false; 
 } 
@@ -27,11 +27,13 @@ return false;
 */ 
 function isEmail(str){  
 var myReg = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
-if(myReg.test(str)) return true; 
-form.email.focus()
+if(myReg.test(str)) {return true; 
+}else{
+form.email.focus();
 alert("请输入正确的邮箱地址!");
 return false; 
 } 
+}
 
 var Wi = [ 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2, 1 ];    // 加权因子   
 var ValideCode = [ 1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2 ];            // 身份证验证位值.10代表X   
@@ -44,12 +46,12 @@ function IdCardValidate(idCard){
         if(isValidityBrithBy18IdCard(idCard)&&isTrueValidateCodeBy18IdCard(a_idCard)){   //进行18位身份证的基本验证和第18位的验证
             return true;   
         }else {   
-			form.IDcard.focus()
+			form.IDcard.focus();
 			alert("请输入正确的身份证号!");
             return false;   
         }   
     } else { 
-		form.IDcard.focus()
+		form.IDcard.focus();
 		alert("请输入正确的身份证号!");  
         return false;   
     }   
@@ -107,7 +109,7 @@ function isValidityBrithBy18IdCard(idCard18){
       if(temp_date.getYear()!=parseFloat(year)   
               ||temp_date.getMonth()!=parseFloat(month)-1   
               ||temp_date.getDate()!=parseFloat(day)){
-				form.IDcard.focus()
+				form.IDcard.focus();
 				alert("请输入正确的身份证号!");   
                 return false;   
         }else{   
