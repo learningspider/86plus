@@ -887,8 +887,10 @@ function checkusername(str){
 {
 	form.username.focus();
 	alert("姓名不能为空");
-
+    return false;
 }
+else
+	{return true;}
 }
 function checkdata() {  
       var ssn=form.IDcard.value;  
