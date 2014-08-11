@@ -242,8 +242,12 @@ def handleRequest(request):
 def membercard(request):
     open = request.GET.get('openid', None)
     u1=memberCard.objects.filter(openid=open)
-    
-    return render_to_response('index2.html',{'u':u1})
+    for blog in u1:
+        dic={}
+        dic['openid']=blog[0]
+        dic['phonenumber']=blog[1]
+        records.append(dic);
+    return render_to_response('index2.html',{'u':dic})
 
 @csrf_exempt 
 def asdfasdf(request):
