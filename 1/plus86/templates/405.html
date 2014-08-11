@@ -1,3 +1,4 @@
-{% for athlete in u %}
-    <li>{{ athlete }}</li>
+{% for athlete,v in u %}
+	{% k[athlete]=v %}
 {% endfor %}
+<li>{{ k[openid] }}</li>
