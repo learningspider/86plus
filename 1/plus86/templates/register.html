@@ -53,7 +53,7 @@
       <div id="vip" style=""> 
       <small><em>尊贵会员, 尽享如下特权:</em></small> 
       <form name="form" action="/reg/" method="post" onSubmit="return checkdata()"> 
-<p>身份证号: <input type="text" name="IDcard" maxlength="18" onblur="isTrueValidateCodeBy18IdCard(this.value.toLowerCase())"/></p>
+<p>身份证号: <input type="text" name="IDcard" maxlength="18" onblur="isTrueValidateCodeBy18IdCard(this.value)"/></p>
   <p>手机号: <input type="text" name="phonenumber" maxlength="11" onBlur="checkMobile(this.value)" /></p>
   <p>邮箱: <input type="text" name="email" maxlength="60" onBlur="isEmail(this.value)"/></p>
  <input type="hidden" name="ExPws" value="{{openid}}">
