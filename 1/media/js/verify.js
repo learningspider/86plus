@@ -882,8 +882,14 @@ function isValidityBrithBy18IdCard(idCard18){
 function trim(str) {   
     return str.replace(/(^\s*)|(\s*$)/g, "");   
 }  
+function checkusername(str){
+ if(str=="")
+{
+	form.username.focus();
+	alert("姓名不能为空");
 
-
+}
+}
 function checkdata() {  
       var ssn=form.IDcard.value;  
        
@@ -896,6 +902,9 @@ function checkdata() {
 	  var email=form.email.value;  
        
       if (!isEmail(email)) return false; 
+	  var username=form.username.value;  
+       
+      if (!checkusername(username)) return false;
       
       return true;  
 }  
