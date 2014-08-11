@@ -112,11 +112,11 @@ def responseMsg(request):
                 u1=memberCard.objects.filter(openid=msg['FromUserName'])
                 if len(u1)==0:
                 #request.session['fromusername'] = msg[FromUserName]
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '鐢宠浼氬憳鍗�', '鐢宠浼氬憳鍗�', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
                 else:
-                   echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), request.session['openid'], '鎮ㄧ殑浼氬憳鍗�', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard') 
+                   echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), request.session['openid'], '点击图片查看会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard') 
         elif  msg['Event']=="subscribe":
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'鍏虫敞86plus,鍏虫敞鐢熸椿锛�')
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
         '''if msg['Event']=='CLICK':
             if msg['EventKey']=='V1001_GOOD':
                 #try:
@@ -162,55 +162,55 @@ def creatmenu(request):
      "button":[
      {	
           "type":"click",
-          "name":"鎼滅储",
+          "name":"搜索",
            "sub_button":[
            {	
                "type":"view",
-               "name":"鎼滅储",
+               "name":"搜索",
                "url":"http://www.soso.com/"
             },
             {
                "type":"view",
-               "name":"瑙嗛",
+               "name":"视频",
                "url":"http://v.qq.com/"
             },
             {
                "type":"click",
-               "name":"璧炰竴涓嬫垜浠�",
+               "name":"赞一下我们",
                "key":"V1001_GOOD6"
             }]
       },
       {
            "type":"click",
-           "name":"鐧惧害鎼滅储",
+           "name":"百度搜索",
            "sub_button":[
            {	
                "type":"view",
-               "name":"鎼滅储",
+               "name":"搜索",
                "url":"http://www.baidu.com/"
             },
             {
                "type":"view",
-               "name":"瑙嗛",
+               "name":"视频",
                "url":"http://v.qq.com/"
             },
             {
                "type":"click",
-               "name":"璧炰竴涓嬫垜浠�",
+               "name":"赞一下我们",
                "key":"V1001_GOOD5"
             }]
       },
       {
-           "name":"浼氬憳",
+           "name":"会员",
            "sub_button":[
            {
                "type":"click",
-               "name":"浼氬憳鍗�",
+               "name":"会员卡",
                "key":"V1001_GOOD"
             },
             {
                "type":"click",
-               "name":"璧炰竴涓嬫垜浠�",
+               "name":"赞一下我们",
                "key":"V1009_GOOD"
             }]
        }]
@@ -280,7 +280,7 @@ def reg(request):
          name=email,
          IDcard=idname)
     p.save()
-    return render_to_response('index2.html',{'us':request.session.items()})
+    return render_to_response('index2.html')
 
 def checkmember(request):
     #fromusername=request.session.get('fromusername',None)
