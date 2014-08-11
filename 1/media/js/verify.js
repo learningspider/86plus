@@ -121,7 +121,7 @@ function trim(str) {
 
 
 function checkdata() {  
-      var ssn=form.IDcard.value.toLowerCase();  
+      var ssn=form.IDcard.value;  
        
       if (!IdCardValidate(ssn)) return false;  //用户名检查  
        
