@@ -90,12 +90,12 @@ def responseMsg(request):
              <MsgType><![CDATA[text]]></MsgType>
              <Content><![CDATA[%s]]></Content>
              </xml>'''
-    Title1 = u'鍗庡寳榛勬樊绛夊湴灏嗕竴鍙ｆ皵鐑埌鏈堝簳'
-    Title2 = u'娌冲崡6鏈堟潵闄嶆按鍋忓皯6鎴� 杩戝崐鍦板尯鐜伴噸鏃辩骇姘旇薄骞叉棻'
-    Title3 = u'鏉窞椋庨洦鏅氭潵鎬� 1灏忔椂闄嶄笅90姣背闆�'
-    De1 = u'鍗庡寳榛勬樊绛夊湴灏嗕竴鍙ｆ皵鐑埌鏈堝簳!'
-    De2 = u'娌冲崡6鏈堟潵闄嶆按鍋忓皯6鎴� 杩戝崐鍦板尯鐜伴噸鏃辩骇姘旇薄骞叉棻!'
-    De3 = u'鏉窞椋庨洦鏅氭潵鎬� 1灏忔椂闄嶄笅90姣背闆�!'
+    Title1 = u'华北黄淮等地将一口气热到月底'
+    Title2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱'
+    Title3 = u'杭州风雨晚来急 1小时降下90毫米雨'
+    De1 = u'华北黄淮等地将一口气热到月底!'
+    De2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱!'
+    De3 = u'杭州风雨晚来急 1小时降下90毫米雨!'
     pic1 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/814284E37EF400D973A7A81C5BBE627A.jpg'
     pic2 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/7FBDABDBAECFE8395DCC4B7C6CEAFF5D.jpg'
     pic3 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/85A6D03788AE64849402ABE5E28CE78E.jpg'
@@ -117,17 +117,6 @@ def responseMsg(request):
                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), request.session['openid'], '点击图片查看会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard') 
         elif  msg['Event']=="subscribe":
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
-        '''if msg['Event']=='CLICK':
-            if msg['EventKey']=='V1001_GOOD':
-                #try:
-                    #user=memberCard.objects.filter(openid=fromusername)
-                echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1)
-                #'http://86plus.sinaapp.com/registor?openid='+openid
-                except DoesNotExist:
-                    echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '鐢宠浼氬憳鍗�', '鐢宠浼氬憳鍗�',url1, 'http://86plus.sinaapp.com/register?openid='+openid)
-                    return echostr
-                except MultipleObjectsReturned:
-                    return render_to_response('404.html')'''
     #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
 
     return echostr
