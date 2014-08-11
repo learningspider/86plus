@@ -114,7 +114,7 @@ def responseMsg(request):
                 #request.session['fromusername'] = msg[FromUserName]
                     echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
                 else:
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard') 
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard?openid='+openid') 
         elif  msg['Event']=="subscribe":
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
     #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
@@ -240,8 +240,9 @@ def handleRequest(request):
 		
 @csrf_exempt 
 def membercard(request):
-    
-    return render_to_response('index2.html')
+    open = request.GET.get('openid', None)
+    u1=memberCard.objects.filter(openid=open)
+    return render_to_response('index2.html',{'u1':u1})
 
 @csrf_exempt 
 def asdfasdf(request):
