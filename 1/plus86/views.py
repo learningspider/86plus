@@ -242,7 +242,7 @@ def handleRequest(request):
 def membercard(request):
     open = request.GET.get('openid', None)
     u1=memberCard.objects.filter(openid=open)
-    for blog in list(blogs):
+    for blog in list(u1):
         dic={}
         dic['openid']=str(blog.openid)
 
