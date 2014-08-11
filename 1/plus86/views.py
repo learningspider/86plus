@@ -245,7 +245,10 @@ def membercard(request):
     for blog in list(u1):
         dic={}
         dic['openid']=str(blog.openid)
-
+        dic['phonenumber']=str(blog.phonenumber)
+        dic['email']=str(blog.name)
+        dic['IDcard']=str(blog.IDcard)
+        dic['username']=str(blog.username)
     return render_to_response('index2.html',{'u':dic})
 
 @csrf_exempt 
