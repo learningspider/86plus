@@ -242,8 +242,8 @@ def handleRequest(request):
 def membercard(request):
     open = request.GET.get('openid', None)
     u1=memberCard.objects.filter(openid=open)
-    u=[u1[0],u1[1]]
-    return render_to_response('index2.html',{'u':u})
+    
+    return render_to_response('index2.html',{'u':u1})
 
 @csrf_exempt 
 def asdfasdf(request):
