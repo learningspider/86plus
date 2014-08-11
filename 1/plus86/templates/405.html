@@ -1,4 +1,4 @@
-{% for athlete,v in u %}
-	{% k[athlete]=v %}
+{% for k in u.keys() %}
+	{% u[k]=v %}
 {% endfor %}
 <li>{{ k[openid] }}</li>
