@@ -26,7 +26,7 @@ return false;
 
 */ 
 function isEmail(str){  
-var myReg = /^[-_A-Za-z0-9][A-Za-z0-9]{1,20}@([_A-Za-z0-9]+\.)+[A-Za-z0-9]{2,3}$/; 
+var myReg = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
 if(myReg.test(str)) return true; 
 form.email.focus()
 alert("请输入正确的邮箱地址!");
