@@ -133,7 +133,7 @@ function checkdata() {
       
 	  var email=form.email.value;  
        
-      if (!isEmail(phonenum)) return false; 
+      if (!isEmail(email)) return false; 
       
       return true;  
 }  
