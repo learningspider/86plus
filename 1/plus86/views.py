@@ -155,8 +155,8 @@ def creatmenu(request):
            "sub_button":[
            {	
                "type":"view",
-               "name":"搜索",
-               "url":"http://www.soso.com/"
+               "name":"测试",
+               "url":"http://86plus.sinaapp.com/checkmember/"
             },
             {
                "type":"view",
