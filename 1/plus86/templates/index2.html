@@ -8,6 +8,37 @@
     <meta name="format-detection" content="telephone=no">
     <title>番茄田</title>
     <link href='/site_media/css/style.css' rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                // 发送给好友
+                WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+                    WeixinJSBridge.invoke('sendAppMessage', {
+                        "img_url": "http://bcs.duapp.com/api100/image/logo/lover.jpg",
+                        "img_width": "160",
+                        "img_height": "160",
+                        "link": "http://api100.duapp.com/card/",
+                        "desc":  "山无陵，天地合，乃敢与君绝。",
+                        "title": "爱情贺卡"
+                    }, function (res) {
+                        _report('send_msg', res.err_msg);
+                    })
+                });
+
+                // 分享到朋友圈
+                WeixinJSBridge.on('menu:share:timeline', function (argv) {
+                    WeixinJSBridge.invoke('shareTimeline', {
+                        "img_url": "http://bcs.duapp.com/api100/image/logo/newyear.jpg",
+                        "img_width": "160",
+                        "img_height": "160",
+                        "link": "http://api100.duapp.com/card/",
+                        "desc":  "Best wishes for a wonderful new year.",
+                        "title": "新年贺卡"
+                    }, function (res) {
+                        _report('timeline', res.err_msg);
+                    });
+                });
+            }, false)
+        </script>
     <script type="text/javascript" src='/site_media/js/_meishi_wei_html5_v3.2.9.js'></script>
     <style>
       abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, figcaption, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, small, time, video {
