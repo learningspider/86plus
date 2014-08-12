@@ -748,20 +748,7 @@ function() {
 });
 
 
-  WeixinJSBridge.on('menu:share:timeline', function(argv){
- 
-      WeixinJSBridge.invoke('shareTimeline',{
- 
-				"appid":"",                                              //appid 设置空就好了。
-				"img_url":	 "http://bcs.duapp.com/api100/image/logo/newyear.jpg",                                   //分享时所带的图片路径
-				"img_width":	"120",                            //图片宽度
-				"img_height":	"120",                            //图片高度
-				"link":"http://api100.duapp.com/card/",                                               //分享附带链接地址
-				"desc":"我是一个介绍",                            //分享内容介绍
-				"title":"标题，再简单不过了。"
-			}, function(res){/*** 回调函数，最好设置为空 ***/});
- 
- });   
+  
 
 
 
