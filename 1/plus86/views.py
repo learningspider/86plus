@@ -253,10 +253,7 @@ def membercard(request):
         dic['username']=str(blog.username)
     return render_to_response('index2.html',{'u':dic})
     #return render_to_response('405.html',{'u':dic})
-@csrf_exempt 
-def asdfasdf(request):
-    openid = request.GET.get('openid', None)
-    return render_to_response('register.html',{"openid":openid})
+
 
 @csrf_exempt 
 def register(request):
