@@ -198,9 +198,9 @@ def creatmenu(request):
                "key":"V1001_GOOD"
             },
             {
-               "type":"click",
-               "name":"赞一下我们",
-               "key":"V1009_GOOD"
+               "type":"view",
+               "name":"登录",
+               "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/weixininfo&reponse_type=code&scope=snsapi_userinfo&state=1#wechat_redirect"
             }]
        }]
  }'''
@@ -293,4 +293,21 @@ def checkmember(request):
     except MultipleObjectsReturned:
         return render_to_response('404.html')'''
     return render_to_response('test.html')
+
+def getinfo(request):
+    codekey=request.GET.get('code', None)
+    if codekey is None:
+        return render_to_response('404.html')
+    appid="wx5346a6f59b5e4dd8"
+    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    url='https://api.weixin.qq.com/sns/oauth2/access_token?appid='+appid+'&secret='+secret+'&grant_type='+codekey
+    response1 = urllib2.urlopen(url)
+    html = response1.read()
+    tokeninfo = json.loads(html)
+    token=tokeninfo['access_token']
+    openid=tokeninfo['openid']
+    url = 'https://api.weixin.qq.com/sns/userinfo?access_token='+token+'&openid='+openid
+    req = urllib2.Request(url, post)
+    response1 = urllib2.urlopen(req)
+    return render_to_response('weixininfo.html',{'res':response1})
   
