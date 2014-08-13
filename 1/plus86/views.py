@@ -303,13 +303,13 @@ def getweixininfo(request):
     appid="wx5346a6f59b5e4dd8"
     secret="3079a01e4c7b9b61da0cbf7808047d7c"
     url='https://api.weixin.qq.com/sns/oauth2/access_token?appid='+appid+'&secret='+secret+'&grant_type='+codekey
-    response1 = urllib2.urlopen(url)
-    html = response1.read()
+    response6 = urllib2.urlopen(url)
+    html = response6.read()
     tokeninfo = json.loads(html)
-    token=tokeninfo['access_token']
+    '''token=tokeninfo['access_token']
     openid=tokeninfo['openid']
     url = 'https://api.weixin.qq.com/sns/userinfo?access_token='+token+'&openid='+openid
     req = urllib2.Request(url, post)
-    response1 = urllib2.urlopen(req)
-    return render_to_response('weixininfo.html',{'res':response1})
+    response1 = urllib2.urlopen(req)'''
+    return render_to_response('weixininfo.html',{'res':tokeninfo})
   
