@@ -114,7 +114,9 @@ def responseMsg(request):
                 #request.session['fromusername'] = msg[FromUserName]
                     echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
                 else:
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard?openid='+openid) 
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard?openid='+openid)
+            elif msg['EventKey']=="V1002_GOOD": 
+                echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/weixininfo&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect">OAUTH登录</a>')
         elif  msg['Event']=="subscribe":
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
     #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
@@ -201,7 +203,12 @@ def creatmenu(request):
                "type":"view",
                "name":"登录",
                "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/weixininfo&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect"
-            }]
+            }, 
+            {
+               "type":"click",
+               "name":"OAUTH登录",
+               "key":"V1002_GOOD"
+            }]]
        }]
  }'''
     url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+token
