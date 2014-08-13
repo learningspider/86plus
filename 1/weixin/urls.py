@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^register', 'plus86.views.register'),
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),
-    url(r'^weixininfo', 'plus86.views.getweixininfo'),
+    url(r'^checkweixininfo', 'plus86.views.getweixininfo'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
