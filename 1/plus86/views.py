@@ -208,7 +208,7 @@ def creatmenu(request):
                "type":"click",
                "name":"OAUTH登录",
                "key":"V1002_GOOD"
-            }]]
+            }]
        }]
  }'''
     url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+token
