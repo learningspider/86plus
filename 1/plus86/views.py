@@ -309,7 +309,8 @@ def getweixininfo(request):
     token=tokeninfo['access_token']
     openid=tokeninfo['openid']
     url = 'https://api.weixin.qq.com/sns/userinfo?access_token='+token+'&openid='+openid
-    req = urllib2.Request(url, post)
-    response1 = urllib2.urlopen(req)
-    return render_to_response('weixininfo.html',{'res':response1})
+    response1 = urllib2.urlopen(url)
+    html1 = response1.read()
+    userinfo = json.loads(html1)
+    return render_to_response('weixininfo.html',{'res':userinfo})
   
