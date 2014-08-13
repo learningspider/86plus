@@ -200,11 +200,6 @@ def creatmenu(request):
                "key":"V1001_GOOD"
             },
             {
-               "type":"view",
-               "name":"登录",
-               "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/weixininfo&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect"
-            }, 
-            {
                "type":"click",
                "name":"OAUTH登录",
                "key":"V1002_GOOD"
