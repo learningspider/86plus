@@ -296,8 +296,8 @@ def checkmember(request):
         return render_to_response('404.html')'''
     return render_to_response('test.html')
 
-def getinfo(request):
-    codekey=request.GET.get('code', None)
+def getweixininfo(request):
+    #codekey=request.GET.get('code', None)
     '''if codekey is None:
         return render_to_response('404.html')
     appid="wx5346a6f59b5e4dd8"
