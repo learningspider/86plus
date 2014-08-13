@@ -298,7 +298,7 @@ def checkmember(request):
 
 def getinfo(request):
     codekey=request.GET.get('code', None)
-    if codekey is None:
+    '''if codekey is None:
         return render_to_response('404.html')
     appid="wx5346a6f59b5e4dd8"
     secret="3079a01e4c7b9b61da0cbf7808047d7c"
@@ -310,6 +310,6 @@ def getinfo(request):
     openid=tokeninfo['openid']
     url = 'https://api.weixin.qq.com/sns/userinfo?access_token='+token+'&openid='+openid
     req = urllib2.Request(url, post)
-    response1 = urllib2.urlopen(req)
-    return render_to_response('weixininfo.html',{'res':response1})
+    response1 = urllib2.urlopen(req)'''
+    return render_to_response('weixininfo.html',{'res':codekey})
   
