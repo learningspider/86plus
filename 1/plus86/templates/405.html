@@ -2,4 +2,8 @@
 	<div class="pull-right">  
     <a href=#>欢迎您：{{request.user}}</a>    
     </div>
+{% else %}
+	<div class="pull-right">  
+    <a href=#>登陆</a>    
+    </div>
 {% endif %}
