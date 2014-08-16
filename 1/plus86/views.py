@@ -313,7 +313,7 @@ def getweixininfo(request):
     response1 = urllib2.urlopen(url)
     html1 = response1.read()
     userinfo = json.loads(html1)
-    userlog=userlogin.objects.filter(username=userinfo['openid'])
+    userlog=userlogin.objects.filter(username=openid)
     if len(userlog)==0:       
         p = userlogin(username=userinfo['openid'],
         verify=userinfo['openid']+'8')
