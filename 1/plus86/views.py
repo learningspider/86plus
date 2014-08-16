@@ -313,14 +313,14 @@ def getweixininfo(request):
     response1 = urllib2.urlopen(url)
     html1 = response1.read()
     userinfo = json.loads(html1)
-    userlog=userlogin.objects.filter(username=openid)
+    userlog=userlogin6.objects.filter(username=openid)
     user6=openid+'8'
     if len(userlog)==0:       
         u= userlogin6(username=openid,verify=user6)
         u.save()
         user1 = User.objects.create_user(openid, 'qiqi@86plus.net', user6)
         user1.save()
-    user = authenticate(username=openid, password=user6)  
+    user = authenticate(username=openid,password=user6)  
     if user is not None:
         if user.is_active:  
             login(request, user) 
