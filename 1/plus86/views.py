@@ -315,7 +315,7 @@ def getweixininfo(request):
     userlog=userlogin.objects.filter(username=userinfo['openid'])
     if len(userlog)==0:       
         p = userlogin(username=userinfo['openid'],
-        verify=userinfo['openid'+'8')
+        verify=userinfo['openid']+'8')
         p.save()
     user = authenticate(username=userinfo['openid'], password=userinfo['openid']+'8')  
     if user is not None:  
