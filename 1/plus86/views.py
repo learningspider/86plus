@@ -324,9 +324,10 @@ def getweixininfo(request):
     user = authenticate(username=userinfo['openid'], password=userinfo['openid']+'8')  
     if user is not None:
         if user.is_active:  
-            login(request, user)        
+            login(request, user) 
+            return render_to_response('oauth2_openid.html',{'res':userinfo})      
     else:  
         #验证失败，暂时不做处理  
         return render_to_response('404.html')
-    return render_to_response('oauth2_openid.html',{'res':userinfo})
+    
   
