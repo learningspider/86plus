@@ -109,7 +109,10 @@ def responseMsg(request):
     openid= msg['FromUserName']
     MsgType=msg['MsgType']
     if MsgType=="text":
-        echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
+        if msg['Content']=='登录':
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo/&response_type=code&scope=snsapi_base&state=123#wechat_redirect">OAUTH登录</a>')
+        else:
+            echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
     elif MsgType=="event":
         if msg['Event']=="CLICK":
             if msg['EventKey']=="V1001_GOOD":
