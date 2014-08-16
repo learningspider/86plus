@@ -300,7 +300,7 @@ def checkmember(request):
 @csrf_exempt
 def getweixininfo(request):
     pattern = re.compile(r'iPhone')
-    match = pattern.match(request.META['HTTP_USER_AGENT'])
+    match = pattern.search(request.META['HTTP_USER_AGENT'])
     if match:
         return render_to_response('404.html')
     codekey=request.GET.get('code', None)
