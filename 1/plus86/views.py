@@ -294,7 +294,7 @@ def checkmember(request):
         return render_to_response('register.html')
     except MultipleObjectsReturned:
         return render_to_response('404.html')'''
-    return render_to_response('test.html')
+    return render_to_response('404_9.html')
 
 def getweixininfo(request):
     codekey=request.GET.get('code', None)
