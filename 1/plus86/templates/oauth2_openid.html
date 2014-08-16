@@ -17,11 +17,7 @@
 				WeixinJSBridge.call('hideToolbar');
 			});
 		</script>
-        {% if request.user.is_authenticated %}  
-        <div class="pull-right">  
-            <a href=#>欢迎您：{{request.user}}</a>    
-        </div>
-        {% endif %}
+        
 		<div data-role="page" id="page1">
 			<div data-role="content">
 				<div style=" text-align:center">
@@ -51,7 +47,11 @@
 								<label for="city">城市</label>
 								<input name="city" id="city" value="{{res.city}}" type="text" >
 							</div>
-							
+							{% if request.user.is_authenticated %}  
+        						<div class="pull-right">  
+            					<a href=#>欢迎您：{{request.user}}</a>    
+        						</div>
+        					{% endif %}
 						</P>
 					</LI>
 				</UL>
