@@ -12,6 +12,7 @@ from django.template import RequestContext, Template
 from django.utils.encoding import smart_str, smart_unicode
 from django.shortcuts import render_to_response
 from django.contrib.sessions.models import Session
+from django.contrib.auth import authenticate,login,logout
 
 
 import hashlib
@@ -19,6 +20,7 @@ import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
 from plus86.models import memberCard
+import plus86.models.user as userlogin
 
 # import requests
 
@@ -310,5 +312,16 @@ def getweixininfo(request):
     response1 = urllib2.urlopen(url)
     html1 = response1.read()
     userinfo = json.loads(html1)
+    userlog=userlogin.objects.filter(username=userinfo['openid'])
+    if len(userlog)==0:       
+        p = userlogin(username=userinfo['openid'],
+        verify=userinfo['openid'+'8')
+        p.save()
+    user = authenticate(username=userinfo['openid'], password=userinfo['openid']+'8')  
+    if user is not None:  
+        login(request, user)        
+    else:  
+        #验证失败，暂时不做处理  
+        return render_to_response('404.html')
     return render_to_response('oauth2_openid.html',{'res':userinfo})
   
