@@ -1,4 +1,5 @@
-
-
-405
-
+{% if request.user.is_authenticated %}  
+	<div class="pull-right">  
+    <a href=#>欢迎您：{{request.user}}</a>    
+    </div>
+{% endif %}
