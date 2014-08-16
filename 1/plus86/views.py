@@ -13,7 +13,7 @@ from django.utils.encoding import smart_str, smart_unicode
 from django.shortcuts import render_to_response
 from django.contrib.sessions.models import Session
 from django.contrib.auth import authenticate,login,logout
-
+from django.contrib.auth.models import User
 
 import hashlib
 import xml.etree.ElementTree as ET
@@ -318,11 +318,14 @@ def getweixininfo(request):
         p = userlogin(username=userinfo['openid'],
         verify=userinfo['openid']+'8')
         p.save()
+        user1 = User.objects.create_user(userinfo['openid'], 'qiqi@86plus.net', userinfo['openid']+'8')
+        user1.save()
     user = authenticate(username=userinfo['openid'], password=userinfo['openid']+'8')  
-    if user is not None:  
-        login(request, user)        
+    if user is not None:
+        if user.is_active:  
+            login(request, user)        
     else:  
         #验证失败，暂时不做处理  
-        return render_to_response('405.html')
+        return render_to_response('404.html')
     return render_to_response('oauth2_openid.html',{'res':userinfo})
   
