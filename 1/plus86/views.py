@@ -319,7 +319,7 @@ def getweixininfo(request):
         verify=openid+'8')
         p.save()
         user6=openid+'8'
-        user1 = User.objects.create_user(opendi, 'qiqi@86plus.net', user6)
+        user1 = User.objects.create_user(openid, 'qiqi@86plus.net', user6)
         user1.save()
     user = authenticate(username=openid, password=openid+'8')  
     if user is not None:
