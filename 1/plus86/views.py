@@ -276,7 +276,7 @@ def reg(request):
     phonenum = request.POST.get( 'phonenumber', None)
     openid = request.POST.get( 'ExPws', None)
     '''if openid is None:
-        return render_to_response('404.html')'''
+        return render_to_response('404_9.html')'''
     p = memberCard(openid=openid,
          phonenumber=phonenum,
          name=email,
@@ -293,13 +293,13 @@ def checkmember(request):
     except DoesNotExist:
         return render_to_response('register.html')
     except MultipleObjectsReturned:
-        return render_to_response('404.html')'''
+        return render_to_response('404_9.html')'''
     return render_to_response('404_9.html')
 
 def getweixininfo(request):
     codekey=request.GET.get('code', None)
     if codekey is None:
-        return render_to_response('404.html')
+        return render_to_response('404_9.html')
     appid="wx5346a6f59b5e4dd8"
     secret="3079a01e4c7b9b61da0cbf7808047d7c"
     url='https://api.weixin.qq.com/sns/oauth2/access_token?appid='+appid+'&secret='+secret+'&code='+codekey+'&grant_type=authorization_code'
@@ -329,6 +329,6 @@ def getweixininfo(request):
             return render(request,'oauth2_openid.html',{'res':userinfo})     
     else:  
         #验证失败，暂时不做处理  
-        return render_to_response('404.html')
+        return render_to_response('404_9.html')
     
   
