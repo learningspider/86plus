@@ -322,7 +322,6 @@ def getweixininfo(request):
     response1 = urllib2.urlopen(url)
     html1 = response1.read()
     userinfo = json.loads(html1)
-    userinfo6=userinfo
     userlog=userlogin6.objects.filter(username=openid)
     user6=openid+'8'
     if len(userlog)==0:       
@@ -335,7 +334,7 @@ def getweixininfo(request):
         if user.is_active:  
             login(request, user) 
             #return render(request,'405.html',{'res':request.META['HTTP_USER_AGENT']})   
-            return render(request,'oauth2_openid.html',{'res':userinfo6})     
+            return render(request,'oauth2_openid.html',{'res':userinfo})     
     else:  
         #验证失败，暂时不做处理  
         return render_to_response('404_9.html')
