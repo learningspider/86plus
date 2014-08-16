@@ -329,6 +329,6 @@ def getweixininfo(request):
             return render(request,'oauth2_openid.html',{'res':userinfo})     
     else:  
         #验证失败，暂时不做处理  
-        return render_to_response('404_9.html')
+        return render_to_response('404_9.html',{'users':user})
     
   
