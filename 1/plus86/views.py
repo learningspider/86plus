@@ -315,13 +315,13 @@ def getweixininfo(request):
     userinfo = json.loads(html1)
     userlog=userlogin.objects.filter(username=openid)
     if len(userlog)==0:       
-        p = userlogin(username=userinfo['openid'],
-        verify=userinfo['openid']+'8')
+        p = userlogin(username=openid,
+        verify=openid+'8')
         p.save()
-        user6=userinfo['openid']+'8'
-        user1 = User.objects.create_user(userinfo['openid'], 'qiqi@86plus.net', user6)
+        user6=openid+'8'
+        user1 = User.objects.create_user(opendi, 'qiqi@86plus.net', user6)
         user1.save()
-    user = authenticate(username=userinfo['openid'], password=userinfo['openid']+'8')  
+    user = authenticate(username=openid, password=openid+'8')  
     if user is not None:
         if user.is_active:  
             login(request, user) 
