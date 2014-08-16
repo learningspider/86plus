@@ -20,7 +20,8 @@ import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
 from plus86.models import memberCard
-import plus86.models.user as userlogin
+from plus86.models import user as userlogin
+
 
 # import requests
 
