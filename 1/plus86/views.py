@@ -325,6 +325,7 @@ def getweixininfo(request):
     if user is not None:
         if user.is_active:  
             login(request, user) 
+            userinfo=userinfo+user
             return render_to_response('405.html',{'res':userinfo})   
             #return render_to_response('oauth2_openid.html',{'res':userinfo})     
     else:  
