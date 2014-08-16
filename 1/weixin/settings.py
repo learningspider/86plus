@@ -27,6 +27,7 @@ else:
       MYSQL_USER = 'root'
       MYSQL_PASS = '123456'
       MYSQL_DB   = 'app_86plus'
+      
 
 '''DATABASES = {
     'default': {
