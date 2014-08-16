@@ -296,6 +296,7 @@ def checkmember(request):
         return render_to_response('404_9.html')'''
     return render_to_response('404_9.html')
 
+@csrf_exempt
 def getweixininfo(request):
     codekey=request.GET.get('code', None)
     if codekey is None:
