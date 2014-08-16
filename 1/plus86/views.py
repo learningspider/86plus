@@ -20,7 +20,7 @@ import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
 from plus86.models import memberCard
-from plus86.models import user as userlogin
+from plus86.models import user as userlogin6
 
 
 # import requests
@@ -315,10 +315,9 @@ def getweixininfo(request):
     userinfo = json.loads(html1)
     userlog=userlogin.objects.filter(username=openid)
     user6=openid+'8'
-    if userlog.count<=0:       
-        p = userlogin(username=openid,
-        verify=user6)
-        p.save()
+    if len(userlog)==0:       
+        u= userlogin6(username=openid,verify=user6)
+        u.save()
         user1 = User.objects.create_user(openid, 'qiqi@86plus.net', user6)
         user1.save()
     user = authenticate(username=openid, password=user6)  
