@@ -323,6 +323,6 @@ def getweixininfo(request):
         login(request, user)        
     else:  
         #验证失败，暂时不做处理  
-        return render_to_response('404.html')
+        return render_to_response('405.html')
     return render_to_response('oauth2_openid.html',{'res':userinfo})
   
