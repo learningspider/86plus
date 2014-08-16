@@ -315,7 +315,7 @@ def getweixininfo(request):
     userinfo = json.loads(html1)
     userlog=userlogin.objects.filter(username=openid)
     user6=openid+'8'
-    if len(userlog)==0:       
+    if userlog.count<=0:       
         p = userlogin(username=openid,
         verify=user6)
         p.save()
@@ -329,6 +329,6 @@ def getweixininfo(request):
             return render(request,'oauth2_openid.html',{'res':userinfo})     
     else:  
         #验证失败，暂时不做处理  
-        return render_to_response('404_9.html',{'users':userlog})
+        return render_to_response('404_9.html')
     
   
