@@ -47,21 +47,12 @@
 								<label for="city">城市</label>
 								<input name="city" id="city" value="{{res.city}}" type="text" >
 							</div>
-                            {% if user.is_authenticated %}  
-								<div class="pull-right">  
-                                <a href=#>欢迎您：{{user.username}}</a>    
-                                </div>
-                            {% else %}
-                                <div class="pull-right">  
-                                <a href=#>登陆</a>    
-                                </div>
-                            {% endif %}
 						</P>
 					</LI>
 				</UL>
 			</div>
 			<div data-theme="a" data-role="footer" data-position="fixed">
-				<h3>86PLUS工作室</h3>
+				<h3>{{res.sex}}86PLUS工作室</h3>
 			</div>
 		</div>
 
