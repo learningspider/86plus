@@ -10,4 +10,4 @@ class memberCard(models.Model):
     
 class user(models.Model):
     username = models.CharField(max_length=60,primary_key=True)
-    verify = models.IntegerField(unique=True)
+    verify = models.CharField(max_length=60)
