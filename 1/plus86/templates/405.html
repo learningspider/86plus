@@ -1,6 +1,6 @@
 {% if user.is_authenticated %}  
 	<div class="pull-right">  
-    <a href=#>欢迎您：{{request.user}}</a>    
+    <a href=#>欢迎您：{{user.username}}</a>    
     </div>
 {% else %}
 	<div class="pull-right">  

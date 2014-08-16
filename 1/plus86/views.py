@@ -10,7 +10,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext, Template
 from django.utils.encoding import smart_str, smart_unicode
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response,rander
 from django.contrib.sessions.models import Session
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
@@ -325,8 +325,8 @@ def getweixininfo(request):
     if user is not None:
         if user.is_active:  
             login(request, user) 
-            #return render_to_response('405.html',{'res':user})   
-            return render_to_response('oauth2_openid.html',{'res':userinfo})     
+            return render_to_response('405.html',{'res':userinfo})   
+            #return render(request,'oauth2_openid.html',{'res':userinfo})     
     else:  
         #验证失败，暂时不做处理  
         return render_to_response('404.html')
