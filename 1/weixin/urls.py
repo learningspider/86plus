@@ -21,6 +21,8 @@ urlpatterns = patterns('',
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),
     url(r'^checkweixininfo/', 'plus86.views.getweixininfo'),
+    url(r'^createproduct/', 'plus86.views.creatproduct'),
+    url(r'^queryproductstatus/', 'plus86.views.queryproductstatus'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
