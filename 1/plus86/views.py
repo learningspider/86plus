@@ -453,8 +453,8 @@ def createproduct(request):
     }
     }'''
     urlinfo='https://api.weixin.qq.com/merchant/create?access_token='
-    postrequest(request,postinfo,urlinfo)
-    return HttpResponse('SUCCESS')
+    requ=postrequest(request,postinfo,urlinfo)
+    return HttpResponse(requ)
 
 def queryproduct(request):
     urlinfo='https://api.weixin.qq.com/merchant/get?access_token='
