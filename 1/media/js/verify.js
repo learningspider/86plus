@@ -896,7 +896,7 @@ else
 
 
 function checkpwd(fpwd,frpwd){
-if(fpwd.value==""||fpwd.value.length<6||fpwd.value.length>20){
+if(fpwd==""||fpwd.length<6||fpwd.length>20){
 	form.yourpw.focus();
 alert("请输入6-20位密码");
 
