@@ -928,6 +928,12 @@ function checkdata() {
 	    var ssn=form.IDcard.value;  
        
       if (!IdCardValidate(ssn)) return false;  
+	  
+	  
+	  var xingming=form.xingming.value; 
+	  if (!checkusername(xingming)) return false; 
+	  
+	  
       var phonenum=form.phonenumber.value;  
        
       if (!checkMobile(phonenum)) return false; 
