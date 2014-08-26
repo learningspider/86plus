@@ -492,7 +492,9 @@ def userregister(request):
     xingming = request.POST.get( 'xingming', None)
     user1 = User.objects.create_user(username=username, 
             email=email, password=yourpw,first_name=xingming)
-    user1.UserProfile.phonenumber=phonenum
-    user1.UserProfile.IDcard=IDcard
     user1.save()
+    u = User.objects.get(username=username)
+    u.UserProfile.phonenumber=phonenum
+    u.UserProfile.IDcard=IDcard
+    
     return render_to_response('index2.html')
