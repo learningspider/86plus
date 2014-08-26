@@ -493,8 +493,8 @@ def userregister(request):
     user1 = User.objects.create_user(username=username, 
             email=email, password=yourpw,first_name=xingming)
     user1.save()
-    username1 = request.POST.get( 'username', None )
-    u = User.objects.get(username=username1)
+    
+    u = User.objects.get(username=username)
     u.UserProfile.phonenumber=phonenum
     u.UserProfile.IDcard=IDcard
     u.save()
