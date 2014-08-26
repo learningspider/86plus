@@ -482,6 +482,7 @@ def userregistershow(request):
     
     
 #用户注册
+@csrf_exempt
 def userregister(request):
     IDcard = request.POST.get( 'IDcard', None )
     username = request.POST.get( 'username', None )
