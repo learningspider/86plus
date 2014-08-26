@@ -892,6 +892,29 @@ function checkusername(str){
 else
 	{return true;}
 }
+
+
+
+function checkpwd(fpwd,frpwd){
+if(fpwd.value==""||fpwd.value.length<6||fpwd.value.length>20){
+	form.yourpw.focus();
+alert("请输入6-20位密码");
+
+return false;
+}
+else if(frpwd!=fpwd){
+	form.yourpw.focus();
+	alert("两次输入密码不一致");
+	return false;
+	}
+else{
+return true;
+}
+
+
+
+
+
 function checkdata() {  
       var ssn=form.IDcard.value;  
        
@@ -899,6 +922,10 @@ function checkdata() {
 	  var username=form.username.value; 
 	  if (!checkusername(username)) return false;  
        
+	  pwd1=form.yourpw.value
+	  pwd2=form.yourpw1.value
+	  if(!checkpwd(pwd1,pwd2))  return false;
+	   
       var phonenum=form.phonenumber.value;  
        
       if (!checkMobile(phonenum)) return false; 
