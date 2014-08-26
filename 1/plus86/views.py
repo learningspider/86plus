@@ -496,5 +496,6 @@ def userregister(request):
     u = User.objects.get(username=username)
     u.UserProfile.phonenumber=phonenum
     u.UserProfile.IDcard=IDcard
+    u.save()
     
     return render_to_response('index2.html')
