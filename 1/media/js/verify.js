@@ -918,16 +918,16 @@ return true;
 
 
 function checkdata() {  
-      var ssn=form.IDcard.value;  
-       
-      if (!IdCardValidate(ssn)) return false;  //用户名检查
 	  var username=form.username.value; 
 	  if (!checkusername(username)) return false;  
-       
+      
 	  var pwd1=form.yourpw.value
 	  var pwd2=form.yourpw1.value
 	  if(!checkpwd(pwd1,pwd2))  return false;
 	   
+	    var ssn=form.IDcard.value;  
+       
+      if (!IdCardValidate(ssn)) return false;  
       var phonenum=form.phonenumber.value;  
        
       if (!checkMobile(phonenum)) return false; 
