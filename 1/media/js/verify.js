@@ -908,7 +908,7 @@ else if(frpwd!=fpwd){
 	return false;
 	}
 else{
-	alert("一致");
+	
 return true;
 }
 }
