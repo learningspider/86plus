@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 class memberCard(models.Model):
@@ -11,3 +13,10 @@ class memberCard(models.Model):
 class user(models.Model):
     username = models.CharField(max_length=60,primary_key=True)
     verify = models.CharField(max_length=60)
+    
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    phonenumber = models.CharField(max_length=11,unique=True)
+    IDcard = models.CharField(max_length=18,unique=True)
+    openid = models.CharField(max_length=60,unique=True)
+    
