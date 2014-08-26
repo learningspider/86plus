@@ -20,7 +20,7 @@ import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
-from plus86.models import memberCard
+from plus86.models import memberCard,UserProfile
 from plus86.models import user as userlogin6
 
 
@@ -495,8 +495,9 @@ def userregister(request):
     user1.save()
     
     u = User.objects.get(username=username)
-    u.UserProfile.phonenumber=phonenum
-    u.UserProfile.IDcard=IDcard
-    u.save()
+    u1 = UserProfile.objects.get(user_id=u.id)
+    u1.phonenumber=phonenum
+    u1.IDcard=IDcard
+    u1.save()
     
     return render_to_response('index2.html')
