@@ -472,6 +472,10 @@ def queryproductstatus(request):
     requ=postrequest(request,postinfo,urlinfo)
     return HttpResponse(requ)
 
+def userregistershow(request):
+    return render_to_response('registeruser.html')
+    
+    
 #用户注册
 def userregister(request):
     IDcard = request.POST.get( 'IDcard', None )
@@ -480,7 +484,7 @@ def userregister(request):
     phonenum = request.POST.get( 'phonenumber', None)
     yourpw = request.POST.get( 'yourpw', None)
     xingming = request.POST.get( 'xingming', None)
-    user1 = User.objects.create_user(username, 
-            email, yourpw,IDcard=IDcard,phonenumber=phonenum,first_name=xingming)
+    user1 = User.objects.create_user(username=username, 
+            email=email, password=yourpw,first_name=xingming)
     user1.save()
     return render_to_response('index2.html')
