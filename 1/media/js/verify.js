@@ -922,8 +922,8 @@ function checkdata() {
 	  var username=form.username.value; 
 	  if (!checkusername(username)) return false;  
        
-	  pwd1=form.yourpw.value
-	  pwd2=form.yourpw1.value
+	  var pwd1=form.yourpw.value
+	  var pwd2=form.yourpw1.value
 	  if(!checkpwd(pwd1,pwd2))  return false;
 	   
       var phonenum=form.phonenumber.value;  
