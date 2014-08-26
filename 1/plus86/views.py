@@ -210,6 +210,11 @@ def creatmenu(request):
             },
             {
                "type":"view",
+               "name":"注册",
+               "url":"http://86plus.vipsinaapp.com/userregister/"
+            },
+            {
+               "type":"view",
                "name":"Oauth登录",
                "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
             }]
