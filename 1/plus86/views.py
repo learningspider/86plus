@@ -491,6 +491,6 @@ def userregister(request):
     yourpw = request.POST.get( 'yourpw', None)
     xingming = request.POST.get( 'xingming', None)
     user1 = User.objects.create_user(username=username, 
-            email=email, password=yourpw,first_name=xingming)
+            email=email, password=yourpw,first_name=xingming,phonenumber=phonenum,IDcard=IDcard)
     user1.save()
     return render_to_response('index2.html')
