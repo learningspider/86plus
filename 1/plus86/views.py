@@ -256,6 +256,8 @@ def handleRequest(request):
 		
 @csrf_exempt 
 def membercard(request):
+    if not request.user.is_authenticated():
+            return HttpResponseRedirect('userlogin/')
     open = request.GET.get('openid', None)
     u1=memberCard.objects.filter(openid=open)
     for blog in list(u1):
@@ -505,3 +507,24 @@ def userregister(request):
         return render_to_response('registeruser.html',{'userhave':'用户名已经存在！'})
     
     return render_to_response('index2.html')
+
+
+#用户登录界面
+def loginview(request):
+    '''if request.user.is_authenticated():
+            return render_to_response('index2.html')'''
+    return render_to_response('login.html')
+
+#用户登录提交
+@csrf_exempt
+def loginAction(request):
+    username = request.POST.get( 'username', None )
+    yourpw = request.POST.get( 'yourpw', None)
+    user = authenticate(username=username,password=yourpw)  
+    if user is not None:
+        if user.is_active:  
+            login(request, user) 
+            #return render(request,'405.html',{'res':request.META['HTTP_USER_AGENT']})   
+            return render(request,'index2.html')
+    else:
+        return render_to_response('login.html',{'userlogin':'用户名或密码不对，登录失败！'})

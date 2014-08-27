@@ -1,3 +1,7 @@
+# -*- coding: utf8 -*-
+
+
+
 from django.conf.urls import patterns, include, url
 import plus86.views
 import bew.views
@@ -20,6 +24,8 @@ urlpatterns = patterns('',
     url(r'^register', 'plus86.views.register'),
     url(r'^userregister/', 'plus86.views.userregistershow'),
     url(r'^userregisteraction/', 'plus86.views.userregister'),
+    url(r'^userlogin/', 'plus86.views.loginview'),  #用户登录界面
+    url(r'^userloginaction/', 'plus86.views.loginAction'),  #用户登录动作
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),
     url(r'^checkweixininfo/', 'plus86.views.getweixininfo'),
