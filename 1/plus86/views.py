@@ -258,6 +258,7 @@ def handleRequest(request):
 def membercard(request):
     if not request.user.is_authenticated():
             return HttpResponseRedirect('/userlogin/')
+    userinfo=request.user
     open = request.GET.get('openid', None)
     u1=memberCard.objects.filter(openid=open)
     for blog in list(u1):
@@ -267,7 +268,7 @@ def membercard(request):
         dic['email']=str(blog.name)
         dic['IDcard']=str(blog.IDcard)
         dic['username']=str(blog.username)
-    return render_to_response('index2.html',{'u':dic})
+    return render_to_response('index2.html',{'u':userinfo})
     #return render_to_response('405.html',{'u':dic})
 
 
