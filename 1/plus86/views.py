@@ -257,7 +257,7 @@ def handleRequest(request):
 @csrf_exempt 
 def membercard(request):
     if not request.user.is_authenticated():
-            return HttpResponseRedirect('userlogin/')
+            return HttpResponseRedirect('/userlogin/')
     open = request.GET.get('openid', None)
     u1=memberCard.objects.filter(openid=open)
     for blog in list(u1):
