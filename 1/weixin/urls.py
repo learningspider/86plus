@@ -26,7 +26,8 @@ urlpatterns = patterns('',
     url(r'^userregisteraction/', 'plus86.views.userregister'),
     url(r'^userlogin/', 'plus86.views.loginview'),  #用户登录界面
     url(r'^userloginaction/', 'plus86.views.loginAction'),  #用户登录动作
-    url(r'^welcome/', 'plus86.views.welcome'),  #用户登录动作
+    url(r'^welcome/', 'plus86.views.welcome'),  #欢迎界面
+    url(r'^guaguaka/', 'plus86.views.guaguaka'),  #刮刮卡界面
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),
     url(r'^checkweixininfo/', 'plus86.views.getweixininfo'),
