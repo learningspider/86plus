@@ -127,7 +127,8 @@ def responseMsg(request):
             elif msg['EventKey']=="V1006000_GOOD": 
                 echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo&response_type=code&scope=snsapi_base&state=123#wechat_redirect">OAUTH登录</a>')
         elif  msg['Event']=="subscribe":
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
+            #echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
+            echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '欢迎关注', '点击图片查看功能介绍', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/welcome/')
     #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
 
     return echostr
@@ -534,3 +535,7 @@ def loginAction(request):
             return render(request,'index2.html')
     else:
         return render_to_response('login.html',{'userlogin':'用户名或密码不对，登录失败！'})
+    
+#欢迎界面  
+def welcome(request):
+    return render_to_response('welcome.html')
