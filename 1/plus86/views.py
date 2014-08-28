@@ -215,6 +215,11 @@ def creatmenu(request):
            "name":"会员地带",
            "sub_button":[
            {
+               "type":"view",
+               "name":"刮刮卡",
+               "url":"http://86plus.vipsinaapp.com/guaguaka/"
+            },
+           {
                "type":"click",
                "name":"会员卡",
                "key":"V1001_GOOD"
@@ -549,3 +554,7 @@ def loginAction(request):
 #欢迎界面  
 def welcome(request):
     return render_to_response('welcome.html')
+
+#刮刮卡界面
+def guaguaka(request):
+    return render_to_response('guaguaka.html')
