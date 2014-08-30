@@ -1,119 +1,492 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-    <title>仿淘宝的个性List列表 站长学院 www.pigzz.com</title>
-    <style>
-    body{ margin:10px; padding:10px; font-size:12px; line-height:1.7; text-align:center;}
-    #zishu{ width:780px; margin-left:auto; margin-right:auto;}
-    .list{width:260px; height:155px; float:left;}
-    .box{ float:left; width:225px;}
-    .box2{ padding:0 5px 0 5px; text-align:left;}
-    #r1{background-position: 0;}
-    #r2{background-position: -19px;}
-    #r3{background-position: -38px;}
-    #r4{background-position: -57px;}
-    #r5{background-position: -76px;}
-    #r6{background-position: -95px;}
-    #r7{background-position: -114px;}
-    #r8{background-position: -133px;}
-    #r9{background-position: -152px;}
-    #t1{background-position: 0px 0px;}
-    #t2{background-position: 0px -5px;}
-    #t3{background-position: 0px -10px;}
-    #t4{background-position: 0px -15px;}
-    #t5{background-position: 0px -20px;}
-    #t6{background-position: 0px -25px;}
-    #t7{background-position: 0px -30px;}
-    #t8{background-position: 0px -35px;}
-    #t9{background-position: 0px -40px;}
-    #y1{background-position: 0px 0px;}
-    #y2{background-position: 0px -18px;}
-    #y3{background-position: 0px -36px;}
-    #y4{background-position: 0px -54px;}
-    #y5{background-position: 0px -72px;}
-    #y6{background-position: 0px -90px;}
-    #y7{background-position: 0px -108px;}
-    #y8{background-position: 0px -126px;}
-    #y9{background-position: 0px -144px;}
-    #u1{border-right: 1px solid #8A8FA0;border-left: 1px solid #8A8FA0;}
-    #u2{border-right: 1px solid #DF4493;border-left: 1px solid #DF4493;}
-    #u3{border-right: 1px solid #3B6DA5;border-left: 1px solid #3B6DA5;}
-    #u4{border-right: 1px solid #AA86CE;border-left: 1px solid #AA86CE;}
-    #u5{border-right: 1px solid #6EA314;border-left: 1px solid #6EA314;}
-    #u6{border-right: 1px solid #C55936;border-left: 1px solid #C55936;}
-    #u7{border-right: 1px solid #FAAD2D;border-left: 1px solid #FAAD2D;}
-    #u8{border-right: 1px solid #86D500;border-left: 1px solid #86D500;}
-    #u9{border-right: 1px solid #2F8A8E;border-left: 1px solid #2F8A8E;}
-    .cd1{background-image:url(http://www.codefans.net/jscss/demoimg/201104/5038.gif);background-repeat:no-repeat;cursor:pointer;float:left; width:19px;height:142px;}
-    .ce1{background-image:url(http://www.codefans.net/jscss/demoimg/201104/5046.gif);background-repeat:no-repeat;height:5px;overflow:hidden;}
-    .cf1{background:#fafafa;border-top: 0;border-bottom: 0; height:119px;}
-    .cg1{background-image:url(http://www.codefans.net/jscss/demoimg/201104/5056.gif);background-repeat:no-repeat;height:18px;overflow:hidden;}
-    .l1{width:40px;height:20px;cursor:pointer; margin-left:180px;}
-    </style>
-    </head>
-    <body>
-    <div id="zishu">
-    <div class="list">
-    <a href="#"><div id="r1" class="cd1"></div></a>
-    <div class="box">
-    <div id="t1" class="ce1"></div>
-    <div id="u1" class="cf1">
-    <div class="box2">这里是内容1</div>
-    </div>
-    <div id="y1" class="cg1">
-    <a href="#"><div class="l1"></div></a>
-    </div>
-    </div>
-    </div>
-    <div class="list">
-    <a href="#"><div id="r2" class="cd1"></div></a>
-    <div class="box">
-    <div id="t2" class="ce1"></div>
-    <div id="u2" class="cf1">
-    <div class="box2">这里是内容2</div>
-    </div>
-    <div id="y2" class="cg1">
-    <a href="#"><div class="l1"></div></a>
-    </div>
-    </div>
-    </div>
-    <div class="list">
-    <a href="#"><div id="r3" class="cd1"></div></a>
-    <div class="box">
-    <div id="t3" class="ce1"></div>
-    <div id="u3" class="cf1">
-    <div class="box2">这里是内容3</div>
-    </div>
-    <div id="y3" class="cg1">
-    <a href="#"><div class="l1"></div></a>
-    </div>
-    </div>
-    </div>
-    <div class="list">
-    <a href="#"><div id="r4" class="cd1"></div></a>
-    <div class="box">
-    <div id="t4" class="ce1"></div>
-    <div id="u4" class="cf1">
-    <div class="box2">这里是内容4</div>
-    </div>
-    <div id="y4" class="cg1">
-    <a href="#"><div class="l1"></div></a>
-    </div>
-    </div>
-    </div>
-    <div class="list">
-    <a href="#"><div id="r5" class="cd1"></div></a>
-    <div class="box">
-    <div id="t5" class="ce1"></div>
-    <div id="u5" class="cf1">
-    <div class="box2">这里是内容5</div>
-    </div>
-    <div id="y5" class="cg1">
-    <a href="#"><div class="l1"></div></a>
-    </div>
-    </div>
-    </div>
-    <p>以上为测试代码，CSS和内容都没有优化，但思路应该是对的！站长学院 www.pigzz.com</p>
-    </div>
-    </body>
-    </html>
+<!DOCTYPE html><html><head><script src="./淘宝网触屏版_html/1135495" async=""></script><script src="./淘宝网触屏版_html/9169644" async=""></script><script charset="gbk" src="./淘宝网触屏版_html/16187446.js" async="" mod_name="tanxssp-main"></script><script charset="gbk" async="" src="./淘宝网触屏版_html/14751181.js"></script><script charset="gbk" async="" src="./淘宝网触屏版_html/14751181.js"></script>
+<meta charset="utf-8">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="telephone=no" name="format-detection">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta property="wb:webmaster" content="c51923015ca19eb1">
+<link rel="apple-touch-icon-precomposed" href="./淘宝网触屏版_html/4221535.png">
+<title>淘宝网触屏版</title>
+<meta name="author" content="m.taobao.com">
+<meta name="copyright" content="Copyright ©m.taobao.com 版权所有">
+<meta name="revisit-after" content="1 days">
+<link rel="canonical" href="./淘宝网触屏版_html/2681094.html#nocheck">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<script type="text/javascript">
+	var scale = 1.0, ratio = 1, assetsHost = 'g.tbcdn.cn', assetsVersion = '0.5.15', isTestEnv = false;
+	(function() {
+		if (location.host.match(/(waptest|wapa)\.taobao\.com$/i)) {
+			assetsHost = 'g.assets.daily.taobao.net';
+            assetsVersion = '0.5.15';
+            isTestEnv = true;
+		}
+		if (window.devicePixelRatio === 2 && window.navigator.appVersion.match(/iphone/gi)) {
+			scale = 0.5;
+			ratio = 2;
+		}
+		var text = '<meta name="viewport" content="initial-scale=' + scale + ', maximum-scale=' + scale +', minimum-scale=' + scale + ', user-scalable=no" />'
+        	+ '<link' + ' type="text/css" rel="styleSheet" href="http://' + assetsHost + '/mtb/app-index/' + assetsVersion + '/index' + ratio + '.css"' + ' />';
+		document.write(text);
+	})();
+</script><meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><link type="text/css" rel="styleSheet" href="./淘宝网触屏版_html/2858777.css">
+
+<script type="text/javascript" async="" src="./淘宝网触屏版_html/5908121"></script></head>
+<body style="height: auto; min-height: 571px; "><iframe style="width: 0px; height: 0px; display: none; " src="./淘宝网触屏版_html/8695889.html"></iframe><script id="tb-beacon-aplus" src="./淘宝网触屏版_html/8989722.js" exparams="req_url=http%3a%2f%2fm%2etaobao%2ecom%2f&amp;amp;category=&amp;amp;userid=&amp;amp;b2c_orid=&amp;amp;b2c_auction=&amp;amp;at_isb=&amp;amp;atp_isdpp=&amp;amp;at_ssid=&amp;amp;bbid=&amp;amp;aplus&amp;amp;at_cart=&amp;amp;at_udid=&amp;asid=AABMVwFURScVQ2Fe5Pc="></script><script type="text/javascript">
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","req_url=http%3a%2f%2fm%2etaobao%2ecom%2f&amp;category=&amp;userid=&amp;b2c_orid=&amp;b2c_auction=&amp;at_isb=&amp;atp_isdpp=&amp;at_ssid=&amp;bbid=&amp;aplus&amp;at_cart=&amp;at_udid=&asid=AABMVwFURScVQ2Fe5Pc=",id="tb-beacon-aplus",src=(location>"https"?"//s":"//a")+".tbcdn.cn/s/aplus_wap.js")
+</script>
+
+<div id="wrap">
+	<header id="bar">
+		<div class="tao-logo"></div>
+		<div class="search c-form-suggest" id="J_searchcomplete">
+			<form action="http://s.m.taobao.com/index.htm" method="post" id="J_searchform">
+				<div class="sb-box">
+					<input id="sb-text" autocomplete="off" name="q" placeholder="" value="">
+					<button id="sb-submit" type="submit"></button>
+					<!--
+					<input id="J_ST" name="event_submit_do_new_search_auction" type="hidden" value="1">
+					<input name="_input_charset" type="hidden" value="utf-8">
+					<input name="topSearch" type="hidden" value="1">
+					<input name="atype" type="hidden" value="b">
+					<input name="searchfrom" type="hidden" value="1">
+					<input name="action" type="hidden" value="home:redirect_app_action">
+					<input name="from" type="hidden" value="1">
+					-->
+				</div>
+			</form>
+		</div>
+	</header>
+	<section id="guide"><div id="first-view"><div class="sliderwrap" style="-webkit-transform: translateZ(0px); "><ul style="-webkit-backface-visibility: hidden; width: 2072px; -webkit-transition-duration: 300ms; -webkit-transform: translate3d(-1480px, 0px, 0px); "><li index="0" l="1"><a href="http://h5.m.taobao.com/market/weekend/h5/washingh51.html?locate=home-1-5-1&amp;spm=a2141.1.1.home-1-5-1&amp;actparam=1_78826_h27620_%E9%A6%96%E7%84%A6-%E6%B4%97%E8%A1%A3%E6%B6%B2-%E7%A0%81%E5%91%A8%E5%89%A9%E4%BD%99-0830"><img class="" src="./淘宝网触屏版_html/15459351.png" height="100%"></a></li><li index="1" class="slideAD" l="1"><ins style="display:inline-block;padding:0;margin:0;width:640px;height:200px;*zoom:1;*display:inline" id="tanxssp-outer-conmm_12852562_1778064_22306155"><a href="http://click.mz.simba.taobao.com/ecpm?e=5ADCerswOpy4t7Q3pvBj0BsQmLP5zomMtr%2Brm1Lz0yQrwR2Asu40kUpXKE2REMKhwGTy%2FMaNJ%2B4X1UpN7q0%2BXVo1oz9qK6OlUK7RDtIZydUyXElRAMLwo62Qb3Xy%2B8KVB8KIeKD7N7u1l7mv3smhrbP99XoSvmmX3GgSghkrHE4QMY7gPM5H9ZFCl2hEiZ0oZPdYKQna8ys%3D&amp;u=http%3A%2F%2Fa.m.taobao.com%2Fi18741480566.htm&amp;k=205" target="_blank"><img border="0" src="./淘宝网触屏版_html/15630941.jpg" width="640px" height="200px"></a></ins><a style="display:none;" id="tanx-a-mm_12852562_1778064_22306155" data="mm_12852562_1778064_22306155"></a></li><li index="2" class="slideAD" l="1"><ins style="display:inline-block;padding:0;margin:0;width:640px;height:200px;*zoom:1;*display:inline" id="tanxssp-outer-conmm_12852562_1778064_22292619"><a href="http://click.mz.simba.taobao.com/ecpm?e=4jr0h%2BbR9ES4t7Q3pvBj0BsQmLP5zomMtr%2Brm1Lz0ySfLOdQK4knn2Su7%2FyMWyTnwGTy%2FMaNJ%2B4LeKY0IfK%2FlF5ffS91IfyaUK7RDtIZydUyXElRAMLwo4UI%2F6mtzqpwe%2F%2BfBScg92RRal5qQlxB3iwJF00YZylXFaoYk%2Fcz%2B%2FDy6z31jCdbVRGaG%2FCELcfnVG4aBlKdp%2F0%3D&amp;u=http%3A%2F%2Fa.m.taobao.com%2Fi14585461370.htm&amp;k=205" target="_blank"><img border="0" src="./淘宝网触屏版_html/9326348.jpg" width="640px" height="200px"></a></ins><a style="display:none;" id="tanx-a-mm_12852562_1778064_22292619" data="mm_12852562_1778064_22292619"></a></li><li index="3" l="1"><a href="http://m.laiwang.com/market/laiwang/head-img.php?locate=home-1-5-4&amp;spm=a2141.1.1.home-1-5-4&amp;actparam=1_78826_h27611_%E9%A6%96%E7%84%A6-%E6%9D%A5%E5%BE%80%E5%B8%B8%E8%A7%84%E6%B4%BB%E5%8A%A8-0830&amp;lwfrom=20140821104754331"><img class="" src="./淘宝网触屏版_html/6132127.jpg" height="100%"></a></li><li index="4" l="1"><a href="http://h5.m.taobao.com/mgame/qpds-0821.html?locate=home-1-5-5&amp;spm=a2141.1.1.home-1-5-5&amp;actparam=1_78826_h27613_%E9%A6%96%E7%84%A6-%E6%95%B0%E5%A8%B1%E6%96%97%E5%9C%B0%E4%B8%BB0-17%E7%82%B9-0830&amp;scm=2019.1.7.60"><img class="" src="./淘宝网触屏版_html/14495892.png" height="100%"></a></li><li index="0" l="1"><a href="http://h5.m.taobao.com/market/weekend/h5/washingh51.html?locate=home-1-5-1&amp;spm=a2141.1.1.home-1-5-1&amp;actparam=1_78826_h27620_%E9%A6%96%E7%84%A6-%E6%B4%97%E8%A1%A3%E6%B6%B2-%E7%A0%81%E5%91%A8%E5%89%A9%E4%BD%99-0830"><img class="" src="./淘宝网触屏版_html/15459351.png" height="100%"></a></li><li index="4" l="1" style="position: relative; left: -2072px; "><a href="http://h5.m.taobao.com/mgame/qpds-0821.html?locate=home-1-5-5&amp;spm=a2141.1.1.home-1-5-5&amp;actparam=1_78826_h27613_%E9%A6%96%E7%84%A6-%E6%95%B0%E5%A8%B1%E6%96%97%E5%9C%B0%E4%B8%BB0-17%E7%82%B9-0830&amp;scm=2019.1.7.60"><img class="" src="./淘宝网触屏版_html/14495892.png" height="100%"></a></li></ul></div><div class="indicator"><span class=""></span><span class=""></span><span class="cur"></span><span></span><span></span></div></div><div id="apps"><div class="sliderwrap" style="-webkit-transform: translateZ(0px); "><ul style="-webkit-transform: translate3d(0px, 0px, 0px); -webkit-backface-visibility: hidden; width: 888px; "><li l="1"><div><a href="http://h5.m.taobao.com/awp/mtb/mtb.htm?sprefer=p23590#!/awp/mtb/mtb.htm"><img class="" src="./淘宝网触屏版_html/14778054.png"><span>我的淘宝</span></a><a href="http://m.tmall.com/?sprefer=p23591"><img class="" src="./淘宝网触屏版_html/3762929.png"><span>天猫</span></a><a href="http://ju.taobao.com/m/index.htm?sprefer=p23592"><img class="" src="./淘宝网触屏版_html/1363690.APvXdplXXamNNre-140-140.png"><span>聚划算</span></a><a href="http://we.m.taobao.com/?ttid=taobao_h5_1.0.0&amp;sprefer=pmm731"><img class="" src="./淘宝网触屏版_html/9508411.png"><span>微淘</span></a></div><div><a href="http://rj.m.taobao.com/wap/index.htm?sprefer=p23598"><img class="" src="./淘宝网触屏版_html/15566773.1fFpXXXXXLdFXXszjdGpXX-140-140.png"><span>免费APP</span></a><a href="http://ye.m.taobao.com/?sprefer=php368"><img class="" src="./淘宝网触屏版_html/11183031.png"><span>夜淘宝</span></a><a href="http://wvs.m.taobao.com/?sprefer=p23596"><img class="" src="./淘宝网触屏版_html/2923060.png"><span>充值中心</span></a><a href="http://caipiao.m.taobao.com/lottery/h5/app.html#viewpath=index%2Fa.html?sprefer=php369"><img class="" src="./淘宝网触屏版_html/8498350.SPvXfVhXXamNNre-140-140.png"><span>彩票</span></a></div></li><li><div><a href="http://h5.m.taobao.com/trip/hotel/search/index.html?sprefer=php370"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://gtms01.alicdn.com/tps/i1/T1c2vCFjpjXXamNNre-140-140.png"><span>酒店客栈</span></a><a href="http://bendi.m.taobao.com/?sprefer=p23610"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://img01.taobaocdn.com/tps/i1/T1Q86MXlxaXXamNNre-140-140.png"><span>身边优惠</span></a><a href="http://chaoshi.m.tmall.com/?sprefer=php371"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://gtms04.alicdn.com/tps/i4/T1Dni3FshcXXX1dP6j-60-60.png"><span>天猫超市</span></a><a href="http://h5.m.taobao.com/fav/index.htm?sprefer=p23608"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://img03.taobaocdn.com/tps/i3/T1omnvXnVkXXamNNre-140-140.png"><span>收藏夹</span></a></div><div><a href="http://triph5.m.taobao.com/?sprefer=p23600"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://gtms01.alicdn.com/tps/i1/T1L7I_FmdpXXamNNre-140-140.png"><span>机票</span></a><a href="http://qiang.m.taobao.com/?actparam=1_057367_yxhd0004_qiangpai&amp;sprefer=p23594"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://img01.taobaocdn.com/tps/i1/T1GT6uXh4pXXamNNre-140-140.png"><span>天天抢拍</span></a><a href="http://h5.m.taobao.com/tejia/index.html?actparam=1_057367_yxhd0001_tttj&amp;sprefer=p23595#/-top/1"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://img04.taobaocdn.com/tps/i4/T1e4YIXl4eXXamNNre-140-140.png"><span>天天特价</span></a><a href="http://h5.m.taobao.com/movie/tbm/home.html?from=outer&amp;sprefer=p23607"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://img01.taobaocdn.com/tps/i1/T1sgtPXpdbXXamNNre-140-140.png"><span>电影票</span></a></div></li><li><div><a href="http://h5.m.taobao.com/category/index.html?sprefer=p23593"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://img03.taobaocdn.com/tps/i3/T13j2vXXdmXXamNNre-140-140.png"><span>类目浏览</span></a><a href="http://m.etao.com/?sprefer=p23852#!sign"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://gtms01.alicdn.com/tps/i1/T1gPZ5FlhcXXamNNre-140-140.png"><span>领集分宝</span></a><a href="http://h5.m.taobao.com/trip/ticket/index.htm#search?sprefer=php372"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://gtms01.alicdn.com/tps/i1/T1VmJXFzBiXXamNNre-140-140.png"><span>门票</span></a><a href="http://h5.m.taobao.com/try/list.htm?sprefer=php373"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://gtms02.alicdn.com/tps/i2/T18XbRFshbXXamNNre-140-140.png"><span>免费试用</span></a></div><div><a href="http://h5.m.taobao.com/dd/index.htm?ttid=12huo0000031"><img class="lazyimg" src="./淘宝网触屏版_html/7439770.png_290x290.jpg" dataimg="http://gtms04.alicdn.com/tps/i4/T1V0ayFuxjXXamNNre-140-140.png"><span>本地餐饮</span></a></div></li></ul></div><div class="indicator"><span class="cur"></span><span></span><span></span></div></div><h4 class="title"><span>导购</span></h4><div id="channel" class="tpl c0"><div class="row1col2"><a index="0" href="http://m.taobao.com/channel/act/mobile/qianggou.html?locate=home-1-6&amp;actparam=1_72091_h27231_null"><img class="" src="./淘宝网触屏版_html/14016946.Iq-288-144.png" height="100%" style="visibility: visible; "></a><a index="1" href="http://h5.m.taobao.com/channel/act/wap/sjzxmjtg.php?locate=home-1-7&amp;actparam=1_72091_h27232_null&amp;query=life&amp;sprefer=pca180"><img class="" src="./淘宝网触屏版_html/15478396.t-292-144.jpg" height="100%" style="visibility: visible; "></a></div><div class="row1col2"><a index="2" href="http://fav.m.taobao.com/shopDynamicIndex.htm?locate=home-1-8&amp;actparam=1_72091_h27233_null&amp;query=store&amp;sprefer=p23878&amp;_navigation_params=%7B%22needlogin%22%3A%221%22%7D"><img class="" src="./淘宝网触屏版_html/16248574.uYFX4aXXcc6K.t-292-144.png" height="100%" style="visibility: visible; "></a><a index="3" href="http://h5.m.taobao.com/vip/index3.html?locate=home-1-9&amp;actparam=1_72091_h27234_null"><img class="" src="./淘宝网触屏版_html/9001033.t-292-144.png" height="100%" style="visibility: visible; "></a></div></div><div id="category"><a index="0" href="http://s.m.taobao.com/search.htm?locate=home-1-10&amp;actparam=1_72091_h27235_null&amp;q=%E8%BF%9E%E8%A1%A3%E8%A3%99">连衣裙</a><a index="1" href="http://s.m.taobao.com/search.htm?locate=home-1-11&amp;actparam=1_72091_h27236_null&amp;q=%E5%8D%95%E9%9E%8B">单鞋</a><a index="2" href="http://s.m.taobao.com/search.htm?locate=home-1-12&amp;actparam=1_72091_h27237_null&amp;q=%E6%89%93%E5%BA%95%E8%A3%A4">打底裤</a><a index="3" href="http://s.m.taobao.com/search.htm?locate=home-1-13&amp;actparam=1_72091_h27238_null&amp;q=%E5%A5%B3%E5%8C%85">女包</a></div><h4 class="decoration"><span></span></h4></section>
+	<section id="cards"><div class="card tpl c2"><div class="title"><span>精彩推荐</span></div><div class="row1col1"><a href="http://h5.m.taobao.com/lanlan/index.html?locate=home-2-1&amp;actparam=1_null_h23319_%E6%9C%89%E5%A5%BD%E8%B4%A7H5&amp;sid=d720f2119b8ce0257c89f09b08cae9fd"><img class="" src="./淘宝网触屏版_html/8113097.jpg" height="100%" style="visibility: visible; "></a></div><div class="row2col2"><div class="col1"><a href="http://h5.m.taobao.com/we/plaza2.html?locate=home-2-2&amp;actparam=1_null_h22992_%E5%BE%AE%E6%B7%98H5"><img class="" src="./淘宝网触屏版_html/11031191.jpg" height="100%" style="visibility: visible; "></a></div><div class="col2"><div class="row1"><a href="http://h5.m.taobao.com/market/shi/new_list.html?locate=home-2-3&amp;actparam=1_null_h22993_%E6%8B%BE%E8%B4%A7H5&amp;spm=a217d.7286485.10.1"><img class="" src="./淘宝网触屏版_html/7170034.jpg" height="100%" style="visibility: visible; "></a></div><div class="row2"><a href="http://h5.m.taobao.com/guang/index.html?locate=home-2-4&amp;actparam=1_58053_h27610_%E7%88%B1%E9%80%9B%E8%A1%97H5"><img class="" src="./淘宝网触屏版_html/13196020.jpg" height="100%" style="visibility: visible; "></a></div></div></div><h4 class="decoration"><span></span></h4></div><div class="card tpl c1"><div class="title"><span>特色市场</span></div><div class="row1col1 big"><a href="http://h5.m.taobao.com/global/index.html?locate=home-3-1&amp;actparam=1_null_h22570_%E5%85%A8%E7%90%83%E8%B4%ADH5"><img class="" src="./淘宝网触屏版_html/6213492.jpg" height="100%" style="visibility: visible; "></a></div><div class="row1col1"><a href="http://h5.m.taobao.com/paimai/v2/home/index.html?locate=home-3-2&amp;actparam=1_null_h22571_%E6%8B%8D%E5%8D%96H5"><img class="" src="./淘宝网触屏版_html/7639729.jpg" height="100%" style="visibility: visible; "></a></div><div class="row1col1"><a href="http://miao.tmall.com/go/market/miao/m.php?locate=home-3-3&amp;actparam=1_null_h22572_%E5%96%B5%E9%B2%9C%E7%94%9FH5"><img class="" src="./淘宝网触屏版_html/4900847.png" height="100%" style="visibility: visible; "></a></div><h4 class="decoration"><span></span></h4></div><div class="card tpl c1"><div class="title"><span>特享专场</span></div><div class="row1col1 big"><a href="http://h5.m.taobao.com/tejia/index.html?locate=home-4-1&amp;actparam=1_null_h22567_%E5%A4%A9%E5%A4%A9%E7%89%B9%E4%BB%B7H5"><img class="" src="./淘宝网触屏版_html/13133686.png" height="100%" style="visibility: visible; "></a></div><div class="row1col1"><a href="http://ju.taobao.com/m/jusp/mliangfan/mtp.htm?locate=home-4-2&amp;actparam=1_null_h22569_%E9%87%8F%E8%B4%A9%E5%9B%A2H5"><img class="" src="./淘宝网触屏版_html/9067172.png" height="100%" style="visibility: visible; "></a></div><div class="row1col1"><a href="http://ju.taobao.com/m/jusp/jumingppd/mtp.htm?locate=home-4-3&amp;actparam=1_null_h22568_%E8%81%9A%E5%90%8D%E5%93%81H5"><img class="" src="./淘宝网触屏版_html/6980586.png" height="100%" style="visibility: visible; "></a></div><h4 class="decoration"><span></span></h4></div></section>
+	<section id="others"><div class="feedback"><ul><li><a href="http://h5.m.taobao.com/mdownload/taobao/download.html" style="color:#f40">手机淘宝官方多版本下载</a></li></ul></div><div class="hots"><ul class="noborder"><li><a href="http://rj.m.taobao.com/wap/index.htm?sprefer=p23444">应用下载</a><a href="http://m.taobao.com/channel/act/sale/yysc_ios_index.html?sprefer=p23443">iPhone应用</a><a href="http://rj.m.taobao.com/wap/appmark/index.htm?sprefer=p23442">Android应用</a></li></ul></div><div class="feedback"><h3>用户反馈</h3><ul><li><a href="http://h5.m.taobao.com/other/feedback.html?sprefer=p23704">触屏版2.0全新上线，期待您的反馈</a></li><li><a href="http://wap.taobao.com/channel/act/guide2.html">回首页不方便、找不到旺旺购物车的请进</a></li></ul></div></section>
+	<footer id="copyright"><footer class="footer c-footer "><section class="footer-t c-footer-t"><p class="user-info c-user-info"><span><a href="http://login.m.taobao.com/login.htm?tpl_redirect_url=http%3A%2F%2Fm.taobao.com%2F">登录</a></span><span><a href="http://u.m.taobao.com/reg/newUser.htm?tpl_redirect_url=http%3A%2F%2Fm.taobao.com%2F">注册</a></span></p><p class="gotop c-gotop"><a id="J_GoTop" href="javascript:(app&&app.scroll)? app.scroll.scrollTo(0):scroll(0,0)">top<b> </b></a></p></section><nav class="footer-l c-footer-l"><a href="http://www.taobao.com/index.php?from=wap" target="_blank">电脑版</a><a id="J_imgViewType" href="javascript:void(0)" class="J_dps" data-dps="hdedition%23h%23" style="display:none;"></a></nav><p class="copyright c-copyright">© 2014 浙B2-20080224<a class="cr-sv c-cr-sv" href="http://service.taobao.com/support/helpWap.htm" id="J_service">服务中心</a></p></footer></footer>
+	<div id="loading" style="display: none; ">
+		<span><img src="./淘宝网触屏版_html/3095607.gif" width="100%" height="100%"></span>
+	</div>
+	<div id="J_popupwrap" class="im-popupout">
+		<div id="J_popup" class="im-popup">
+			<a id="J_popupclose" class="im-close"></a>
+			<a id="J_popupdown" class="im-comm im-cdown"></a>
+			<a id="J_popupinvoke" class="im-comm im-cinvok"></a>
+			<a id="J_popupcontinue" class="im-view"></a>
+		</div>
+	</div>
+    <!--iframe id="J_popupFrame" style="display:none"></iframe-->
+</div>
+<section id="J_search" class="in-search cc-search showoff">
+	<div class="cc-search-hide">
+		<a class="cc-back">关闭</a>
+		<ul class="cc-search-tab">
+			<li class="cur" i="event_submit_do_new_search_auction">宝贝</li>
+			<li i="event_submit_do_search_shop">店铺</li>
+			<li i="event_submit_do_new_search_tmall_auction">天猫</li>
+		</ul>
+	</div>
+	<div id="J_dropdown" class="c-form-suggest">
+		<div class="c-form-search">
+			<form id="J_indexform" name="wapSearchForm" action="http://s.m.taobao.com/index.htm?pds=hbword0%23h%23search" method="post" autocomplete="off">
+				<input id="J_searchtext" class="inp-search" name="q" value="" autocomplete="off" placeholder="">
+				<a id="J_cleartext" class="clearText"><span></span></a>
+				<input type="submit" value="" name="search-bton" class="bton-search">
+				<input type="hidden" id="J_ST" name="event_submit_do_new_search_auction" value="1">
+				<input type="hidden" value="utf-8" name="_input_charset">
+				<input type="hidden" value="1" name="topSearch">
+				<input type="hidden" value="b" name="atype">
+				<input type="hidden" value="1" name="searchfrom">
+				<input type="hidden" value="home:redirect_app_action" name="action">
+				<input type="hidden" value="1" name="from">
+			</form>
+		</div>
+		<div class="suggest"><ul class="meat"></ul><span class="close c-btn-grey-small s-btn-grey">关闭</span></div>
+	</div>
+</section>
+
+<script type="text/javascript">
+var SmartbannerJSON = {
+"mainIndex" : {"href":"#","title":"上客户端，获知更多精彩","text":"立即打开","color":"","bgcolor":""},
+"mainSearch" : {"href":"#","title":"亲，这里有你留下的足迹","text":"瞅一眼去","color":"","bgcolor":""},
+"mainDetail" : {"href":"a.m.taobao.com","title":"这款宝贝可以看到评价哦","text":"立即查看","color":"","bgcolor":""},
+"mainShop" : {"href":"shop.m.taobao.com/shop/shop_index.htm","title":"热销、上新、优惠全在这里哦","text":"点我查看","color":"","bgcolor":""},
+"mainCart" : {"href":"h5.m.taobao.com/cart/index.htm?#cart","title":"百万精选商品，手机专享帮您省钱","text":"立即打开","color":"","bgcolor":""},
+"mainFav" : {"href":"","title":"百万精选商品，手机专享帮您省钱","text":"立即打开","color":"","bgcolor":""},
+"mainMyTaobao" : {"href":"h5.m.taobao.com/my/index.htm#!myTaobao","title":"终于可以看到自己的权益了","text":"立即查看","color":"","bgcolor":""},
+"mainOrderDetail" : {"href":"tm.m.taobao.com/order/order_detail.htm?payOrderId=","title":"百万精选商品，手机专享帮您省钱","text":"立即打开","color":"","bgcolor":""},
+"mainLogistics" : {"href":"h5.m.taobao.com/my/index.htm?#!orderList-5/-Z1","title":"百万精选商品，手机专享帮您省钱","text":"立即打开","color":"","bgcolor":""},
+"mainTaobaoNew" : {"href":"#","title":"","text":"","color":"","bgcolor":""},
+"itemfav" : {"href":"#","title":"推荐更换淘宝客户端，收藏宝贝免登陆更方便！","banner":"http://gtms01.alicdn.com/tps/i1/T1hVgnFcNbXXbHd2nf-456-176.jpg"},
+"shopfav" : {"href":"#","title":"淘宝客户端不仅可以更流畅地收藏宝贝，还能分享，立刻下载体验！","banner":"http://gtms01.alicdn.com/tps/i1/T1dZbNFfNcXXbHd2nf-456-176.jpg"},
+"addcart" : {"href":"#","title":"强烈推荐您更换淘宝客户端使用购物车，保障交易安全！","banner":"http://gtms01.alicdn.com/tps/i1/T1XgfPFmBeXXbHd2nf-456-176.jpg"}
+}
+</script>
+
+<script type="text/javascript">
+/*首页运营数据*/
+try{
+var IndexOpJSON = JSON.parse('{'+
+  '"slideAD":{ "src":"http://p.tanx.com/ex?i=mm_12852562_1778064_14424735","adid":"tanx-a-mm_12852562_1778064_14424735","jsid":"tanx-s-mm_12852562_1778064_14424735","charset":"gbk"},'+
+           '"popAD":{},'+
+  '"ucAD":{},'+
+           '"searchHot":{},'+
+    '"app" : ['+
+      
+        
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/awp/mtb/mtb.htm?sprefer=p23590#!/awp/mtb/mtb.htm",'+
+               '"picUrl": "http://img02.taobaocdn.com/tps/i2/T1Dk6wXahXXXamNNre-140-140.png",'+
+               '"description": "我的淘宝"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://m.tmall.com?sprefer=p23591",'+
+               '"picUrl": "http://img01.taobaocdn.com/tps/i1/T1dSr9XfddXXamNNre-140-140.png",'+
+               '"description": "天猫"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://ju.taobao.com/m/index.htm?sprefer=p23592",'+
+               '"picUrl": "http://img02.taobaocdn.com/tps/i2/T1.APvXdplXXamNNre-140-140.png",'+
+               '"description": "聚划算"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://we.m.taobao.com/?ttid=taobao_h5_1.0.0&sprefer=pmm731",'+
+               '"picUrl": "http://img03.taobaocdn.com/tps/i3/T1wCV0XAVgXXamNNre-140-140.png",'+
+               '"description": "微淘"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://rj.m.taobao.com/wap/index.htm?sprefer=p23598",'+
+               '"picUrl": "http://gtms01.alicdn.com/tps/i1/TB1U.1fFpXXXXXLdFXXszjdGpXX-140-140.png",'+
+               '"description": "免费APP"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://ye.m.taobao.com/?sprefer=php368",'+
+               '"picUrl": "http://gtms01.alicdn.com/tps/i1/T1rqMnFhtdXXamNNre-140-140.png",'+
+               '"description": "夜淘宝"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://wvs.m.taobao.com?sprefer=p23596",'+
+               '"picUrl": "http://img01.taobaocdn.com/tps/i1/T1FJzvXmhoXXamNNre-140-140.png",'+
+               '"description": "充值中心"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://caipiao.m.taobao.com/lottery/h5/app.html#viewpath=index%2Fa.html?sprefer=php369",'+
+               '"picUrl": "http://img04.taobaocdn.com/tps/i4/T1.SPvXfVhXXamNNre-140-140.png",'+
+               '"description": "彩票"'+
+            '},'+
+                    
+      
+        
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/trip/hotel/search/index.html?sprefer=php370",'+
+               '"picUrl": "http://gtms01.alicdn.com/tps/i1/T1c2vCFjpjXXamNNre-140-140.png",'+
+               '"description": "酒店客栈"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://bendi.m.taobao.com?sprefer=p23610",'+
+               '"picUrl": "http://img01.taobaocdn.com/tps/i1/T1Q86MXlxaXXamNNre-140-140.png",'+
+               '"description": "身边优惠"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://chaoshi.m.tmall.com?sprefer=php371",'+
+               '"picUrl": "http://gtms04.alicdn.com/tps/i4/T1Dni3FshcXXX1dP6j-60-60.png",'+
+               '"description": "天猫超市"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/fav/index.htm?sprefer=p23608",'+
+               '"picUrl": "http://img03.taobaocdn.com/tps/i3/T1omnvXnVkXXamNNre-140-140.png",'+
+               '"description": "收藏夹"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://triph5.m.taobao.com?sprefer=p23600",'+
+               '"picUrl": "http://gtms01.alicdn.com/tps/i1/T1L7I_FmdpXXamNNre-140-140.png",'+
+               '"description": "机票"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://qiang.m.taobao.com/?actparam=1_057367_yxhd0004_qiangpai&sprefer=p23594",'+
+               '"picUrl": "http://img01.taobaocdn.com/tps/i1/T1GT6uXh4pXXamNNre-140-140.png",'+
+               '"description": "天天抢拍"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/tejia/index.html?actparam=1_057367_yxhd0001_tttj&sprefer=p23595#/-top/1",'+
+               '"picUrl": "http://img04.taobaocdn.com/tps/i4/T1e4YIXl4eXXamNNre-140-140.png",'+
+               '"description": "天天特价"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/movie/tbm/home.html?from=outer&sprefer=p23607",'+
+               '"picUrl": "http://img01.taobaocdn.com/tps/i1/T1sgtPXpdbXXamNNre-140-140.png",'+
+               '"description": "电影票"'+
+            '},'+
+                    
+      
+        
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/category/index.html?sprefer=p23593",'+
+               '"picUrl": "http://img03.taobaocdn.com/tps/i3/T13j2vXXdmXXamNNre-140-140.png",'+
+               '"description": "类目浏览"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://m.etao.com/?sprefer=p23852#!sign",'+
+               '"picUrl": "http://gtms01.alicdn.com/tps/i1/T1gPZ5FlhcXXamNNre-140-140.png",'+
+               '"description": "领集分宝"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/trip/ticket/index.htm#search?sprefer=php372",'+
+               '"picUrl": "http://gtms01.alicdn.com/tps/i1/T1VmJXFzBiXXamNNre-140-140.png",'+
+               '"description": "门票"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/try/list.htm?sprefer=php373",'+
+               '"picUrl": "http://gtms02.alicdn.com/tps/i2/T18XbRFshbXXamNNre-140-140.png",'+
+               '"description": "免费试用"'+
+            '},'+
+                        '{   '+                    
+               '"redirectUrl": "http://h5.m.taobao.com/dd/index.htm?ttid=12huo0000031",'+
+               '"picUrl": "http://gtms04.alicdn.com/tps/i4/T1V0ayFuxjXXamNNre-140-140.png",'+
+               '"description": "本地餐饮"'+
+            '},'+
+                    
+      
+      null+
+    '],'+
+    '"hots": ['+
+        
+          '['+
+          
+          '{'+
+              '"noborder": "true",'+
+              '"redirectUrl": "http://rj.m.taobao.com/wap/index.htm?sprefer=p23444",'+
+              '"description": "应用下载"'+
+          '},'+
+          
+          
+                    '{'+
+              '"redirectUrl": "http://m.taobao.com/channel/act/sale/yysc_ios_index.html?sprefer=p23443",'+
+              '"description": "iPhone应用"'+
+          '},'+
+                    '{'+
+              '"redirectUrl": "http://rj.m.taobao.com/wap/appmark/index.htm?sprefer=p23442",'+
+              '"description": "Android应用"'+
+          '},'+
+                    null+
+          
+          '],'+
+        
+        null+
+    '],'+
+    '"feedback": {'+
+		
+          
+          '"title":  "用户反馈" ,'+
+          
+          '"list": ['+
+               
+                              '{'+
+                  '"redirectUrl": "http://h5.m.taobao.com/other/feedback.html?sprefer=p23704",'+
+                  '"description": "触屏版2.0全新上线，期待您的反馈"'+
+               '},'+
+                              '{'+
+                  '"redirectUrl": "http://wap.taobao.com/channel/act/guide2.html",'+
+                  '"description": "回首页不方便、找不到旺旺购物车的请进"'+
+               '},'+
+                             
+              null+
+          ']'+
+        
+    '},'+
+    '"download": {'+
+		
+          
+          '"title":  "用户反馈" ,'+
+          
+          '"list": ['+
+                             
+                              '{'+
+                  '"redirectUrl": "http://h5.m.taobao.com/mdownload/taobao/download.html",'+
+                  '"description": "手机淘宝官方多版本下载",'+
+                  '"color": "#f40"'+
+               '},'+
+                             
+              null+
+          ']'+
+        
+    '},'+
+    '"recommend": {'+
+
+    '}'+
+  '}'
+  )
+}catch(err){
+  var IndexOpJSON = {
+    "slideAD": {
+        "src": "http://p.tanx.com/ex?i=mm_12852562_1778064_14424735",
+        "adid": "tanx-a-mm_12852562_1778064_14424735",
+        "jsid": "tanx-s-mm_12852562_1778064_14424735",
+        "charset": "gbk"
+    },
+    "popAD": {},
+    "ucAD": {},
+    "searchHot": {},
+    "app": [
+        {
+            "redirectUrl": "http://h5.m.taobao.com/awp/mtb/mtb.htm?sprefer=p23590#!/awp/mtb/mtb.htm",
+            "picUrl": "http://img02.taobaocdn.com/tps/i2/T1Dk6wXahXXXamNNre-140-140.png",
+            "description": "我的淘宝"
+        },
+        {
+            "redirectUrl": "http://m.tmall.com?sprefer=p23591",
+            "picUrl": "http://img01.taobaocdn.com/tps/i1/T1dSr9XfddXXamNNre-140-140.png",
+            "description": "天猫"
+        },
+        {
+            "redirectUrl": "http://ju.taobao.com/m/index.htm?sprefer=p23592",
+            "picUrl": "http://img02.taobaocdn.com/tps/i2/T1.APvXdplXXamNNre-140-140.png",
+            "description": "聚划算"
+        },
+        {
+            "redirectUrl": "http://we.m.taobao.com/?ttid=taobao_h5_1.0.0&sprefer=pmm731",
+            "picUrl": "http://img03.taobaocdn.com/tps/i3/T1wCV0XAVgXXamNNre-140-140.png",
+            "description": "微淘"
+        },
+        {
+            "redirectUrl": "http://qiang.m.taobao.com/?actparam=1_057367_yxhd0004_qiangpai&sprefer=p23594",
+            "picUrl": "http://img01.taobaocdn.com/tps/i1/T1GT6uXh4pXXamNNre-140-140.png",
+            "description": "天天抢拍"
+        },
+        {
+            "redirectUrl": "http://tejia.m.taobao.com/?actparam=1_057367_yxhd0001_tttj&sprefer=p23595",
+            "picUrl": "http://img04.taobaocdn.com/tps/i4/T1e4YIXl4eXXamNNre-140-140.png",
+            "description": "天天特价"
+        },
+        {
+            "redirectUrl": "http://wvs.m.taobao.com?sprefer=p23596",
+            "picUrl": "http://img01.taobaocdn.com/tps/i1/T1FJzvXmhoXXamNNre-140-140.png",
+            "description": "充值中心"
+        },
+        {
+            "redirectUrl": "http://caipiao.m.taobao.com/lottery/h5/app.html#viewpath=index%2Fa.html",
+            "picUrl": "http://img04.taobaocdn.com/tps/i4/T1.SPvXfVhXXamNNre-140-140.png",
+            "description": "彩票"
+        },
+        {
+            "redirectUrl": "http://h5.m.taobao.com/trip/hotel/search/index.html",
+            "picUrl": "http://gtms01.alicdn.com/tps/i1/T1c2vCFjpjXXamNNre-140-140.png",
+            "description": "酒店"
+        },
+        {
+            "redirectUrl": "http://bendi.m.taobao.com?sprefer=p23610",
+            "picUrl": "http://img01.taobaocdn.com/tps/i1/T1Q86MXlxaXXamNNre-140-140.png",
+            "description": "身边优惠"
+        },
+        {
+            "redirectUrl": "http://m.taobao.com/channel/act/sale/quanbuleimu.html?sprefer=p23593",
+            "picUrl": "http://img03.taobaocdn.com/tps/i3/T13j2vXXdmXXamNNre-140-140.png",
+            "description": "类目浏览"
+        },
+        {
+            "redirectUrl": "http://h5.m.taobao.com/fav/index.htm?sprefer=p23608",
+            "picUrl": "http://img03.taobaocdn.com/tps/i3/T1omnvXnVkXXamNNre-140-140.png",
+            "description": "收藏夹"
+        },
+        {
+            "redirectUrl": "http://triph5.m.taobao.com?sprefer=p23600",
+            "picUrl": "http://gtms01.alicdn.com/tps/i1/T1L7I_FmdpXXamNNre-140-140.png",
+            "description": "机票"
+        },
+        {
+            "redirectUrl": "http://rj.m.taobao.com/wap/index.htm?sprefer=p23598",
+            "picUrl": "http://img01.taobaocdn.com/tps/i1/T11LvuXX4oXXamNNre-140-140.png",
+            "description": "软件市场"
+        },
+        {
+            "redirectUrl": "http://ye.m.taobao.com/?actparam=1_057367_yxhd0003_yeshi&sprefer=p23606",
+            "picUrl": "http://gtms01.alicdn.com/tps/i1/T1rqMnFhtdXXamNNre-140-140.png",
+            "description": "淘宝夜市"
+        },
+        {
+            "redirectUrl": "http://dianying.m.taobao.com?sprefer=p23607",
+            "picUrl": "http://img01.taobaocdn.com/tps/i1/T1sgtPXpdbXXamNNre-140-140.png",
+            "description": "电影票"
+        },
+        {
+            "redirectUrl": "http://m.etao.com/?sprefer=p23852#!sign",
+            "picUrl": "http://gtms01.alicdn.com/tps/i1/T1gPZ5FlhcXXamNNre-140-140.png",
+            "description": "领集分宝"
+        },
+        {
+            "redirectUrl": "http://h5.m.taobao.com/trip/ticket/index.htm#search",
+            "picUrl": "http://gtms01.alicdn.com/tps/i1/T1VmJXFzBiXXamNNre-140-140.png",
+            "description": "门票"
+        },
+        null
+    ],
+    "hots": [
+        [
+            {
+                "noborder": "true",
+                "redirectUrl": "http://rj.m.taobao.com/wap/index.htm?sprefer=p23444",
+                "description": "应用下载"
+            },
+            {
+                "redirectUrl": "http://m.taobao.com/channel/act/sale/yysc_ios_index.html?sprefer=p23443",
+                "description": "iPhone应用"
+            },
+            {
+                "redirectUrl": "http://rj.m.taobao.com/wap/appmark/index.htm?sprefer=p23442",
+                "description": "Android应用"
+            },
+            null
+        ],
+        null
+    ],
+    "feedback": {
+        "title": "用户反馈",
+        "list": [
+            {
+                "redirectUrl": "http://info.m.taobao.com/rtm/rtm_detail_h_5.htm?id=1007878&sprefer=p23704",
+                "description": "触屏版2.0全新上线，期待您的反馈"
+            },
+            {
+                "redirectUrl": "http://wap.taobao.com/channel/act/guide2.html",
+                "description": "回首页不方便、找不到旺旺购物车的请进"
+            },
+            null
+        ]
+    },
+    "download":{
+        "list": [
+          {
+            "redirectUrl": "http://h5.m.taobao.com/mdownload/taobao/download.html",
+            "description": "手机淘宝官方应用下载",
+            "color":"#f40"
+          },              
+          null
+        ]
+    },
+    "recommend": {
+        "countdown": {
+            "location": [
+                0,
+                0
+            ]
+        },
+        "list": [
+            [
+                {
+                    "redirectUrl": "http://h5.m.taobao.com/rush2buy/index.html",
+                    "picUrl": "http://gtms01.alicdn.com/tps/i1/T1HQZjFm8jXXb4Br.3-100-37.png",
+                    "picUrl2": "http://gtms01.alicdn.com/tps/i1/T1ZbzUFbNiXXaUBo2d-244-130.png",
+                    "description": "距离本场结束"
+                }
+            ]
+        ]
+    }
+  }
+}
+</script>
+
+<script type="text/javascript">
+  var subHost = isTestEnv?'waptest':'m';
+  document.write('<scr'+'ipt type="text/javascript" src="http://h5.'+subHost+'.taobao.com/js/smartbanner/setting.js?t='+Date.now()+'"></scr'+'ipt>');
+  document.write('<scr' + 'ipt type="text/javascript" src="http://' + (window['assetsHost']||'g.tbcdn.cn') + '/mtb/app-index/' + (window['assetsVersion']||'0.4.23') + '/combo.js"></scr' + 'ipt>');
+</script><script type="text/javascript" src="./淘宝网触屏版_html/5643881.js"></script><script type="text/javascript" src="./淘宝网触屏版_html/1563241.js"></script>
+
+
+<iframe style="width: 1px; height: 1px; position: absolute; display: none; " src="./淘宝网触屏版_html/12158031.html" name="{&quot;url&quot;:&quot;http://log.mmstat.com/m.gif?logtype=1&amp;title=%u6DD8%u5B9D%u7F51%u89E6%u5C4F%u7248&amp;pre=http%3A%2F%2Fhao.uc.cn%2F%3Fuc_param_str%3Ddnfrpfbivecpbtntla%26ch%3Dwebapp&amp;cache=a4fc87f&amp;scr=1080x1920&amp;isbeta=9&amp;spm-cnt=0.0.0.0&amp;req_url=http%3a%2f%2fm%2etaobao%2ecom%2f&amp;category=&amp;uidaplus=&amp;b2c_orid=&amp;b2c_auction=&amp;at_isb=&amp;atp_isdpp=&amp;at_ssid=&amp;bbid=&amp;aplus&amp;at_cart=&amp;at_udid=&amp;asid=AABMVwFURScVQ2Fe5Pc=&quot;,&quot;js&quot;:&quot;http://a.tbcdn.cn/s/fdc/lsproxy.js?v=20140709&quot;,&quot;referrer&quot;:&quot;http://m.taobao.com/&quot;}" data-spm-act-id="0.0.0.i1.0"></iframe><div id="J_Shade" class="none"></div><div id="J_Taojia" class="taoplus" style="-webkit-transform: translate3d(0px, 0px, 0px); "><div class="circle hide"><div class="tpicons"><ul><li class="more"><a dataurl="http://m.taobao.com/channel/chn/mobile/application.html?pds=apply%23h%23taojia"></a><span class="bg"></span></li><li class="logis"><a dataurl="http://h5.m.taobao.com/awp/mtb/olist.htm?#!/awp/mtb/olist.htm?sta=5"></a><span class="bg"></span></li><li class="ww"><a dataurl="http://h5.m.taobao.com/ww/index.htm?#!lateConts"></a><span class="bg"></span></li><li class="individ"><a dataurl="http://h5.m.taobao.com/awp/mtb/mtb.htm?#!/awp/mtb/mtb.htm"></a><span class="bg"></span></li><li class="car"><a dataurl="http://h5.m.taobao.com/awp/base/cart.htm?pds=cart%23h%23taojia#!/awp/base/cart.htm"></a><span class="bg"></span></li><li class="search"><a dataurl="http://m.taobao.com/channel/act/sale/searchlist.html?pds=search%23h%23taojia"></a><span class="bg"></span></li></ul></div><div class="tplogo"><a href="http://m.taobao.com/?pds=home%23h%23taojia"></a><span class="bg"></span></div></div><div class="tpbtn on"><div><ul><li class="icontao p"></li></ul></div><p class="num none"></p></div></div><script type="text/javascript" charset="gbk" id="tanx-s-mm_12852562_1778064_22306155" async="" src="./淘宝网触屏版_html/8205777"></script><script type="text/javascript" charset="gbk" id="tanx-s-mm_12852562_1778064_22292619" async="" src="./淘宝网触屏版_html/10957162"></script></body></html>
