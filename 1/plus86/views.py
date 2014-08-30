@@ -178,7 +178,7 @@ def creatmenu(request):
             {
                "type":"view",
                "name":"服饰聚焦",
-               "url":"http://v.qq.com/"
+               "url":"http://86plus.sinaapp.com/productfushi/"
             },
             {
                "type":"view",
@@ -558,3 +558,6 @@ def welcome(request):
 #刮刮卡界面
 def guaguaka(request):
     return render_to_response('guaguaka.html')
+#商品界面
+def productfushi(request):
+    return render_to_response('productfushi.html')
