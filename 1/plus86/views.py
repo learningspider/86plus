@@ -168,7 +168,7 @@ def creatmenu(request):
            {	
                "type":"view",
                "name":"86PLUS公益",
-               "url":"http://86plus.sinaapp.com/checkmember/"
+               "url":"http://86plus.sinaapp.com/gongyi/"
             },
             {
                "type":"view",
@@ -561,3 +561,7 @@ def guaguaka(request):
 #商品界面
 def productfushi(request):
     return render_to_response('productfushi.html')
+
+#公益界面
+def gongyi(request):
+    return render_to_response('gongyi.html')
