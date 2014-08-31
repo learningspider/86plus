@@ -1,1 +1,34 @@
-.it-slider img{display:inline-block;height:100%;width:100%;background:url(../../../images/echannelWap/loading/mask.png) no-repeat scroll 50% 50%;background-size:14.2em 14.2em}
+#search-2013 .text, #search-2013 .button {
+-webkit-appearance: none;
+-webkit-border-radius: 0;
+}
+
+#search-2013 .button {
+width: 78px;
+background: #E4393C;
+font-size: 14px;
+font-weight: 700;
+color: #fff;
+}
+
+#search-2013 input {
+margin: 0;
+padding: 0;
+height: 30px;
+border: 0;
+}
+
+.form label, .form input, .form select, .form textarea, .form button, .form .label {
+float: left;
+font-size: 12px;
+}
+
+
+.btn-img, .button {
+display: inline-block;
+margin: 0;
+padding: 0;
+border: 0;
+text-align: center;
+cursor: pointer;
+}
