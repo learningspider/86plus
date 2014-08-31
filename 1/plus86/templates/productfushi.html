@@ -7,39 +7,7 @@
 <title>公益</title>
 <meta name="keywords" content="华为商城,华为,华为官网, 华为荣耀,华为手机官网,荣耀手机,华为荣耀, 荣耀3C,荣耀畅玩版,荣耀3X,荣耀X1,华为P7,vmall,huawei" />
 <meta name="description" content="华为商城是华为旗下面向全国服务的电子商务平台官网，提供正品华为手机、荣耀手机(华为荣耀3C、畅玩版、3X、X1、华为P7等)、平板电脑、配件等华为、荣耀产品。品质保证！" />  
-<style type="text/css"> 
-body{ 
-font: normal 100% 'Arial','Helvetica','Verdana',sans-serif; 
-color: #333; 
-} 
-p { 
-padding: 12px 0; 
-margin: 0; 
-font-size: .8em; 
-line-height: 1.5; 
-} 
-form { 
-margin: 0; 
-} 
-#search_box { 
-width: 201px; 
-height: 31px; 
-background: url(http://files.jb51.net/demoimg/200912/bg_search_box.gif); 
-} 
-#search_box #s { 
-float: left; 
-padding: 0; 
-margin: 6px 0 0 6px; 
-border: 0; 
-width: 159px; 
-background: none; 
-font-size: .8em; 
-} 
-#search_box #go { 
-float: right; 
-margin: 3px 4px 0 0; 
-} 
-</style> 
+
 <link href="/site_media/css/vmcss.css" rel="stylesheet" type="text/css">
 <script>
 var mediaPath = "/site_media/";
@@ -74,12 +42,18 @@ var cartNum = "" || "0" || 0;
 
 
 <!-- 21030306-首页焦点图-start -->
-<div id="search_box"> 
-<form id="search_form" method="post" action="#"> 
-<input type="text" id="s" value="Search" class="swap_value" /> 
-<input type="image" src="http://files.jb51.net/demoimg/200912/btn_search_box.gif" width="27" height="24" id="go" alt="Search" title="Search" /> 
-</form> 
-</div> 
+<div id="search-2013">
+			<div class="i-search ld">
+				<ul id="shelper" class="hide">
+				</ul>
+				<div class="form">
+					<input type="text" class="text" accesskey="s" id="key" autocomplete="off" onkeydown="javascript:if(event.keyCode==13) search('key');">
+					<input type="button" value="搜索" class="button" onclick="search('key');return false;" clstag="homepage|keycount|home2013|03a">
+				</div>
+			</div>
+			<div id="hotwords" clstag="homepage|keycount|home2013|03b"></div>
+		</div>
+
 
 
 
