@@ -102,7 +102,7 @@ header {
   padding: 120px;
   background-image: url('/site_media/img/hamburger.png');
   background-position: 50% 50%;
-  background-size: 50px 50px;
+  background-size: 25px 25px;
   background-repeat: no-repeat;
 }
 .menubtn:hover, .openmenu .menubtn {
