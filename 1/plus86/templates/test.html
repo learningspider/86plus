@@ -1,40 +1,139 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>方倍工作室</title>
-    </head>
-    <body style="">
-        <script type="text/javascript">
-            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-                // 发送给好友
-                WeixinJSBridge.on('menu:share:appmessage', function (argv) {
-                    WeixinJSBridge.invoke('sendAppMessage', {
-                        "img_url": "http://bcs.duapp.com/api100/image/logo/lover.jpg",
-                        "img_width": "160",
-                        "img_height": "160",
-                        "link": "http://api100.duapp.com/card/",
-                        "desc":  "山无陵，天地合，乃敢与君绝。",
-                        "title": "爱情贺卡"
-                    }, function (res) {
-                        _report('send_msg', res.err_msg);
-                    })
-                });
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport"content="width=device-width, initial-scale=1.0" />
+<title>服饰聚焦</title>
+<meta name="keywords" content="华为商城,华为,华为官网, 华为荣耀,华为手机官网,荣耀手机,华为荣耀, 荣耀3C,荣耀畅玩版,荣耀3X,荣耀X1,华为P7,vmall,huawei" />
+<meta name="description" content="华为商城是华为旗下面向全国服务的电子商务平台官网，提供正品华为手机、荣耀手机(华为荣耀3C、畅玩版、3X、X1、华为P7等)、平板电脑、配件等华为、荣耀产品。品质保证！" />  
 
-                // 分享到朋友圈
-                WeixinJSBridge.on('menu:share:timeline', function (argv) {
-                    WeixinJSBridge.invoke('shareTimeline', {
-                        "img_url": "http://bcs.duapp.com/api100/image/logo/newyear.jpg",
-                        "img_width": "160",
-                        "img_height": "160",
-                        "link": "http://api100.duapp.com/card/",
-                        "desc":  "Best wishes for a wonderful new year.",
-                        "title": "新年贺卡"
-                    }, function (res) {
-                        _report('timeline', res.err_msg);
-                    });
-                });
-            }, false)
-        </script>
-    </body>
+<link href="/site_media/css/vmcss.css" rel="stylesheet" type="text/css">
+<script>
+var mediaPath = "/site_media/";
+var cartNum = "" || "0" || 0;
+</script>
+<link href="/site_media/css/main.css" rel="stylesheet" type="text/css">
+
+
+
+
+</head>
+
+
+<body>
+
+<div class="index-top">
+	<div class="index-top-main" id="index-header">
+		<header class="header">
+			<!-- 21030531-logo-start -->
+			<section class="logo">
+				<a href="#"><img src="http://res.vmall.com/nwap/20140708/images/echannelWap/logo.png"></a>
+			</section><!-- 21030531-logo-end -->
+			<section class="shortcut">
+				<ul>
+					<li></li>
+				</ul>
+			</section>
+			
+		</header>
+	</div>
+</div>
+
+<div class="hr-96"></div>
+
+<br>
+<!-- 21030306-首页焦点图-start -->
+<div id="search-2013">
+			<div class="i-search ld">
+				<ul id="shelper" class="hide">
+				</ul>
+				<div class="form" align="right">
+                <input type="button" onclick="document.getElementById('divtanchu').style.display=(document.getElementById('div').style.display=='none')?'':'none'"  value="button" />
+                <div id="divtanchu" style="width: 300px;border: 1px dashed #CCCCCC;background-color: #FFFFCC; display:none">this is a div!</div>
+					<input type="text" class="text" width="600" accesskey="s" id="key" autocomplete="off" onkeydown="javascript:if(event.keyCode==13) search('key');">
+					<input type="button" value="搜索" style='font-size:18px'  class="button" onclick="search('key');return false;" clstag="homepage|keycount|home2013|03a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
+			</div>
+			<div id="hotwords" clstag="homepage|keycount|home2013|03b"></div>
+		</div>
+
+
+
+
+<!-- 21030306-推荐商品-start -->
+<article class="rec-pro">
+    <section class="pro-list-1">
+        <ul> 
+            <!-- 组合套餐商品列表 -->
+            
+            
+            <!-- 促销商品列表 -->
+            
+                <li>
+                    <a href="#" >
+                <div class="pro-area1" id="promotion-prd-1070">
+                        <p class="p-img1"> <img align="middle"  with="95%" height="10%"
+                        src="http://picapi.ooopic.com/10/26/22/71b1OOOPICdf.jpg" alt="华为 Ascend P7 移动4G（粉色）" /></p>
+                        
+                        
+                    </div>
+                    </a>
+                    <br>
+                </li>
+                <br>
+                <li>
+                    <a href="#" >
+                <div class="pro-area1" id="promotion-prd-1349">
+                        <p class="p-img1"><img align="middle"  with="95%" height="280" src="http://photo.sohu.com/35/65/Img209406535.jpg" alt="C199 麦芒  电信4G（月光银）" /></p>
+                      
+                      
+                    </div>
+                    </a>
+                 <br>
+                </li>
+                <br>
+                <li>
+                    <a href="#" >
+                <div class="pro-area1" id="promotion-prd-1070">
+                        <p class="p-img1"> <img align="middle"  with="95%" height="280"
+                        src="http://picapi.ooopic.com/10/26/22/71b1OOOPICdf.jpg" alt="华为 Ascend P7 移动4G（粉色）" /></p>
+                        
+                        
+                    </div>
+                    </a>
+                    <br>
+                </li>
+                <br>
+                <li>
+                    <a href="#" >
+                <div class="pro-area1" id="promotion-prd-1349">
+                        <p class="p-img1"><img align="middle"  with="95%" height="280" src="http://photo.sohu.com/35/65/Img209406535.jpg" alt="C199 麦芒  电信4G（月光银）" /></p>
+                      
+                      
+                    </div>
+                    </a>
+                </li>
+                
+               
+            
+            
+         </ul>
+    </section>
+</article> <!-- 21030306-推荐商品-end -->
+
+
+
+
+
+
+<script src="/site_media/js/ecWap.js"></script>
+<script src="/site_media/css/base.js"></script><script src="/site_media/css/index.js"></script>
+
+
+
+
+
+</body>
 </html>
+<!--Hit 2014-08-30 13:14:20-->
