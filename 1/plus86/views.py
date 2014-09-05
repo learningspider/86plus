@@ -570,4 +570,4 @@ def gongyi(request):
 
 #隐藏测试
 def yincang(request):
-    return render_to_response('yincang.html')
+    return render_to_response('test.html')
