@@ -138,7 +138,7 @@ body.openmenu {
 
 #hamburgermenu {
   height: 100%;
-  width: 0;
+  width: 500;
   background: #373737;
   position: fixed;
   top: 0;
