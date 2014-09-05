@@ -1,5 +1,5 @@
 $(function(){
-  var menuwidth  = 240; // 边栏宽度
+  var menuwidth  = 600; // 边栏宽度
   var menuspeed  = 400; // 边栏滑出耗费时间
   
   var $bdy       = $('body');
