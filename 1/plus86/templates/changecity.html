@@ -1,0 +1,1831 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link href="//p0.meituan.net" rel="dns-prefetch">
+    <link href="//p1.meituan.net" rel="dns-prefetch">
+    <link href="//mc.meituan.net" rel="dns-prefetch">
+<noscript>
+    <meta http-equiv="refresh" content="0; URL=http://m.meituan.com/?ndr">
+</noscript>
+<title>选择城市</title>
+<meta name="description" content="每天团购一次，精品消费指南">
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name='apple-touch-fullscreen' content='yes'>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<link rel="icon" href="http://ms0.meituan.net/touch/img/icon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" sizes="57x57"
+      href="http://ms0.meituan.net/touch/img/startup/apple-touch-icon-57x57-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120"
+      href="http://ms0.meituan.net/touch/img/startup/apple-touch-icon-120x120-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="196x196"
+      href="http://ms0.meituan.net/touch/img/startup/apple-touch-icon-196x196-precomposed.png">
+<link rel="apple-touch-startup-image"
+      href="http://ms0.meituan.net/touch/img/startup/apple-touch-startup-image-640x1096.png"
+      media="(device-height:568px)">
+<link rel="apple-touch-startup-image"
+      href="http://ms0.meituan.net/touch/img/startup/apple-touch-startup-image-640x920.png"
+      media="(device-height:480px)">
+<script>
+    var MT = MT || {};
+    MT.pageData = {pid: '100002', pc: '', sid: 'mobile-touch11.lf.sankuai.com', st:1410187050834, cip: '110.251.205.5', setPC: function (v) {
+        v = v || '';
+        if (Object.prototype.toString.call(v) == '[object Object]') {
+            var a = [];
+            for (i in v) {
+                a.push(i + '=' + v[i])
+            }
+            this.pc = a.join('&')
+        } else {
+            this.pc = v
+        }
+    }};
+    MT.TimeTracker = {rt:1410187050834, st: Date.now()};
+    window.addEventListener('load', function () {
+        MT.TimeTracker.lt = Date.now()
+    });
+    document.addEventListener('DOMContentLoaded', function (e) {
+        MT.TimeTracker.dt = Date.now()
+    });
+    document.addEventListener('DOMContentLoaded', function (e) {
+        var _el = document.getElementById('meituan_check'), _img = window['_' + Date.now()] = new Image(), log = function (c, h) {
+            var d = {ip: MT.pageData.cip, ua: window.navigator.userAgent, evs: [
+                {pid: MT.pageData.pid, sid: MT.pageData.sid, nm: 'ERROR', cate: c, url: encodeURIComponent(location.href)}
+            ]};
+            if (h) {
+                d.evs[0].height = h
+            }
+            ;
+            console.log(d);
+            _img.src = 'http://api.mobile.meituan.com/data/collect.json?type=i_stat&content=' + JSON.stringify(d) + '&t=' + Date.now()
+        };
+        if (!_el) {
+            log('incomplete', document.body.offsetHeight)
+        } else if (_el.offsetTop < 100) {
+            log('pageheight', document.body.offsetHeight)
+        } else if (_el.offsetHeight > 1) {
+            log('cdn', _el.offsetHeight)
+        }
+    });
+    MT.log = {_logs: [], send: function (t, v, s) {
+        this._logs.push({type: t, value: v, sampling: s});
+    }}
+</script>
+    <link href="http://ms0.meituan.net/touch/css/eve.74c7a686.css" rel="stylesheet"/>
+<!--[if IE]>
+<link rel="stylesheet" href="/static/touch/css/eve_ie.css">
+<![endif]-->
+<style>
+    * {
+        font-size: .28rem;
+    }
+    .box {
+        margin-top: .2rem;
+        margin-bottom: .4rem;
+    }
+
+    .box:last-child {
+        margin-bottom: 0;
+    }
+
+    .abc {
+        border-top: 1px solid #ddd8ce;
+        border-bottom: 1px solid #ddd8ce;
+        clear: both;
+    }
+
+    .abc:last-child {
+        border-bottom: none;
+    }
+
+    .charlist li {
+        display: inline-block;
+        width: 20%;
+        height: .8rem;
+        text-align: center;
+        line-height: .8rem;
+        color: #1BB3A4;
+        font-size: .28rem;
+    }
+
+    .city-name {
+        color: #666;
+    }
+</style>
+
+
+</head>
+<body id="changecity">
+
+        <header class="navbar">
+                <div class="nav-wrap-left">
+                    <a class="react back" href="http://i.meituan.com/"><i class="text-icon icon-back"></i></a>
+                </div>
+            <h1 class="nav-header">选择城市</h1>
+
+            <div class="nav-wrap-right">
+                <a class="react nav-dropdown-btn">
+                    <span class="nav-btn">
+                        <i class="text-icon">≋</i>导航
+                    </span>
+                </a>
+            </div>
+            <div id="nav-dropdown" class="nav-dropdown">
+                <ul>
+                    <li><a class="react" gaevent="imt/hd/index"
+                           href="/"><i class="text-icon">⟰</i>
+                        <space></space>
+                        首页</a>
+                    <li><a class="react" gaevent="imt/hd/account"
+                           href="/account/"><i class="text-icon">⍥</i>
+                        <space></space>
+                        我的</a>
+                    <li><a class="react" gaevent="imt/hd/search"
+                           href="/s/"><i class="text-icon">⌕</i>
+                        <space></space>
+                        搜索</a>
+                </ul>
+            </div>
+        </header>
+
+<div id="tips"></div>
+
+<div id="cityBox" class="wrapper">
+    <div id="location-city" class="box">
+        定位城市：<span class="city-name">定位中...</span>
+    </div>
+    <div class="js-recent-block" style="display: none">
+        <h4>最近访问</h4>
+
+        <div id="recently-city" class="box nopadding">
+            <ul class="table">
+            </ul>
+        </div>
+    </div>
+    <h4>热门城市</h4>
+
+    <div id="hot-city" class="box nopadding">
+        <ul class="table">
+        <li><a class="react" gaevent="imt/selectCity/shanghai"
+               href="/?city=shanghai"
+               data-citypinyin="shanghai">上海</a>
+        <li><a class="react" gaevent="imt/selectCity/beijing"
+               href="/?city=beijing"
+               data-citypinyin="beijing">北京</a>
+        <li><a class="react" gaevent="imt/selectCity/chongqing"
+               href="/?city=chongqing"
+               data-citypinyin="chongqing">重庆</a>
+        <li><a class="react" gaevent="imt/selectCity/chengdu"
+               href="/?city=chengdu"
+               data-citypinyin="chengdu">成都</a>
+        <li><a class="react" gaevent="imt/selectCity/shenzhen"
+               href="/?city=shenzhen"
+               data-citypinyin="shenzhen">深圳</a>
+        <li><a class="react" gaevent="imt/selectCity/nanjing"
+               href="/?city=nanjing"
+               data-citypinyin="nanjing">南京</a>
+        <li><a class="react" gaevent="imt/selectCity/tianjin"
+               href="/?city=tianjin"
+               data-citypinyin="tianjin">天津</a>
+        <li><a class="react" gaevent="imt/selectCity/hangzhou"
+               href="/?city=hangzhou"
+               data-citypinyin="hangzhou">杭州</a>
+        <li><a class="react" gaevent="imt/selectCity/guangzhou"
+               href="/?city=guangzhou"
+               data-citypinyin="guangzhou">广州</a>
+        <li><a class="react" gaevent="imt/selectCity/xian"
+               href="/?city=xian"
+               data-citypinyin="xian">西安</a>
+        <li><a class="react" gaevent="imt/selectCity/wuhan"
+               href="/?city=wuhan"
+               data-citypinyin="wuhan">武汉</a>
+        </ul>
+    </div>
+    <h4>全部城市</h4>
+
+    <div class="box nopadding">
+        <ul class="charlist">
+            <li><a class="react">A</a>
+            <li><a class="react">B</a>
+            <li><a class="react">C</a>
+            <li><a class="react">D</a>
+            <li><a class="react">E</a>
+            <li><a class="react">F</a>
+            <li><a class="react">G</a>
+            <li><a class="react">H</a>
+            <li><a class="react">J</a>
+            <li><a class="react">K</a>
+            <li><a class="react">L</a>
+            <li><a class="react">M</a>
+            <li><a class="react">N</a>
+            <li><a class="react">P</a>
+            <li><a class="react">Q</a>
+            <li><a class="react">R</a>
+            <li><a class="react">S</a>
+            <li><a class="react">T</a>
+            <li><a class="react">W</a>
+            <li><a class="react">X</a>
+            <li><a class="react">Y</a>
+            <li><a class="react">Z</a>
+        </ul>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="A">A</h4>
+                    <li><a class="react" gaevent="imt/selectCity/anshan"
+                           href="/?city=anshan"
+                           data-citypinyin="anshan">鞍山</a>
+                    <li><a class="react" gaevent="imt/selectCity/anyang"
+                           href="/?city=anyang"
+                           data-citypinyin="anyang">安阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/anqiu"
+                           href="/?city=anqiu"
+                           data-citypinyin="anqiu">安丘</a>
+                    <li><a class="react" gaevent="imt/selectCity/ankang"
+                           href="/?city=ankang"
+                           data-citypinyin="ankang">安康</a>
+                    <li><a class="react" gaevent="imt/selectCity/anshun"
+                           href="/?city=anshun"
+                           data-citypinyin="anshun">安顺</a>
+                    <li><a class="react" gaevent="imt/selectCity/anji"
+                           href="/?city=anji"
+                           data-citypinyin="anji">安吉</a>
+                    <li><a class="react" gaevent="imt/selectCity/anqing"
+                           href="/?city=anqing"
+                           data-citypinyin="anqing">安庆</a>
+                    <li><a class="react" href="/index/changecity/more/A"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="B">B</h4>
+                    <li><a class="react" gaevent="imt/selectCity/beijing"
+                           href="/?city=beijing"
+                           data-citypinyin="beijing">北京</a>
+                    <li><a class="react" gaevent="imt/selectCity/baotou"
+                           href="/?city=baotou"
+                           data-citypinyin="baotou">包头</a>
+                    <li><a class="react" gaevent="imt/selectCity/baoding"
+                           href="/?city=baoding"
+                           data-citypinyin="baoding">保定</a>
+                    <li><a class="react" gaevent="imt/selectCity/baoji"
+                           href="/?city=baoji"
+                           data-citypinyin="baoji">宝鸡</a>
+                    <li><a class="react" gaevent="imt/selectCity/beihai"
+                           href="/?city=beihai"
+                           data-citypinyin="beihai">北海</a>
+                    <li><a class="react" gaevent="imt/selectCity/baise"
+                           href="/?city=baise"
+                           data-citypinyin="baise">百色</a>
+                    <li><a class="react" gaevent="imt/selectCity/baicheng"
+                           href="/?city=baicheng"
+                           data-citypinyin="baicheng">白城</a>
+                    <li><a class="react" gaevent="imt/selectCity/binzhou"
+                           href="/?city=binzhou"
+                           data-citypinyin="binzhou">滨州</a>
+                    <li><a class="react" gaevent="imt/selectCity/baiyin"
+                           href="/?city=baiyin"
+                           data-citypinyin="baiyin">白银</a>
+                    <li><a class="react" gaevent="imt/selectCity/bijiediqu"
+                           href="/?city=bijiediqu"
+                           data-citypinyin="bijiediqu">毕节</a>
+                    <li><a class="react" gaevent="imt/selectCity/baishan"
+                           href="/?city=baishan"
+                           data-citypinyin="baishan">白山</a>
+                    <li><a class="react" gaevent="imt/selectCity/bozhou"
+                           href="/?city=bozhou"
+                           data-citypinyin="bozhou">亳州</a>
+                    <li><a class="react" gaevent="imt/selectCity/binhai"
+                           href="/?city=binhai"
+                           data-citypinyin="binhai">滨海</a>
+                    <li><a class="react" gaevent="imt/selectCity/bayannaoer"
+                           href="/?city=bayannaoer"
+                           data-citypinyin="bayannaoer">巴彦淖尔</a>
+                    <li><a class="react" gaevent="imt/selectCity/bengbu"
+                           href="/?city=bengbu"
+                           data-citypinyin="bengbu">蚌埠</a>
+                    <li><a class="react" gaevent="imt/selectCity/benxi"
+                           href="/?city=benxi"
+                           data-citypinyin="benxi">本溪</a>
+                    <li><a class="react" href="/index/changecity/more/B"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="C">C</h4>
+                    <li><a class="react" gaevent="imt/selectCity/chongqing"
+                           href="/?city=chongqing"
+                           data-citypinyin="chongqing">重庆</a>
+                    <li><a class="react" gaevent="imt/selectCity/chengdu"
+                           href="/?city=chengdu"
+                           data-citypinyin="chengdu">成都</a>
+                    <li><a class="react" gaevent="imt/selectCity/changzhou"
+                           href="/?city=changzhou"
+                           data-citypinyin="changzhou">常州</a>
+                    <li><a class="react" gaevent="imt/selectCity/changsha"
+                           href="/?city=changsha"
+                           data-citypinyin="changsha">长沙</a>
+                    <li><a class="react" gaevent="imt/selectCity/changchun"
+                           href="/?city=changchun"
+                           data-citypinyin="changchun">长春</a>
+                    <li><a class="react" gaevent="imt/selectCity/changji"
+                           href="/?city=changji"
+                           data-citypinyin="changji">昌吉</a>
+                    <li><a class="react" gaevent="imt/selectCity/changshu"
+                           href="/?city=changshu"
+                           data-citypinyin="changshu">常熟</a>
+                    <li><a class="react" gaevent="imt/selectCity/cixi"
+                           href="/?city=cixi"
+                           data-citypinyin="cixi">慈溪</a>
+                    <li><a class="react" gaevent="imt/selectCity/chuzhou"
+                           href="/?city=chuzhou"
+                           data-citypinyin="chuzhou">滁州</a>
+                    <li><a class="react" gaevent="imt/selectCity/changzhi"
+                           href="/?city=changzhi"
+                           data-citypinyin="changzhi">长治</a>
+                    <li><a class="react" gaevent="imt/selectCity/changxing"
+                           href="/?city=changxing"
+                           data-citypinyin="changxing">长兴</a>
+                    <li><a class="react" gaevent="imt/selectCity/chaozhou"
+                           href="/?city=chaozhou"
+                           data-citypinyin="chaozhou">潮州</a>
+                    <li><a class="react" gaevent="imt/selectCity/chaoyang"
+                           href="/?city=chaoyang"
+                           data-citypinyin="chaoyang">朝阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/chaohu"
+                           href="/?city=chaohu"
+                           data-citypinyin="chaohu">巢湖</a>
+                    <li><a class="react" gaevent="imt/selectCity/chuxiong"
+                           href="/?city=chuxiong"
+                           data-citypinyin="chuxiong">楚雄</a>
+                    <li><a class="react" gaevent="imt/selectCity/conghua"
+                           href="/?city=conghua"
+                           data-citypinyin="conghua">从化</a>
+                    <li><a class="react" gaevent="imt/selectCity/changyi"
+                           href="/?city=changyi"
+                           data-citypinyin="changyi">昌邑</a>
+                    <li><a class="react" gaevent="imt/selectCity/cangzhou"
+                           href="/?city=cangzhou"
+                           data-citypinyin="cangzhou">沧州</a>
+                    <li><a class="react" gaevent="imt/selectCity/chifeng"
+                           href="/?city=chifeng"
+                           data-citypinyin="chifeng">赤峰</a>
+                    <li><a class="react" gaevent="imt/selectCity/chengde"
+                           href="/?city=chengde"
+                           data-citypinyin="chengde">承德</a>
+                    <li><a class="react" gaevent="imt/selectCity/changde"
+                           href="/?city=changde"
+                           data-citypinyin="changde">常德</a>
+                    <li><a class="react" href="/index/changecity/more/C"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="D">D</h4>
+                    <li><a class="react" gaevent="imt/selectCity/dongguan"
+                           href="/?city=dongguan"
+                           data-citypinyin="dongguan">东莞</a>
+                    <li><a class="react" gaevent="imt/selectCity/dalian"
+                           href="/?city=dalian"
+                           data-citypinyin="dalian">大连</a>
+                    <li><a class="react" gaevent="imt/selectCity/datong"
+                           href="/?city=datong"
+                           data-citypinyin="datong">大同</a>
+                    <li><a class="react" gaevent="imt/selectCity/dongying"
+                           href="/?city=dongying"
+                           data-citypinyin="dongying">东营</a>
+                    <li><a class="react" gaevent="imt/selectCity/daqing"
+                           href="/?city=daqing"
+                           data-citypinyin="daqing">大庆</a>
+                    <li><a class="react" gaevent="imt/selectCity/deyang"
+                           href="/?city=deyang"
+                           data-citypinyin="deyang">德阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/danyang"
+                           href="/?city=danyang"
+                           data-citypinyin="danyang">丹阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/deqing"
+                           href="/?city=deqing"
+                           data-citypinyin="deqing">德清</a>
+                    <li><a class="react" gaevent="imt/selectCity/dongyang"
+                           href="/?city=dongyang"
+                           data-citypinyin="dongyang">东阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/dujiangyan"
+                           href="/?city=dujiangyan"
+                           data-citypinyin="dujiangyan">都江堰</a>
+                    <li><a class="react" gaevent="imt/selectCity/danzhou"
+                           href="/?city=danzhou"
+                           data-citypinyin="danzhou">儋州</a>
+                    <li><a class="react" gaevent="imt/selectCity/donggang"
+                           href="/?city=donggang"
+                           data-citypinyin="donggang">东港</a>
+                    <li><a class="react" gaevent="imt/selectCity/dafeng"
+                           href="/?city=dafeng"
+                           data-citypinyin="dafeng">大丰</a>
+                    <li><a class="react" gaevent="imt/selectCity/dongtai"
+                           href="/?city=dongtai"
+                           data-citypinyin="dongtai">东台</a>
+                    <li><a class="react" gaevent="imt/selectCity/dezhou"
+                           href="/?city=dezhou"
+                           data-citypinyin="dezhou">德州</a>
+                    <li><a class="react" gaevent="imt/selectCity/dazhou"
+                           href="/?city=dazhou"
+                           data-citypinyin="dazhou">达州</a>
+                    <li><a class="react" gaevent="imt/selectCity/dandong"
+                           href="/?city=dandong"
+                           data-citypinyin="dandong">丹东</a>
+                    <li><a class="react" gaevent="imt/selectCity/dali"
+                           href="/?city=dali"
+                           data-citypinyin="dali">大理</a>
+                    <li><a class="react" href="/index/changecity/more/D"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="E">E</h4>
+                    <li><a class="react" gaevent="imt/selectCity/emeishan"
+                           href="/?city=emeishan"
+                           data-citypinyin="emeishan">峨眉山</a>
+                    <li><a class="react" gaevent="imt/selectCity/ezhou"
+                           href="/?city=ezhou"
+                           data-citypinyin="ezhou">鄂州</a>
+                    <li><a class="react" gaevent="imt/selectCity/eerduosi"
+                           href="/?city=eerduosi"
+                           data-citypinyin="eerduosi">鄂尔多斯</a>
+                    <li><a class="react" gaevent="imt/selectCity/enshi"
+                           href="/?city=enshi"
+                           data-citypinyin="enshi">恩施</a>
+                    <li><a class="react" gaevent="imt/selectCity/eerguna"
+                           href="/?city=eerguna"
+                           data-citypinyin="eerguna">额尔古纳</a>
+                    <li><a class="react" href="/index/changecity/more/E"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="F">F</h4>
+                    <li><a class="react" gaevent="imt/selectCity/fuzhou"
+                           href="/?city=fuzhou"
+                           data-citypinyin="fuzhou">福州</a>
+                    <li><a class="react" gaevent="imt/selectCity/foshan"
+                           href="/?city=foshan"
+                           data-citypinyin="foshan">佛山</a>
+                    <li><a class="react" gaevent="imt/selectCity/fushun"
+                           href="/?city=fushun"
+                           data-citypinyin="fushun">抚顺</a>
+                    <li><a class="react" gaevent="imt/selectCity/fenghua"
+                           href="/?city=fenghua"
+                           data-citypinyin="fenghua">奉化</a>
+                    <li><a class="react" gaevent="imt/selectCity/fuxin"
+                           href="/?city=fuxin"
+                           data-citypinyin="fuxin">阜新</a>
+                    <li><a class="react" gaevent="imt/selectCity/fuqing"
+                           href="/?city=fuqing"
+                           data-citypinyin="fuqing">福清</a>
+                    <li><a class="react" gaevent="imt/selectCity/fangchenggang"
+                           href="/?city=fangchenggang"
+                           data-citypinyin="fangchenggang">防城港</a>
+                    <li><a class="react" gaevent="imt/selectCity/fuyangfy"
+                           href="/?city=fuyangfy"
+                           data-citypinyin="fuyangfy">富阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/feicheng"
+                           href="/?city=feicheng"
+                           data-citypinyin="feicheng">肥城</a>
+                    <li><a class="react" gaevent="imt/selectCity/fuzhoufz"
+                           href="/?city=fuzhoufz"
+                           data-citypinyin="fuzhoufz">抚州</a>
+                    <li><a class="react" gaevent="imt/selectCity/funing"
+                           href="/?city=funing"
+                           data-citypinyin="funing">阜宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/fuyang"
+                           href="/?city=fuyang"
+                           data-citypinyin="fuyang">阜阳</a>
+                    <li><a class="react" href="/index/changecity/more/F"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="G">G</h4>
+                    <li><a class="react" gaevent="imt/selectCity/guangzhou"
+                           href="/?city=guangzhou"
+                           data-citypinyin="guangzhou">广州</a>
+                    <li><a class="react" gaevent="imt/selectCity/guiyang"
+                           href="/?city=guiyang"
+                           data-citypinyin="guiyang">贵阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/ganzhou"
+                           href="/?city=ganzhou"
+                           data-citypinyin="ganzhou">赣州</a>
+                    <li><a class="react" gaevent="imt/selectCity/guilin"
+                           href="/?city=guilin"
+                           data-citypinyin="guilin">桂林</a>
+                    <li><a class="react" gaevent="imt/selectCity/gaomi"
+                           href="/?city=gaomi"
+                           data-citypinyin="gaomi">高密</a>
+                    <li><a class="react" gaevent="imt/selectCity/gongyi"
+                           href="/?city=gongyi"
+                           data-citypinyin="gongyi">巩义</a>
+                    <li><a class="react" gaevent="imt/selectCity/guangrao"
+                           href="/?city=guangrao"
+                           data-citypinyin="guangrao">广饶</a>
+                    <li><a class="react" gaevent="imt/selectCity/guanghan"
+                           href="/?city=guanghan"
+                           data-citypinyin="guanghan">广汉</a>
+                    <li><a class="react" gaevent="imt/selectCity/gaocheng"
+                           href="/?city=gaocheng"
+                           data-citypinyin="gaocheng">藁城</a>
+                    <li><a class="react" gaevent="imt/selectCity/gongzhuling"
+                           href="/?city=gongzhuling"
+                           data-citypinyin="gongzhuling">公主岭</a>
+                    <li><a class="react" gaevent="imt/selectCity/guangan"
+                           href="/?city=guangan"
+                           data-citypinyin="guangan">广安</a>
+                    <li><a class="react" gaevent="imt/selectCity/gaoyou"
+                           href="/?city=gaoyou"
+                           data-citypinyin="gaoyou">高邮</a>
+                    <li><a class="react" gaevent="imt/selectCity/guigang"
+                           href="/?city=guigang"
+                           data-citypinyin="guigang">贵港</a>
+                    <li><a class="react" gaevent="imt/selectCity/guiping"
+                           href="/?city=guiping"
+                           data-citypinyin="guiping">桂平</a>
+                    <li><a class="react" href="/index/changecity/more/G"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="H">H</h4>
+                    <li><a class="react" gaevent="imt/selectCity/hangzhou"
+                           href="/?city=hangzhou"
+                           data-citypinyin="hangzhou">杭州</a>
+                    <li><a class="react" gaevent="imt/selectCity/haerbin"
+                           href="/?city=haerbin"
+                           data-citypinyin="haerbin">哈尔滨</a>
+                    <li><a class="react" gaevent="imt/selectCity/hefei"
+                           href="/?city=hefei"
+                           data-citypinyin="hefei">合肥</a>
+                    <li><a class="react" gaevent="imt/selectCity/huhehaote"
+                           href="/?city=huhehaote"
+                           data-citypinyin="huhehaote">呼和浩特</a>
+                    <li><a class="react" gaevent="imt/selectCity/haikou"
+                           href="/?city=haikou"
+                           data-citypinyin="haikou">海口</a>
+                    <li><a class="react" gaevent="imt/selectCity/handan"
+                           href="/?city=handan"
+                           data-citypinyin="handan">邯郸</a>
+                    <li><a class="react" gaevent="imt/selectCity/huaian"
+                           href="/?city=huaian"
+                           data-citypinyin="huaian">淮安</a>
+                    <li><a class="react" gaevent="imt/selectCity/huzhou"
+                           href="/?city=huzhou"
+                           data-citypinyin="huzhou">湖州</a>
+                    <li><a class="react" gaevent="imt/selectCity/hengyang"
+                           href="/?city=hengyang"
+                           data-citypinyin="hengyang">衡阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/huizhou"
+                           href="/?city=huizhou"
+                           data-citypinyin="huizhou">惠州</a>
+                    <li><a class="react" gaevent="imt/selectCity/haining"
+                           href="/?city=haining"
+                           data-citypinyin="haining">海宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/huludao"
+                           href="/?city=huludao"
+                           data-citypinyin="huludao">葫芦岛</a>
+                    <li><a class="react" gaevent="imt/selectCity/hbbazhou"
+                           href="/?city=hbbazhou"
+                           data-citypinyin="hbbazhou">霸州</a>
+                    <li><a class="react" gaevent="imt/selectCity/hegang"
+                           href="/?city=hegang"
+                           data-citypinyin="hegang">鹤岗</a>
+                    <li><a class="react" gaevent="imt/selectCity/haimen"
+                           href="/?city=haimen"
+                           data-citypinyin="haimen">海门</a>
+                    <li><a class="react" gaevent="imt/selectCity/heshan"
+                           href="/?city=heshan"
+                           data-citypinyin="heshan">鹤山</a>
+                    <li><a class="react" gaevent="imt/selectCity/haicheng"
+                           href="/?city=haicheng"
+                           data-citypinyin="haicheng">海城</a>
+                    <li><a class="react" gaevent="imt/selectCity/hejin"
+                           href="/?city=hejin"
+                           data-citypinyin="hejin">河津</a>
+                    <li><a class="react" gaevent="imt/selectCity/heyuan"
+                           href="/?city=heyuan"
+                           data-citypinyin="heyuan">河源</a>
+                    <li><a class="react" gaevent="imt/selectCity/hebi"
+                           href="/?city=hebi"
+                           data-citypinyin="hebi">鹤壁</a>
+                    <li><a class="react" gaevent="imt/selectCity/huangshan"
+                           href="/?city=huangshan"
+                           data-citypinyin="huangshan">黄山</a>
+                    <li><a class="react" gaevent="imt/selectCity/heze"
+                           href="/?city=heze"
+                           data-citypinyin="heze">菏泽</a>
+                    <li><a class="react" gaevent="imt/selectCity/houma"
+                           href="/?city=houma"
+                           data-citypinyin="houma">侯马</a>
+                    <li><a class="react" gaevent="imt/selectCity/haiyang"
+                           href="/?city=haiyang"
+                           data-citypinyin="haiyang">海阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/hechi"
+                           href="/?city=hechi"
+                           data-citypinyin="hechi">河池</a>
+                    <li><a class="react" gaevent="imt/selectCity/hengshui"
+                           href="/?city=hengshui"
+                           data-citypinyin="hengshui">衡水</a>
+                    <li><a class="react" gaevent="imt/selectCity/hezhou"
+                           href="/?city=hezhou"
+                           data-citypinyin="hezhou">贺州</a>
+                    <li><a class="react" gaevent="imt/selectCity/huanggang"
+                           href="/?city=huanggang"
+                           data-citypinyin="huanggang">黄冈</a>
+                    <li><a class="react" gaevent="imt/selectCity/haidong"
+                           href="/?city=haidong"
+                           data-citypinyin="haidong">海东</a>
+                    <li><a class="react" gaevent="imt/selectCity/huidong"
+                           href="/?city=huidong"
+                           data-citypinyin="huidong">惠东</a>
+                    <li><a class="react" gaevent="imt/selectCity/hulunbeier"
+                           href="/?city=hulunbeier"
+                           data-citypinyin="hulunbeier">呼伦贝尔</a>
+                    <li><a class="react" gaevent="imt/selectCity/huaibei"
+                           href="/?city=huaibei"
+                           data-citypinyin="huaibei">淮北</a>
+                    <li><a class="react" gaevent="imt/selectCity/honghe"
+                           href="/?city=honghe"
+                           data-citypinyin="honghe">红河</a>
+                    <li><a class="react" gaevent="imt/selectCity/hanzhong"
+                           href="/?city=hanzhong"
+                           data-citypinyin="hanzhong">汉中</a>
+                    <li><a class="react" gaevent="imt/selectCity/huaihua"
+                           href="/?city=huaihua"
+                           data-citypinyin="huaihua">怀化</a>
+                    <li><a class="react" gaevent="imt/selectCity/huangshi"
+                           href="/?city=huangshi"
+                           data-citypinyin="huangshi">黄石</a>
+                    <li><a class="react" gaevent="imt/selectCity/huayin"
+                           href="/?city=huayin"
+                           data-citypinyin="huayin">华阴</a>
+                    <li><a class="react" href="/index/changecity/more/H"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="J">J</h4>
+                    <li><a class="react" gaevent="imt/selectCity/jinan"
+                           href="/?city=jinan"
+                           data-citypinyin="jinan">济南</a>
+                    <li><a class="react" gaevent="imt/selectCity/jinhua"
+                           href="/?city=jinhua"
+                           data-citypinyin="jinhua">金华</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiaxing"
+                           href="/?city=jiaxing"
+                           data-citypinyin="jiaxing">嘉兴</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiangyin"
+                           href="/?city=jiangyin"
+                           data-citypinyin="jiangyin">江阴</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiangmen"
+                           href="/?city=jiangmen"
+                           data-citypinyin="jiangmen">江门</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiaozuo"
+                           href="/?city=jiaozuo"
+                           data-citypinyin="jiaozuo">焦作</a>
+                    <li><a class="react" gaevent="imt/selectCity/jingzhou"
+                           href="/?city=jingzhou"
+                           data-citypinyin="jingzhou">荆州</a>
+                    <li><a class="react" gaevent="imt/selectCity/jilin"
+                           href="/?city=jilin"
+                           data-citypinyin="jilin">吉林</a>
+                    <li><a class="react" gaevent="imt/selectCity/jining"
+                           href="/?city=jining"
+                           data-citypinyin="jining">济宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiashan"
+                           href="/?city=jiashan"
+                           data-citypinyin="jiashan">嘉善</a>
+                    <li><a class="react" gaevent="imt/selectCity/jinjiang"
+                           href="/?city=jinjiang"
+                           data-citypinyin="jinjiang">晋江</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiaozhou"
+                           href="/?city=jiaozhou"
+                           data-citypinyin="jiaozhou">胶州</a>
+                    <li><a class="react" gaevent="imt/selectCity/jixi"
+                           href="/?city=jixi"
+                           data-citypinyin="jixi">鸡西</a>
+                    <li><a class="react" gaevent="imt/selectCity/jingmen"
+                           href="/?city=jingmen"
+                           data-citypinyin="jingmen">荆门</a>
+                    <li><a class="react" gaevent="imt/selectCity/jingjiang"
+                           href="/?city=jingjiang"
+                           data-citypinyin="jingjiang">靖江</a>
+                    <li><a class="react" gaevent="imt/selectCity/jintan"
+                           href="/?city=jintan"
+                           data-citypinyin="jintan">金坛</a>
+                    <li><a class="react" gaevent="imt/selectCity/jian"
+                           href="/?city=jian"
+                           data-citypinyin="jian">吉安</a>
+                    <li><a class="react" gaevent="imt/selectCity/jinzhong"
+                           href="/?city=jinzhong"
+                           data-citypinyin="jinzhong">晋中</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiande"
+                           href="/?city=jiande"
+                           data-citypinyin="jiande">建德</a>
+                    <li><a class="react" gaevent="imt/selectCity/jianhu"
+                           href="/?city=jianhu"
+                           data-citypinyin="jianhu">建湖</a>
+                    <li><a class="react" gaevent="imt/selectCity/jinzhoushi"
+                           href="/?city=jinzhoushi"
+                           data-citypinyin="jinzhoushi">晋州</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiyuan"
+                           href="/?city=jiyuan"
+                           data-citypinyin="jiyuan">济源</a>
+                    <li><a class="react" gaevent="imt/selectCity/jincheng"
+                           href="/?city=jincheng"
+                           data-citypinyin="jincheng">晋城</a>
+                    <li><a class="react" gaevent="imt/selectCity/jurong"
+                           href="/?city=jurong"
+                           data-citypinyin="jurong">句容</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiangshan"
+                           href="/?city=jiangshan"
+                           data-citypinyin="jiangshan">江山</a>
+                    <li><a class="react" gaevent="imt/selectCity/jingdezhen"
+                           href="/?city=jingdezhen"
+                           data-citypinyin="jingdezhen">景德镇</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiamusi"
+                           href="/?city=jiamusi"
+                           data-citypinyin="jiamusi">佳木斯</a>
+                    <li><a class="react" gaevent="imt/selectCity/jieyang"
+                           href="/?city=jieyang"
+                           data-citypinyin="jieyang">揭阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/jiujiang"
+                           href="/?city=jiujiang"
+                           data-citypinyin="jiujiang">九江</a>
+                    <li><a class="react" gaevent="imt/selectCity/jinzhou"
+                           href="/?city=jinzhou"
+                           data-citypinyin="jinzhou">锦州</a>
+                    <li><a class="react" gaevent="imt/selectCity/jishou"
+                           href="/?city=jishou"
+                           data-citypinyin="jishou">吉首</a>
+                    <li><a class="react" href="/index/changecity/more/J"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="K">K</h4>
+                    <li><a class="react" gaevent="imt/selectCity/kunming"
+                           href="/?city=kunming"
+                           data-citypinyin="kunming">昆明</a>
+                    <li><a class="react" gaevent="imt/selectCity/kunshan"
+                           href="/?city=kunshan"
+                           data-citypinyin="kunshan">昆山</a>
+                    <li><a class="react" gaevent="imt/selectCity/kaifeng"
+                           href="/?city=kaifeng"
+                           data-citypinyin="kaifeng">开封</a>
+                    <li><a class="react" gaevent="imt/selectCity/kelamayi"
+                           href="/?city=kelamayi"
+                           data-citypinyin="kelamayi">克拉玛依</a>
+                    <li><a class="react" gaevent="imt/selectCity/kaiping"
+                           href="/?city=kaiping"
+                           data-citypinyin="kaiping">开平</a>
+                    <li><a class="react" href="/index/changecity/more/K"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="L">L</h4>
+                    <li><a class="react" gaevent="imt/selectCity/lanzhou"
+                           href="/?city=lanzhou"
+                           data-citypinyin="lanzhou">兰州</a>
+                    <li><a class="react" gaevent="imt/selectCity/liuzhou"
+                           href="/?city=liuzhou"
+                           data-citypinyin="liuzhou">柳州</a>
+                    <li><a class="react" gaevent="imt/selectCity/lianyungang"
+                           href="/?city=lianyungang"
+                           data-citypinyin="lianyungang">连云港</a>
+                    <li><a class="react" gaevent="imt/selectCity/langfang"
+                           href="/?city=langfang"
+                           data-citypinyin="langfang">廊坊</a>
+                    <li><a class="react" gaevent="imt/selectCity/luoyang"
+                           href="/?city=luoyang"
+                           data-citypinyin="luoyang">洛阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/linyi"
+                           href="/?city=linyi"
+                           data-citypinyin="linyi">临沂</a>
+                    <li><a class="react" gaevent="imt/selectCity/longkou"
+                           href="/?city=longkou"
+                           data-citypinyin="longkou">龙口</a>
+                    <li><a class="react" gaevent="imt/selectCity/lvliang"
+                           href="/?city=lvliang"
+                           data-citypinyin="lvliang">吕梁</a>
+                    <li><a class="react" gaevent="imt/selectCity/laizhou"
+                           href="/?city=laizhou"
+                           data-citypinyin="laizhou">莱州</a>
+                    <li><a class="react" gaevent="imt/selectCity/liaoyang"
+                           href="/?city=liaoyang"
+                           data-citypinyin="liaoyang">辽阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/laiwu"
+                           href="/?city=laiwu"
+                           data-citypinyin="laiwu">莱芜</a>
+                    <li><a class="react" gaevent="imt/selectCity/liyang"
+                           href="/?city=liyang"
+                           data-citypinyin="liyang">溧阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/luzhou"
+                           href="/?city=luzhou"
+                           data-citypinyin="luzhou">泸州</a>
+                    <li><a class="react" gaevent="imt/selectCity/linan"
+                           href="/?city=linan"
+                           data-citypinyin="linan">临安</a>
+                    <li><a class="react" gaevent="imt/selectCity/liaoyuan"
+                           href="/?city=liaoyuan"
+                           data-citypinyin="liaoyuan">辽源</a>
+                    <li><a class="react" gaevent="imt/selectCity/lishui"
+                           href="/?city=lishui"
+                           data-citypinyin="lishui">丽水</a>
+                    <li><a class="react" gaevent="imt/selectCity/loudi"
+                           href="/?city=loudi"
+                           data-citypinyin="loudi">娄底</a>
+                    <li><a class="react" gaevent="imt/selectCity/laibin"
+                           href="/?city=laibin"
+                           data-citypinyin="laibin">来宾</a>
+                    <li><a class="react" gaevent="imt/selectCity/lingbao"
+                           href="/?city=lingbao"
+                           data-citypinyin="lingbao">灵宝</a>
+                    <li><a class="react" gaevent="imt/selectCity/liangshan"
+                           href="/?city=liangshan"
+                           data-citypinyin="liangshan">凉山</a>
+                    <li><a class="react" gaevent="imt/selectCity/laiyang"
+                           href="/?city=laiyang"
+                           data-citypinyin="laiyang">莱阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/linqing"
+                           href="/?city=linqing"
+                           data-citypinyin="linqing">临清</a>
+                    <li><a class="react" gaevent="imt/selectCity/liuan"
+                           href="/?city=liuan"
+                           data-citypinyin="liuan">六安</a>
+                    <li><a class="react" gaevent="imt/selectCity/longyan"
+                           href="/?city=longyan"
+                           data-citypinyin="longyan">龙岩</a>
+                    <li><a class="react" gaevent="imt/selectCity/lijiang"
+                           href="/?city=lijiang"
+                           data-citypinyin="lijiang">丽江</a>
+                    <li><a class="react" gaevent="imt/selectCity/lechang"
+                           href="/?city=lechang"
+                           data-citypinyin="lechang">乐昌</a>
+                    <li><a class="react" gaevent="imt/selectCity/lanxi"
+                           href="/?city=lanxi"
+                           data-citypinyin="lanxi">兰溪</a>
+                    <li><a class="react" gaevent="imt/selectCity/linhai"
+                           href="/?city=linhai"
+                           data-citypinyin="linhai">临海</a>
+                    <li><a class="react" gaevent="imt/selectCity/liupanshui"
+                           href="/?city=liupanshui"
+                           data-citypinyin="liupanshui">六盘水</a>
+                    <li><a class="react" gaevent="imt/selectCity/luohe"
+                           href="/?city=luohe"
+                           data-citypinyin="luohe">漯河</a>
+                    <li><a class="react" gaevent="imt/selectCity/leshan"
+                           href="/?city=leshan"
+                           data-citypinyin="leshan">乐山</a>
+                    <li><a class="react" gaevent="imt/selectCity/liaocheng"
+                           href="/?city=liaocheng"
+                           data-citypinyin="liaocheng">聊城</a>
+                    <li><a class="react" gaevent="imt/selectCity/linfen"
+                           href="/?city=linfen"
+                           data-citypinyin="linfen">临汾</a>
+
+                    <li><a class="react" gaevent="imt/selectCity/lufeng"
+                           href="/?city=lufeng"
+                           data-citypinyin="lufeng">陆丰</a>
+                    <li><a class="react" href="/index/changecity/more/L"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="M">M</h4>
+                    <li><a class="react" gaevent="imt/selectCity/miluo"
+                           href="/?city=miluo"
+                           data-citypinyin="miluo">汨罗</a>
+                    <li><a class="react" gaevent="imt/selectCity/meihekou"
+                           href="/?city=meihekou"
+                           data-citypinyin="meihekou">梅河口</a>
+                    <li><a class="react" gaevent="imt/selectCity/manzhouli"
+                           href="/?city=manzhouli"
+                           data-citypinyin="manzhouli">满洲里</a>
+                    <li><a class="react" gaevent="imt/selectCity/meishan"
+                           href="/?city=meishan"
+                           data-citypinyin="meishan">眉山</a>
+                    <li><a class="react" gaevent="imt/selectCity/maoming"
+                           href="/?city=maoming"
+                           data-citypinyin="maoming">茂名</a>
+                    <li><a class="react" gaevent="imt/selectCity/mianyang"
+                           href="/?city=mianyang"
+                           data-citypinyin="mianyang">绵阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/meizhou"
+                           href="/?city=meizhou"
+                           data-citypinyin="meizhou">梅州</a>
+                    <li><a class="react" gaevent="imt/selectCity/mudanjiang"
+                           href="/?city=mudanjiang"
+                           data-citypinyin="mudanjiang">牡丹江</a>
+                    <li><a class="react" gaevent="imt/selectCity/maanshan"
+                           href="/?city=maanshan"
+                           data-citypinyin="maanshan">马鞍山</a>
+                    <li><a class="react" gaevent="imt/selectCity/mohe"
+                           href="/?city=mohe"
+                           data-citypinyin="mohe">漠河</a>
+                    <li><a class="react" gaevent="imt/selectCity/mishan"
+                           href="/?city=mishan"
+                           data-citypinyin="mishan">密山</a>
+                    <li><a class="react" href="/index/changecity/more/M"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="N">N</h4>
+                    <li><a class="react" gaevent="imt/selectCity/nanjing"
+                           href="/?city=nanjing"
+                           data-citypinyin="nanjing">南京</a>
+                    <li><a class="react" gaevent="imt/selectCity/ningbo"
+                           href="/?city=ningbo"
+                           data-citypinyin="ningbo">宁波</a>
+                    <li><a class="react" gaevent="imt/selectCity/nanchang"
+                           href="/?city=nanchang"
+                           data-citypinyin="nanchang">南昌</a>
+                    <li><a class="react" gaevent="imt/selectCity/nanning"
+                           href="/?city=nanning"
+                           data-citypinyin="nanning">南宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/nantong"
+                           href="/?city=nantong"
+                           data-citypinyin="nantong">南通</a>
+                    <li><a class="react" gaevent="imt/selectCity/nanping"
+                           href="/?city=nanping"
+                           data-citypinyin="nanping">南平</a>
+                    <li><a class="react" gaevent="imt/selectCity/nansha"
+                           href="/?city=nansha"
+                           data-citypinyin="nansha">南沙</a>
+                    <li><a class="react" gaevent="imt/selectCity/ningde"
+                           href="/?city=ningde"
+                           data-citypinyin="ningde">宁德</a>
+                    <li><a class="react" gaevent="imt/selectCity/ningxiang"
+                           href="/?city=ningxiang"
+                           data-citypinyin="ningxiang">宁乡</a>
+                    <li><a class="react" gaevent="imt/selectCity/ninghai"
+                           href="/?city=ninghai"
+                           data-citypinyin="ninghai">宁海</a>
+                    <li><a class="react" gaevent="imt/selectCity/nanchong"
+                           href="/?city=nanchong"
+                           data-citypinyin="nanchong">南充</a>
+                    <li><a class="react" gaevent="imt/selectCity/nanyang"
+                           href="/?city=nanyang"
+                           data-citypinyin="nanyang">南阳</a>
+                    <li><a class="react" href="/index/changecity/more/N"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="P">P</h4>
+                    <li><a class="react" gaevent="imt/selectCity/putian"
+                           href="/?city=putian"
+                           data-citypinyin="putian">莆田</a>
+                    <li><a class="react" gaevent="imt/selectCity/panjin"
+                           href="/?city=panjin"
+                           data-citypinyin="panjin">盘锦</a>
+                    <li><a class="react" gaevent="imt/selectCity/pinghu"
+                           href="/?city=pinghu"
+                           data-citypinyin="pinghu">平湖</a>
+                    <li><a class="react" gaevent="imt/selectCity/pingdu"
+                           href="/?city=pingdu"
+                           data-citypinyin="pingdu">平度</a>
+                    <li><a class="react" gaevent="imt/selectCity/pingxiang"
+                           href="/?city=pingxiang"
+                           data-citypinyin="pingxiang">萍乡</a>
+                    <li><a class="react" gaevent="imt/selectCity/puning"
+                           href="/?city=puning"
+                           data-citypinyin="puning">普宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/pengzhou"
+                           href="/?city=pengzhou"
+                           data-citypinyin="pengzhou">彭州</a>
+                    <li><a class="react" gaevent="imt/selectCity/penglai"
+                           href="/?city=penglai"
+                           data-citypinyin="penglai">蓬莱</a>
+                    <li><a class="react" gaevent="imt/selectCity/pingliang"
+                           href="/?city=pingliang"
+                           data-citypinyin="pingliang">平凉</a>
+                    <li><a class="react" gaevent="imt/selectCity/pizhou"
+                           href="/?city=pizhou"
+                           data-citypinyin="pizhou">邳州</a>
+                    <li><a class="react" gaevent="imt/selectCity/pingdingshan"
+                           href="/?city=pingdingshan"
+                           data-citypinyin="pingdingshan">平顶山</a>
+                    <li><a class="react" gaevent="imt/selectCity/panzhihua"
+                           href="/?city=panzhihua"
+                           data-citypinyin="panzhihua">攀枝花</a>
+                    <li><a class="react" gaevent="imt/selectCity/puyang"
+                           href="/?city=puyang"
+                           data-citypinyin="puyang">濮阳</a>
+                    <li><a class="react" href="/index/changecity/more/P"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="Q">Q</h4>
+                    <li><a class="react" gaevent="imt/selectCity/qingdao"
+                           href="/?city=qingdao"
+                           data-citypinyin="qingdao">青岛</a>
+                    <li><a class="react" gaevent="imt/selectCity/quzhou"
+                           href="/?city=quzhou"
+                           data-citypinyin="quzhou">衢州</a>
+                    <li><a class="react" gaevent="imt/selectCity/quanzhou"
+                           href="/?city=quanzhou"
+                           data-citypinyin="quanzhou">泉州</a>
+                    <li><a class="react" gaevent="imt/selectCity/qinhuangdao"
+                           href="/?city=qinhuangdao"
+                           data-citypinyin="qinhuangdao">秦皇岛</a>
+                    <li><a class="react" gaevent="imt/selectCity/qianan"
+                           href="/?city=qianan"
+                           data-citypinyin="qianan">迁安</a>
+                    <li><a class="react" gaevent="imt/selectCity/qufu"
+                           href="/?city=qufu"
+                           data-citypinyin="qufu">曲阜</a>
+                    <li><a class="react" gaevent="imt/selectCity/qitaihe"
+                           href="/?city=qitaihe"
+                           data-citypinyin="qitaihe">七台河</a>
+                    <li><a class="react" gaevent="imt/selectCity/qiandongnan"
+                           href="/?city=qiandongnan"
+                           data-citypinyin="qiandongnan">黔东南</a>
+                    <li><a class="react" gaevent="imt/selectCity/qianjiang"
+                           href="/?city=qianjiang"
+                           data-citypinyin="qianjiang">潜江</a>
+                    <li><a class="react" gaevent="imt/selectCity/qionghai"
+                           href="/?city=qionghai"
+                           data-citypinyin="qionghai">琼海</a>
+                    <li><a class="react" gaevent="imt/selectCity/qingzhou"
+                           href="/?city=qingzhou"
+                           data-citypinyin="qingzhou">青州</a>
+                    <li><a class="react" gaevent="imt/selectCity/qidong"
+                           href="/?city=qidong"
+                           data-citypinyin="qidong">启东</a>
+                    <li><a class="react" gaevent="imt/selectCity/qingyang"
+                           href="/?city=qingyang"
+                           data-citypinyin="qingyang">庆阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/qinzhou"
+                           href="/?city=qinzhou"
+                           data-citypinyin="qinzhou">钦州</a>
+                    <li><a class="react" gaevent="imt/selectCity/qujing"
+                           href="/?city=qujing"
+                           data-citypinyin="qujing">曲靖</a>
+                    <li><a class="react" gaevent="imt/selectCity/qingyuan"
+                           href="/?city=qingyuan"
+                           data-citypinyin="qingyuan">清远</a>
+                    <li><a class="react" gaevent="imt/selectCity/qiqihaer"
+                           href="/?city=qiqihaer"
+                           data-citypinyin="qiqihaer">齐齐哈尔</a>
+                    <li><a class="react" href="/index/changecity/more/Q"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="R">R</h4>
+                    <li><a class="react" gaevent="imt/selectCity/rizhao"
+                           href="/?city=rizhao"
+                           data-citypinyin="rizhao">日照</a>
+                    <li><a class="react" gaevent="imt/selectCity/rongcheng"
+                           href="/?city=rongcheng"
+                           data-citypinyin="rongcheng">荣成</a>
+                    <li><a class="react" gaevent="imt/selectCity/rushan"
+                           href="/?city=rushan"
+                           data-citypinyin="rushan">乳山</a>
+                    <li><a class="react" gaevent="imt/selectCity/rugao"
+                           href="/?city=rugao"
+                           data-citypinyin="rugao">如皋</a>
+                    <li><a class="react" gaevent="imt/selectCity/ruian"
+                           href="/?city=ruian"
+                           data-citypinyin="ruian">瑞安</a>
+                    <li><a class="react" gaevent="imt/selectCity/renhuai"
+                           href="/?city=renhuai"
+                           data-citypinyin="renhuai">仁怀</a>
+                    <li><a class="react" href="/index/changecity/more/R"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="S">S</h4>
+                    <li><a class="react" gaevent="imt/selectCity/shanghai"
+                           href="/?city=shanghai"
+                           data-citypinyin="shanghai">上海</a>
+                    <li><a class="react" gaevent="imt/selectCity/shenzhen"
+                           href="/?city=shenzhen"
+                           data-citypinyin="shenzhen">深圳</a>
+                    <li><a class="react" gaevent="imt/selectCity/suzhou"
+                           href="/?city=suzhou"
+                           data-citypinyin="suzhou">苏州</a>
+                    <li><a class="react" gaevent="imt/selectCity/shijiazhuang"
+                           href="/?city=shijiazhuang"
+                           data-citypinyin="shijiazhuang">石家庄</a>
+                    <li><a class="react" gaevent="imt/selectCity/shenyang"
+                           href="/?city=shenyang"
+                           data-citypinyin="shenyang">沈阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/sanya"
+                           href="/?city=sanya"
+                           data-citypinyin="sanya">三亚</a>
+                    <li><a class="react" gaevent="imt/selectCity/shaoxing"
+                           href="/?city=shaoxing"
+                           data-citypinyin="shaoxing">绍兴</a>
+                    <li><a class="react" gaevent="imt/selectCity/shantou"
+                           href="/?city=shantou"
+                           data-citypinyin="shantou">汕头</a>
+                    <li><a class="react" gaevent="imt/selectCity/shanwei"
+                           href="/?city=shanwei"
+                           data-citypinyin="shanwei">汕尾</a>
+                    <li><a class="react" gaevent="imt/selectCity/shaoyang"
+                           href="/?city=shaoyang"
+                           data-citypinyin="shaoyang">邵阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/shishi"
+                           href="/?city=shishi"
+                           data-citypinyin="shishi">石狮</a>
+                    <li><a class="react" gaevent="imt/selectCity/shunde"
+                           href="/?city=shunde"
+                           data-citypinyin="shunde">顺德</a>
+                    <li><a class="react" gaevent="imt/selectCity/shuangyashan"
+                           href="/?city=shuangyashan"
+                           data-citypinyin="shuangyashan">双鸭山</a>
+                    <li><a class="react" gaevent="imt/selectCity/shouguang"
+                           href="/?city=shouguang"
+                           data-citypinyin="shouguang">寿光</a>
+                    <li><a class="react" gaevent="imt/selectCity/shangyu"
+                           href="/?city=shangyu"
+                           data-citypinyin="shangyu">上虞</a>
+                    <li><a class="react" gaevent="imt/selectCity/shangrao"
+                           href="/?city=shangrao"
+                           data-citypinyin="shangrao">上饶</a>
+                    <li><a class="react" gaevent="imt/selectCity/sanhe"
+                           href="/?city=sanhe"
+                           data-citypinyin="sanhe">三河</a>
+                    <li><a class="react" gaevent="imt/selectCity/songyuan"
+                           href="/?city=songyuan"
+                           data-citypinyin="songyuan">松原</a>
+                    <li><a class="react" gaevent="imt/selectCity/suqian"
+                           href="/?city=suqian"
+                           data-citypinyin="suqian">宿迁</a>
+                    <li><a class="react" gaevent="imt/selectCity/suizhou"
+                           href="/?city=suizhou"
+                           data-citypinyin="suizhou">随州</a>
+                    <li><a class="react" gaevent="imt/selectCity/shizuishan"
+                           href="/?city=shizuishan"
+                           data-citypinyin="shizuishan">石嘴山</a>
+                    <li><a class="react" gaevent="imt/selectCity/suzhousz"
+                           href="/?city=suzhousz"
+                           data-citypinyin="suzhousz">宿州</a>
+                    <li><a class="react" gaevent="imt/selectCity/shuozhou"
+                           href="/?city=shuozhou"
+                           data-citypinyin="shuozhou">朔州</a>
+                    <li><a class="react" gaevent="imt/selectCity/shihezi"
+                           href="/?city=shihezi"
+                           data-citypinyin="shihezi">石河子</a>
+                    <li><a class="react" gaevent="imt/selectCity/sheyang"
+                           href="/?city=sheyang"
+                           data-citypinyin="sheyang">射阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/suihua"
+                           href="/?city=suihua"
+                           data-citypinyin="suihua">绥化</a>
+                    <li><a class="react" gaevent="imt/selectCity/sanmenxia"
+                           href="/?city=sanmenxia"
+                           data-citypinyin="sanmenxia">三门峡</a>
+                    <li><a class="react" gaevent="imt/selectCity/shengzhou"
+                           href="/?city=shengzhou"
+                           data-citypinyin="shengzhou">嵊州</a>
+                    <li><a class="react" gaevent="imt/selectCity/shuyang"
+                           href="/?city=shuyang"
+                           data-citypinyin="shuyang">沭阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/suining"
+                           href="/?city=suining"
+                           data-citypinyin="suining">遂宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/shiyan"
+                           href="/?city=shiyan"
+                           data-citypinyin="shiyan">十堰</a>
+                    <li><a class="react" gaevent="imt/selectCity/sanming"
+                           href="/?city=sanming"
+                           data-citypinyin="sanming">三明</a>
+                    <li><a class="react" gaevent="imt/selectCity/shangqiu"
+                           href="/?city=shangqiu"
+                           data-citypinyin="shangqiu">商丘</a>
+                    <li><a class="react" gaevent="imt/selectCity/siping"
+                           href="/?city=siping"
+                           data-citypinyin="siping">四平</a>
+                    <li><a class="react" gaevent="imt/selectCity/shaoguan"
+                           href="/?city=shaoguan"
+                           data-citypinyin="shaoguan">韶关</a>
+                    <li><a class="react" gaevent="imt/selectCity/shaoshan"
+                           href="/?city=shaoshan"
+                           data-citypinyin="shaoshan">韶山</a>
+                    <li><a class="react" href="/index/changecity/more/S"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="T">T</h4>
+                    <li><a class="react" gaevent="imt/selectCity/tianjin"
+                           href="/?city=tianjin"
+                           data-citypinyin="tianjin">天津</a>
+                    <li><a class="react" gaevent="imt/selectCity/taiyuan"
+                           href="/?city=taiyuan"
+                           data-citypinyin="taiyuan">太原</a>
+                    <li><a class="react" gaevent="imt/selectCity/taizhoutz"
+                           href="/?city=taizhoutz"
+                           data-citypinyin="taizhoutz">台州</a>
+                    <li><a class="react" gaevent="imt/selectCity/taizhou"
+                           href="/?city=taizhou"
+                           data-citypinyin="taizhou">泰州</a>
+                    <li><a class="react" gaevent="imt/selectCity/taian"
+                           href="/?city=taian"
+                           data-citypinyin="taian">泰安</a>
+                    <li><a class="react" gaevent="imt/selectCity/tangshan"
+                           href="/?city=tangshan"
+                           data-citypinyin="tangshan">唐山</a>
+                    <li><a class="react" gaevent="imt/selectCity/taicang"
+                           href="/?city=taicang"
+                           data-citypinyin="taicang">太仓</a>
+                    <li><a class="react" gaevent="imt/selectCity/tongchuan"
+                           href="/?city=tongchuan"
+                           data-citypinyin="tongchuan">铜川</a>
+                    <li><a class="react" gaevent="imt/selectCity/tongling"
+                           href="/?city=tongling"
+                           data-citypinyin="tongling">铜陵</a>
+                    <li><a class="react" gaevent="imt/selectCity/taishan"
+                           href="/?city=taishan"
+                           data-citypinyin="taishan">台山</a>
+                    <li><a class="react" gaevent="imt/selectCity/tieling"
+                           href="/?city=tieling"
+                           data-citypinyin="tieling">铁岭</a>
+                    <li><a class="react" gaevent="imt/selectCity/tianshui"
+                           href="/?city=tianshui"
+                           data-citypinyin="tianshui">天水</a>
+                    <li><a class="react" gaevent="imt/selectCity/taixing"
+                           href="/?city=taixing"
+                           data-citypinyin="taixing">泰兴</a>
+                    <li><a class="react" gaevent="imt/selectCity/tianmen"
+                           href="/?city=tianmen"
+                           data-citypinyin="tianmen">天门</a>
+                    <li><a class="react" gaevent="imt/selectCity/tongrendiqu"
+                           href="/?city=tongrendiqu"
+                           data-citypinyin="tongrendiqu">铜仁</a>
+                    <li><a class="react" gaevent="imt/selectCity/tengzhou"
+                           href="/?city=tengzhou"
+                           data-citypinyin="tengzhou">滕州</a>
+                    <li><a class="react" gaevent="imt/selectCity/tongliao"
+                           href="/?city=tongliao"
+                           data-citypinyin="tongliao">通辽</a>
+                    <li><a class="react" gaevent="imt/selectCity/tonghua"
+                           href="/?city=tonghua"
+                           data-citypinyin="tonghua">通化</a>
+                    <li><a class="react" gaevent="imt/selectCity/tongxiang"
+                           href="/?city=tongxiang"
+                           data-citypinyin="tongxiang">桐乡</a>
+                    <li><a class="react" href="/index/changecity/more/T"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="W">W</h4>
+                    <li><a class="react" gaevent="imt/selectCity/wuhan"
+                           href="/?city=wuhan"
+                           data-citypinyin="wuhan">武汉</a>
+                    <li><a class="react" gaevent="imt/selectCity/wuxi"
+                           href="/?city=wuxi"
+                           data-citypinyin="wuxi">无锡</a>
+                    <li><a class="react" gaevent="imt/selectCity/wulumuqi"
+                           href="/?city=wulumuqi"
+                           data-citypinyin="wulumuqi">乌鲁木齐</a>
+                    <li><a class="react" gaevent="imt/selectCity/wenzhou"
+                           href="/?city=wenzhou"
+                           data-citypinyin="wenzhou">温州</a>
+                    <li><a class="react" gaevent="imt/selectCity/wuhu"
+                           href="/?city=wuhu"
+                           data-citypinyin="wuhu">芜湖</a>
+                    <li><a class="react" gaevent="imt/selectCity/weihai"
+                           href="/?city=weihai"
+                           data-citypinyin="weihai">威海</a>
+                    <li><a class="react" gaevent="imt/selectCity/weifang"
+                           href="/?city=weifang"
+                           data-citypinyin="weifang">潍坊</a>
+                    <li><a class="react" gaevent="imt/selectCity/wendeng"
+                           href="/?city=wendeng"
+                           data-citypinyin="wendeng">文登</a>
+                    <li><a class="react" gaevent="imt/selectCity/wujiang"
+                           href="/?city=wujiang"
+                           data-citypinyin="wujiang">吴江</a>
+                    <li><a class="react" gaevent="imt/selectCity/wenling"
+                           href="/?city=wenling"
+                           data-citypinyin="wenling">温岭</a>
+                    <li><a class="react" gaevent="imt/selectCity/wuchuan"
+                           href="/?city=wuchuan"
+                           data-citypinyin="wuchuan">吴川</a>
+                    <li><a class="react" gaevent="imt/selectCity/wulanchabu"
+                           href="/?city=wulanchabu"
+                           data-citypinyin="wulanchabu">乌兰察布</a>
+                    <li><a class="react" gaevent="imt/selectCity/wuan"
+                           href="/?city=wuan"
+                           data-citypinyin="wuan">武安</a>
+                    <li><a class="react" gaevent="imt/selectCity/wuzhong"
+                           href="/?city=wuzhong"
+                           data-citypinyin="wuzhong">吴忠</a>
+                    <li><a class="react" gaevent="imt/selectCity/wanzhou"
+                           href="/?city=wanzhou"
+                           data-citypinyin="wanzhou">万州</a>
+                    <li><a class="react" gaevent="imt/selectCity/wuwei"
+                           href="/?city=wuwei"
+                           data-citypinyin="wuwei">武威</a>
+                    <li><a class="react" gaevent="imt/selectCity/weinan"
+                           href="/?city=weinan"
+                           data-citypinyin="weinan">渭南</a>
+                    <li><a class="react" gaevent="imt/selectCity/wuhai"
+                           href="/?city=wuhai"
+                           data-citypinyin="wuhai">乌海</a>
+                    <li><a class="react" gaevent="imt/selectCity/wuzhou"
+                           href="/?city=wuzhou"
+                           data-citypinyin="wuzhou">梧州</a>
+                    <li><a class="react" href="/index/changecity/more/W"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="X">X</h4>
+                    <li><a class="react" gaevent="imt/selectCity/xian"
+                           href="/?city=xian"
+                           data-citypinyin="xian">西安</a>
+                    <li><a class="react" gaevent="imt/selectCity/xiamen"
+                           href="/?city=xiamen"
+                           data-citypinyin="xiamen">厦门</a>
+                    <li><a class="react" gaevent="imt/selectCity/xuzhou"
+                           href="/?city=xuzhou"
+                           data-citypinyin="xuzhou">徐州</a>
+                    <li><a class="react" gaevent="imt/selectCity/xiangtan"
+                           href="/?city=xiangtan"
+                           data-citypinyin="xiangtan">湘潭</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinxiang"
+                           href="/?city=xinxiang"
+                           data-citypinyin="xinxiang">新乡</a>
+                    <li><a class="react" gaevent="imt/selectCity/xining"
+                           href="/?city=xining"
+                           data-citypinyin="xining">西宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/xiangyang"
+                           href="/?city=xiangyang"
+                           data-citypinyin="xiangyang">襄阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/xintai"
+                           href="/?city=xintai"
+                           data-citypinyin="xintai">新泰</a>
+                    <li><a class="react" gaevent="imt/selectCity/xianyang"
+                           href="/?city=xianyang"
+                           data-citypinyin="xianyang">咸阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinyang"
+                           href="/?city=xinyang"
+                           data-citypinyin="xinyang">信阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/xuchang"
+                           href="/?city=xuchang"
+                           data-citypinyin="xuchang">许昌</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinghua"
+                           href="/?city=xinghua"
+                           data-citypinyin="xinghua">兴化</a>
+                    <li><a class="react" gaevent="imt/selectCity/xiaogan"
+                           href="/?city=xiaogan"
+                           data-citypinyin="xiaogan">孝感</a>
+                    <li><a class="react" gaevent="imt/selectCity/xianning"
+                           href="/?city=xianning"
+                           data-citypinyin="xianning">咸宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/xuancheng"
+                           href="/?city=xuancheng"
+                           data-citypinyin="xuancheng">宣城</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinmi"
+                           href="/?city=xinmi"
+                           data-citypinyin="xinmi">新密</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinzheng"
+                           href="/?city=xinzheng"
+                           data-citypinyin="xinzheng">新郑</a>
+                    <li><a class="react" gaevent="imt/selectCity/xingyang"
+                           href="/?city=xingyang"
+                           data-citypinyin="xingyang">荥阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/xishuangbanna"
+                           href="/?city=xishuangbanna"
+                           data-citypinyin="xishuangbanna">西双版纳</a>
+                    <li><a class="react" gaevent="imt/selectCity/xiangcheng"
+                           href="/?city=xiangcheng"
+                           data-citypinyin="xiangcheng">项城</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinmin"
+                           href="/?city=xinmin"
+                           data-citypinyin="xinmin">新民</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinganmeng"
+                           href="/?city=xinganmeng"
+                           data-citypinyin="xinganmeng">兴安盟</a>
+                    <li><a class="react" gaevent="imt/selectCity/xingning"
+                           href="/?city=xingning"
+                           data-citypinyin="xingning">兴宁</a>
+                    <li><a class="react" gaevent="imt/selectCity/xiantao"
+                           href="/?city=xiantao"
+                           data-citypinyin="xiantao">仙桃</a>
+                    <li><a class="react" gaevent="imt/selectCity/xiangshui"
+                           href="/?city=xiangshui"
+                           data-citypinyin="xiangshui">响水</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinji"
+                           href="/?city=xinji"
+                           data-citypinyin="xinji">辛集</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinyi"
+                           href="/?city=xinyi"
+                           data-citypinyin="xinyi">新沂</a>
+                    <li><a class="react" gaevent="imt/selectCity/xinzhou"
+                           href="/?city=xinzhou"
+                           data-citypinyin="xinzhou">忻州</a>
+                    <li><a class="react" gaevent="imt/selectCity/xiangyin"
+                           href="/?city=xiangyin"
+                           data-citypinyin="xiangyin">湘阴</a>
+                    <li><a class="react" gaevent="imt/selectCity/xingtai"
+                           href="/?city=xingtai"
+                           data-citypinyin="xingtai">邢台</a>
+                    <li><a class="react" href="/index/changecity/more/X"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="Y">Y</h4>
+                    <li><a class="react" gaevent="imt/selectCity/yangzhou"
+                           href="/?city=yangzhou"
+                           data-citypinyin="yangzhou">扬州</a>
+                    <li><a class="react" gaevent="imt/selectCity/yantai"
+                           href="/?city=yantai"
+                           data-citypinyin="yantai">烟台</a>
+                    <li><a class="react" gaevent="imt/selectCity/yinchuan"
+                           href="/?city=yinchuan"
+                           data-citypinyin="yinchuan">银川</a>
+                    <li><a class="react" gaevent="imt/selectCity/yiwu"
+                           href="/?city=yiwu"
+                           data-citypinyin="yiwu">义乌</a>
+                    <li><a class="react" gaevent="imt/selectCity/yueyang"
+                           href="/?city=yueyang"
+                           data-citypinyin="yueyang">岳阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/yancheng"
+                           href="/?city=yancheng"
+                           data-citypinyin="yancheng">盐城</a>
+                    <li><a class="react" gaevent="imt/selectCity/yichang"
+                           href="/?city=yichang"
+                           data-citypinyin="yichang">宜昌</a>
+                    <li><a class="react" gaevent="imt/selectCity/yuncheng"
+                           href="/?city=yuncheng"
+                           data-citypinyin="yuncheng">运城</a>
+                    <li><a class="react" gaevent="imt/selectCity/yanbian"
+                           href="/?city=yanbian"
+                           data-citypinyin="yanbian">延边</a>
+                    <li><a class="react" gaevent="imt/selectCity/yiyang"
+                           href="/?city=yiyang"
+                           data-citypinyin="yiyang">益阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/yuyao"
+                           href="/?city=yuyao"
+                           data-citypinyin="yuyao">余姚</a>
+                    <li><a class="react" gaevent="imt/selectCity/yixing"
+                           href="/?city=yixing"
+                           data-citypinyin="yixing">宜兴</a>
+                    <li><a class="react" gaevent="imt/selectCity/yongzhou"
+                           href="/?city=yongzhou"
+                           data-citypinyin="yongzhou">永州</a>
+                    <li><a class="react" gaevent="imt/selectCity/yangzhong"
+                           href="/?city=yangzhong"
+                           data-citypinyin="yangzhong">扬中</a>
+                    <li><a class="react" gaevent="imt/selectCity/yangquan"
+                           href="/?city=yangquan"
+                           data-citypinyin="yangquan">阳泉</a>
+                    <li><a class="react" gaevent="imt/selectCity/yangjiang"
+                           href="/?city=yangjiang"
+                           data-citypinyin="yangjiang">阳江</a>
+                    <li><a class="react" gaevent="imt/selectCity/yueqing"
+                           href="/?city=yueqing"
+                           data-citypinyin="yueqing">乐清</a>
+                    <li><a class="react" gaevent="imt/selectCity/yongkang"
+                           href="/?city=yongkang"
+                           data-citypinyin="yongkang">永康</a>
+                    <li><a class="react" gaevent="imt/selectCity/yanzhou"
+                           href="/?city=yanzhou"
+                           data-citypinyin="yanzhou">兖州</a>
+                    <li><a class="react" gaevent="imt/selectCity/yongcheng"
+                           href="/?city=yongcheng"
+                           data-citypinyin="yongcheng">永城</a>
+                    <li><a class="react" gaevent="imt/selectCity/yibin"
+                           href="/?city=yibin"
+                           data-citypinyin="yibin">宜宾</a>
+                    <li><a class="react" gaevent="imt/selectCity/yuxi"
+                           href="/?city=yuxi"
+                           data-citypinyin="yuxi">玉溪</a>
+                    <li><a class="react" gaevent="imt/selectCity/yulin"
+                           href="/?city=yulin"
+                           data-citypinyin="yulin">玉林</a>
+                    <li><a class="react" gaevent="imt/selectCity/yongji"
+                           href="/?city=yongji"
+                           data-citypinyin="yongji">永济</a>
+                    <li><a class="react" gaevent="imt/selectCity/yanshi"
+                           href="/?city=yanshi"
+                           data-citypinyin="yanshi">偃师</a>
+                    <li><a class="react" gaevent="imt/selectCity/yingde"
+                           href="/?city=yingde"
+                           data-citypinyin="yingde">英德</a>
+                    <li><a class="react" gaevent="imt/selectCity/yichuan"
+                           href="/?city=yichuan"
+                           data-citypinyin="yichuan">伊川</a>
+                    <li><a class="react" gaevent="imt/selectCity/yizheng"
+                           href="/?city=yizheng"
+                           data-citypinyin="yizheng">仪征</a>
+                    <li><a class="react" gaevent="imt/selectCity/yangshuo"
+                           href="/?city=yangshuo"
+                           data-citypinyin="yangshuo">阳朔</a>
+                    <li><a class="react" gaevent="imt/selectCity/yichun"
+                           href="/?city=yichun"
+                           data-citypinyin="yichun">宜春</a>
+                    <li><a class="react" gaevent="imt/selectCity/yanan"
+                           href="/?city=yanan"
+                           data-citypinyin="yanan">延安</a>
+                    <li><a class="react" gaevent="imt/selectCity/yingkou"
+                           href="/?city=yingkou"
+                           data-citypinyin="yingkou">营口</a>
+                    <li><a class="react" href="/index/changecity/more/Y"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+            <div class="abc">
+                <ul class="table">
+                    <h4 id="Z">Z</h4>
+                    <li><a class="react" gaevent="imt/selectCity/zhengzhou"
+                           href="/?city=zhengzhou"
+                           data-citypinyin="zhengzhou">郑州</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhanjiang"
+                           href="/?city=zhanjiang"
+                           data-citypinyin="zhanjiang">湛江</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhoushan"
+                           href="/?city=zhoushan"
+                           data-citypinyin="zhoushan">舟山</a>
+                    <li><a class="react" gaevent="imt/selectCity/zaozhuang"
+                           href="/?city=zaozhuang"
+                           data-citypinyin="zaozhuang">枣庄</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhangzhou"
+                           href="/?city=zhangzhou"
+                           data-citypinyin="zhangzhou">漳州</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhuzhou"
+                           href="/?city=zhuzhou"
+                           data-citypinyin="zhuzhou">株洲</a>
+                    <li><a class="react" gaevent="imt/selectCity/zunyi"
+                           href="/?city=zunyi"
+                           data-citypinyin="zunyi">遵义</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhuhai"
+                           href="/?city=zhuhai"
+                           data-citypinyin="zhuhai">珠海</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhongshan"
+                           href="/?city=zhongshan"
+                           data-citypinyin="zhongshan">中山</a>
+                    <li><a class="react" gaevent="imt/selectCity/zibo"
+                           href="/?city=zibo"
+                           data-citypinyin="zibo">淄博</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhenjiang"
+                           href="/?city=zhenjiang"
+                           data-citypinyin="zhenjiang">镇江</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhangjiagang"
+                           href="/?city=zhangjiagang"
+                           data-citypinyin="zhangjiagang">张家港</a>
+                    <li><a class="react" gaevent="imt/selectCity/zengcheng"
+                           href="/?city=zengcheng"
+                           data-citypinyin="zengcheng">增城</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhuji"
+                           href="/?city=zhuji"
+                           data-citypinyin="zhuji">诸暨</a>
+                    <li><a class="react" gaevent="imt/selectCity/zunhua"
+                           href="/?city=zunhua"
+                           data-citypinyin="zunhua">遵化</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhuanghe"
+                           href="/?city=zhuanghe"
+                           data-citypinyin="zhuanghe">庄河</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhucheng"
+                           href="/?city=zhucheng"
+                           data-citypinyin="zhucheng">诸城</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhangqiu"
+                           href="/?city=zhangqiu"
+                           data-citypinyin="zhangqiu">章丘</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhangjiajie"
+                           href="/?city=zhangjiajie"
+                           data-citypinyin="zhangjiajie">张家界</a>
+                    <li><a class="react" gaevent="imt/selectCity/zouping"
+                           href="/?city=zouping"
+                           data-citypinyin="zouping">邹平</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhaoyuan"
+                           href="/?city=zhaoyuan"
+                           data-citypinyin="zhaoyuan">招远</a>
+                    <li><a class="react" gaevent="imt/selectCity/ziyang"
+                           href="/?city=ziyang"
+                           data-citypinyin="ziyang">资阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/zaoyang"
+                           href="/?city=zaoyang"
+                           data-citypinyin="zaoyang">枣阳</a>
+                    <li><a class="react" gaevent="imt/selectCity/zigong"
+                           href="/?city=zigong"
+                           data-citypinyin="zigong">自贡</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhumadian"
+                           href="/?city=zhumadian"
+                           data-citypinyin="zhumadian">驻马店</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhoukou"
+                           href="/?city=zhoukou"
+                           data-citypinyin="zhoukou">周口</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhangjiakou"
+                           href="/?city=zhangjiakou"
+                           data-citypinyin="zhangjiakou">张家口</a>
+                    <li><a class="react" gaevent="imt/selectCity/zhaoqing"
+                           href="/?city=zhaoqing"
+                           data-citypinyin="zhaoqing">肇庆</a>
+                    <li><a class="react" href="/index/changecity/more/Z"
+                           data-more="true" gaevent="imt/selectCity/more">更多&#187;</a>
+                </ul>
+            </div>
+    </div>
+</div>
+    <footer>
+        <div class="footer-bar">
+                <div class="pull-right">
+                    <span>城市:</span>
+                    <space>
+                    </space><a href="http://i.meituan.com/index/changecity/" gaevent="imt/ft/changeCity" class="btn btn-weak footer-citybtn" >廊坊</a>
+
+                </div>
+<a href="https://i.meituan.com/account/login" gaevent="imt/ft/signin" class="btn btn-weak" >登录</a>
+                    <space></space><a href="http://i.meituan.com/account/signup" gaevent="imt/ft/signup" class="btn btn-weak" >注册</a>
+
+        </div>
+        <div class="footer-nav">
+            <ul>
+                <li><a class="react" gaevent="imt/ft/index"
+                       href="/">首页</a>
+            <li><a class="react" gaevent="imt/ft/order"
+                   href="/orders/all">订单</a>
+                <li><a data-pos="footer" class="react" data-com="i2app" gaevent="imt/ft/client"
+                       href="http://i.meituan.com/client/">客户端</a>
+                <li><a class="react" gaevent="imt/ft/pc"
+                       href="http://www.meituan.com?ndr">电脑版</a>
+                <li><a class="react" gaevent="imt/ft/help"
+                       href="http://i.meituan.com/help/">帮助</a>
+            </ul>
+        </div>
+        <div class="footer-links">友情链接：
+            <a gaevent="OutLink|Click|imt/ft/maoyan" target="_blank"
+               href="http://m.maoyan.com/?channel=touch_group">猫眼电影</a>
+        </div>
+        <div class="footer-copyright">
+            <div class="hr"></div>
+            <span class="footer-copyright-text">©2014 美团网 <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证070791号</a></span>
+        </div>
+    </footer>
+    <div class="top-btn" data-com="gotop"><a class="react"><i class="text-icon">⇧</i></a></div>
+
+<div id="meituan_check"><br><br><br></div>
+
+
+<script>
+    MT.LOG_ONLINE = true;
+    MT.LOG_POS = 'core';
+</script>
+<script>
+    var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-43949337-1']);
+    _gaq.push(['_addOrganic', 'm.baidu', 'word']);
+    _gaq.push(['_addOrganic', 'wap.baidu', 'word']);
+    _gaq.push(['_addOrganic', 'Baidu', 'bs']);
+    _gaq.push(['_addOrganic', 'www.soso', 'w']);
+    _gaq.push(['_addOrganic', 'wap.soso', 'key']);
+    _gaq.push(['_addOrganic', 'www.sogou', 'query']);
+    _gaq.push(['_addOrganic', 'wap.sogou', 'keyword']);
+    _gaq.push(['_addOrganic', 'so.com', 'q']);
+    _gaq.push(['_addOrganic', 'so.com', 'pq']);
+    _gaq.push(['_addOrganic', 'youdao', 'q']);
+    _gaq.push(['_addOrganic', 'sm.cn', 'q']);
+    _gaq.push(['_setDomainName', 'meituan.com']);
+        _gaq.push(['_trackPageview']);
+    setTimeout(function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = "async";
+        ga.src = ('https:' == document.location.protocol ? 'https://ms0.meituan.com' : 'http://mc.meituan.net') + '/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    }, 300);
+</script>
+<script src="http://mc.meituan.net/combo/?f=touch/js/count_v2.660aec13.js;" async="async"></script>
+
+<script>
+    var requirejs = {};
+    requirejs.__require = [];
+    var require = function () {
+        requirejs.__require.push(arguments);
+    }
+
+    requirejs.__requirejsConfig = {
+            baseUrl: 'http://ms0.meituan.net/',
+
+            prefix: 'touch/js/amd/',
+
+            revision: {"amd_account/address/edit.js":"b2f80e87","amd_account/address/manageAddr.js":"2bc89f09","amd_account/default.js":"ca7cf048","amd_act/gesture.js":"6d533252","amd_act/page.js":"9a61dc93","amd_act/pageable.js":"9ab9dd7d","amd_basic_v2.js":"28f2a181","amd_buy/info.js":"f774b7a7","amd_cinema.js":"196659f5","amd_city.js":"3e803828","amd_common/album.js":"cc49ccfc","amd_common/banner.js":"49f12d64","amd_common/cookie.js":"54548d4c","amd_common/countdown.js":"b42eb631","amd_common/datepicker.js":"8ee7ad81","amd_common/dropdown.js":"9bd27a78","amd_common/filter.js":"1b8abef6","amd_common/geo.js":"b08218e8","amd_common/gotop.js":"083189e8","amd_common/i2app.js":"a6aa28f2","amd_common/iframeResizer.contentWindow.js":"ad71f2da","amd_common/iframeResizer.js":"5ca60eb0","amd_common/phonecall.js":"bd6784d1","amd_common/share.js":"c7590032","amd_common/smsBtn.js":"3197c2c2","amd_common/stepper.js":"98ccdffd","amd_common/tips.js":"a5815df7","amd_common/toggleClass.js":"53c212d5","amd_common/unveil.js":"e48b1617","amd_count_v2.js":"f466cee7","amd_deal/biz.js":"0fdffad1","amd_deal/detail.js":"dbe923e4","amd_deal/feedback.js":"9b03df32","amd_deal/feedbacklist.js":"569785f1","amd_deal/hotel_booking.js":"97acba87","amd_deal/list.js":"c3dd05cf","amd_deal/search.js":"e7a139a6","amd_event/school.js":"db70ccd0","amd_eventbus.js":"5d612c42","amd_index.js":"be536c0b","amd_iscroll.lite.js":"1029bebf","amd_msg.js":"acefddac","amd_msg_v2.js":"1455c28c","amd_order/applyrefund.js":"efeb2bda","amd_order/check.js":"7043803a","amd_order/orderList.js":"e7c4e8e8","amd_order/selectBank.js":"fb3fe7c3","amd_poi/merchant.js":"cd3b26c7","amd_pop_i2app_v2.js":"9a541607","amd_pop_share.js":"404c6a9c","amd_pop_v2.js":"66f7cd87","amd_truck.js":"605010ea","amd_util/form_validator.js":"2453740e","amd_util/recentItem.js":"de47a70b","amd_util/url.js":"e2aac723","amd_weixintips.js":"c3b7e484","amd_zepto.carousel.js":"ec4e0272","amd_zepto.js":"51bd9ff2","amd_zepto.mjs.js":"4a7bb6c7","amd_zepto.popup.js":"222e8414","amd_zepto.swipe.js":"585b9a82","amd_zepto.unveil.js":"69a8cfda"},
+            combo: {
+                url: 'http://mc.meituan.net/combo/?f=',
+                deps: {"amd_account/address/edit.js":["amd_zepto.js","amd_zepto.mjs.js"],"amd_account/address/manageAddr.js":["amd_zepto.js","amd_zepto.mjs.js","amd_msg.js"],"amd_account/default.js":["amd_zepto.js","amd_zepto.mjs.js"],"amd_act/gesture.js":["amd_zepto.js"],"amd_act/page.js":[],"amd_act/pageable.js":["amd_act/gesture.js","amd_act/page.js","amd_zepto.js"],"amd_basic_v2.js":["amd_count_v2.js"],"amd_buy/info.js":["amd_zepto.js","amd_msg.js","LocalStorage","amd_zepto.mjs.js","amd_util/form_validator.js"],"amd_cinema.js":["amd_zepto.js","amd_common/iframeResizer.js","amd_msg_v2.js"],"amd_city.js":["amd_zepto.js","amd_util/recentItem.js","amd_zepto.mjs.js","amd_common/geo.js"],"amd_common/album.js":["amd_zepto.js","amd_act/page.js","amd_act/pageable.js","amd_act/gesture.js"],"amd_common/banner.js":["amd_zepto.carousel.js"],"amd_common/cookie.js":[],"amd_common/countdown.js":["amd_zepto.js"],"amd_common/datepicker.js":["amd_zepto.js","amd_zepto.mjs.js"],"amd_common/dropdown.js":[],"amd_common/filter.js":["amd_zepto.js","amd_iscroll.lite.js"],"amd_common/geo.js":["amd_common/cookie.js","amd_msg_v2.js"],"amd_common/gotop.js":[],"amd_common/i2app.js":[],"amd_common/iframeResizer.contentWindow.js":[],"amd_common/iframeResizer.js":[],"amd_common/phonecall.js":["amd_zepto.js","amd_msg_v2.js"],"amd_common/share.js":["amd_zepto.js","amd_msg_v2.js"],"amd_common/smsBtn.js":["amd_zepto.js","amd_msg.js"],"amd_common/stepper.js":["amd_zepto.js"],"amd_common/tips.js":["amd_zepto.js"],"amd_common/toggleClass.js":["amd_zepto.js"],"amd_common/unveil.js":["amd_zepto.js","amd_common/cookie.js"],"amd_count_v2.js":[],"amd_deal/biz.js":["amd_zepto.js","amd_zepto.mjs.js"],"amd_deal/detail.js":["amd_zepto.js","amd_msg_v2.js","amd_zepto.mjs.js"],"amd_deal/feedback.js":[],"amd_deal/feedbacklist.js":["amd_zepto.js"],"amd_deal/hotel_booking.js":["amd_zepto.mjs.js","amd_common/tips.js","amd_zepto.js","amd_deal/list.js","amd_common/datepicker.js","amd_msg_v2.js","amd_common/geo.js","amd_zepto.unveil.js"],"amd_deal/list.js":["amd_zepto.js","amd_util/url.js","amd_common/filter.js","amd_common/cookie.js","amd_common/geo.js","amd_common/banner.js","amd_msg_v2.js","amd_zepto.mjs.js"],"amd_deal/search.js":["amd_util/recentItem.js","amd_zepto.mjs.js","amd_common/tips.js","amd_zepto.js","amd_deal/list.js","LocalStorage"],"amd_event/school.js":["amd_zepto.mjs.js","amd_common/tips.js","amd_zepto.js","amd_deal/list.js","amd_msg_v2.js","amd_common/geo.js","amd_zepto.unveil.js"],"amd_eventbus.js":[],"amd_index.js":["amd_zepto.js","amd_common/cookie.js","amd_zepto.mjs.js","amd_common/geo.js","amd_common/banner.js"],"amd_iscroll.lite.js":[],"amd_msg.js":["amd_zepto.js"],"amd_msg_v2.js":["amd_zepto.js"],"amd_order/applyrefund.js":["amd_zepto.js","amd_msg.js"],"amd_order/check.js":["amd_zepto.js","amd_msg_v2.js"],"amd_order/orderList.js":["amd_zepto.js","amd_zepto.mjs.js","amd_common/tips.js","amd_msg_v2.js"],"amd_order/selectBank.js":["amd_zepto.js","amd_msg_v2.js"],"amd_poi/merchant.js":["amd_zepto.js","amd_zepto.mjs.js","amd_msg_v2.js"],"amd_pop_i2app_v2.js":["amd_zepto.js","amd_pop_v2.js"],"amd_pop_share.js":["amd_zepto.js","amd_pop_v2.js"],"amd_pop_v2.js":["amd_zepto.js"],"amd_truck.js":[],"amd_util/form_validator.js":["amd_zepto.js"],"amd_util/recentItem.js":["LocalStorage"],"amd_util/url.js":[],"amd_weixintips.js":[],"amd_zepto.carousel.js":["amd_zepto.js"],"amd_zepto.js":[],"amd_zepto.mjs.js":["amd_zepto.js","amd_common/cookie.js","LocalStorage"],"amd_zepto.popup.js":["amd_zepto.js"],"amd_zepto.swipe.js":[],"amd_zepto.unveil.js":["amd_zepto.js"]}
+            }
+    }
+</script>
+<script src="http://ms0.meituan.net/touch/js/amd/amd_truck.605010ea.js" async="async" id="truckjsnode"></script>
+<script>
+    require(['amd_city.js'], function (page) {
+        page.init({
+            
+            cityId: 106
+        })
+    });
+</script>
+<script>
+    //页面通用js代码
+    (function () {
+        //修复active失效的问题
+        document.body.addEventListener('touchstart', function () {
+        });
+        //组件自动加载
+        window.__setupCom = function (root) {
+            var root = root || document.body;
+            var doms = root.querySelectorAll("[data-com]");
+            var cc = [];
+            var deps = [];
+            for (var i = 0; i < doms.length; i++) {
+                var comName = "amd_common/" + doms[i].attributes["data-com"].value + ".js";
+                var index = deps.indexOf(comName);
+                if (index == -1) {
+                    index = deps.length;
+                    deps.push(comName);
+                }
+                cc.push({name: name, dom: doms[i], index: index});
+            }
+            require(deps, function () {
+                for (var i = 0; i < cc.length; i++) {
+                    cc[i].dom.coms = cc[i].dom.coms || [];
+                    cc[i].dom.coms[cc[i].name] = new arguments[cc[i].index](cc[i].dom);
+                }
+            });
+        }
+        if ("require" in window) {
+            __setupCom(document)
+
+                } else {
+            var script = document.createElement('script');
+                script.src = 'http://ms0.meituan.net/touch/js/amd/amd_common/i2app.a6aa28f2.js';
+            script.async = 'async';
+            document.body.appendChild(script);
+        }
+
+        //返回顶部按钮
+        var top = document.getElementById('top_btn');
+        if (top) {
+            top.onclick = function () {
+                window.scrollTo(0, 0);
+            }
+        }
+        //导航条
+        var nav = document.getElementsByClassName('nav-dropdown-btn')[0];
+        var dropdown = document.getElementsByClassName('nav-dropdown')[0];
+        if (dropdown) {
+            nav.addEventListener('click', function (e) {
+                dropdown.classList.toggle('active');
+                e.stopPropagation();
+            });
+            document.body.addEventListener('click', function () {
+                dropdown.classList.remove('active');
+            });
+        }
+    })();
+    (function (a, b, c) {
+        if (c in b && b[c]) {
+            var d, e = a.location, f = /^(a|html)$/i, chref;
+            a.addEventListener("click", function (a) {
+                d = a.target;
+                while (!f.test(d.nodeName))d = d.parentNode;
+                "href"in d && (chref = d.href).replace(e.href, "").indexOf("#") && chref && (!/^[a-z\+\.\-]+:/i.test(chref) || chref.indexOf(e.protocol + "//" + e.host) === 0) && (a.preventDefault(), e.href = d.href)
+            }, !1)
+        }
+    })(document, window.navigator, "standalone");
+</script>
+</body>
+</html>

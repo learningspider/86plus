@@ -31,6 +31,7 @@ urlpatterns = patterns('',
     url(r'^productfushi/', 'plus86.views.productfushi'),  #服饰界面
     url(r'^gongyi/', 'plus86.views.gongyi'),  #公益界面
     url(r'^yincang/', 'plus86.views.yincang'),  #隐藏测试
+    url(r'^changecity/', 'plus86.views.changecity'),  #改变城市
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),
     url(r'^checkweixininfo/', 'plus86.views.getweixininfo'),
