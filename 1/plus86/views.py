@@ -571,3 +571,7 @@ def gongyi(request):
 #隐藏测试
 def yincang(request):
     return render_to_response('yincang.html')
+
+#改变城市
+def yincang(request):
+    return render_to_response('changecity.html')
