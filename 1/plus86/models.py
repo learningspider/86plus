@@ -14,6 +14,13 @@ class memberCard(models.Model):
 class user(models.Model):
     username = models.CharField(max_length=60,primary_key=True)
     verify = models.CharField(max_length=60)
+
+#服饰分类模块
+class clothes(models.Model):
+    clname=models.CharField(max_length=60)
+    clurl=models.CharField(max_length=60)
+    clcity=models.CharField(max_length=60)
+    tpurl=models.CharField(max_length=60)
     
 class UserProfile(models.Model):
     user = models.OneToOneField(User)

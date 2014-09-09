@@ -565,6 +565,8 @@ def productfushi(request):
     city=request.GET.get('city', 'beijing')
     if city=='beijing':
         city='北京'
+    elif city=='wuhan':
+        city='武汉'
     return render_to_response('productfushi.html',{'city':city})
 
 #公益界面
