@@ -562,7 +562,8 @@ def guaguaka(request):
     return render_to_response('guaguaka.html')
 #商品界面
 def productfushi(request):
-    return render_to_response('productfushi.html')
+    city=request.GET.get('city', 'beijing')
+    return render_to_response('productfushi.html',{'city':city})
 
 #公益界面
 def gongyi(request):
