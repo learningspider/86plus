@@ -563,6 +563,8 @@ def guaguaka(request):
 #商品界面
 def productfushi(request):
     city=request.GET.get('city', 'beijing')
+    if city=='beijing':
+        city='北京'
     return render_to_response('productfushi.html',{'city':city})
 
 #公益界面
