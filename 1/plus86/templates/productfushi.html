@@ -19,7 +19,11 @@ var cartNum = "" || "0" || 0;
 $(function(){
 
 $("#xiayiye").click(function(){
-  $("body").prepend("<div>123</div>");
+  $(this).remove();
+  $("body").append("<div>123</div>");
+  $("body").append("<div class="anniu" align="center">
+<button id="xiayiye">下一页</button>
+</div>");
   });
 })
 </script>
