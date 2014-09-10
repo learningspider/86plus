@@ -19,9 +19,7 @@ var cartNum = "" || "0" || 0;
 $(document).ready(function(){
 
 $("#xiayiye").click(function(){
-  $("#xiayiye").after("<div class="ddd">
-        123
-</div>");
+  $(this).prepend("<div class="ddd">123</div>");
   });
   
   
