@@ -55,7 +55,12 @@ $("#xiayiye").click(function(){
 <div id="search-2013" >
 
 			<div class="i-search ld" style='position:relative'>
- <div class="changecity" style='font-size:18px; position:absolute; left:40px; top:5px;width:50px; height:auto'><a href="/changecity/"> {{city[0]}}</a></div>           
+ <div class="changecity" style='font-size:18px; position:absolute; left:40px; top:5px;width:50px; height:auto'><a href="/changecity/">
+{% for item in city %}
+    {% if forloop.first %}
+        {{item.clcity}}
+     {% endif %}    
+{% endfor %}</a></div>           
 				<ul id="shelper" class="hide">
 				</ul>
 				<div class="form" align="right">
