@@ -561,6 +561,19 @@ def welcome(request):
 #刮刮卡界面
 def guaguaka(request):
     return render_to_response('guaguaka.html')
+#服饰下一页
+def guaguaka(request):
+    city=request.GET.get('city', 'beijing')
+    cityshiji=''
+    if city=='beijing':
+        cityshiji='北京'
+    elif city=='wuhan':
+        cityshiji='武汉'
+        
+    productFushi=clothes.objects.filter(clcity=city).order_by("-id")
+    #items =chain(city, productFushi)
+    return render_to_response('xiayiye.html',locals())
+
 #商品界面
 def productfushi(request):
     city=request.GET.get('city', 'beijing')
