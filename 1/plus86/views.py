@@ -569,7 +569,7 @@ def productfushi(request):
     elif city=='wuhan':
         cityshiji='武汉'
         
-    productFushi=clothes.objects.filter(cicity=cityshiji).order_by("-id")
+    productFushi=clothes.objects.filter(clcity=cityshiji).order_by("-id")
     return render_to_response('productfushi.html',{'city':productFushi})
 
 #公益界面
