@@ -572,7 +572,7 @@ def productfushi(request):
         
     productFushi=clothes.objects.filter(clcity=city).order_by("-id")
     #items =chain(city, productFushi)
-    results={}
+    results=[]
     results.append({city:city})
     results.append(productFushi)
     return render_to_response('productfushi.html',{'city':results})
