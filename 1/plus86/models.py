@@ -23,6 +23,9 @@ class clothes(models.Model):
     clcity=models.CharField(max_length=60)
     tpurl=models.CharField(max_length=60)
     
+    def __unicode__(self):
+        return self.clname
+    
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     phonenumber = models.CharField(max_length=11,unique=True)
