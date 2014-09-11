@@ -7,6 +7,7 @@ import sys
 reload(sys) 
 sys.setdefaultencoding('utf8')
 from django.http import HttpResponse,HttpResponseRedirect
+from itertools import chain
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext, Template
 from django.utils.encoding import smart_str, smart_unicode
