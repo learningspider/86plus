@@ -564,7 +564,6 @@ def guaguaka(request):
 #服饰下一页
 def xiayiye(request):
     number=request.session['num']
-    number=number+1
     city=request.session['city']
     productFushi=clothes.objects.filter(clcity=city).order_by("-id")[0:number]
     number=number+1
