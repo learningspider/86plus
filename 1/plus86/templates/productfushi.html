@@ -56,14 +56,7 @@ $("#xiayiye").click(function(){
 
 			<div class="i-search ld" style='position:relative'>
  <div class="changecity" style='font-size:18px; position:absolute; left:40px; top:5px;width:50px; height:auto'><a href="/changecity/">
-{% for item in city %}
-    {% if forloop.first %}
-        {% qcity=item.clcity %}
-    	{% if qcity=='beijing' %}
-            {% qcity='北京' %}
-        {{qcity}}
-     {% endif %}    
-{% endfor %}</a></div>           
+{{cityshiji}}</a></div>           
 				<ul id="shelper" class="hide">
 				</ul>
 				<div class="form" align="right">
@@ -143,7 +136,7 @@ $("#xiayiye").click(function(){
 <br>
 </div>
   <div style="border: 1px solid green;margin-top: 20px;padding: 10px;">
-    {% for item in city %}
+    {% for item in productFushi %}
         clname:{{item.clname}}-->clurl:{{item.clurl}}</br>
     {% endfor %}
     </div>
