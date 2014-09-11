@@ -73,6 +73,11 @@ $("#xiayiye").click(function(){
 <article class="rec-pro">
     <section class="pro-list-1" id=divinsert>
         <ul> 
+        {% for item in city %}
+<ul>
+  <li>{{ item }}</li>
+</ul>
+{% endfor %}
             <!-- 组合套餐商品列表 -->
             
             
