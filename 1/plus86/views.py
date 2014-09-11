@@ -564,6 +564,7 @@ def guaguaka(request):
 #服饰下一页
 def xiayiye(request):
     city=request.GET.get('city', 'beijing')
+    num=request.GET.get('num', 'nu')
     cityshiji=''
     if city=='beijing':
         cityshiji='北京'
