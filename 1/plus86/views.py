@@ -567,7 +567,7 @@ def xiayiye(request):
     number=number+0
     city=request.session['city']
     productFushi=clothes.objects.filter(clcity=city).order_by("-id")[0:number]
-    number=number+1
+    request.session['num']=request.session['num']+1
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
 
