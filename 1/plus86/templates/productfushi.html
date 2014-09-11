@@ -72,12 +72,7 @@ $("#xiayiye").click(function(){
 <!-- 21030306-推荐商品-start -->
 <article class="rec-pro">
     <section class="pro-list-1" id=divinsert>
-        <ul> 
-        {% for item in city %}
-<ul>
-  <li>{{ item }}</li>
-</ul>
-{% endfor %}
+        
             <!-- 组合套餐商品列表 -->
             
             
@@ -139,6 +134,11 @@ $("#xiayiye").click(function(){
 <button id="xiayiye">下一页</button>
 <br>
 </div>
+  <div style="border: 1px solid green;margin-top: 20px;padding: 10px;">
+    {% for item in city %}
+        clname:{{item.clname}}-->clurl:{{item.clurl}}</br>
+    {% endfor %}
+    </div>
 
 
 
