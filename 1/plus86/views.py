@@ -20,7 +20,7 @@ import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
-from plus86.models import memberCard,UserProfile
+from plus86.models import memberCard,UserProfile,clothes
 from plus86.models import user as userlogin6
 
 
@@ -563,11 +563,14 @@ def guaguaka(request):
 #商品界面
 def productfushi(request):
     city=request.GET.get('city', 'beijing')
+    cityshiji=''
     if city=='beijing':
-        city='北京'
+        cityshiji='北京'
     elif city=='wuhan':
-        city='武汉'
-    return render_to_response('productfushi.html',{'city':city})
+        cityshiji='武汉'
+        
+    productFushi=clothes.objects.filter(cicity=cityshiji).order_by("-id")
+    return render_to_response('productfushi.html',{'city':productFushi})
 
 #公益界面
 def gongyi(request):
