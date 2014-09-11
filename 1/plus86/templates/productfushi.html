@@ -20,8 +20,8 @@ $(function(){
 
 $("#xiayiye").click(function(){
   var num=1;
-  $("#divinsert").append("<div class='pro-area1' id='divget'></div>");
-  $("#divget").load("/xiayiye/?num="+num);
+  $("#divinsert").append("<div class='pro-area1' id='divget'+num></div>");
+  $("#divget"+num).load("/xiayiye/?num="+num);
   num++;
   });
 })
