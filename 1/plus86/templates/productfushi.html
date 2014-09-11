@@ -21,7 +21,6 @@ $(function(){
 $("#xiayiye").click(function(){
   var num=1;
   $("#divinsert").append("<div class='pro-area1'></div>");
-  $.get("/xiayiye/",{num:$num});
   $(".pro-area1:last").load("/xiayiye/");
   
   num++;
