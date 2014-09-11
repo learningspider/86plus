@@ -563,7 +563,8 @@ def guaguaka(request):
     return render_to_response('guaguaka.html')
 #服饰下一页
 def xiayiye(request):
-    num=request.session['num']+1
+    number=request.session['num']
+    number=2
     city=request.POST.get('city', 'beijing')
     #num=request.POST.get('number', 'nu')
     cityshiji=''
