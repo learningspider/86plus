@@ -21,7 +21,9 @@ $(function(){
 $("#xiayiye").click(function(){
   var num=1;
   $("#divinsert").append("<div class='pro-area1'></div>");
-  $(".pro-area1:last").load("/xiayiye/?num="+num);
+  //$(".pro-area1:last").load("/xiayiye/?num="+num);
+  var str=($.ajax({url:"/xiayiye",async:false,data:"num="+num})).responseText;
+  $(".pro-area1:last").html(str);
   num++;
   });
 })
