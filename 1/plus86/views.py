@@ -572,7 +572,7 @@ def productfushi(request):
         
     productFushi=clothes.objects.filter(clcity=city).order_by("-id")
     #items =chain(city, productFushi)
-    return render_to_response('productfushi.html',{'city':productFushi})
+    return render_to_response('productfushi.html',locals())
 
 #公益界面
 def gongyi(request):
