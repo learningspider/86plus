@@ -565,14 +565,7 @@ def guaguaka(request):
 def xiayiye(request):
     number=request.session['num']
     number=number+1
-    city=request.POST.get('city', 'beijing')
-    #num=request.POST.get('number', 'nu')
-    cityshiji=''
-    if city=='beijing':
-        cityshiji='北京'
-    elif city=='wuhan':
-        cityshiji='武汉'
-        
+    city=request.session['city']
     productFushi=clothes.objects.filter(clcity=city).order_by("-id")
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
@@ -581,6 +574,7 @@ def xiayiye(request):
 def productfushi(request):
     request.session['num'] = 1
     city=request.GET.get('city', 'beijing')
+    request.session['city'] = city
     cityshiji=''
     if city=='beijing':
         cityshiji='北京'
