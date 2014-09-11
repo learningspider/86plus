@@ -562,7 +562,7 @@ def welcome(request):
 def guaguaka(request):
     return render_to_response('guaguaka.html')
 #服饰下一页
-def guaguaka(request):
+def xiayiye(request):
     city=request.GET.get('city', 'beijing')
     cityshiji=''
     if city=='beijing':
