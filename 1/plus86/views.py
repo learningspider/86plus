@@ -573,9 +573,16 @@ def xiayiye(request):
 
 #公益界面
 def fushisearch(request):
+    request.session['num'] = 1
     fushisearch = request.POST.get( 'fushisearch', None )
     city=request.session['city']
-    return render_to_response('fushisearch.html')
+    cityshiji=''
+    if city=='beijing':
+        cityshiji='北京'
+    elif city=='wuhan':
+        cityshiji='武汉'
+    productFushi=clothes.objects.filter(clcity=city,clname=fushisearch).order_by("-id")[0:number]
+    return render_to_response('fushisearch.html',locals())
 
 #商品界面
 def productfushi(request):
