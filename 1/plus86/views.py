@@ -571,6 +571,12 @@ def xiayiye(request):
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
 
+#公益界面
+def fushisearch(request):
+    fushisearch = request.POST.get( 'fushisearch', None )
+    city=request.session['city']
+    return render_to_response('fushisearch.html')
+
 #商品界面
 def productfushi(request):
     request.session['num'] = 1
