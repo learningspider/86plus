@@ -582,7 +582,7 @@ def fushisearch(request):
         cityshiji='北京'
     elif city=='wuhan':
         cityshiji='武汉'
-    productFushi=clothes.objects.filter(clcity=city,clname=fushisearch).order_by("-id")[0:10]
+    productFushi=clothes.objects.filter(clcity=city,clname__contains=fushisearch).order_by("-id")[0:10]
     return render_to_response('fushisearch.html',locals())
 
 #商品界面
