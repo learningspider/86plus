@@ -572,6 +572,7 @@ def xiayiye(request):
     return render_to_response('xiayiye.html',locals())
 
 #公益界面
+@csrf_exempt
 def fushisearch(request):
     request.session['num'] = 1
     fushisearch = request.POST.get( 'fushisearch', None )
