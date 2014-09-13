@@ -33,6 +33,7 @@ urlpatterns = patterns('',
     url(r'^yincang/', 'plus86.views.yincang'),  #隐藏测试
     url(r'^changecity/', 'plus86.views.changecity'),  #改变城市
     url(r'^xiayiye/', 'plus86.views.xiayiye'),  #下一页
+    url(r'^fushisearch/', 'plus86.views.fushisearch'),  #服饰搜索
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),
     url(r'^checkweixininfo/', 'plus86.views.getweixininfo'),
