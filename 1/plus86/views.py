@@ -571,6 +571,16 @@ def xiayiye(request):
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
 
+#服饰下一页search
+def xiayiyesearch(request):
+    number=request.session['num']
+    number=number+0
+    city=request.session['city']
+    productFushi=clothes.objects.filter(clcity=city,clname__contains=fushisearch).order_by("-id")[0:number]
+    request.session['num']=request.session['num']+1
+    #items =chain(city, productFushi)
+    return render_to_response('xiayiye.html',locals())
+
 #公益界面
 @csrf_exempt
 def fushisearch(request):

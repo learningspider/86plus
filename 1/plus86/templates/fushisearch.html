@@ -1,5 +1,16 @@
 {% extends "productfushi.html" %}
 
+{% block script %}
+<script type="text/javascript">
+$(function(){
+
+$("#xiayiye").click(function(){
+  $("#divinsert").append("<div class='pro-area1'></div>");
+  $(".pro-area1:last").load("/xiayiyesearch/");
+  });
+})
+</script>
+{% endblock %}
 
 {% block content %}
 <div>
@@ -22,6 +33,7 @@
 </div>
  <br>
 {% endblock %}
+
 
 
 
