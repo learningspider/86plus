@@ -596,7 +596,7 @@ def fushisearch(request):
     return render_to_response('fushisearch.html',locals())
 
 #城市选择
-def citycity(request,city):
+def citycity(city):
     if city=='beijing':
         cityshiji='北京'
     elif city=='wuhan':
