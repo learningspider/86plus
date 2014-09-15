@@ -28,12 +28,12 @@ urlpatterns = patterns('',
     url(r'^userloginaction/', 'plus86.views.loginAction'),  #用户登录动作
     url(r'^welcome/', 'plus86.views.welcome'),  #欢迎界面
     url(r'^guaguaka/', 'plus86.views.guaguaka'),  #刮刮卡界面
-    url(r'^productfushi/', 'plus86.views.productfushi'),  #服饰界面
+    url(r'^productfushi/[a-z]{1,10}/, 'plus86.views.productfushi'),  #服饰界面
     url(r'^gongyi/', 'plus86.views.gongyi'),  #公益界面
     url(r'^yincang/', 'plus86.views.yincang'),  #隐藏测试
     url(r'^changecity/', 'plus86.views.changecity'),  #改变城市
     url(r'^xiayiye/', 'plus86.views.xiayiye'),  #下一页
-    url(r'^xiayiyesearcg/', 'plus86.views.xiayiyesearch'),  #下一页search
+    url(r'^xiayiyesearch/', 'plus86.views.xiayiyesearch'),  #下一页search
     url(r'^fushisearch/', 'plus86.views.fushisearch'),  #服饰搜索
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),

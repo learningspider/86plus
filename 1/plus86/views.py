@@ -604,9 +604,11 @@ def citycity(city):
     return cityshiji
 
 #商品界面
-def productfushi(request):
+def productfushi(request,city):
     request.session['num'] = 1
-    city=request.GET.get('city', 'beijing')
+    if city=='':
+        city=beijing
+    #city=request.GET.get('city', 'beijing')
     request.session['city'] = city
     cityshiji=citycity(city)
     
