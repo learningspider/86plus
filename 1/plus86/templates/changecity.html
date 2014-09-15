@@ -34,9 +34,9 @@
 <script type="text/javascript">
 $(function(){
 for(i=1;i<23;i++){
-  $("#a'+i+'").click(function(){
-      $("body").animate({scrollTop:$("#b'+i+'").offset().top},0);
-      // 返回false可以避免在原链接后加
+  $("#a"+i).click(function(){
+      $("body").animate({scrollTop:$("#b"+i).offset().top},0);
+      return false;// 返回false可以避免在原链接后加
     });
 	}
 /*$('#a1').click(function(){
