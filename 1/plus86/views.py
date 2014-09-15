@@ -601,6 +601,8 @@ def citycity(city):
         cityshiji='北京'
     elif city=='wuhan':
         cityshiji='武汉'
+    else:
+        cityshiji='稍等'
     return cityshiji
 
 #商品界面
