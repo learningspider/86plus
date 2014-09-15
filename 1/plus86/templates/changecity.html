@@ -43,7 +43,8 @@ for(i=1;i<23;i++){
 $('#a'+i).click(function(){
 $("body").animate({scrollTop:$('#b'+i).offset().top},0);
 return false;// 返回false可以避免在原链接后加上#
-});}
+});
+}
 })
 </script>     
 <script>
@@ -255,9 +256,9 @@ return false;// 返回false可以避免在原链接后加上#
             <li><a class="react" id="a21">Y</a>
             <li><a class="react" id="a22">Z</a>
         </ul>
-            <div class="abc">
+            <div class="abc" id="b1">
                 <ul class="table">
-                    <h4 id="b1">A</h4>
+                    <h4 id="A">A</h4>
                     <li><a class="react" gaevent="imt/selectCity/anshan"
                            href="/productfushi/anshan/2/"
                            data-citypinyin="anshan">鞍山</a>
