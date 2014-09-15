@@ -608,9 +608,9 @@ def productfushi(request,city,offsize):
     request.session['num'] = 1
     if city=='':
         city=beijing
-    if offsize==1:
+    if offsize=='1':
         productFushi=clothes.objects.filter(clcity=city).order_by("-id")
-    elif offsize==2:
+    elif offsize=='2':
         productFushi=clothes.objects.filter(clcity=city).order_by("-id")
     else:
         return render_to_response('404_9.html')
