@@ -30,7 +30,56 @@
       href="http://ms0.meituan.net/touch/img/startup/apple-touch-startup-image-640x920.png"
       media="(device-height:480px)">
       
-      
+<script>
+    var MT = MT || {};
+    MT.pageData = {pid: '100002', pc: '', sid: 'mobile-touch12.lf.sankuai.com', st:1410783070384, cip: '114.247.188.63', setPC: function (v) {
+        v = v || '';
+        if (Object.prototype.toString.call(v) == '[object Object]') {
+            var a = [];
+            for (i in v) {
+                a.push(i + '=' + v[i])
+            }
+            this.pc = a.join('&')
+        } else {
+            this.pc = v
+        }
+    }};
+    MT.TimeTracker = {rt:1410783070384, st: Date.now()};
+    window.addEventListener('load', function () {
+        MT.TimeTracker.lt = Date.now()
+    });
+    document.addEventListener('DOMContentLoaded', function (e) {
+        MT.TimeTracker.dt = Date.now()
+    });
+    document.addEventListener('DOMContentLoaded', function (e) {
+        var _el = document.getElementById('meituan_check'), _img = window['_' + Date.now()] = new Image(), log = function (c, h) {
+            var d = {ip: MT.pageData.cip, ua: window.navigator.userAgent, evs: [
+                {pid: MT.pageData.pid, sid: MT.pageData.sid, nm: 'ERROR', cate: c, url: encodeURIComponent(location.href)}
+            ]};
+            if (h) {
+                d.evs[0].height = h
+            }
+            ;
+            console.log(d);
+            _img.src = 'http://api.mobile.meituan.com/data/collect.json?type=i_stat&content=' + JSON.stringify(d) + '&t=' + Date.now()
+        };
+        if (!_el) {
+            log('incomplete', document.body.offsetHeight)
+        } else if (_el.offsetTop < 100) {
+            log('pageheight', document.body.offsetHeight)
+        } else if (_el.offsetHeight > 1) {
+            log('cdn', _el.offsetHeight)
+        }
+    });
+    MT.log = {_logs: [], send: function (t, v, s) {
+        this._logs.push({type: t, value: v, sampling: s});
+    }}
+    var requirejs = {};
+    requirejs.__require = [];
+    var require = function () {
+        requirejs.__require.push(arguments);
+    }
+</script>     
       
 <link href="/site_media/css/eve.74c7a686.css" rel="stylesheet"/>
 <!--[if IE]>
