@@ -181,7 +181,7 @@ def creatmenu(request):
             {
                "type":"view",
                "name":"服饰聚焦",
-               "url":"http://86plus.sinaapp.com/productfushi/"
+               "url":"http://86plus.sinaapp.com/productfushi/beijing/"
             },
             {
                "type":"view",
