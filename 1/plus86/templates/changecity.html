@@ -29,7 +29,14 @@
 <link rel="apple-touch-startup-image"
       href="http://ms0.meituan.net/touch/img/startup/apple-touch-startup-image-640x920.png"
       media="(device-height:480px)">
-      
+<script type="text/javascript" src="/site_media/js/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript">
+$('#a1').click(function(){
+$body.animate({scrollTop: $('#A').offset().top}, 1000);
+return false;// 返回false可以避免在原链接后加上#
+});
+</script>     
 <script>
 /*
     var MT = MT || {};
@@ -216,7 +223,7 @@
 
     <div class="box nopadding">
         <ul class="charlist">
-            <li><a class="react">A</a>
+            <li><a class="react id='a1'">A</a>
             <li><a class="react">B</a>
             <li><a class="react">C</a>
             <li><a class="react">D</a>
