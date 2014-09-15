@@ -32,10 +32,12 @@
 <script type="text/javascript" src="/site_media/js/jquery-1.11.1.min.js"></script>
 
 <script type="text/javascript">
+$(function(){
 $('#a1').click(function(){
 $body.animate({scrollTop: $('#A').offset().top}, 1000);
 return false;// 返回false可以避免在原链接后加上#
 });
+})
 </script>     
 <script>
 /*
