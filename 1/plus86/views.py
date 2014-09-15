@@ -604,16 +604,19 @@ def citycity(city):
     return cityshiji
 
 #商品界面
-def productfushi(request,city):
+def productfushi(request,city,offsize):
     request.session['num'] = 1
     if city=='':
         city=beijing
+    if offsize=1:
+        productFushi=clothes.objects.filter(clcity=city).order_by("-id")
+    elif offsize=2:
+        productFushi=clothes.objects.filter(clcity=city).order_by("-id")
+    else:
+        return render_to_response('404_9.html')
     #city=request.GET.get('city', 'beijing')
     request.session['city'] = city
     cityshiji=citycity(city)
-    
-        
-    productFushi=clothes.objects.filter(clcity=city).order_by("-id")
     #items =chain(city, productFushi)
     return render_to_response('productfushi.html',locals())
 
