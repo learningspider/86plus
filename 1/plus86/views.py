@@ -601,8 +601,28 @@ def citycity(city):
         cityshiji='北京'
     elif city=='wuhan':
         cityshiji='武汉'
+    elif city=='shanghai':
+        cityshiji='上海'
+    elif city=='chongqing':
+        cityshiji='重庆'
+    elif city=='chengdu':
+        cityshiji='成都'
+    elif city=='shenzhen':
+        cityshiji='深圳'
+    elif city=='nanjing':
+        cityshiji='南京'
+    elif city=='tianjin':
+        cityshiji='天津'
+    elif city=='hangzhou':
+        cityshiji='杭州'
+    elif city=='guangzhou':
+        cityshiji='广州'
+    elif city=='xian':
+        cityshiji='西安'
+    elif city=='wuhan':
+        cityshiji='武汉'
     else:
-        cityshiji='稍等'
+        cityshiji='暂无'
     return cityshiji
 
 #商品界面
@@ -611,9 +631,9 @@ def productfushi(request,city,offsize):
     if city=='':
         city=beijing
     if offsize=='1':
-        productFushi=clothes.objects.filter(clcity=city).order_by("-id")
+        productFushi=clothes.objects.filter(clcity=city).order_by("-id")[0:20]
     elif offsize=='2':
-        productFushi=clothes.objects.filter(clcity=city).order_by("-id")
+        productFushi=clothes.objects.filter(clshi=city).order_by("-id")[0:20]
     else:
         return render_to_response('404_9.html')
     #city=request.GET.get('city', 'beijing')
