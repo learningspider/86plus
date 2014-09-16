@@ -33,7 +33,7 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	var top = document.getElementById('top_btn');
+	var top = document.getElementById('dingbu');
         if (top) {
             top.onclick = function () {
                 window.scrollTo(0, 0);
@@ -96,7 +96,18 @@ $("body").animate({scrollTop:$('#b'+id).offset().top},0);
         color: #666;
     }
 	
-	.top-btn {
+	#dingbu {
+background-color:#096;
+z-index:999;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+_position:absolute;
+_top: expression_r(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);
+overflow:visible;
+}
+	/*.top-btn {
 		display::block;
 position: fixed;
 right: .3rem;
@@ -110,7 +121,7 @@ border-radius: 50%;
 color: #fff;
 overflow: hidden;
 text-align: center;
-font-size: .5rem;}
+font-size: .5rem;}*/
 </style>
 
 
@@ -1841,7 +1852,7 @@ font-size: .5rem;}
             <span class="footer-copyright-text">©2014 美团网 <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证070791号</a></span>
         </div>
     </footer>
-    <div class="top-btn" data-com="gotop">aaa<a class="react"><i class="text-icon">⇧</i></a></div>
+    <div class="top-btn"  id="dingbu"  data-com="gotop">aaa<a class="react"><i class="text-icon">⇧</i></a></div>
 
 <div id="meituan_check"><br><br><br></div>
 
