@@ -565,8 +565,10 @@ def guaguaka(request):
 def xiayiye(request):
     number=request.session['num']
     number=number+0
+    num1=number*20
+    num=number*20+20
     city=request.session['city']
-    productFushi=clothes.objects.filter(clcity=city).order_by("-id")[0:number]
+    productFushi=clothes.objects.filter(clcity=city).order_by("-id")[num1:num]
     request.session['num']=request.session['num']+1
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
@@ -574,9 +576,10 @@ def xiayiye(request):
 #服饰下一页search
 def xiayiyesearch(request):
     number=request.session['num']
-    number=number+0
+    number=number+0num1=number*20
+    num=number*20+20
     city=request.session['city']
-    productFushi=clothes.objects.filter(clcity=city,clname__contains=fushisearch).order_by("-id")[0:number]
+    productFushi=clothes.objects.filter(clcity=city,clname__contains=fushisearch).order_by("-id")[num1:num]
     request.session['num']=request.session['num']+1
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
