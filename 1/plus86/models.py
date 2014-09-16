@@ -21,7 +21,10 @@ class clothes(models.Model):
     clname=models.CharField(max_length=60)
     clurl=models.CharField(max_length=60)
     clcity=models.CharField(max_length=60)
+    clshi=models.CharField(max_length=60)
     tpurl=models.CharField(max_length=60)
+    clinfo=models.TextField()
+    
     
     def __unicode__(self):
         return self.clname
