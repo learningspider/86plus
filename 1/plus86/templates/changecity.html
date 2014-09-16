@@ -33,6 +33,12 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+	var top = document.getElementById('top_btn');
+        if (top) {
+            top.onclick = function () {
+                window.scrollTo(0, 0);
+            }
+        }
  $(".react").each(
  function ()
 {
@@ -89,6 +95,21 @@ $("body").animate({scrollTop:$('#b'+id).offset().top},0);
     .city-name {
         color: #666;
     }
+	
+	.top-btn {
+position: fixed;
+right: .3rem;
+bottom: 1.5rem;
+width: .86rem;
+height: .86rem;
+line-height: .86rem;
+background: #2bb2a3;
+z-index: 130;
+border-radius: 50%;
+color: #fff;
+overflow: hidden;
+text-align: center;
+font-size: .5rem;}
 </style>
 
 
