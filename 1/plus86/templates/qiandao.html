@@ -11,7 +11,11 @@
     <script type="text/javascript" src='/site_media/js/verify.js'></script>
     <script type="text/javascript" src="/site_media/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src='/site_media/js/clndr.js'></script>
-    
+    <script type="text/javascript">
+	$(function(){
+  $('#calendar').clndr();
+  })
+  </script>>
     <style>
       abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, figcaption, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, small, time, video {
         display:block;
@@ -19,9 +23,7 @@
     </style>
   </head>
   <body id="" class="">
-  <script type="text/javascript">
-  $('#calendar').clndr();
-  </script>>
+  
     <div id="loading" style="display: none; ">
       <div class="bk"></div>
       <div class="cont">
@@ -69,5 +71,28 @@
 </form> 
       </div>
     </div>
+    <div class="clndr-grid">
+  <div class="days-of-the-week clearfix">
+    <% _.each(daysOfTheWeek, function(day) { %>
+      <div class="header-day"><%= day %></div>
+    <% }); %>
+  </div>
+  <div class="days clearfix">
+    <% _.each(days, function(day) { %>
+      <div class="<%= day.classes %>" id="<%= day.id %>">
+        <span class="day-number"><%= day.day %></span>
+      </div>
+    <% }); %>
+  </div>
+</div>
+<div class="event-listing">
+  <div class="event-listing-title">EVENTS THIS MONTH</div>
+  <% _.each(eventsThisMonth, function(event) { %>
+      <div class="event-item">
+        <div class="event-item-name"><%= event.name %></div>
+        <div class="event-item-location"><%= event.location %></div>
+      </div>
+    <% }); %>
+</div>
   </body>
 </html>
