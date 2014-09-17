@@ -657,3 +657,6 @@ def yincang(request):
 #改变城市
 def changecity(request):
     return render_to_response('changecity.html')
+#日历签到
+def qiandao(request):
+    return render_to_response('qiandao.html')
