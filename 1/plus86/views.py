@@ -673,3 +673,7 @@ def gonggaodetail(request,offsize):
     except ValueError:
         raise Http404()
     return render_to_response('gonggaodetail.html',locals())
+
+#活动
+def huodong(request):
+    return render_to_response('huodong.html')
