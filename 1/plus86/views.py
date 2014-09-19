@@ -668,4 +668,8 @@ def gonggao(request):
 
 #公告细节
 def gonggaodetail(request,offsize):
+    try:
+        offset = int(offset)
+    except ValueError:
+        raise Http404()
     return render_to_response('gonggaodetail.html',locals())
