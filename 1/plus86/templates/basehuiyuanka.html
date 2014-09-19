@@ -52,7 +52,7 @@
       </section>
 {% endblock %}
       <div id="vip" style=""> 
-      <small><em>尊贵会员, 尽享如下特权:</em></small> 
+      {% block neirong %}<small><em>尊贵会员, 尽享如下特权:</em></small> {% endblock %}
       {% block content %}<form name="form" action="/reg/"  onSubmit="return checkdata()" method="post""> 
 <p>身份证号: <input type="text" name="IDcard" maxlength="18" /></p>
 <p>姓&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="username" maxlength="10" /></p>

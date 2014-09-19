@@ -677,3 +677,7 @@ def gonggaodetail(request,offsize):
 #活动
 def huodong(request):
     return render_to_response('huodong.html')
+
+#支付教学
+def zhifujiaoxue(request):
+    return render_to_response('zhifujiaoxue.html')
