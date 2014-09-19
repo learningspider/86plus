@@ -679,7 +679,7 @@ def huodong(request):
     return render_to_response('huodong.html')
 
 #活动细节
-def gonggaodetail(request,offsize):
+def huodongdetail(request,offsize):
     try:
         offsize = int(offsize)
     except ValueError:
