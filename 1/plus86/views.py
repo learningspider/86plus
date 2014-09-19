@@ -197,7 +197,7 @@ def creatmenu(request):
            {	
                "type":"view",
                "name":"招商加盟",
-               "url":"http://86plus.vipsinaapp.com/jiaoshang/"
+               "url":"http://86plus.vipsinaapp.com/zhaoshang/"
             },
             {
                "type":"view",
