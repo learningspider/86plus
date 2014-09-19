@@ -40,6 +40,7 @@ urlpatterns = patterns('',
     url(r'^gonggaodetail/(\d+)/$', 'plus86.views.gonggaodetail'),  #公告细节
     url(r'^huodong/$', 'plus86.views.huodong'),  #活动
     url(r'^zhifujiaoxue/$', 'plus86.views.zhifujiaoxue'),  #支付教学
+    url(r'^zhaoshang/$', 'plus86.views.zhaoshang'),  #招商
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),
     url(r'^checkweixininfo/', 'plus86.views.getweixininfo'),
