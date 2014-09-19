@@ -153,6 +153,7 @@ def checkSignature(request):
     else:
         return None
 
+#创建菜单
 def creatmenu(request):
     appid="wx5346a6f59b5e4dd8"
     secret="3079a01e4c7b9b61da0cbf7808047d7c"
@@ -211,7 +212,7 @@ def creatmenu(request):
             {
                 "type":"view",
                "name":"86Plus公告",
-               "url":"http://v.qq.com/"
+               "url":"http://86plus.sinaapp.com/gonggao/"
             }]
       },
       {
