@@ -668,9 +668,8 @@ def gonggao(request):
 
 #公告细节
 def gonggaodetail(request,offsize):
-    request.session['ceshi'] = 1
     try:
-        offset = int(offset)
+        offsize = int(offsize)
     except ValueError:
         raise Http404()
     return render_to_response('gonggaodetail.html',locals())
