@@ -209,9 +209,9 @@ def creatmenu(request):
                "url":"http://v.qq.com/"
             },
             {
-               "type":"click",
+                "type":"view",
                "name":"86Plus公告",
-               "key":"V1001_GOOD5"
+               "url":"http://v.qq.com/"
             }]
       },
       {
@@ -660,3 +660,7 @@ def changecity(request):
 #日历签到
 def qiandao(request):
     return render_to_response('qiandao.html')
+
+#公告
+def gonggao(request):
+    return render_to_response('gonggao.html')
