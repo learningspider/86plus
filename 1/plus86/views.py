@@ -681,3 +681,8 @@ def huodong(request):
 #支付教学
 def zhifujiaoxue(request):
     return render_to_response('zhifujiaoxue.html')
+
+
+#支付教学
+def zhaoshang(request):
+    return render_to_response('zhaoshang.html')
