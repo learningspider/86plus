@@ -668,4 +668,4 @@ def gonggao(request):
 
 #公告细节
 def gonggaodetail(request,offsize):
-    return render_to_response('gonggaodetail.html')
+    return render_to_response('gonggaodetail.html',locals())
