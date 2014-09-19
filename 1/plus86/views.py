@@ -678,6 +678,14 @@ def gonggaodetail(request,offsize):
 def huodong(request):
     return render_to_response('huodong.html')
 
+#活动细节
+def gonggaodetail(request,offsize):
+    try:
+        offsize = int(offsize)
+    except ValueError:
+        raise Http404()
+    return render_to_response('huodongdetail.html',locals())
+
 #支付教学
 def zhifujiaoxue(request):
     return render_to_response('zhifujiaoxue.html')
