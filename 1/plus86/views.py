@@ -197,17 +197,17 @@ def creatmenu(request):
            {	
                "type":"view",
                "name":"招商加盟",
-               "url":"http://www.baidu.com/"
+               "url":"http://86plus.vipsinaapp.com/jiaoshang/"
             },
             {
                "type":"view",
                "name":"支付教学",
-               "url":"http://v.qq.com/"
+               "url":"http://86plus.vipsinaapp.com/zhifujiaoxue/"
             },
             {
                "type":"view",
                "name":"活动资讯",
-               "url":"http://v.qq.com/"
+               "url":"http://86plus.vipsinaapp.com/huodong/"
             },
             {
                 "type":"view",
