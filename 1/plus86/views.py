@@ -665,3 +665,7 @@ def qiandao(request):
 #公告
 def gonggao(request):
     return render_to_response('gonggao.html')
+
+#公告细节
+def gonggaodetail(request,offsize):
+    return render_to_response('gonggaodetail.html')
