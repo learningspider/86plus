@@ -30,6 +30,7 @@ urlpatterns = patterns('',
     url(r'^guaguaka/', 'plus86.views.guaguaka'),  #刮刮卡界面
     url(r'^productfushi/([a-z]*)/([1-2])/$', 'plus86.views.productfushi'),  #服饰界面
     url(r'^gongyi/', 'plus86.views.gongyi'),  #公益界面
+    url(r'^gongyidetail/(\d+)/$', 'plus86.views.gongyidetail'),  #公益细节
     url(r'^yincang/', 'plus86.views.yincang'),  #隐藏测试
     url(r'^changecity/$', 'plus86.views.changecity'),  #改变城市
     url(r'^xiayiye/', 'plus86.views.xiayiye'),  #下一页
