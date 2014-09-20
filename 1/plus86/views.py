@@ -667,6 +667,10 @@ def gonggao(request):
     return render_to_response('gonggao.html')
 
 #公告细节
+def gongyidetail(request,offsize):
+    return render_to_response('gongyidetail.html')
+
+#公告细节
 def gonggaodetail(request,offsize):
     try:
         offsize = int(offsize)
