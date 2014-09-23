@@ -115,7 +115,7 @@ def responseMsg(request):
         elif msg['Content']=='查询商品':
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://86plus.vipsinaapp.com/queryproductstatus/">查询所有商品</a>')
         elif msg['Content']=='隐藏':
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://86plus.vipsinaapp.com/yincang/">隐藏测试</a>')    
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://86plus.vipsinaapp.com/riqiqiandao/">隐藏测试</a>')    
         else:
             echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
     elif MsgType=="event":
@@ -661,6 +661,10 @@ def changecity(request):
 #日历签到
 def qiandao(request):
     return render_to_response('qiandao.html')
+
+#日历签到xin
+def riqiqiandao(request):
+    return render_to_response('riqiqiandao.html')
 
 #公告
 def gonggao(request):
