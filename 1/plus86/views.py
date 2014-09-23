@@ -243,13 +243,15 @@ def creatmenu(request):
                "name":"签到抽奖",
                "url":"http://86plus.sinaapp.com/riqiqiandao/"
             }
-            '''{
+            ]
+       }]
+ }'''
+    
+    '''{
                "type":"view",
                "name":"Oauth登录",
                "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
-            }''']
-       }]
- }'''
+            }'''
     url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+token
     req = urllib2.Request(url, post)
     response = urllib2.urlopen(req)
