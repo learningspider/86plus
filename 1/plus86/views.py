@@ -739,6 +739,7 @@ def qunfa(request):
     }'''
     errorcode='1'
     successinfo=[]
+    fenge=['分隔']
     errorinfo=[]
     for key in tokeninfo1['data']['openid']:
         echostr = postinfo %(key,'群发测试')
@@ -751,5 +752,5 @@ def qunfa(request):
             errorcode='0'
         else:
             successinfo.append(key)
-    totolinfo=successinfo+"分隔"+errorinfo
+    totolinfo=successinfo+fenge+errorinfo
     return HttpResponse(errorcode)
