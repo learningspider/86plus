@@ -10,9 +10,8 @@
 
 <body>
 <p>已发送用户：</p>
-{% i=0 %}
 {% for userinfo in totalinfo %}   
-    {% ifequal i%9 0" %}
+    {% ifequal forloop.counter%10 0" %}
     <br>
     {% endifequal %}
     {% ifequal userinfo "分割线段" %}
