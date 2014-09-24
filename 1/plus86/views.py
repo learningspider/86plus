@@ -783,7 +783,7 @@ def qunfa(request):
     De3 = u'杭州风雨晚来急 1小时降下90毫米雨!'
     #echostr = postinfo %(Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title2,De2,url2,pic2)
     successinfo=[]
-    fenge=['分隔']
+    fenge=['分割线段']
     errorinfo=[]
     for key in tokeninfo1['data']['openid']:
         #echostr = postinfo %(key,'群发测试')
