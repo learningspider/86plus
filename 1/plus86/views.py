@@ -726,4 +726,4 @@ def qunfa(request):
     html1 = response1.read()
     tokeninfo1 = json.loads(html1)
     openidinfo=tokeninfo1['data']
-    return HttpResponse(openidinfo)
+    return HttpResponse(tokeninfo1)
