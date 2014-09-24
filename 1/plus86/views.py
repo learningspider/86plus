@@ -169,51 +169,53 @@ def creatmenu(request):
           "type":"click",
           "name":"精彩导航",
            "sub_button":[
-           {	
+           {
                "type":"view",
-               "name":"86PLUS公益",
-               "url":"http://86plus.sinaapp.com/gongyi/"
+               "name":"86PLUS介绍",
+               "url":"http://86plus.sinaapp.com/welcome/"
             },
-            {
-               "type":"view",
-               "name":"美食博览",
-               "url":"http://v.qq.com/"
-            },
-            {
+           {
                "type":"view",
                "name":"服饰聚焦",
                "url":"http://86plus.sinaapp.com/productfushi/beijing/1/"
             },
-            {
+           {
                "type":"view",
-               "name":"86PLUS介绍",
-               "url":"http://86plus.sinaapp.com/welcome/"
-            }]
+               "name":"美食博览",
+               "url":"http://v.qq.com/"
+            },
+           {	
+               "type":"view",
+               "name":"86PLUS公益",
+               "url":"http://86plus.sinaapp.com/gongyi/"
+            }
+            ]
       },
       {
            "type":"click",
            "name":"活动公告",
            "sub_button":[
-           {	
-               "type":"view",
-               "name":"招商加盟",
-               "url":"http://86plus.vipsinaapp.com/zhaoshang/"
+           {
+                "type":"view",
+               "name":"86Plus公告",
+               "url":"http://86plus.sinaapp.com/gonggao/"
             },
-            {
-               "type":"view",
-               "name":"支付教学",
-               "url":"http://86plus.vipsinaapp.com/zhifujiaoxue/"
-            },
-            {
+           {
                "type":"view",
                "name":"活动资讯",
                "url":"http://86plus.vipsinaapp.com/huodong/"
             },
-            {
-                "type":"view",
-               "name":"86Plus公告",
-               "url":"http://86plus.sinaapp.com/gonggao/"
-            }]
+           {
+               "type":"view",
+               "name":"支付教学",
+               "url":"http://86plus.vipsinaapp.com/zhifujiaoxue/"
+            },
+           {	
+               "type":"view",
+               "name":"招商加盟",
+               "url":"http://86plus.vipsinaapp.com/zhaoshang/"
+            }
+            ]
       },
       {
            "name":"会员地带",
