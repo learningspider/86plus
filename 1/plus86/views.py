@@ -725,7 +725,7 @@ def qunfa(request):
     response1 = urllib2.urlopen(req)
     html1 = response1.read()
     tokeninfo1 = json.loads(html1)
-    openidinfo=tokeninfo1['data']['openid'][0]
+    #openidinfo=tokeninfo1['data']['openid'][0]
     urlfasong='https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token='
     urlfasongzhong = urlfasong+token
     postinfo='''
@@ -737,12 +737,13 @@ def qunfa(request):
             "content":"%s"
         }
     }'''
-    echostr = postinfo %('oZXGHuCR_OblP-AJqqIaEGu-kmmI','群发测试')
-    reqfasong = urllib2.Request(urlfasongzhong,echostr)
-    responsefasong = urllib2.urlopen(reqfasong)
-    htmlfasong = responsefasong.read()
-    tokeninfofasong = json.loads(htmlfasong)
     errorcode='1'
-    if tokeninfofasong['errcode']:
-        errorcode='0'
+    for key in tokeninfo1['data']['openid']:
+        echostr = postinfo %(key,'群发测试')
+        reqfasong = urllib2.Request(urlfasongzhong,echostr)
+        responsefasong = urllib2.urlopen(reqfasong)
+        htmlfasong = responsefasong.read()
+        tokeninfofasong = json.loads(htmlfasong)  
+        if tokeninfofasong['errcode']:
+            errorcode='0'
     return HttpResponse(errorcode)
