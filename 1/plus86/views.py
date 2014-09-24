@@ -793,7 +793,7 @@ def qunfa(request):
         htmlfasong = responsefasong.read()
         tokeninfofasong = json.loads(htmlfasong)
         
-        urlnc = 'https://api.weixin.qq.com/sns/userinfo?access_token='+token+'&openid='+key+'&lang=zh_CN'
+        urlnc = 'https://api.weixin.qq.com/cgi-bin/user/info?access_token='+token+'&openid='+key+'&lang=zh_CN'
         responsenc = urllib2.urlopen(urlnc)
         htmlnc = responsenc.read()
         usernc = json.loads(htmlnc)
