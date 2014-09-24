@@ -8,7 +8,7 @@ import os
 
 #monkey.patch()
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
