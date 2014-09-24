@@ -2,5 +2,5 @@ libraries:
 - name: "django"
   version: "1.5"
 handlers:
-- url: /media/
-  static_dir: media
+- url: /site_media/
+  static_dir: site_media
