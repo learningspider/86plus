@@ -738,6 +738,8 @@ def qunfa(request):
         }
     }'''
     errorcode='1'
+    successinfo=[]
+    errorinfo=[]
     for key in tokeninfo1['data']['openid']:
         echostr = postinfo %(key,'群发测试')
         reqfasong = urllib2.Request(urlfasongzhong,echostr)
@@ -745,5 +747,9 @@ def qunfa(request):
         htmlfasong = responsefasong.read()
         tokeninfofasong = json.loads(htmlfasong)  
         if tokeninfofasong['errcode']:
+            errorinfo.append(key)
             errorcode='0'
+        else:
+            successinfo.append(key)
+    totolinfo=successinfo+"分隔"+errorinfo
     return HttpResponse(errorcode)
