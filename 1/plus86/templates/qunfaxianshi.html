@@ -9,8 +9,12 @@
 </head>
 
 <body>
+<p>已发送用户：</p>
 {% for userinfo in totalinfo %}
-        {{ userinfo }}
+    {% ifequal userinfo "分割线段" %}
+    <p>发送失败用户：</p>
+    {% endifequal %}
+    {{ userinfo }}
 {% endfor %}
 </body>
 </html>
