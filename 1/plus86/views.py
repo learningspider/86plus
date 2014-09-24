@@ -709,3 +709,18 @@ def zhifujiaoxue(request):
 #支付教学
 def zhaoshang(request):
     return render_to_response('zhaoshang.html')
+
+#群发
+def qunfa(request):
+    appid="wx5346a6f59b5e4dd8"
+    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
+    response = urllib2.urlopen(url)
+    html = response.read()
+    tokeninfo = json.loads(html)
+    token=tokeninfo['access_token']
+    urlinfo='https://api.weixin.qq.com/cgi-bin/user/get?access_token='
+    url = urlinfo+token
+    req = urllib2.Request(url)
+    response1 = urllib2.urlopen(req)
+    return HttpResponse(response1)
