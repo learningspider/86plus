@@ -725,5 +725,19 @@ def qunfa(request):
     response1 = urllib2.urlopen(req)
     html1 = response1.read()
     tokeninfo1 = json.loads(html1)
-    openidinfo=len(tokeninfo1['data']['openid'])
+    openidinfo=tokeninfo1['data']['openid'][0]
+    urlfasong='https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token='
+    urlfasongzhong = urlfasong+token
+    postinfo='''
+{
+    "touser":"(%s)",
+    "msgtype":"text",
+    "text":
+    {
+         "content":"Hello World"
+    }
+}
+        ''' %(openidinfo)
+    reqfasong = urllib2.Request(urlfasongzhong,postinfo)
+    responsefasong = urllib2.urlopen(reqfasong)
     return HttpResponse(openidinfo)
