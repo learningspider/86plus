@@ -737,7 +737,7 @@ def qunfa(request):
             "content":"%s"
         }
     }'''
-    errorcode='1'
+    
     successinfo=[]
     fenge=['分隔']
     errorinfo=[]
@@ -749,7 +749,6 @@ def qunfa(request):
         tokeninfofasong = json.loads(htmlfasong)  
         if tokeninfofasong['errcode']:
             errorinfo.append(key)
-            errorcode='0'
         else:
             successinfo.append(key)
     totalinfo=successinfo+fenge+errorinfo
