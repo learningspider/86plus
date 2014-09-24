@@ -737,7 +737,7 @@ def qunfa(request):
             "content":"%s"
         }
     }'''
-    echostr = postinfo %('oZXGHuOMK80tT3qwu4DDc_wO4psU','群发测试')
+    echostr = postinfo %('oZXGHuCR_OblP-AJqqIaEGu-kmmI','群发测试')
     reqfasong = urllib2.Request(urlfasongzhong,echostr)
     responsefasong = urllib2.urlopen(reqfasong)
     htmlfasong = responsefasong.read()
