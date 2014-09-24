@@ -779,12 +779,13 @@ def qunfa(request):
     De1 = u'华北黄淮等地将一口气热到月底!'
     De2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱!'
     De3 = u'杭州风雨晚来急 1小时降下90毫米雨!'
-    echostr = postinfo %(Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title2,De2,url2,pic2)
+    #echostr = postinfo %(Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title2,De2,url2,pic2)
     successinfo=[]
     fenge=['分隔']
     errorinfo=[]
     for key in tokeninfo1['data']['openid']:
-        echostr = postinfo %(key,'群发测试')
+        #echostr = postinfo %(key,'群发测试')
+        echostr = postinfo %(key,Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title2,De2,url2,pic2)
         reqfasong = urllib2.Request(urlfasongzhong,echostr)
         responsefasong = urllib2.urlopen(reqfasong)
         htmlfasong = responsefasong.read()
