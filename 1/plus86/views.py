@@ -729,15 +729,15 @@ def qunfa(request):
     urlfasong='https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token='
     urlfasongzhong = urlfasong+token
     postinfo='''
-{
-    "touser":"(%s)",
-    "msgtype":"text",
-    "text":
     {
-         "content":"Hello World"
-    }
-}
-        ''' %(openidinfo)
-    reqfasong = urllib2.Request(urlfasongzhong,postinfo)
+        "touser":"%s",
+        "msgtype":"text",
+        "text":
+        {
+            "content":"%s"
+        }
+    }'''
+    echostr = postinfo %('oZXGHuCR_OblP-AJqqIaEGu-kmmI','群发测试')
+    reqfasong = urllib2.Request(urlfasongzhong,echostr)
     responsefasong = urllib2.urlopen(reqfasong)
     return HttpResponse(openidinfo)
