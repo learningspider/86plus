@@ -101,7 +101,7 @@ STATIC_ROOT = os.path.join(os.path.dirname(__file__), '../media').replace('\\','
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = '/site_media/'
 #3/static/
 # Additional locations of static files
 STATICFILES_DIRS = (
