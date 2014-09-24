@@ -804,4 +804,4 @@ def qunfa(request):
         else:
             successinfo.append(nicheng)
     totalinfo=successinfo+fenge+errorinfo
-    return HttpResponse(totalinfo)
+    return render_to_response('qunfaxianshi.html',{'totalinfo':totalinfo})
