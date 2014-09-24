@@ -730,14 +730,56 @@ def qunfa(request):
     urlfasongzhong = urlfasong+token
     postinfo='''
     {
-        "touser":"%s",
-        "msgtype":"text",
-        "text":
-        {
-            "content":"%s"
-        }
+    "touser":"%s",
+    "msgtype":"news",
+    "news":{
+        "articles": [
+         {
+             "title":"%s",
+             "description":"%s",
+             "url":"%s",
+             "picurl":"%s"
+         },
+         {
+             "title":"%s",
+             "description":"%s",
+             "url":"%s",
+             "picurl":"%s"
+         },
+         {
+             "title":"%s",
+             "description":"%s",
+             "url":"%s",
+             "picurl":"%s"
+         },
+         {
+             "title":"%s",
+             "description":"%s",
+             "url":"%s",
+             "picurl":"%s"
+         },
+         {
+             "title":"%s",
+             "description":"%s",
+             "url":"%s",
+             "picurl":"%s"
+         }
+         ]
+         }
     }'''
-    
+    pic1 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/814284E37EF400D973A7A81C5BBE627A.jpg'
+    pic2 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/7FBDABDBAECFE8395DCC4B7C6CEAFF5D.jpg'
+    pic3 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/85A6D03788AE64849402ABE5E28CE78E.jpg'
+    url1 = 'http://news.weather.com.cn/2014/07/2164829.shtml'
+    url2 = 'http://news.weather.com.cn/2014/07/2164872.shtml'
+    url3 = 'http://news.weather.com.cn/2014/07/2164877.shtml'
+    Title1 = u'华北黄淮等地将一口气热到月底'
+    Title2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱'
+    Title3 = u'杭州风雨晚来急 1小时降下90毫米雨'
+    De1 = u'华北黄淮等地将一口气热到月底!'
+    De2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱!'
+    De3 = u'杭州风雨晚来急 1小时降下90毫米雨!'
+    echostr = postinfo %(Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title2,De2,url2,pic2)
     successinfo=[]
     fenge=['分隔']
     errorinfo=[]
