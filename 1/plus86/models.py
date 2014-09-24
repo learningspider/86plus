@@ -19,7 +19,7 @@ class user(models.Model):
 #服饰分类模块
 class clothes(models.Model):
     clname=models.CharField(max_length=60)
-    clurl=models.CharField(max_length=60)
+    #clurl=models.CharField(max_length=60)
     clcity=models.CharField(max_length=60)
     clshi=models.CharField(max_length=60)
     tpurl=models.CharField(max_length=60)
@@ -28,6 +28,24 @@ class clothes(models.Model):
     
     def __unicode__(self):
         return self.clname
+
+#公告
+class gonggao(models.Model):
+    ggname=models.CharField(max_length=60)
+    gginfo=models.TextField()
+    
+    
+    def __unicode__(self):
+        return self.ggname
+
+#公告
+class huodong(models.Model):
+    hdname=models.CharField(max_length=60)
+    hdinfo=models.TextField()
+    
+    
+    def __unicode__(self):
+        return self.hdname
     
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
