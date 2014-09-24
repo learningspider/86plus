@@ -791,10 +791,17 @@ def qunfa(request):
         reqfasong = urllib2.Request(urlfasongzhong,echostr)
         responsefasong = urllib2.urlopen(reqfasong)
         htmlfasong = responsefasong.read()
-        tokeninfofasong = json.loads(htmlfasong)  
+        tokeninfofasong = json.loads(htmlfasong)
+        
+        urlnc = 'https://api.weixin.qq.com/sns/userinfo?access_token='+token+'&openid='+key+'&lang=zh_CN'
+        responsenc = urllib2.urlopen(urlnc)
+        htmlnc = responsenc.read()
+        usernc = json.loads(htmlnc)
+        nicheng=usernc['nickname']
+          
         if tokeninfofasong['errcode']:
-            errorinfo.append(key)
+            errorinfo.append(nicheng)
         else:
-            successinfo.append(key)
+            successinfo.append(nicheng)
     totalinfo=successinfo+fenge+errorinfo
     return HttpResponse(totalinfo)
