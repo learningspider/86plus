@@ -785,7 +785,7 @@ def qunfa(request):
     errorinfo=[]
     for key in tokeninfo1['data']['openid']:
         #echostr = postinfo %(key,'群发测试')
-        echostr = postinfo %(key,Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title2,De2,url2,pic2)
+        echostr = postinfo %(key,Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title3,De3,url3,pic3)
         reqfasong = urllib2.Request(urlfasongzhong,echostr)
         responsefasong = urllib2.urlopen(reqfasong)
         htmlfasong = responsefasong.read()
