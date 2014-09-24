@@ -10,11 +10,16 @@
 
 <body>
 <p>已发送用户：</p>
-{% for userinfo in totalinfo %}
+{% i=0 %}
+{% for userinfo in totalinfo %}   
+    {% ifequal i%9 0" %}
+    <br>
+    {% endifequal %}
     {% ifequal userinfo "分割线段" %}
     <p>发送失败用户：</p>
     {% endifequal %}
     {{ userinfo }}<span>——</span>
+    {% i=i+1 %}
 {% endfor %}
 </body>
 </html>
