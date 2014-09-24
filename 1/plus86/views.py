@@ -752,5 +752,5 @@ def qunfa(request):
             errorcode='0'
         else:
             successinfo.append(key)
-    totolinfo=successinfo+fenge+errorinfo
-    return HttpResponse(errorcode)
+    totalinfo=successinfo+fenge+errorinfo
+    return HttpResponse(totalinfo)
