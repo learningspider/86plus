@@ -714,7 +714,7 @@ def zhaoshang(request):
 
 #群发
 def qunfa(request):
-    if request.user!=administrator:
+    if request.user!='administrator':
         return render_to_response('404_9.html')
     appid="wx5346a6f59b5e4dd8"
     secret="3079a01e4c7b9b61da0cbf7808047d7c"
