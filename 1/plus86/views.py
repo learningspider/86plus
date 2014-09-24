@@ -724,7 +724,6 @@ def qunfa(request):
     req = urllib2.Request(url)
     response1 = urllib2.urlopen(req)
     html1 = response1.read()
-    h=html1['data']
     tokeninfo1 = json.loads(html1)
     openidinfo=tokeninfo1['data']
-    return HttpResponse(h)
+    return HttpResponse(tokeninfo1)
