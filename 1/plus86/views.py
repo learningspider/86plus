@@ -740,4 +740,9 @@ def qunfa(request):
     echostr = postinfo %('oZXGHuOMK80tT3qwu4DDc_wO4psU','群发测试')
     reqfasong = urllib2.Request(urlfasongzhong,echostr)
     responsefasong = urllib2.urlopen(reqfasong)
-    return HttpResponse(responsefasong)
+    htmlfasong = responsefasong.read()
+    tokeninfofasong = json.loads(htmlfasong)
+    errorcode='1'
+    if tokeninfofasong['errcode']:
+        errorcode='0'
+    return HttpResponse(errorcode)
