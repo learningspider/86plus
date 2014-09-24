@@ -51,7 +51,7 @@ urlpatterns = patterns('',
     url(r'^createproduct/', 'plus86.views.createproduct'),
     url(r'^queryproductstatus/', 'plus86.views.queryproductstatus'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
+    #url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
 
     # Uncomment the next line to enable the admin:
