@@ -836,5 +836,5 @@ def qunfajiemian(request):
     user = request.user
     if user<>"administrator":
         #return render_to_response('404_9.html')
-        return HttpResponse(request.user)
+        return HttpResponse(request.user.get_full_name())
     return render_to_response('qunfajiemian.html')
