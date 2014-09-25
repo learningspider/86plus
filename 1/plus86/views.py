@@ -772,7 +772,27 @@ def qunfa(request):
          ]
          }
     }'''
-    pic1 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/814284E37EF400D973A7A81C5BBE627A.jpg'
+    Title1 = request.POST.get( 'biaoti1', None )
+    Title2 = request.POST.get( 'biaoti2', None )
+    Title3 = request.POST.get( 'biaoti3', None )
+    Title4 = request.POST.get( 'biaoti4', None )
+    Title5 = request.POST.get( 'biaoti5', None )
+    De1 = request.POST.get( 'miaoshu1', None )
+    De2 = request.POST.get( 'miaoshu2', None )
+    De3 = request.POST.get( 'miaoshu3', None )
+    De4 = request.POST.get( 'miaoshu4', None )
+    De5 = request.POST.get( 'miaoshu5', None )
+    url1 = request.POST.get( 'url1', None )
+    url2 = request.POST.get( 'url2', None )
+    url3 = request.POST.get( 'url3', None )
+    url4 = request.POST.get( 'url4', None )
+    url5 = request.POST.get( 'url5', None )
+    pic1 = request.POST.get( 'picurl1', None )
+    pic2 = request.POST.get( 'picurl2', None )
+    pic3 = request.POST.get( 'picurl3', None )
+    pic4 = request.POST.get( 'picurl4', None )
+    pic5 = request.POST.get( 'picurl5', None )
+    '''pic1 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/814284E37EF400D973A7A81C5BBE627A.jpg'
     pic2 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/7FBDABDBAECFE8395DCC4B7C6CEAFF5D.jpg'
     pic3 = 'http://i.weather.com.cn/images/cn/news/2014/07/26/85A6D03788AE64849402ABE5E28CE78E.jpg'
     url1 = 'http://news.weather.com.cn/2014/07/2164829.shtml'
@@ -783,14 +803,14 @@ def qunfa(request):
     Title3 = u'杭州风雨晚来急 1小时降下90毫米雨'
     De1 = u'华北黄淮等地将一口气热到月底!'
     De2 = u'河南6月来降水偏少6成 近半地区现重旱级气象干旱!'
-    De3 = u'杭州风雨晚来急 1小时降下90毫米雨!'
+    De3 = u'杭州风雨晚来急 1小时降下90毫米雨!''''
     #echostr = postinfo %(Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title2,De2,url2,pic2)
     successinfo=[]
     fenge=['分割线段']
     errorinfo=[]
     for key in tokeninfo1['data']['openid']:
         #echostr = postinfo %(key,'群发测试')
-        echostr = postinfo %(key,Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title1,De1,url1,pic1,Title3,De3,url3,pic3)
+        echostr = postinfo %(key,Title1,De1,url1,pic1,Title2,De2,url2,pic2,Title3,De3,url3,pic3,Title4,De4,url4,pic4,Title5,De5,url5,pic5)
         reqfasong = urllib2.Request(urlfasongzhong,echostr)
         responsefasong = urllib2.urlopen(reqfasong)
         htmlfasong = responsefasong.read()
@@ -809,3 +829,10 @@ def qunfa(request):
     totalinfo=successinfo+fenge+errorinfo
     #return HttpResponse(request.user)
     return render_to_response('qunfaxianshi.html',{'totalinfo':totalinfo})
+
+#群发界面
+def qufajiemian(request):
+    if request.user != 'administrator':
+        #return render_to_response('404_9.html')
+        return HttpResponse('请管理员用户登录后群发消息！')
+    return render_to_response('qunfajiemian.html')
