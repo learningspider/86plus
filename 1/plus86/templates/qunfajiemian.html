@@ -54,6 +54,7 @@
       <div id="vip" style=""> 
       <small><em>尊贵会员, 尽享如下特权:</em></small> 
       <form name="form" action="/qunfa/"  style="width:100%" method="post""> 
+      {% csrf_token %}
  <p>&nbsp;</p>
 <p>文章标题1:<input class="shurukuang" type="text" name="biaoti1"  maxlength="100" /></p>
 <p>文章描述1:<input class="shurukuang" type="text" name="miaoshu1" maxlength="100" /></p>
