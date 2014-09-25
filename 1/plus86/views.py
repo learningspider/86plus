@@ -831,6 +831,7 @@ def qunfa(request):
     return render_to_response('qunfaxianshi.html',{'totalinfo':totalinfo})
 
 #群发界面
+@csrf_exempt
 def qunfajiemian(request):
     #user = request.user.username
     if request.user.username<>"administrator":
