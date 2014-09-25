@@ -714,7 +714,8 @@ def zhaoshang(request):
 
 #群发
 def qunfa(request):
-    if request.user=='administrator':
+    user = request.user
+    if user!='administrator':
         #return render_to_response('404_9.html')
         return HttpResponse(request.user)
     appid="wx5346a6f59b5e4dd8"
@@ -832,7 +833,8 @@ def qunfa(request):
 
 #群发界面
 def qunfajiemian(request):
-    if request.user!='administrator':
+    user = request.user
+    if user!='administrator':
         #return render_to_response('404_9.html')
         return HttpResponse(request.user)
     return render_to_response('qunfajiemian.html')
