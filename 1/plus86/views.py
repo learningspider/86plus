@@ -714,10 +714,9 @@ def zhaoshang(request):
 
 #群发
 def qunfa(request):
-    user = request.user
-    if user!='administrator':
+    if request.user.username<>"administrator":
         #return render_to_response('404_9.html')
-        return HttpResponse(request.user)
+        return HttpResponse("请用管理员账户登录！")
     appid="wx5346a6f59b5e4dd8"
     secret="3079a01e4c7b9b61da0cbf7808047d7c"
     url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
@@ -833,8 +832,8 @@ def qunfa(request):
 
 #群发界面
 def qunfajiemian(request):
-    user = request.user.username
-    if user<>"administrator":
+    #user = request.user.username
+    if request.user.username<>"administrator":
         #return render_to_response('404_9.html')
-        return HttpResponse(request.user.username)
+        return HttpResponse("请用管理员账户登录！")
     return render_to_response('qunfajiemian.html')
