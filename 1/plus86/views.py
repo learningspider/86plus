@@ -832,7 +832,7 @@ def qunfa(request):
 
 #群发界面
 def qunfajiemian(request):
-    if request.user is not 'administrator':
+    if request.user=='administrator':
         #return render_to_response('404_9.html')
         return HttpResponse(request.user)
     return render_to_response('qunfajiemian.html')
