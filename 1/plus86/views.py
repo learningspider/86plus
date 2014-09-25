@@ -713,6 +713,7 @@ def zhaoshang(request):
     return render_to_response('zhaoshang.html')
 
 #群发
+@csrf_exempt
 def qunfa(request):
     if request.user.username<>"administrator":
         #return render_to_response('404_9.html')
