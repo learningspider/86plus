@@ -49,7 +49,7 @@ class huodong(models.Model):
     
 #日期签到
 class riqiqiandao(models.Model):
-    yonghu=models.ForeignKey(User)
+    yonghu=models.CharField(max_length=60)
     h1=models.CharField(max_length=2)
     h2=models.CharField(max_length=2)
     h3=models.CharField(max_length=2)
