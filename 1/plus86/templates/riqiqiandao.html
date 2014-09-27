@@ -39,11 +39,20 @@
 	</script>
     
     
-    {% ifequal i 1 %}
+    {% ifequal i1 1 %}
     <script type="text/javascript">
 	$(function()
 	{
+		
 		$("#1").css({"background":"#ffe45c"});
+	});
+	</script>
+    {% endifequal %}
+    {% ifequal i2 1 %}
+    <script type="text/javascript">
+	$(function()
+	{
+		$("#2").css({"background":"#ffe45c"});
 	});
 	</script>
     {% endifequal %}
