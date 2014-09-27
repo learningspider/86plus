@@ -675,11 +675,12 @@ def qiandao(request):
 def riqiqiandao(request):
     if not request.user.is_authenticated():
         return render_to_response('riqiqiandao.html',locals())
-    else:  
+    else:
+        rqname=request.user.username  
         try:
-            yonghu=clothes.objects.filter(yonghu=request.user.username)
+            yonghu=clothes.objects.filter(yonghu=rqname)
         except:
-            return render_to_response('404_9.html')
+            return render_to_response('404.html')
         
     return render_to_response('riqiqiandao.html',locals())
 
