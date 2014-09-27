@@ -676,11 +676,12 @@ def riqiqiandao(request):
     if not request.user.is_authenticated():
         return render_to_response('riqiqiandao.html',locals())
     else:
-        rqname=request.user.username  
-        try:
+        rqname=request.user.username 
+        yonghu=riqiqiandao.objects.filter(yonghu=rqname) 
+        '''try:
             yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         except:
-            return render_to_response('404_9.html')
+            return render_to_response('404_9.html')'''
         
     return render_to_response('riqiqiandao.html',locals())
 
