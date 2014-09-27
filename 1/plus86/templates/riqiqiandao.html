@@ -32,18 +32,21 @@
             onSelect: function(selectedDate) {//选择日期后执行的操作  
                 alert(selectedDate); 
             }  
-            });  
-			
-
-
-	
-    
-    	
-			
+            });  		
 			
 	}
 	);
-	</script>>
+	</script>
+    
+    
+    {% ifequal {{i}} 1 %}
+    <script type="text/javascript">
+	$(function()
+	{
+		$("#1").css({"background":"#ffe45c"});
+	});
+	</script>
+    {% endifequal %}
 </head>
 <body>
 
