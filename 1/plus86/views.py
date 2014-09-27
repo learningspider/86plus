@@ -21,7 +21,7 @@ import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
-from plus86.models import memberCard,UserProfile,clothes
+from plus86.models import memberCard,UserProfile,clothes,riqiqiandao
 from plus86.models import user as userlogin6
 
 
@@ -673,8 +673,11 @@ def qiandao(request):
 
 #日历签到xin
 def riqiqiandao(request):
-    i=1
-    return render_to_response('riqiqiandao.html',{'i':i})
+    if not request.user.is_authenticated():
+        return render_to_response('riqiqiandao.html',locals())
+    i1=1
+    i2=0
+    return render_to_response('riqiqiandao.html',locals())
 
 #公告
 def gonggao(request):
