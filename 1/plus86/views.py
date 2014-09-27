@@ -680,7 +680,7 @@ def riqiqiandao(request):
         try:
             yonghu=riqiqiandao.objects.filter(yonghu=request.user.username)
         except:
-            return render_to_response('404.html')
+            return render_to_response('404_9.html')
         
     return render_to_response('riqiqiandao.html',locals())
 
