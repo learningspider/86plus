@@ -672,7 +672,7 @@ def qiandao(request):
     return render_to_response('qiandao.html')
 
 #日历签到xin
-def riqiqiandao(request):
+def riqiqiandaoa(request):
     if not request.user.is_authenticated():
         return render_to_response('riqiqiandao.html',locals())
     else:
