@@ -48,7 +48,7 @@
 	});
 	</script>
     {% endifequal %}
-    {% ifequal y.h2 1 %}
+    {% ifequal y.h2 '1' %}
     <script type="text/javascript">
 	$(function()
 	{
@@ -56,7 +56,7 @@
 	});
 	</script>
     {% endifequal %}
-    {% ifequal y.h3 1 %}
+    {% ifequal y.h3 '1' %}
     <script type="text/javascript">
 	$(function()
 	{
@@ -70,8 +70,5 @@
 <body>
 
 <div id="datepicker" style="width:100%;height:100%" align="center"></div>
-{% for y in yonghu %}
-{{y.h1}}
-{% endfor %}
 </body>
 </html>
