@@ -673,7 +673,8 @@ def qiandao(request):
 
 #日历签到xin
 def riqiqiandao(request):
-    return render_to_response('riqiqiandao.html')
+    i=1
+    return render_to_response('riqiqiandao.html',{'i':i})
 
 #公告
 def gonggao(request):
