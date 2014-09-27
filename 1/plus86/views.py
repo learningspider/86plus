@@ -677,7 +677,8 @@ def riqiqiandaoa(request):
         return render_to_response('riqiqiandao.html',locals())
     else:
         rqname=request.user.username 
-        yonghu=riqiqiandao.objects.filter(yonghu=rqname) 
+        yonghu=riqiqiandao.objects.filter(yonghu=rqname)
+        i1=1 
         '''try:
             yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         except:
