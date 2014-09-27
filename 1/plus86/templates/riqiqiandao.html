@@ -38,8 +38,8 @@
 	);
 	</script>
     
-    
-    {% ifequal i1 1 %}
+    {% for y in yonghu %}
+    {% ifequal y.h1 1 %}
     <script type="text/javascript">
 	$(function()
 	{
@@ -48,7 +48,7 @@
 	});
 	</script>
     {% endifequal %}
-    {% ifequal yonghu.h2 1 %}
+    {% ifequal y.h2 1 %}
     <script type="text/javascript">
 	$(function()
 	{
@@ -56,7 +56,7 @@
 	});
 	</script>
     {% endifequal %}
-    {% ifequal yonghu.h3 1 %}
+    {% ifequal y.h3 1 %}
     <script type="text/javascript">
 	$(function()
 	{
@@ -64,6 +64,8 @@
 	});
 	</script>
     {% endifequal %}
+    {% endfor %}
+    
 </head>
 <body>
 
