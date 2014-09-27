@@ -47,6 +47,43 @@ class huodong(models.Model):
     def __unicode__(self):
         return self.hdname
     
+#日期签到
+class riqiqiandao(models.Model):
+    yonghu=models.ForeignKey(User)
+    h1=models.CharField(max_length=2)
+    h2=models.CharField(max_length=2)
+    h3=models.CharField(max_length=2)
+    h4=models.CharField(max_length=2)
+    h5=models.CharField(max_length=2)
+    h6=models.CharField(max_length=2)
+    h7=models.CharField(max_length=2)
+    h8=models.CharField(max_length=2)
+    h9=models.CharField(max_length=2)
+    h10=models.CharField(max_length=2)
+    h11=models.CharField(max_length=2)
+    h12=models.CharField(max_length=2)
+    h13=models.CharField(max_length=2)
+    h14=models.CharField(max_length=2)
+    h15=models.CharField(max_length=2)
+    h16=models.CharField(max_length=2)
+    h17=models.CharField(max_length=2)
+    h18=models.CharField(max_length=2)
+    h19=models.CharField(max_length=2)
+    h20=models.CharField(max_length=2)
+    h21=models.CharField(max_length=2)
+    h22=models.CharField(max_length=2)
+    h23=models.CharField(max_length=2)
+    h24=models.CharField(max_length=2)
+    h25=models.CharField(max_length=2)
+    h26=models.CharField(max_length=2)
+    h27=models.CharField(max_length=2)
+    h28=models.CharField(max_length=2)
+    h29=models.CharField(max_length=2)
+    h30=models.CharField(max_length=2)
+    h31=models.CharField(max_length=2) 
+    def __unicode__(self):
+        return self.yonghu
+    
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     phonenumber = models.CharField(max_length=11,unique=True)

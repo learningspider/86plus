@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from plus86.models import memberCard,UserProfile,clothes,gonggao,huodong
+from plus86.models import memberCard,UserProfile,clothes,gonggao,huodong,riqiqiandao
 from django.contrib.auth.admin import UserAdmin
 
 class UserProfileInline(admin.StackedInline):
@@ -18,3 +18,4 @@ admin.site.register(User, UserAdmin)
 admin.site.register(clothes)
 admin.site.register(gonggao)
 admin.site.register(huodong)
+admin.site.register(riqiqiandao)
