@@ -678,7 +678,7 @@ def riqiqiandao(request):
     else:
         rqname=request.user.username  
         try:
-            yonghu=clothes.objects.filter(yonghu=rqname)
+            yonghu=clothes.objects.filter(yonghu=administrator)
         except:
             return render_to_response('404.html')
         
