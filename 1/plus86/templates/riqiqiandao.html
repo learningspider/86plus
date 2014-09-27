@@ -39,7 +39,7 @@
 	</script>
     
     
-    {% ifequal i1 1 %}
+    {% ifequal yonghu.h1 1 %}
     <script type="text/javascript">
 	$(function()
 	{
@@ -48,11 +48,19 @@
 	});
 	</script>
     {% endifequal %}
-    {% ifequal i2 1 %}
+    {% ifequal yonghu.h2 1 %}
     <script type="text/javascript">
 	$(function()
 	{
 		$("#2").css({"background":"#ffe45c"});
+	});
+	</script>
+    {% endifequal %}
+    {% ifequal yonghu.h3 1 %}
+    <script type="text/javascript">
+	$(function()
+	{
+		$("#3").css({"background":"#ffe45c"});
 	});
 	</script>
     {% endifequal %}
