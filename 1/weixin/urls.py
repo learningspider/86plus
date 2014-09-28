@@ -38,6 +38,7 @@ urlpatterns = patterns('',
     url(r'^fushisearch/', 'plus86.views.fushisearch'),  #服饰搜索
     url(r'^qiandao/$', 'plus86.views.qiandao'),  #日历签到
     url(r'^riqiqiandao/$', 'plus86.views.riqiqiandaoa'),  #日历签到xin
+    url(r'^riqiqiandaoaction/$', 'plus86.views.riqiqiandaoaction'),  #日历签到xin
     url(r'^gonggao/$', 'plus86.views.gonggao'),  #公告
     url(r'^gonggaodetail/(\d+)/$', 'plus86.views.gonggaodetail'),  #公告细节
     url(r'^huodong/$', 'plus86.views.huodong'),  #活动
