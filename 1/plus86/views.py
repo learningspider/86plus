@@ -681,7 +681,7 @@ def riqiqiandaoa(request):
         yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         if len(yonghu)==0 or len(yonghu)>1:
             return render_to_response('404_9.html')
-        a=1
+        a=11
         if a==1:
             riqi=time.strftime('%d',time.localtime(time.time()))
             riqichange='h'+riqi
