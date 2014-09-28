@@ -683,6 +683,7 @@ def riqiqiandaoa(request):
         a=1
         if a==1:
             riqi=time.strftime('%d',time.localtime(time.time()))
+            riqichange='h'+riqi
         '''try:
             yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         except:
