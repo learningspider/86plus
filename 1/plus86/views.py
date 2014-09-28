@@ -718,7 +718,7 @@ def riqiqiandaoaction(request):
         cursor.execute(sqlyuju)
         transaction.commit_unless_managed()
     except:
-        return render_to_response('404_9.html')
+        return render_to_response('404.html')
     return HttpResponseRedirect("/riqiqiandao/")
     #return render_to_response('qiandao.html')
 
