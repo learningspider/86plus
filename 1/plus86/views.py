@@ -687,6 +687,7 @@ def riqiqiandaoa(request):
         sqlyuju="""select %s from plus86_riqiqiandao WHERE yonghu ='%s'"""%(riqichange,rqname)
         cursor.execute(sqlyuju)
         row = cursor.fetchone()
+        row1=row[0]
         a=11
         if a==1:
             
