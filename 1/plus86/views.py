@@ -686,7 +686,8 @@ def riqiqiandaoa(request):
             riqi=time.strftime('%d',time.localtime(time.time()))
             riqichange='h'+riqi
             cursor = connection.cursor()
-            cursor.execute("""UPDATE riqiqiandao SET %s = 1 WHERE yonghu = %s""", [riqichange,rqname])
+            sqlyuju="""UPDATE riqiqiandao SET %s = '1' WHERE yonghu = %s"""%(riqichange,rqname)
+            #cursor.execute("""UPDATE riqiqiandao SET %s = '1' WHERE yonghu = %s""", [riqichange,rqname])
         '''try:
             yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         except:
