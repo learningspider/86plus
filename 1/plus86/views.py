@@ -716,7 +716,7 @@ def riqiqiandaoaction(request):
         riqichange='h'+riqi
         sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu ='%s'"""%(riqichange,rqname)
         cursor.execute(sqlyuju)
-        transaction.commit_unless_managed()
+        #transaction.commit_unless_managed()
     except:
         return render_to_response('404.html')
     return HttpResponseRedirect("/riqiqiandao/")
