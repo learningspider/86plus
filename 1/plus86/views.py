@@ -682,9 +682,7 @@ def riqiqiandaoa(request):
         if len(yonghu)==0 or len(yonghu)>1:
             return render_to_response('404_9.html')
         riqi=time.strftime('%d',time.localtime(time.time()))
-        for k,v in yonghu:
-            yonghu[k]=v
-        f=yonghu[riqi]
+        f=yonghu.h28
         a=11
         if a==1:
             cursor = connection.cursor()
