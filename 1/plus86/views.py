@@ -691,7 +691,7 @@ def riqiqiandaoa(request):
             row1=row[0]
         except:
             return render_to_response('404_9.html')
-        a=11
+        '''a=11
         if a==1:
             
             riqi=time.strftime('%d',time.localtime(time.time()))
@@ -700,12 +700,27 @@ def riqiqiandaoa(request):
             sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu ='%s'"""%(riqichange,rqname)
             cursor.execute(sqlyuju)
             transaction.commit_unless_managed()
-        '''try:
+        try:
             yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         except:
             return render_to_response('404_9.html')'''
         
     return render_to_response('riqiqiandao.html',locals())
+
+#日历签到action
+def riqiqiandaoaction(request):
+    rqname=request.user.username
+    try:
+        riqi=time.strftime('%d',time.localtime(time.time()))
+        cursor = connection.cursor()
+        riqichange='h'+riqi
+        sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu ='%s'"""%(riqichange,rqname)
+        cursor.execute(sqlyuju)
+        transaction.commit_unless_managed()
+    except:
+        return render_to_response('404_9.html')
+    return HttpResponseRedirect("/riqiqiandao/")
+    #return render_to_response('qiandao.html')
 
 #公告
 def gonggao(request):
