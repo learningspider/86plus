@@ -15,6 +15,7 @@ from django.shortcuts import render_to_response,render
 from django.contrib.sessions.models import Session
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
+from django.db import connection
 
 import hashlib
 import re
@@ -684,6 +685,8 @@ def riqiqiandaoa(request):
         if a==1:
             riqi=time.strftime('%d',time.localtime(time.time()))
             riqichange='h'+riqi
+            cursor = connection.cursor()
+            cursor.execute("""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu = %s""", [riqichange,rqname])
         '''try:
             yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         except:
