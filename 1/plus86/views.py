@@ -678,7 +678,7 @@ def riqiqiandaoa(request):
     else:
         rqname=request.user.username 
         yonghu=riqiqiandao.objects.filter(yonghu=rqname)
-        if len(yonghu)==0:
+        if len(yonghu)==0 or len(yonghu)>1:
             return render_to_response('404_9.html')
         '''try:
             yonghu=riqiqiandao.objects.filter(yonghu=rqname)
