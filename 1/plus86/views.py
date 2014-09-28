@@ -682,12 +682,14 @@ def riqiqiandaoa(request):
         if len(yonghu)==0 or len(yonghu)>1:
             return render_to_response('404_9.html')
         riqi=time.strftime('%d',time.localtime(time.time()))
-        for y in yonghu:
-            f=y.riqi
+        cursor = connection.cursor()
+        riqichange='h'+riqi
+        sqlyuju="""select %s from plus86_riqiqiandao WHERE yonghu ='%s'"""%(riqichange,rqname)
+        row = cursor.fetchone()
         a=11
         if a==1:
-            cursor = connection.cursor()
-            riqichange='h'+riqi
+            
+            
             sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu ='%s'"""%(riqichange,rqname)
             cursor.execute(sqlyuju)
             transaction.commit_unless_managed()
