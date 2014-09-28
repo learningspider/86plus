@@ -684,10 +684,12 @@ def riqiqiandaoa(request):
         riqi=time.strftime('%d',time.localtime(time.time()))
         cursor = connection.cursor()
         riqichange='h'+riqi
-        sqlyuju="""select %s from plus86_riqiqiandao WHERE yonghu ='%s'"""%(riqichange,rqname)
+        sqlyuju="""select %s from plus86_riqiqiandao WHERE yonghu ='%s'"""%(riqichange,'a')
         cursor.execute(sqlyuju)
         row = cursor.fetchone()
         row1=row[0]
+        if row1 is null:
+            return render_to_response('404_9.html')
         a=11
         if a==1:
             
