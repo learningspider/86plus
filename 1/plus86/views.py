@@ -687,7 +687,7 @@ def riqiqiandaoa(request):
             riqichange='h'+riqi
             cursor = connection.cursor()
             sqlyuju="""UPDATE riqiqiandao SET %s = '1' WHERE yonghu = %s"""%(riqichange,rqname)
-            #cursor.execute("""UPDATE riqiqiandao SET %s = '1' WHERE yonghu = %s""", [riqichange,rqname])
+            cursor.execute(sqlyuju)
         '''try:
             yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         except:
