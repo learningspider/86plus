@@ -678,9 +678,9 @@ def riqiqiandaoa(request):
         return render_to_response('riqiqiandao.html',locals())
     else:
         rqname=request.user.username 
-        '''yonghu=riqiqiandao.objects.filter(yonghu=rqname)
+        yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         if len(yonghu)==0 or len(yonghu)>1:
-            return render_to_response('404_9.html')'''
+            return render_to_response('404_9.html')
         riqi=time.strftime('%d',time.localtime(time.time()))
         cursor = connection.cursor()
         riqichange='h'+riqi
