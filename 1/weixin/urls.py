@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^weixin', 'plus86.views.handleRequest'),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^$', 'bew.views.current_datetime'),
+    url(r'^$', 'plus86.views.current_datetime'),
     url(r'^create/createmenu$', 'plus86.views.creatmenu'),
     url(r'^create/deletemenu$', 'plus86.views.deletemenu'),
     url(r'^membercard/', 'plus86.views.membercard'),
