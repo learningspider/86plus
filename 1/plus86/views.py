@@ -31,6 +31,9 @@ from plus86.models import user as userlogin6
 
 
 
+def current_datetime(request):
+    return render_to_response('gonggaodetail.html')
+
 def responseMsg(request):
     recvmsg = smart_str(request.raw_post_data)
     root = ET.fromstring(recvmsg)
