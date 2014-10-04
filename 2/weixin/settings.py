@@ -1,25 +1,59 @@
+# -*- coding: utf8 -*-
 # Django settings for weixin project.
+
+import os
+#from sae._restful_mysql import monkey
+
+
+
+#monkey.patch()
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('周超', '1161192890@qq.com'),
 )
 
 MANAGERS = ADMINS
 
+if 'SERVER_SOFTWARE' in os.environ:
+     from sae.const import (
+         MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
+     )
+else:
+      MYSQL_HOST = '127.0.0.1'
+      MYSQL_PORT = '3306'
+      MYSQL_USER = 'root'
+      MYSQL_PASS = ''
+      MYSQL_DB   = 'app_86plus'
+      
+
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'app_86plus',                      # Or path to database file if using sqlite3.
+        # The following settings are not used with sqlite3:
+        'USER': '525n14oznm',
+        'PASSWORD': '15w4jymx400x3zjyjxkw00zxxwj3xwky2ll0xxzm',
+        #'HOST': 'MYSQL_HOST',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'HOST':'w.rdc.sae.sina.com.cn',
+        'PORT': '3307',                      # Set to empty string for default.
+        
+    }
+}'''
+     
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': MYSQL_DB,                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'USER': MYSQL_USER,
+        'PASSWORD': MYSQL_PASS,
+        'HOST': MYSQL_HOST,                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': MYSQL_PORT,                      # Set to empty string for default.
     }
-}
+ }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -51,27 +85,31 @@ USE_TZ = True
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = ''
-
+#1kong
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = ''
-
+#2kong
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(os.path.dirname(__file__), '../media').replace('\\','/')
+#STATIC_PATH='../static'
+
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
-
+STATIC_URL = '/site_media/'
+#3/static/
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    #os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/'),
+    #'weixin/static',
 )
 
 # List of finder classes that know how to find static files in
@@ -92,6 +130,14 @@ TEMPLATE_LOADERS = (
 #     'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (  
+    "django.contrib.auth.context_processors.auth",  
+    "django.core.context_processors.debug",  
+    "django.core.context_processors.i18n",  
+    "django.core.context_processors.media",  
+    "django.core.context_processors.request",  
+) 
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -111,6 +157,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    'bew/templates/',
+    'plus86/templates/',
 )
 
 INSTALLED_APPS = (
@@ -124,6 +172,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'plus86',
+    'django.contrib.admin',
 )
 
 # A sample logging configuration. The only tangible logging
