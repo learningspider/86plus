@@ -889,3 +889,9 @@ def qunfajiemian(request):
         #return render_to_response('404_9.html')
         return HttpResponse("请用管理员账户登录！")
     return render_to_response('qunfajiemian.html')
+
+def page_not_found(request):
+    return render_to_response('404_9.html')
+
+def page_error(request):
+    return render_to_response('500.html')
