@@ -117,9 +117,9 @@ def responseMsg(request):
         if msg['Content']=='登录':
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">OAUTH登录</a>')
         elif msg['Content']=='查询商品':
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://86plus.vipsinaapp.com/queryproductstatus/">查询所有商品</a>')
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://124.248.42.172/queryproductstatus/">查询所有商品</a>')
         elif msg['Content']=='隐藏':
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://86plus.vipsinaapp.com/riqiqiandao/">隐藏测试</a>')    
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://124.248.42.172/riqiqiandao/">隐藏测试</a>')    
         else:
             echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
     elif MsgType=="event":
@@ -128,14 +128,14 @@ def responseMsg(request):
                 u1=memberCard.objects.filter(openid=msg['FromUserName'])
                 if len(u1)==0:
                 #request.session['fromusername'] = msg[FromUserName]
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
                 else:
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard?openid='+openid)
             elif msg['EventKey']=="V1006000_GOOD": 
                 echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo&response_type=code&scope=snsapi_base&state=123#wechat_redirect">OAUTH登录</a>')
         elif  msg['Event']=="subscribe":
             #echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
-            echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '谢谢关注', '点击图片查看功能介绍', 'http://86plus.vipsinaapp.com/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/welcome/')
+            echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '谢谢关注', '点击图片查看功能介绍', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/welcome/')
     #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
 
     return echostr
@@ -207,17 +207,17 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"活动资讯",
-               "url":"http://86plus.vipsinaapp.com/huodong/"
+               "url":"http://124.248.42.172/huodong/"
             },
            {
                "type":"view",
                "name":"支付教学",
-               "url":"http://86plus.vipsinaapp.com/zhifujiaoxue/"
+               "url":"http://124.248.42.172/zhifujiaoxue/"
             },
            {	
                "type":"view",
                "name":"招商加盟",
-               "url":"http://86plus.vipsinaapp.com/zhaoshang/"
+               "url":"http://124.248.42.172/zhaoshang/"
             }
             ]
       },
@@ -227,7 +227,7 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"刮刮卡",
-               "url":"http://86plus.vipsinaapp.com/guaguaka/"
+               "url":"http://124.248.42.172/guaguaka/"
             },
            {
                "type":"click",
@@ -237,12 +237,12 @@ def creatmenu(request):
             {
                "type":"view",
                "name":"注册",
-               "url":"http://86plus.vipsinaapp.com/userregister/"
+               "url":"http://124.248.42.172/userregister/"
             },
             {
                "type":"view",
                "name":"普通登录",
-               "url":"http://86plus.vipsinaapp.com/userlogin/"
+               "url":"http://124.248.42.172/userlogin/"
             },
             {
                 "type":"view",
