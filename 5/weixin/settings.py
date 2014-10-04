@@ -8,8 +8,8 @@ import os
 
 #monkey.patch()
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = False
+TEMPLATE_DEBUG = False
 
 ADMINS = (
     ('周超', '1161192890@qq.com'),
@@ -25,7 +25,7 @@ else:
       MYSQL_HOST = '127.0.0.1'
       MYSQL_PORT = '3306'
       MYSQL_USER = 'root'
-      MYSQL_PASS = ''
+      MYSQL_PASS = 'zhouchao1850'
       MYSQL_DB   = 'app_86plus'
       
 
@@ -175,7 +175,7 @@ INSTALLED_APPS = (
     'plus86',
     'django.contrib.admin',
 )
-
+ALLOWED_HOSTS = '*'
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
