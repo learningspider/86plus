@@ -159,8 +159,8 @@ def checkSignature(request):
 
 #创建菜单
 def creatmenu(request):
-    appid="wx5346a6f59b5e4dd8"
-    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    appid="wxd4831e974d5a475f"
+    secret="493d0d39d736f43dda354acca3a006f6"
     url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
     response = urllib2.urlopen(url)
     html = response.read()
@@ -265,8 +265,8 @@ def creatmenu(request):
 
 
 def deletemenu(request):
-    appid="wx5346a6f59b5e4dd8"
-    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    appid="wxd4831e974d5a475f"
+    secret="493d0d39d736f43dda354acca3a006f6"
     url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
     response = urllib2.urlopen(url)
     html = response.read()
@@ -357,8 +357,8 @@ def getweixininfo(request):
     codekey=request.GET.get('code', None)
     if codekey is None:
         return render_to_response('404_9.html')
-    appid="wx5346a6f59b5e4dd8"
-    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    appid="wxd4831e974d5a475f"
+    secret="493d0d39d736f43dda354acca3a006f6"
     url='https://api.weixin.qq.com/sns/oauth2/access_token?appid='+appid+'&secret='+secret+'&code='+codekey+'&grant_type=authorization_code'
     response6 = urllib2.urlopen(url)
     html = response6.read()
@@ -390,8 +390,8 @@ def getweixininfo(request):
   
   
 def postrequest(request,postinfo,urlinfo):
-    appid="wx5346a6f59b5e4dd8"
-    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    appid="wxd4831e974d5a475f"
+    secret="493d0d39d736f43dda354acca3a006f6"
     url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
     response = urllib2.urlopen(url)
     html = response.read()
@@ -768,8 +768,8 @@ def qunfa(request):
     if request.user.username<>"administrator":
         #return render_to_response('404_9.html')
         return HttpResponse("请用管理员账户登录！")
-    appid="wx5346a6f59b5e4dd8"
-    secret="3079a01e4c7b9b61da0cbf7808047d7c"
+    appid="wxd4831e974d5a475f"
+    secret="493d0d39d736f43dda354acca3a006f6"
     url='https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+appid+'&secret='+secret
     response = urllib2.urlopen(url)
     html = response.read()
