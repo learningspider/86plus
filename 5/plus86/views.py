@@ -261,7 +261,7 @@ def creatmenu(request):
     url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+token
     req = urllib2.Request(url, post)
     response = urllib2.urlopen(req)
-    return response
+    return HttpResponse(response)
 
 
 def deletemenu(request):
@@ -275,20 +275,20 @@ def deletemenu(request):
     url = 'https://api.weixin.qq.com/cgi-bin/menu/delete?access_token='+token
     req = urllib2.Request(url)
     response = urllib2.urlopen(req)
-    return response
+    return HttpResponse(response)
  
 @csrf_exempt 
 def handleRequest(request):  
     if request.method == 'GET':  
         #response = HttpResponse(request.GET['echostr'],content_type="text/plain")  
         response = HttpResponse(checkSignature(request),content_type="text/plain")  
-        return HttpResponse(response)  
+        return response  
     elif request.method == 'POST':  
         #c = RequestContext(request,{'result':responseMsg(request)})  
         #t = Template('{{result}}')  
         #response = HttpResponse(t.render(c),content_type="application/xml")
         response = HttpResponse(responseMsg(request),content_type="application/xml")  
-        return HttpResponse(response)  
+        return response  
     else:  
         return None  
 		
