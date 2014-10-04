@@ -282,13 +282,13 @@ def handleRequest(request):
     if request.method == 'GET':  
         #response = HttpResponse(request.GET['echostr'],content_type="text/plain")  
         response = HttpResponse(checkSignature(request),content_type="text/plain")  
-        return response  
+        return HttpResponse(response)  
     elif request.method == 'POST':  
         #c = RequestContext(request,{'result':responseMsg(request)})  
         #t = Template('{{result}}')  
         #response = HttpResponse(t.render(c),content_type="application/xml")
         response = HttpResponse(responseMsg(request),content_type="application/xml")  
-        return response  
+        return HttpResponse(response)  
     else:  
         return None  
 		
