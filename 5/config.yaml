@@ -1,2 +1,6 @@
-name: 86plus
-version: 5
+libraries:
+- name: "django"
+  version: "1.5"
+handlers:
+- url: /site_media/
+  static_dir: site_media
