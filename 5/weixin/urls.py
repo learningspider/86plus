@@ -59,3 +59,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 )
+handler404 = 'MyNet.app.Common.views.page_not_found'
+handler500 = 'MyNet.app.Common.views.page_error'
