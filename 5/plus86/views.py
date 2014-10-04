@@ -115,7 +115,7 @@ def responseMsg(request):
     MsgType=msg['MsgType']
     if MsgType=="text":
         if msg['Content']=='登录':
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">OAUTH登录</a>')
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://124.248.42.172/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">OAUTH登录</a>')
         elif msg['Content']=='查询商品':
             echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://124.248.42.172/queryproductstatus/">查询所有商品</a>')
         elif msg['Content']=='隐藏':
@@ -128,14 +128,14 @@ def responseMsg(request):
                 u1=memberCard.objects.filter(openid=msg['FromUserName'])
                 if len(u1)==0:
                 #request.session['fromusername'] = msg[FromUserName]
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/register?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://124.248.42.172/register?openid='+openid)
                 else:
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/membercard?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://124.248.42.172/membercard?openid='+openid)
             elif msg['EventKey']=="V1006000_GOOD": 
-                echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo&response_type=code&scope=snsapi_base&state=123#wechat_redirect">OAUTH登录</a>')
+                echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://124.248.42.172/checkweixininfo&response_type=code&scope=snsapi_base&state=123#wechat_redirect">OAUTH登录</a>')
         elif  msg['Event']=="subscribe":
             #echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
-            echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '谢谢关注', '点击图片查看功能介绍', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://86plus.sinaapp.com/welcome/')
+            echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '谢谢关注', '点击图片查看功能介绍', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://124.248.42.172/welcome/')
     #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
 
     return echostr
@@ -176,12 +176,12 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"86PLUS介绍",
-               "url":"http://86plus.sinaapp.com/welcome/"
+               "url":"http://124.248.42.172/welcome/"
             },
            {
                "type":"view",
                "name":"服饰聚焦",
-               "url":"http://86plus.sinaapp.com/productfushi/beijing/1/"
+               "url":"http://124.248.42.172/productfushi/beijing/1/"
             },
            {
                "type":"view",
@@ -191,7 +191,7 @@ def creatmenu(request):
            {	
                "type":"view",
                "name":"86PLUS公益",
-               "url":"http://86plus.sinaapp.com/gongyi/"
+               "url":"http://124.248.42.172/gongyi/"
             }
             ]
       },
@@ -202,7 +202,7 @@ def creatmenu(request):
            {
                 "type":"view",
                "name":"86Plus公告",
-               "url":"http://86plus.sinaapp.com/gonggao/"
+               "url":"http://124.248.42.172/gonggao/"
             },
            {
                "type":"view",
@@ -247,7 +247,7 @@ def creatmenu(request):
             {
                 "type":"view",
                "name":"签到抽奖",
-               "url":"http://86plus.sinaapp.com/riqiqiandao/"
+               "url":"http://124.248.42.172/riqiqiandao/"
             }
             ]
        }]
@@ -256,7 +256,7 @@ def creatmenu(request):
     '''{
                "type":"view",
                "name":"Oauth登录",
-               "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://86plus.sinaapp.com/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
+               "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://124.248.42.172/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
             }'''
     url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+token
     req = urllib2.Request(url, post)
