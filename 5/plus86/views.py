@@ -115,11 +115,11 @@ def responseMsg(request):
     MsgType=msg['MsgType']
     if MsgType=="text":
         if msg['Content']=='登录':
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://124.248.42.172/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">OAUTH登录</a>')
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://www.iyouvip.com/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect">OAUTH登录</a>')
         elif msg['Content']=='查询商品':
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://124.248.42.172/queryproductstatus/">查询所有商品</a>')
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://www.iyouvip.com/queryproductstatus/">查询所有商品</a>')
         elif msg['Content']=='隐藏':
-            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://124.248.42.172/riqiqiandao/">隐藏测试</a>')    
+            echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="http://www.iyouvip.com/riqiqiandao/">隐藏测试</a>')    
         else:
             echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
     elif MsgType=="event":
@@ -128,14 +128,14 @@ def responseMsg(request):
                 u1=memberCard.objects.filter(openid=msg['FromUserName'])
                 if len(u1)==0:
                 #request.session['fromusername'] = msg[FromUserName]
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://124.248.42.172/register?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '申请会员卡', '申请会员卡', 'http://www.iyouvip.com/site_media/img/companylogo.png', 'http://www.iyouvip.com/register?openid='+openid)
                 else:
-                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://124.248.42.172/membercard?openid='+openid)
+                    echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '会员卡', '点击图片查看会员卡', 'http://www.iyouvip.com/site_media/img/companylogo.png', 'http://www.iyouvip.com/membercard?openid='+openid)
             elif msg['EventKey']=="V1006000_GOOD": 
-                echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://124.248.42.172/checkweixininfo&response_type=code&scope=snsapi_base&state=123#wechat_redirect">OAUTH登录</a>')
+                echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'<a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://www.iyouvip.com/checkweixininfo&response_type=code&scope=snsapi_base&state=123#wechat_redirect">OAUTH登录</a>')
         elif  msg['Event']=="subscribe":
             #echostr = text1 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())),'关注86plus,关注生活')
-            echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '谢谢关注', '点击图片查看功能介绍', 'http://124.248.42.172/site_media/img/companylogo.png', 'http://124.248.42.172/welcome/')
+            echostr = textTp6 % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), '谢谢关注', '点击图片查看功能介绍', 'http://www.iyouvip.com/site_media/img/companylogo.png', 'http://www.iyouvip.com/welcome/')
     #echostr = textTpl % (msg['FromUserName'], msg['ToUserName'], str(int(time.time())), Title1, De1, pic1, url1, MsgType, De2, pic2, url2, Title3, De3, pic3, url3)
 
     return echostr
@@ -176,12 +176,12 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"86PLUS介绍",
-               "url":"http://124.248.42.172/welcome/"
+               "url":"http://www.iyouvip.com/welcome/"
             },
            {
                "type":"view",
                "name":"服饰聚焦",
-               "url":"http://124.248.42.172/productfushi/beijing/1/"
+               "url":"http://www.iyouvip.com/productfushi/beijing/1/"
             },
            {
                "type":"view",
@@ -191,7 +191,7 @@ def creatmenu(request):
            {	
                "type":"view",
                "name":"86PLUS公益",
-               "url":"http://124.248.42.172/gongyi/"
+               "url":"http://www.iyouvip.com/gongyi/"
             }
             ]
       },
@@ -202,22 +202,22 @@ def creatmenu(request):
            {
                 "type":"view",
                "name":"86Plus公告",
-               "url":"http://124.248.42.172/gonggao/"
+               "url":"http://www.iyouvip.com/gonggao/"
             },
            {
                "type":"view",
                "name":"活动资讯",
-               "url":"http://124.248.42.172/huodong/"
+               "url":"http://www.iyouvip.com/huodong/"
             },
            {
                "type":"view",
                "name":"支付教学",
-               "url":"http://124.248.42.172/zhifujiaoxue/"
+               "url":"http://www.iyouvip.com/zhifujiaoxue/"
             },
            {	
                "type":"view",
                "name":"招商加盟",
-               "url":"http://124.248.42.172/zhaoshang/"
+               "url":"http://www.iyouvip.com/zhaoshang/"
             }
             ]
       },
@@ -227,7 +227,7 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"刮刮卡",
-               "url":"http://124.248.42.172/guaguaka/"
+               "url":"http://www.iyouvip.com/guaguaka/"
             },
            {
                "type":"click",
@@ -237,17 +237,17 @@ def creatmenu(request):
             {
                "type":"view",
                "name":"注册",
-               "url":"http://124.248.42.172/userregister/"
+               "url":"http://www.iyouvip.com/userregister/"
             },
             {
                "type":"view",
                "name":"普通登录",
-               "url":"http://124.248.42.172/userlogin/"
+               "url":"http://www.iyouvip.com/userlogin/"
             },
             {
                 "type":"view",
                "name":"签到抽奖",
-               "url":"http://124.248.42.172/riqiqiandao/"
+               "url":"http://www.iyouvip.com/riqiqiandao/"
             }
             ]
        }]
@@ -256,7 +256,7 @@ def creatmenu(request):
     '''{
                "type":"view",
                "name":"Oauth登录",
-               "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://124.248.42.172/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
+               "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://www.iyouvip.com/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
             }'''
     url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+token
     req = urllib2.Request(url, post)
