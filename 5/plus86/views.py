@@ -50,7 +50,7 @@ def responseMsg(request):
     
                 
     #textTpl = "<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[%s]]></MsgType><Content><![CDATA[%s]]></Content><FuncFlag>0</FuncFlag></xml>"
-    textTpl = """<xml>
+    textTpl = '''<xml>
                 <ToUserName><![CDATA[%s]]></ToUserName>
                 <FromUserName><![CDATA[%s]]></FromUserName>
                 <CreateTime>%s</CreateTime>
@@ -76,8 +76,8 @@ def responseMsg(request):
                 <Url><![CDATA[%s]]></Url>
                 </item>
                 </Articles>
-                </xml> """
-    textTp6 = """<xml>
+                </xml>'''
+    textTp6 = '''<xml>
                 <ToUserName><![CDATA[%s]]></ToUserName>
                 <FromUserName><![CDATA[%s]]></FromUserName>
                 <CreateTime>%s</CreateTime>
@@ -91,7 +91,7 @@ def responseMsg(request):
                 <Url><![CDATA[%s]]></Url>
                 </item>
                 </Articles>
-                </xml> """
+                </xml>'''
     text1='''<xml>
              <ToUserName><![CDATA[%s]]></ToUserName>
              <FromUserName><![CDATA[%s]]></FromUserName>
