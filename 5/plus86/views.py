@@ -284,7 +284,9 @@ def handleRequest(request):
         response = HttpResponse(checkSignature(request),content_type="text/plain")  
         return response  
     elif request.method == 'POST':  
-        return HttpResponse(responseMsg(request),content_type="application/xml")     
+        response = HttpResponse(responseMsg(request),content_type="application/xml")  
+        return response  
+        #return HttpResponse(responseMsg(request),content_type="application/xml")     
     else:  
         return None  
 		
