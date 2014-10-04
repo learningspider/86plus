@@ -1,0 +1,25 @@
+
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>群发</title>
+  <meta name="author" content="Jake Rocheleau">
+</head>
+
+<body>
+<p>已发送用户：</p>
+{% comment %}
+{% ifequal forloop.counter  %}
+    <br>
+    {% endifequal %}
+{% endcomment %}
+{% for userinfo in totalinfo %}   
+    {% ifequal userinfo "分割线段" %}
+    <p>发送失败用户：</p>
+    {% endifequal %}
+    {{ userinfo }}<span>——</span>
+{% endfor %}
+</body>
+</html>
