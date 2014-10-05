@@ -35,7 +35,7 @@ def current_datetime(request):
     return render_to_response('gonggaodetail.html')
 
 def responseMsg(request):
-    recvmsg = smart_str(request.raw_post_data)
+    recvmsg = smart_str(request.body)
     root = ET.fromstring(recvmsg)
     msg={}
     
