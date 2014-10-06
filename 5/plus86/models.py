@@ -33,7 +33,8 @@ class clothes(models.Model):
 class gonggao(models.Model):
     ggname=models.CharField(max_length=60)
     gginfo=models.TextField()
-    
+    ggtime=models.DateTimeField()
+    istimeout=models.BooleanField()
     
     def __unicode__(self):
         return self.ggname
@@ -42,8 +43,8 @@ class gonggao(models.Model):
 class huodong(models.Model):
     hdname=models.CharField(max_length=60)
     hdinfo=models.TextField()
-    
-    
+    hdtime=models.DateTimeField()
+    istimeout=models.BooleanField()
     def __unicode__(self):
         return self.hdname
     
