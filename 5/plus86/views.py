@@ -22,7 +22,7 @@ import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
-from plus86.models import memberCard,UserProfile,clothes,riqiqiandao
+from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao
 from plus86.models import user as userlogin6
 
 
@@ -725,7 +725,8 @@ def riqiqiandaoaction(request):
 
 #公告
 def gonggao(request):
-    return render_to_response('gonggao.html')
+    gonggaoinfo=gonggao.objects.filter(istimeout='0').order_by("-ggtime")[0:1]
+    return render_to_response('gonggao.html',{'gonggaoinfo':gonggaoinfo})
 
 #公告细节
 def gongyidetail(request,offsize):
