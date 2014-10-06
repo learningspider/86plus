@@ -175,7 +175,7 @@ def creatmenu(request):
            "sub_button":[
            {
                "type":"view",
-               "name":"86PLUS介绍",
+               "name":"爱优介绍",
                "url":"http://www.iyouvip.com/welcome/"
             },
            {
@@ -186,11 +186,11 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"美食博览",
-               "url":"http://v.qq.com/"
+               "url":"http://www.iyouvip.com/product美食/beijing/1/"
             },
            {	
                "type":"view",
-               "name":"86PLUS公益",
+               "name":"爱优公益",
                "url":"http://www.iyouvip.com/gongyi/"
             }
             ]
@@ -201,7 +201,7 @@ def creatmenu(request):
            "sub_button":[
            {
                 "type":"view",
-               "name":"86Plus公告",
+               "name":"爱优公告",
                "url":"http://www.iyouvip.com/gonggao/"
             },
            {
