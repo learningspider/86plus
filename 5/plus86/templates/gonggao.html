@@ -31,11 +31,13 @@
 {% endblock %}
 {% block neirong %}<small><em>尊贵会员,爱优折扣公告:</em></small> {% endblock %}
 {% block content %}
- <p align="center">公告1</p>
- <p>公告1尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告尊贵会员,爱优折扣公告</p>
- <p align="center"><a href='/gonggaolishi/'/>历史公告</a></p>
+{% for item in gonggaoinfo %}
+         <p align="center">{{item.ggname}}</p><br>
+ <p>{{item.gginfo}}</p><br>
+    {% endfor %}
+ <p align="center"><a href='/gonggaolishi/'/>历史公告</a></p><br>
 {% comment %}
-    {% for item in productFushi %}
+    {% for item in gonggaoinfo %}
          <li><a href='/gonggaodetail'+{{item.id}} />{{item.name}}</a></li><br>
     {% endfor %}
 {% endcomment %}
