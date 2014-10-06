@@ -724,7 +724,7 @@ def riqiqiandaoaction(request):
     #return render_to_response('qiandao.html')
 
 #公告
-def gonggao(request):
+def gonggaoa(request):
     gonggaoinfo=gonggao.objects.filter(istimeout='0').order_by("-ggtime")[0:1]
     return render_to_response('gonggao.html',{'gonggaoinfo':gonggaoinfo})
 
