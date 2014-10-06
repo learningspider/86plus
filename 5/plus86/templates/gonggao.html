@@ -1,5 +1,5 @@
 {% extends "basehuiyuanka.html" %}
-{% block title %}86PLUS公告{% endblock %}
+{% block title %}爱优折扣公告{% endblock %}
 
 {% block huiyuanka %}
 <section id="card_ctn">
@@ -35,7 +35,7 @@
          <p align="center">{{item.ggname}}</p><br>
  <p>{{item.gginfo}}</p><br>
     {% endfor %}
- <ul style="text-align:center"><li><a href='/gonggaolishi/'/>历史公告</a></li><ul><br>
+ <ul style="text-align:center"><li><a href='/gonggaolishi/'/>历史公告</a></li><ul>
 {% comment %}
     {% for item in gonggaoinfo %}
          <li><a href='/gonggaodetail'+{{item.id}} />{{item.name}}</a></li><br>
