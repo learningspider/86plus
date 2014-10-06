@@ -725,7 +725,7 @@ def riqiqiandaoaction(request):
 
 #公告
 def gonggaoa(request):
-    gonggaoinfo=gonggao.objects.filter(istimeout='0').order_by("-ggtime")[0:1]
+    gonggaoinfo=gonggao.objects.filter(istimeout=0).order_by("-ggtime")[0:1]
     return render_to_response('gonggao.html',{'gonggaoinfo':gonggaoinfo})
 
 #公告细节
