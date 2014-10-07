@@ -40,6 +40,7 @@ urlpatterns = patterns('',
     url(r'^riqiqiandao/$', 'plus86.views.riqiqiandaoa'),  #日历签到xin
     url(r'^riqiqiandaoaction/$', 'plus86.views.riqiqiandaoaction'),  #日历签到xin
     url(r'^gonggao/$', 'plus86.views.gonggaoa'),  #公告
+    url(r'^gonggaolishi/$', 'plus86.views.gonggaoalishi'),  #历史公告
     url(r'^gonggaodetail/(\d+)/$', 'plus86.views.gonggaodetail'),  #公告细节
     url(r'^huodong/$', 'plus86.views.huodong'),  #活动
     url(r'^huodongdetail/(\d+)/$', 'plus86.views.huodongdetail'),  #活动细节
