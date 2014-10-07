@@ -31,10 +31,10 @@ class clothes(models.Model):
 
 #公告
 class gonggao(models.Model):
-    ggname=models.CharField(max_length=60)
-    gginfo=models.TextField()
-    ggtime=models.DateTimeField()
-    istimeout=models.BooleanField()
+    ggname=models.CharField(max_length=60,verbose_name='公告名称')
+    gginfo=models.TextField(verbose_name='公告内容')
+    ggtime=models.DateTimeField(verbose_name='公告创建时间')
+    istimeout=models.BooleanField(verbose_name='是否过期')
     
     def __unicode__(self):
         return self.ggname
