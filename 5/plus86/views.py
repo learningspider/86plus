@@ -740,24 +740,18 @@ def gonggaoalishi(request):
         if len(gonggaoinfo)<=0:
             return render_to_response('404_9.html')
     except:
-        raise Http404()
+        return render_to_response('404_9.html')
     return render_to_response('gonggaolishi.html',{'gonggaoinfo':gonggaoinfo})
 
 #公告细节
 def gongyidetail(request,offsize):
+    offsize = int(offsize)
     try:
         gonggaoinfo=gonggao.objects.get(id=offsize)
     except:
-        raise Http404()
+        return render_to_response('404_9.html')
     return render_to_response('gongyidetail.html',{'gonggaoinfo':gonggaoinfo})
 
-#公告细节
-def gonggaodetail(request,offsize):
-    try:
-        offsize = int(offsize)
-    except ValueError:
-        raise Http404()
-    return render_to_response('gonggaodetail.html',locals())
 
 #活动
 def huodong(request):
