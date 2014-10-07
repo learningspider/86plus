@@ -20,8 +20,8 @@ class user(models.Model):
 class clothes(models.Model):
     clname=models.CharField(max_length=60,verbose_name='服饰公司名')
     #clurl=models.CharField(max_length=60)
-    clcity=models.CharField(max_length=60,verbose_name='省')
-    clshi=models.CharField(max_length=60,verbose_name='市')
+    clcity=models.CharField(max_length=60,verbose_name='省',blank=True)
+    clshi=models.CharField(max_length=60,verbose_name='市',blank=True)
     tpurl=models.CharField(max_length=60,verbose_name='图片地址')
     clinfo=models.TextField(verbose_name='服饰详情')
     
