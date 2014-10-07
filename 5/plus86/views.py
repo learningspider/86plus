@@ -725,12 +725,31 @@ def riqiqiandaoaction(request):
 
 #公告
 def gonggaoa(request):
-    gonggaoinfo=gonggao.objects.filter(istimeout=0).order_by("-ggtime")[0:1]
+    try:
+        gonggaoinfo=gonggao.objects.filter(istimeout=0).order_by("-ggtime")[0:1]
+        if len(gonggaoinfo)<=0:
+            return render_to_response('404_9.html')
+    except:
+        raise Http404()
     return render_to_response('gonggao.html',{'gonggaoinfo':gonggaoinfo})
+
+#历史公告
+def gonggaoalishi(request):
+    try:
+        gonggaoinfo=gonggao.objects.filter(istimeout=1).order_by("-ggtime")[0:40]
+        if len(gonggaoinfo)<=0:
+            return render_to_response('404_9.html')
+    except:
+        raise Http404()
+    return render_to_response('gonggaolishi.html',{'gonggaoinfo':gonggaoinfo})
 
 #公告细节
 def gongyidetail(request,offsize):
-    return render_to_response('gongyidetail.html')
+    try:
+        gonggaoinfo=gonggao.objects.get(id=offsize)
+    except:
+        raise Http404()
+    return render_to_response('gongyidetail.html',{'gonggaoinfo':gonggaoinfo})
 
 #公告细节
 def gonggaodetail(request,offsize):
