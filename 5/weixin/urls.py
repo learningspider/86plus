@@ -29,6 +29,7 @@ urlpatterns = patterns('',
     url(r'^welcome/', 'plus86.views.welcome'),  #欢迎界面
     url(r'^guaguaka/', 'plus86.views.guaguaka'),  #刮刮卡界面
     url(r'^productfushi/([a-z]*)/([1-2])/$', 'plus86.views.productfushi'),  #服饰界面
+    url(r'^fushidetail/(/d+)/$', 'plus86.views.fushidetail'),  #服饰细节
     url(r'^gongyi/', 'plus86.views.gongyi'),  #公益界面
     url(r'^gongyidetail/(\d+)/$', 'plus86.views.gongyidetail'),  #公益细节
     url(r'^yincang/', 'plus86.views.yincang'),  #隐藏测试

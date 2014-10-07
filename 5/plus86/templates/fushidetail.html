@@ -1,0 +1,68 @@
+{% extends "productfushi.html" %}
+{% block title %}{{productFushi.clname}}{% endblock %}
+{% block script %}
+<script type="text/javascript">
+$(function(){
+
+$("#xiayiye").click(function(){
+  $("#divinsert").append("<div class='pro-area1'></div>");
+  $(".pro-area1:last").load("/xiayiye/");
+  });
+})
+</script>
+{% endblock %}
+
+</head>
+
+
+<body>
+
+<div class="index-top">
+	<div class="index-top-main" id="index-header">
+		<header class="header">
+			<!-- 21030531-logo-start -->
+			<section class="logo">
+				<a href="#"><img src="http://res.vmall.com/nwap/20140708/images/echannelWap/logo.png"></a>
+			</section><!-- 21030531-logo-end -->
+			<section class="shortcut">
+				<ul>
+					<li></li>
+				</ul>
+			</section>
+			
+		</header>
+	</div>
+</div>
+
+<div class="hr-96"></div>
+
+<br>
+<!-- 21030306-首页焦点图-start -->
+{% block search-2013 %}
+<div id="search-2013" >
+
+			<div class="i-search ld" style='position:relative'>
+ <div class="changecity" style='font-size:18px; position:absolute; left:40px; top:5px;width:50px; height:auto'><a href="/changecity/">
+{{cityshiji}}</a></div>           
+				<ul id="shelper" class="hide">
+				</ul>
+				<div class="form" align="right" >
+                    <form action="/fushisearch/" method="post">
+					<input type="text" class="text" width="600" accesskey="s" id="fushi" name="fushisearch" autocomplete="off" >
+					<input type="submit" value="搜索" style='font-size:18px'  class="button" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </form>
+				</div>
+  </div>
+			<div id="hotwords" clstag="homepage|keycount|home2013|03b"></div>
+</div>
+{% endblock %}
+
+{% block content %}
+<p>{{productFushi.clname}}</p>
+<p>{{productFushi.clinfo}}</p>
+        
+{% endblock %}
+
+
+
+

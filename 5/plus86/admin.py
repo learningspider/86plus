@@ -16,10 +16,14 @@ class gonggaoAdmin(admin.ModelAdmin):
     list_display = ('id','ggname', 'ggtime', 'istimeout')
     search_fields = ('ggname',)
 
+class clothesAdmin(admin.ModelAdmin):
+    list_display = ('id','clname', 'clcity', 'clshi')
+    search_fields = ('clname',)
+
 admin.site.register(memberCard)
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
-admin.site.register(clothes)
+admin.site.register(clothes,clothesAdmin)
 admin.site.register(gonggao,gonggaoAdmin)
 admin.site.register(huodong)
 admin.site.register(riqiqiandao)
