@@ -14,7 +14,7 @@ class UserAdmin(UserAdmin):
     
 class gonggaoAdmin(admin.ModelAdmin):
     list_display = ('id','ggname', 'ggtime', 'istimeout')
-    search_fields = ('ggname')
+    search_fields = ('ggname',)
 
 admin.site.register(memberCard)
 admin.site.unregister(User)
