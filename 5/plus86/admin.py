@@ -13,7 +13,7 @@ class UserAdmin(UserAdmin):
     inlines = (UserProfileInline, )
     
 class gonggao(admin.ModelAdmin):
-    list_display = ('id', 'ggname', 'ggtime', 'istimeout')
+    list_display = ('ggname', 'ggtime', 'istimeout')
     search_fields = ('ggname')
 
 admin.site.register(memberCard)
