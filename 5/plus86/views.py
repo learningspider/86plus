@@ -658,6 +658,18 @@ def productfushi(request,city,offsize):
     #items =chain(city, productFushi)
     return render_to_response('productfushi.html',locals())
 
+#服饰细节
+def fushidetail(request,offsize):
+    city=request.session['city']
+    offsize = int(offsize)
+    cityshiji=citycity(city)
+    #items =chain(city, productFushi)
+    try:
+        productFushi=clothes.objects.get(id=offsize)
+    except:
+        return render_to_response('404_9.html')
+    return render_to_response('fushidetail.html',locals())
+
 #公益界面
 def gongyi(request):
     return render_to_response('gongyi.html')
