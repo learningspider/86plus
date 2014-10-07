@@ -1,0 +1,19 @@
+{% extends "basehuiyuanka.html" %}
+{% block title %}爱优折扣历史公告{% endblock %}
+
+
+{% block neirong %}<small><em>尊贵会员,爱优折扣公告:</em></small> {% endblock %}
+{% block content %}
+
+{% for item in gonggaoinfo %}
+         <li><a href='/gonggaodetail/'+{{item.id}}+'/' />{{item.ggname}}</a></li><br>
+    {% endfor %}
+{% comment %}
+    {% for item in gonggaoinfo %}
+         <li><a href='/gonggaodetail'+{{item.id}} />{{item.name}}</a></li><br>
+    {% endfor %}
+{% endcomment %}
+
+{% endblock %}
+
+   
