@@ -31,8 +31,8 @@ class clothes(models.Model):
 
 #公告
 class gonggao(models.Model):
-    '''公告
-    '''
+    """公告
+    """
     ggname=models.CharField(max_length=60,verbose_name='公告名称')
     gginfo=models.TextField(verbose_name='公告内容')
     ggtime=models.DateTimeField(verbose_name='公告创建时间')
