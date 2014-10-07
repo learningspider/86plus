@@ -743,7 +743,16 @@ def gonggaoalishi(request):
         return render_to_response('404_9.html')
     return render_to_response('gonggaolishi.html',{'gonggaoinfo':gonggaoinfo})
 
-#公告细节
+#公益细节
+def gonggaodetail(request,offsize):
+    offsize = int(offsize)
+    try:
+        gonggaoinfo=gonggao.objects.get(id=offsize)
+    except:
+        return render_to_response('404_9.html')
+    return render_to_response('gongyidetail.html',{'gonggaoinfo':gonggaoinfo})
+
+#公益细节
 def gongyidetail(request,offsize):
     offsize = int(offsize)
     try:
