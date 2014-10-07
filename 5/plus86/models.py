@@ -37,7 +37,10 @@ class gonggao(models.Model):
     gginfo=models.TextField(verbose_name='公告内容')
     ggtime=models.DateTimeField(verbose_name='公告创建时间')
     istimeout=models.BooleanField(verbose_name='是否过期')
-    
+    class Meta:
+5         #db_table = 'Product'#数据库名
+6         verbose_name='公告内容'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
+7         verbose_name_plural='公告'#修改管理级页面显示
     def __unicode__(self):
         return self.ggname
 
