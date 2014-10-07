@@ -11,6 +11,10 @@ class UserProfileInline(admin.StackedInline):
 # Define a new User admin
 class UserAdmin(UserAdmin):
     inlines = (UserProfileInline, )
+    
+class gonggao(admin.ModelAdmin):
+    list_display = ('id', 'ggname', 'ggtime', 'istimeout')
+    search_fields = ('ggname')
 
 admin.site.register(memberCard)
 admin.site.unregister(User)
