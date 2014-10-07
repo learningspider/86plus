@@ -12,14 +12,14 @@ class UserProfileInline(admin.StackedInline):
 class UserAdmin(UserAdmin):
     inlines = (UserProfileInline, )
     
-class gonggao(admin.ModelAdmin):
-    list_display = ('ggname', 'ggtime', 'istimeout')
+class gonggaoAdmin(admin.ModelAdmin):
+    list_display = ('id,''ggname', 'ggtime', 'istimeout')
     search_fields = ('ggname')
 
 admin.site.register(memberCard)
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 admin.site.register(clothes)
-admin.site.register(gonggao)
+admin.site.register(gonggao,gonggaoAdmin)
 admin.site.register(huodong)
 admin.site.register(riqiqiandao)
