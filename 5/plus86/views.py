@@ -750,7 +750,7 @@ def gonggaodetail(request,offsize):
         gonggaoinfo=gonggao.objects.get(id=offsize)
     except:
         return render_to_response('404_9.html')
-    return render_to_response('gongyidetail.html',{'gonggaoinfo':gonggaoinfo})
+    return render_to_response('gonggaodetail.html',{'gonggaoinfo':gonggaoinfo})
 
 #公益细节
 def gongyidetail(request,offsize):
