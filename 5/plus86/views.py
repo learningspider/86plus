@@ -529,20 +529,22 @@ def userregister(request):
     phonenum = request.POST.get( 'phonenumber', None)
     yourpw = request.POST.get( 'yourpw', None)
     xingming = request.POST.get( 'xingming', None)
-    userhave=User.objects.filter(username=username)
-    if len(userhave)==0:      
-        user1 = User.objects.create_user(username=username, 
-                email=email, password=yourpw,first_name=xingming)
-        user1.save()
-        
-        u = User.objects.get(username=username)
-        u1 = UserProfile.objects.get(user_id=u.id)
-        u1.phonenumber=phonenum
-        u1.IDcard=IDcard
-        u1.save()
-    else:
-        return render_to_response('registeruser.html',{'userhave':'用户名已经存在！'})
-    
+    try:
+        userhave=User.objects.filter(username=username)
+        if len(userhave)==0:      
+            user1 = User.objects.create_user(username=username, 
+                    email=email, password=yourpw,first_name=xingming)
+            user1.save()
+            
+            u = User.objects.get(username=username)
+            u1 = UserProfile.objects.get(user_id=u.id)
+            u1.phonenumber=phonenum
+            u1.IDcard=IDcard
+            u1.save()
+        else:
+            return render_to_response('registeruser.html',{'userhave':'用户名已经存在！'})
+    except:
+        return render_to_response('404_9.html')
     return render_to_response('index2.html')
 
 
