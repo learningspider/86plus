@@ -55,6 +55,7 @@ class guanzhuClothesModel(models.Model):
     username=models.CharField(max_length=60,verbose_name='用户名')
     gzClothes=models.CharField(max_length=100,verbose_name='关注服饰公司')
     gzurl=models.CharField(max_length=100,verbose_name='关注服饰公司url')
+    gztpurl=models.CharField(max_length=100,verbose_name='图片url')
     class Meta:
         #db_table = 'Product'#数据库名
         verbose_name='服饰关注列表'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
