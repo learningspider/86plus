@@ -580,7 +580,7 @@ def xiayiye(request):
     num1=number*20
     num=number*20+20
     city=request.session['city']
-    productFushi=clothes.objects.filter(clcity=city).order_by("-id")[num1:num]
+    productFushi=clothes.objects.filter(clcity=city).order_by("clname")[num1:num]
     request.session['num']=request.session['num']+1
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
@@ -592,7 +592,7 @@ def xiayiyesearch(request):
     num1=number*20
     num=number*20+20
     city=request.session['city']
-    productFushi=clothes.objects.filter(clcity=city,clname__contains=fushisearch).order_by("-id")[num1:num]
+    productFushi=clothes.objects.filter(clcity=city,clname__contains=fushisearch).order_by("clname")[num1:num]
     request.session['num']=request.session['num']+1
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
@@ -608,7 +608,7 @@ def fushisearch(request):
         cityshiji='北京'
     elif city=='wuhan':
         cityshiji='武汉'
-    productFushi=clothes.objects.filter(clcity=city,clname__contains=fushisearch).order_by("-id")[0:10]
+    productFushi=clothes.objects.filter(clcity=city,clname__contains=fushisearch).order_by("clname")[0:10]
     return render_to_response('fushisearch.html',locals())
 
 #城市选择
@@ -647,9 +647,9 @@ def productfushi(request,city,offsize):
     if city=='':
         city=beijing
     if offsize=='1':
-        productFushi=clothes.objects.filter(clcity=city).order_by("-id")[0:20]
+        productFushi=clothes.objects.filter(clcity=city).order_by("clname")[0:20]
     elif offsize=='2':
-        productFushi=clothes.objects.filter(clshi=city).order_by("-id")[0:20]
+        productFushi=clothes.objects.filter(clshi=city).order_by("clname")[0:20]
     else:
         return render_to_response('404_9.html')
     #city=request.GET.get('city', 'beijing')
