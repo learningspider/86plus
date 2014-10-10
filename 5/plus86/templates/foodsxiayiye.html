@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+
+</head>
+
+
+<body>
+
+    {% for item in productFushi %}
+         <li  style="list-style:none"><div class="pro-area1"><a href='/fushidetail/{{item.id}}/'><img align='middle'  with='95%' height='280' src='{{item.tpurl}}' alt='{{item.clname}}' /></a></div></li><br>
+    {% endfor %}
+
+{% if nextend %}
+<div class="nextend" align="center">
+<p>已经到最后一页</p>
+<br>
+</div>
+ <br>
+{% endif %}
+     
+</body>
+</html>
+<!--Hit 2014-08-30 13:14:20-->

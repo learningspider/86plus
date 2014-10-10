@@ -22,7 +22,7 @@ import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
-from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao
+from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao，foods
 from plus86.models import user as userlogin6
 
 
@@ -186,7 +186,7 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"美食博览",
-               "url":"http://www.iyouvip.com/product美食/beijing/1/"
+               "url":"http://www.iyouvip.com/productfoods/beijing/1/"
             },
            {	
                "type":"view",
@@ -677,6 +677,96 @@ def fushidetail(request,offsize):
     except:
         return render_to_response('404_9.html')
     return render_to_response('fushidetail.html',locals())
+
+#美食相关---------------------------------------------------------------
+
+#美食界面
+def productfoods(request,city,offsize):
+    request.session['num'] = 1
+    if city=='':
+        city=beijing
+    try:
+    if offsize=='1':
+        productFushi=foods.objects.filter(fdcity=city).order_by("fdname")[0:20]
+    elif offsize=='2':
+        productFushi=foods.objects.filter(fdshi=city).order_by("fdname")[0:20]
+    else:
+        return render_to_response('404_9.html')
+    except:
+        return render_to_response('404_9.html')
+    #city=request.GET.get('city', 'beijing')
+    request.session['city'] = city
+    cityshiji=citycity(city)
+    #items =chain(city, productFushi)
+    return render_to_response('productfoods.html',locals())
+
+#美食细节
+def foodsdetail(request,offsize):
+    city=request.session['city']
+    offsize = int(offsize)
+    cityshiji=citycity(city)
+    #items =chain(city, productFushi)
+    try:
+        productFushi=foods.objects.get(id=offsize)
+    except:
+        return render_to_response('404_9.html')
+    return render_to_response('foodsdetail.html',locals())
+
+#改变城市美食
+def foodschangecity(request):
+    return render_to_response('foodschangecity.html')
+
+#美食下一页
+def foodsxiayiye(request):
+    number=request.session['num']
+    number=number+0
+    num1=number*20
+    num=number*20+20
+    city=request.session['city']
+    nextend = False
+    try:
+        productFushi=foods.objects.filter(fdcity=city).order_by("fdname")[num1:num]
+        request.session['num']=request.session['num']+1
+        if(len(productFushi)<20):
+            nextend = True
+    except:
+        return render_to_response('404_9.html')
+    #items =chain(city, productFushi)
+    return render_to_response('foodsxiayiye.html',locals())
+
+#美食下一页search
+def foodsxiayiyesearch(request):
+    number=request.session['num']
+    number=number+0
+    num1=number*20
+    num=number*20+20
+    city=request.session['city']
+    try:
+        productFushi=foods.objects.filter(fdcity=city,fdname__contains=fushisearch).order_by("fdname")[num1:num]
+    except:
+        return render_to_response('404_9.html')
+    request.session['num']=request.session['num']+1
+    #items =chain(city, productFushi)
+    return render_to_response('foodsxiayiye.html',locals())
+
+#美食search
+@csrf_exempt
+def foodssearch(request):
+    request.session['num'] = 1
+    fushisearch = request.POST.get( 'fushisearch', None )
+    city=request.session['city']
+    cityshiji=''
+    if city=='beijing':
+        cityshiji='北京'
+    elif city=='wuhan':
+        cityshiji='武汉'
+    try:
+        productFushi=foods.objects.filter(fdcity=city,fdname__contains=fushisearch).order_by("fdname")[0:10]
+    except:
+        return render_to_response('404_9.html')
+    return render_to_response('foodssearch.html',locals())
+
+#美食相关---------------------------------------------------------------
 
 #公益界面
 def gongyi(request):
