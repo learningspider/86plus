@@ -1032,6 +1032,7 @@ def page_error(request):
     return render_to_response('500.html')
 
 #用户上传action
+@csrf_exempt
 def uploadfile(request):
     if request.user.username<>"administrator":
         #return render_to_response('404_9.html')
