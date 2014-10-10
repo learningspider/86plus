@@ -88,6 +88,7 @@ class huodong(models.Model):
     hdname=models.CharField(max_length=60,verbose_name='活动名称')
     hdinfo=models.TextField(verbose_name='活动信息')
     hdtime=models.DateTimeField(verbose_name='活动创建时间')
+    hdtpurl=models.CharField(max_length=100,verbose_name='图片url')
     istimeout=models.BooleanField(verbose_name='是否过期')
     class Meta:
         #db_table = 'Product'#数据库名
