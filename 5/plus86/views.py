@@ -22,7 +22,7 @@ import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
-from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao，foods
+from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods
 from plus86.models import user as userlogin6
 
 
