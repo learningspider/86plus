@@ -678,7 +678,7 @@ def fushidetail(request,offsize):
         return render_to_response('404_9.html')
     return render_to_response('fushidetail.html',locals())
 
-#美食相关---------------------------------------------------------------
+#美食相关---------START-----------------------------------------------
 
 #美食界面
 def productfoods(request,city,offsize):
@@ -766,7 +766,7 @@ def foodssearch(request):
         return render_to_response('404_9.html')
     return render_to_response('foodssearch.html',locals())
 
-#美食相关---------------------------------------------------------------
+#美食相关----------------------END--------------------------------------
 
 #公益界面
 def gongyi(request):
