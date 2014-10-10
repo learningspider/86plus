@@ -1031,7 +1031,7 @@ def page_not_found(request):
 def page_error(request):
     return render_to_response('500.html')
 
-
+#用户上传action
 def uploadfile(request):
     if request.user.username<>"administrator":
         #return render_to_response('404_9.html')
@@ -1052,3 +1052,10 @@ def uploadfile(request):
     except:
         return HttpResponse('file upload error')
     return HttpResponse('file upload succeed')
+
+#用户上传
+def useruploadfile(request):
+    if request.user.username<>"administrator":
+        #return render_to_response('404_9.html')
+        return HttpResponse("请用管理员账户登录！")
+    return render_to_response('upload.html')

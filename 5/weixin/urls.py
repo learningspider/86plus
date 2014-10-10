@@ -49,7 +49,8 @@ urlpatterns = patterns('',
     url(r'^zhaoshang/$', 'plus86.views.zhaoshang'),  #招商
     url(r'^qunfa/$', 'plus86.views.qunfa'),  #群发
     url(r'^qunfajiemian/$', 'plus86.views.qunfajiemian'),  #群发界面
-    url(r'^uploadfile/$', 'plus86.views.uploadfile'),  #上传界面
+    url(r'^uploadfile/$', 'plus86.views.uploadfile'),  #上传
+    url(r'^useruploadfile/$', 'plus86.views.useruploadfile'),  #上传界面
     url(r'^checkmember/', 'plus86.views.checkmember'),
     url(r'^reg/', 'plus86.views.reg'),
     url(r'^checkweixininfo/', 'plus86.views.getweixininfo'),
