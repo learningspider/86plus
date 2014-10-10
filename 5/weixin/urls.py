@@ -55,6 +55,14 @@ urlpatterns = patterns('',
     url(r'^createproduct/', 'plus86.views.createproduct'),
     url(r'^queryproductstatus/', 'plus86.views.queryproductstatus'),
     url(r'^plus86admin/', include(admin.site.urls)),
+    
+    #美食相关
+    url(r'^productfoods/([a-z]*)/([1-2])/$', 'plus86.views.productfoods'),  #美食界面
+    url(r'^foodsdetail/(\d+)/$', 'plus86.views.foodsdetail'),  #美食细节
+    url(r'^foodschangecity/$', 'plus86.views.foodschangecity'),  #改变城市美食
+    url(r'^foodsxiayiye/', 'plus86.views.foodsxiayiye'),  #下一页美食
+    url(r'^foodsxiayiyesearch/', 'plus86.views.foodsxiayiyesearch'),  #下一页search美食
+    url(r'^foodssearch/', 'plus86.views.foodssearch'),  #美食搜索
     #url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
 
