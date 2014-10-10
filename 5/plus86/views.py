@@ -22,7 +22,7 @@ import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
-from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods
+from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods,huodong
 from plus86.models import user as userlogin6
 
 
@@ -873,8 +873,12 @@ def gongyidetail(request,offsize):
 
 
 #活动
-def huodong(request):
-    return render_to_response('huodong.html')
+def huodongview(request):
+    try:
+        huodonginfo=huodong.objects.filter(istimeout=0).order_by("-hdtime")
+    except:
+        return render_to_response('404_9.html')
+    return render_to_response('huodong.html',{'huodonginfo':huodonginfo})
 
 #活动细节
 def huodongdetail(request,offsize):
@@ -1026,3 +1030,25 @@ def page_not_found(request):
 
 def page_error(request):
     return render_to_response('500.html')
+
+
+def uploadfile(request):
+    if request.user.username<>"administrator":
+        #return render_to_response('404_9.html')
+        return HttpResponse("请用管理员账户登录！")
+    UPLOADS_ROOT='/data/www/weixin/site_media/upload'
+    # 获取文件
+    file_obj = request.FILES.get('your_file', None)
+    if file_obj == None:
+        return HttpResponse('file not existing in the request')
+    
+    # 写入文件
+    file_name = file_obj.name # 不能使用文件名称，因为存在中文，会引起内部错误
+    file_full_path = os.path.join(UPLOADS_ROOT, file_name)
+    try:
+        dest = open(file_full_path,'wb+')
+        dest.write(file_obj.read())
+        dest.close()
+    except:
+        return HttpResponse('file upload error')
+    return HttpResponse('file upload succeed')

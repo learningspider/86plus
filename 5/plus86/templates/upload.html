@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN" manifest="/misc/wei_cache.manifest">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Generator" content="Fortune v1.0.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="format-detection" content="telephone=no">
+    <title>{% block title %}爱优折扣上传{% endblock %}</title>
+    <link href="/site_media/css/style.css" rel="stylesheet" type="text/css">
+ 
+    <style>
+      abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, figcaption, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, small, time, video {
+        display:block;
+      }
+    </style>
+  </head>
+  <body id="" class="">
+    
+<form enctype="multipart/form-data" method="POST" action="/uploadfile/">
+	{% csrf_token %}
+	<input type="file" name="your_file"/>
+	<input type="submit" value="上传文件" />
+</form>
+
+  </body>
+</html>
