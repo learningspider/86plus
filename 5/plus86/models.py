@@ -33,6 +33,40 @@ class clothes(models.Model):
     def __unicode__(self):
         return self.clname
 
+#服饰分类模块
+class clothes(models.Model):
+    clname=models.CharField(max_length=100,verbose_name='服饰公司名')
+    #clurl=models.CharField(max_length=60)
+    clcity=models.CharField(max_length=60,verbose_name='省',blank=True)
+    clshi=models.CharField(max_length=60,verbose_name='市',blank=True)
+    tpurl=models.CharField(max_length=100,verbose_name='图片地址')
+    clinfo=models.TextField(verbose_name='服饰详情')
+    
+    class Meta:
+        #db_table = 'Product'#数据库名
+        verbose_name='服饰列表'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
+        verbose_name_plural='服饰'#修改管理级页面显示
+    
+    def __unicode__(self):
+        return self.clname
+
+#服饰分类模块
+class foods(models.Model):
+    fdname=models.CharField(max_length=100,verbose_name='美食公司名')
+    #clurl=models.CharField(max_length=60)
+    fdcity=models.CharField(max_length=60,verbose_name='省',blank=True)
+    fdshi=models.CharField(max_length=60,verbose_name='市',blank=True)
+    tpurl=models.CharField(max_length=100,verbose_name='图片地址')
+    fdinfo=models.TextField(verbose_name='美食详情')
+    
+    class Meta:
+        #db_table = 'Product'#数据库名
+        verbose_name='美食列表'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
+        verbose_name_plural='美食'#修改管理级页面显示
+    
+    def __unicode__(self):
+        return self.clname
+
 #公告
 class gonggao(models.Model):
     """公告

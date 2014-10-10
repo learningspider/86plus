@@ -582,8 +582,14 @@ def xiayiye(request):
     num1=number*20
     num=number*20+20
     city=request.session['city']
-    productFushi=clothes.objects.filter(clcity=city).order_by("clname")[num1:num]
-    request.session['num']=request.session['num']+1
+    nextend = False
+    try:
+        productFushi=clothes.objects.filter(clcity=city).order_by("clname")[num1:num]
+        request.session['num']=request.session['num']+1
+        if(len(productFushi)<20):
+            nextend = True
+    except:
+        return render_to_response('404_9.html')
     #items =chain(city, productFushi)
     return render_to_response('xiayiye.html',locals())
 
