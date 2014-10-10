@@ -18,8 +18,12 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^$', 'plus86.views.current_datetime'),
+    
+    #菜单相关
     url(r'^create/createmenu$', 'plus86.views.creatmenu'),
     url(r'^create/deletemenu$', 'plus86.views.deletemenu'),
+    
+    
     url(r'^membercard/', 'plus86.views.membercard'),
     url(r'^register', 'plus86.views.register'),
     url(r'^userregister/', 'plus86.views.userregistershow'),
@@ -28,28 +32,44 @@ urlpatterns = patterns('',
     url(r'^userloginaction/', 'plus86.views.loginAction'),  #用户登录动作
     url(r'^welcome/', 'plus86.views.welcome'),  #欢迎界面
     url(r'^guaguaka/', 'plus86.views.guaguaka'),  #刮刮卡界面
+    
+    #服饰聚焦相关
     url(r'^productfushi/([a-z]*)/([1-2])/$', 'plus86.views.productfushi'),  #服饰界面
     url(r'^fushidetail/(\d+)/$', 'plus86.views.fushidetail'),  #服饰细节
-    url(r'^gongyi/', 'plus86.views.gongyi'),  #公益界面
-    url(r'^gongyidetail/(\d+)/$', 'plus86.views.gongyidetail'),  #公益细节
-    url(r'^yincang/', 'plus86.views.yincang'),  #隐藏测试
     url(r'^changecity/$', 'plus86.views.changecity'),  #改变城市
     url(r'^xiayiye/', 'plus86.views.xiayiye'),  #下一页
     url(r'^xiayiyesearch/', 'plus86.views.xiayiyesearch'),  #下一页search
     url(r'^fushisearch/', 'plus86.views.fushisearch'),  #服饰搜索
+    
+    #公益相关
+    url(r'^gongyi/', 'plus86.views.gongyi'),  #公益界面
+    url(r'^gongyidetail/(\d+)/$', 'plus86.views.gongyidetail'),  #公益细节
+    url(r'^yincang/', 'plus86.views.yincang'),  #隐藏测试
+    
+    #签到相关
     url(r'^qiandao/$', 'plus86.views.qiandao'),  #日历签到
     url(r'^riqiqiandao/$', 'plus86.views.riqiqiandaoa'),  #日历签到xin
     url(r'^riqiqiandaoaction/$', 'plus86.views.riqiqiandaoaction'),  #日历签到xin
+    
+    #公告相关
     url(r'^gonggao/$', 'plus86.views.gonggaoa'),  #公告
     url(r'^gonggaolishi/$', 'plus86.views.gonggaoalishi'),  #历史公告
     url(r'^gonggaodetail/(\d+)/$', 'plus86.views.gonggaodetail'),  #公告细节
+    
+    #活动相关
     url(r'^huodong/$', 'plus86.views.huodongview'),  #活动
     url(r'^huodongsearch/$', 'plus86.views.huodongsearch'),  #活动search
     url(r'^huodongdetail/(\d+)/$', 'plus86.views.huodongdetail'),  #活动细节
+    
+    
     url(r'^zhifujiaoxue/$', 'plus86.views.zhifujiaoxue'),  #支付教学
     url(r'^zhaoshang/$', 'plus86.views.zhaoshang'),  #招商
+    
+    #群发相关
     url(r'^qunfa/$', 'plus86.views.qunfa'),  #群发
     url(r'^qunfajiemian/$', 'plus86.views.qunfajiemian'),  #群发界面
+    
+    
     url(r'^uploadfile/$', 'plus86.views.uploadfile'),  #上传
     url(r'^useruploadfile/$', 'plus86.views.useruploadfile'),  #上传界面
     url(r'^checkmember/', 'plus86.views.checkmember'),
