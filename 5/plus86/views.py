@@ -872,6 +872,8 @@ def gongyidetail(request,offsize):
     return render_to_response('gongyidetail.html',{'gonggaoinfo':gonggaoinfo})
 
 
+#--------------------------活动start---------------------------------------
+
 #活动
 def huodongview(request):
     try:
@@ -889,7 +891,7 @@ def huodongdetail(request,offsize):
         return render_to_response('404_9.html')
     return render_to_response('huodongdetail.html',{'huodonginfo':huodonginfo})
 
-#美食search
+#活动search
 @csrf_exempt
 def huodongsearch(request):
     request.session['num'] = 1
@@ -906,14 +908,18 @@ def huodongsearch(request):
         return render_to_response('404_9.html')
     return render_to_response('huodongsearch.html',locals())
 
+#--------------------------活动end---------------------------------------
+
 #支付教学
 def zhifujiaoxue(request):
     return render_to_response('zhifujiaoxue.html')
 
 
-#支付教学
+#招商
 def zhaoshang(request):
     return render_to_response('zhaoshang.html')
+
+#--------------------------群发start---------------------------------------
 
 #群发
 @csrf_exempt
@@ -1048,6 +1054,9 @@ def page_not_found(request):
 
 def page_error(request):
     return render_to_response('500.html')
+
+#--------------------------群发end---------------------------------------
+
 #--------------------------上传start---------------------------------------
 #用户上传action
 @csrf_exempt
