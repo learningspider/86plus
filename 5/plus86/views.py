@@ -875,18 +875,36 @@ def gongyidetail(request,offsize):
 #活动
 def huodongview(request):
     try:
-        huodonginfo=huodong.objects.filter(istimeout=0).order_by("-hdtime")
+        huodonginfo=huodong.objects.filter(istimeout=0).order_by("-hdtime")[0:100]
     except:
         return render_to_response('404_9.html')
     return render_to_response('huodong.html',{'huodonginfo':huodonginfo})
 
 #活动细节
 def huodongdetail(request,offsize):
+    offsize = int(offsize)
     try:
-        offsize = int(offsize)
-    except ValueError:
-        raise Http404()
-    return render_to_response('huodongdetail.html',locals())
+        huodonginfo=huodong.objects.get(id=offsize)
+    except:
+        return render_to_response('404_9.html')
+    return render_to_response('huodongdetail.html',{'huodonginfo':huodonginfo})
+
+#美食search
+@csrf_exempt
+def huodongsearch(request):
+    request.session['num'] = 1
+    fushisearch = request.POST.get( 'fushisearch', None )
+    city=request.session['city']
+    cityshiji=''
+    if city=='beijing':
+        cityshiji='北京'
+    elif city=='wuhan':
+        cityshiji='武汉'
+    try:
+        productFushi=huodong.objects.filter(hdname__contains=fushisearch).order_by("hdname")
+    except:
+        return render_to_response('404_9.html')
+    return render_to_response('huodongsearch.html',locals())
 
 #支付教学
 def zhifujiaoxue(request):
@@ -1030,7 +1048,7 @@ def page_not_found(request):
 
 def page_error(request):
     return render_to_response('500.html')
-
+#--------------------------上传start---------------------------------------
 #用户上传action
 @csrf_exempt
 def uploadfile(request):
@@ -1060,3 +1078,5 @@ def useruploadfile(request):
         #return render_to_response('404_9.html')
         return HttpResponse("请用管理员账户登录！")
     return render_to_response('upload.html')
+
+#--------------------------上传end---------------------------------------

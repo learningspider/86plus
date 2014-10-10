@@ -14,25 +14,6 @@ $("#xiayiye").click(function(){
 </script>
 {% endblock %}
 
-{% block search-2013 %}
-<div id="search-2013" >
-
-			<div class="i-search ld" style='position:relative'>
- <div class="changecity" style='font-size:18px; position:absolute; left:40px; top:5px;width:50px; height:auto'><a href="/changecity/">
-{{cityshiji}}</a></div>           
-				<ul id="shelper" class="hide">
-				</ul>
-				<div class="form" align="right" >
-                    <form action="/huodongsearch/" method="post">
-					<input type="text" class="text" width="600" accesskey="s" id="fushi" name="fushisearch" autocomplete="off" >
-					<input type="submit" value="搜索" style='font-size:18px'  class="button" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </form>
-				</div>
-  </div>
-			<div id="hotwords" clstag="homepage|keycount|home2013|03b"></div>
-</div>
-{% endblock %}
-
 {% block content %}
 <div>
 <!-- 21030306-推荐商品-start -->
@@ -47,6 +28,8 @@ $("#xiayiye").click(function(){
          </ul>
     </section>
 </article> <!-- 21030306-推荐商品-end -->
+</div>
+
  <br>
 {% endblock %}
 

@@ -1,41 +1,29 @@
-{% extends "basehuiyuanka.html" %}
-{% block title %}86PLUS活动{% endblock %}
+{% extends "productfushi.html" %}
+{% block title %}{{huodonginfo.hdname}}{% endblock %}
 
-{% block huiyuanka %}
-<section id="card_ctn">
-        <div class="bk1"></div>
-        <div class="cont">
-          <div class="card">
-            <div class="front">
-              <figure class="fg" style="background-image:url(/site_media/img/4f.jpg);">
-                <img src="/site_media/img/companylogo.png">
-                <figcaption class="fc">
-                  <span class="cname" style="color:#957426;">微信会员卡</span>
-                  <span class="t" style="color:#aaa;text-shadow:#000 0 -1px;"></span>
-                  <span class="n" style="color: rgb(170, 170, 170); text-shadow: rgb(0, 0, 0) 0px -1px; ">NO.80000716</span>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="back">
-              <figure class="fg" style="background-image:url(/site_media/img/4b.jpg);">
-                <div class="info">
-                  <p class="addr">广东省深圳市南山区滨海大道深圳湾体育中心</p>
-                  <p class="tel"><a class="autotel" href="tel:075586280000">0755-86280000</a></p>
-                </div>
-                <p class="keywords">番茄田</p>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-{% endblock %}
 
-{% block neirong %}
-<small><em>86PLIS活动:</em></small>
+
+{% block search-2013 %}
+<div id="search-2013" >
+
+			<div class="i-search ld" style='position:relative'>
+ <div class="changecity" style='font-size:18px; position:absolute; left:40px; top:5px;width:50px; height:auto'><a href="/changecity/">
+{{cityshiji}}</a></div>           
+				<ul id="shelper" class="hide">
+				</ul>
+				<div class="form" align="right" >
+                    <form action="/huodongsearch/" method="post">
+					<input type="text" class="text" width="600" accesskey="s" id="fushi" name="fushisearch" autocomplete="off" >
+					<input type="submit" value="搜索" style='font-size:18px'  class="button" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </form>
+				</div>
+  </div>
+			<div id="hotwords" clstag="homepage|keycount|home2013|03b"></div>
+</div>
 {% endblock %}
 
 {% block content %}
-<p>；；；；；；；；；；；；；；；；；；；；；；；；；大天下告知！！！！！！！！！！！！！！！</p>
-{% endblock %}
-
-   
+<p align="center">{{huodonginfo.hdname}}</p><br>
+<img align='middle'  with='95%' height='280' src='{{huodonginfo.hdtpurll}}' alt='{{hdinfo.hdname}}' /><br>
+ <p>{{huodonginfo.gginfo}}</p><br>
+    {% endfor %}
