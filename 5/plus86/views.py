@@ -17,7 +17,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.db import connection
 
-import hashlib
+import hashlib,os
 import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
