@@ -686,12 +686,12 @@ def productfoods(request,city,offsize):
     if city=='':
         city=beijing
     try:
-    if offsize=='1':
-        productFushi=foods.objects.filter(fdcity=city).order_by("fdname")[0:20]
-    elif offsize=='2':
-        productFushi=foods.objects.filter(fdshi=city).order_by("fdname")[0:20]
-    else:
-        return render_to_response('404_9.html')
+        if offsize=='1':
+            productFushi=foods.objects.filter(fdcity=city).order_by("fdname")[0:20]
+        elif offsize=='2':
+            productFushi=foods.objects.filter(fdshi=city).order_by("fdname")[0:20]
+        else:
+            return render_to_response('404_9.html')
     except:
         return render_to_response('404_9.html')
     #city=request.GET.get('city', 'beijing')
