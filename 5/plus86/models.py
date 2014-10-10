@@ -108,7 +108,7 @@ class huodong(models.Model):
     
 #日期签到
 class riqiqiandao(models.Model):
-    yonghu=models.CharField(max_length=60)
+    yonghu=models.CharField(max_length=60,verbose_name='用户名')
     h1=models.CharField(max_length=2)
     h2=models.CharField(max_length=2)
     h3=models.CharField(max_length=2)
@@ -140,6 +140,10 @@ class riqiqiandao(models.Model):
     h29=models.CharField(max_length=2)
     h30=models.CharField(max_length=2)
     h31=models.CharField(max_length=2) 
+    class Meta:
+        #db_table = 'Product'#数据库名
+        verbose_name='签到详情'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
+        verbose_name_plural='签到'#修改管理级页面显示
     def __unicode__(self):
         return self.yonghu
     
