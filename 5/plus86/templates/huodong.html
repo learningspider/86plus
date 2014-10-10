@@ -1,51 +1,42 @@
-{% extends "basehuiyuanka.html" %}
-{% block title %}86PLUS活动{% endblock %}
+{% extends "productfushi.html" %}
 
-{% block huiyuanka %}
-<section id="card_ctn">
-        <div class="bk1"></div>
-        <div class="cont">
-          <div class="card">
-            <div class="front">
-              <figure class="fg" style="background-image:url(/site_media/img/4f.jpg);">
-                <img src="/site_media/img/companylogo.png">
-                <figcaption class="fc">
-                  <span class="cname" style="color:#957426;">微信会员卡</span>
-                  <span class="t" style="color:#aaa;text-shadow:#000 0 -1px;"></span>
-                  <span class="n" style="color: rgb(170, 170, 170); text-shadow: rgb(0, 0, 0) 0px -1px; ">NO.80000716</span>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="back">
-              <figure class="fg" style="background-image:url(/site_media/img/4b.jpg);">
-                <div class="info">
-                  <p class="addr">广东省深圳市南山区滨海大道深圳湾体育中心</p>
-                  <p class="tel"><a class="autotel" href="tel:075586280000">0755-86280000</a></p>
-                </div>
-                <p class="keywords">番茄田</p>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-{% endblock %}
+{% block title %}活动资讯{% endblock %}
 
-{% block neirong %}
-<small><em>86PLIS活动:</em></small>
+{% block script %}
+<script type="text/javascript">
+$(function(){
+
+$("#xiayiye").click(function(){
+  $("#divinsert").append("<div class='pro-area1'></div>");
+  $(".pro-area1:last").load("/foodsxiayiyesearch/");
+  });
+})
+</script>
 {% endblock %}
 
 {% block content %}
-<ul>
- <li><a href='/huodongdetail/1/'/>活动1</a></li><br>
- <li><a href='/huodongdetail/2/'/>活动1</a></li><br>
- <li><a href='/huodongdetail/3/'/>活动1</a></li><br>
- <li><a href='/huodongdetail/4/'/>活动1</a></li><br>
-{% comment %}
+<div>
+<!-- 21030306-推荐商品-start -->
+<article class="rec-pro">
+    <section class="pro-list-1" id=divinsert>
+    <ul>
     {% for item in productFushi %}
-         <li><a href='/huodongdetail'+{{item.id}} />{{item.name}}</a></li><br>
+         <li><div class="pro-area1"><a href='/foodsdetail/{{item.id}}/'><img align='middle'  with='95%' height='280' src='{{item.tpurl}}' alt='{{item.clname}}' /></a></div></li><br>
     {% endfor %}
-{% endcomment %}
-</ul>
+        
+           
+         </ul>
+    </section>
+</article> <!-- 21030306-推荐商品-end -->
+</div>
+<div class="anniu" align="center">
+<button id="xiayiye">下一页</button>
+<br>
+</div>
+ <br>
 {% endblock %}
 
-   
+
+
+
+

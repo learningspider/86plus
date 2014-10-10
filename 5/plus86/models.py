@@ -33,22 +33,7 @@ class clothes(models.Model):
     def __unicode__(self):
         return self.clname
 
-#服饰分类模块
-class clothes(models.Model):
-    clname=models.CharField(max_length=100,verbose_name='服饰公司名')
-    #clurl=models.CharField(max_length=60)
-    clcity=models.CharField(max_length=60,verbose_name='省',blank=True)
-    clshi=models.CharField(max_length=60,verbose_name='市',blank=True)
-    tpurl=models.CharField(max_length=100,verbose_name='图片地址')
-    clinfo=models.TextField(verbose_name='服饰详情')
-    
-    class Meta:
-        #db_table = 'Product'#数据库名
-        verbose_name='服饰列表'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
-        verbose_name_plural='服饰'#修改管理级页面显示
-    
-    def __unicode__(self):
-        return self.clname
+
 
 #服饰分类模块
 class foods(models.Model):
@@ -99,10 +84,16 @@ class guanzhuClothesModel(models.Model):
 
 #活动
 class huodong(models.Model):
-    hdname=models.CharField(max_length=60)
-    hdinfo=models.TextField()
-    hdtime=models.DateTimeField()
-    istimeout=models.BooleanField()
+    hdcompany=models.CharField(max_length=100,verbose_name='公司名称')
+    hdname=models.CharField(max_length=60,verbose_name='活动名称')
+    hdinfo=models.TextField(verbose_name='活动信息')
+    hdtime=models.DateTimeField(verbose_name='活动创建时间')
+    istimeout=models.BooleanField(verbose_name='是否过期')
+    class Meta:
+        #db_table = 'Product'#数据库名
+        verbose_name='活动列表'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
+        verbose_name_plural='活动'#修改管理级页面显示
+    
     def __unicode__(self):
         return self.hdname
     
