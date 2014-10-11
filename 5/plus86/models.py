@@ -105,7 +105,7 @@ class jianyi(models.Model):
     jyuser=models.CharField(max_length=60,verbose_name='联系人')
     jyqq=models.CharField(max_length=60,verbose_name='QQ号')
     jyphone=models.CharField(max_length=11,verbose_name='手机号')
-    jyinfo=models.TextField(verbose_name='建议内容')
+    jyinfo=models.TextField(max_length=2000,verbose_name='建议内容')
     jyip=models.CharField(max_length=60,verbose_name='IP地址')
     jytime=models.DateTimeField(auto_now_add=True,verbose_name='时间')
     class Meta:
