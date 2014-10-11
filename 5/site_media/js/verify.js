@@ -893,6 +893,16 @@ else
 	{return true;}
 }
 
+function checkneirong(str){
+ if(str=="")
+{
+	form.neirong.focus();
+	alert("投诉建议不能为空");
+    return false;
+}
+else
+	{return true;}
+}
 
 
 function checkpwd(fpwd,frpwd){
@@ -943,6 +953,22 @@ function checkdata() {
       if (!isEmail(email)) return false; 
 	   
        
+      
+      
+      return true;  
+}  
+
+
+function checkdatajianyi() {  
+	  var username=form.username.value; 
+	  if (!checkusername(username)) return false;  
+	  
+	  
+      var phonenum=form.phonenumber.value;  
+       
+      if (!checkMobile(phonenum)) return false; 
+      var neirong=form.neirong.value; 
+       if (!checkneirong(neirong)) return false;
       
       
       return true;  

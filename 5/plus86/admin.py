@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from plus86.models import memberCard,UserProfile,clothes,gonggao,huodong,riqiqiandao,guanzhuClothesModel
-from plus86.models import foods,huodong
+from plus86.models import foods,huodong,jianyi
 from django.contrib.auth.admin import UserAdmin
 
 class UserProfileInline(admin.StackedInline):
@@ -33,6 +33,9 @@ class huodongAdmin(admin.ModelAdmin):
     list_display = ('id','hdcompany', 'hdname','hdtime','istimeout')
     search_fields = ('hdcompany',)
 
+class jianyiAdmin(admin.ModelAdmin):
+    list_display = ('id','jyusername', 'jyuser','jyqq','jyphone','jytime')
+
 admin.site.register(memberCard)
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
@@ -42,3 +45,4 @@ admin.site.register(gonggao,gonggaoAdmin)
 admin.site.register(huodong,huodongAdmin)
 admin.site.register(riqiqiandao)
 admin.site.register(guanzhuClothesModel,guanzhuClothesAdmin)
+admin.site.register(jianyi,jianyiAdmin)

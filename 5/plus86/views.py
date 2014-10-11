@@ -22,7 +22,7 @@ import re
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
-from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods,huodong
+from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods,huodong,jianyi
 from plus86.models import user as userlogin6
 
 
@@ -225,39 +225,50 @@ def creatmenu(request):
            "name":"会员地带",
            "sub_button":[
            {
-               "type":"view",
-               "name":"刮刮卡",
-               "url":"http://www.iyouvip.com/guaguaka/"
+                "type":"view",
+               "name":"签到抽奖",
+               "url":"http://www.iyouvip.com/riqiqiandao/"
             },
-           {
+            {
                "type":"click",
                "name":"会员卡",
                "key":"V1001_GOOD"
             },
-            {
+           {
                "type":"view",
-               "name":"注册",
-               "url":"http://www.iyouvip.com/userregister/"
+               "name":"刮刮卡",
+               "url":"http://www.iyouvip.com/guaguaka/"
             },
             {
                "type":"view",
-               "name":"普通登录",
-               "url":"http://www.iyouvip.com/userlogin/"
+               "name":"我的订阅",
+               "url":"http://www.iyouvip.com/subscription/"
             },
             {
-                "type":"view",
-               "name":"签到抽奖",
-               "url":"http://www.iyouvip.com/riqiqiandao/"
+               "type":"view",
+               "name":"意见建议",
+               "url":"http://www.iyouvip.com/advise/"
             }
             ]
        }]
  }'''
     
-    '''{
+    '''return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+    {
+               "type":"view",
+               "name":"注册",
+               "url":"http://www.iyouvip.com/userregister/"
+            },
+    {
                "type":"view",
                "name":"Oauth登录",
                "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx5346a6f59b5e4dd8&redirect_uri=http://www.iyouvip.com/checkweixininfo/&response_type=code&scope=snsapi_userinfo&state=123#wechat_redirect"
-            }'''
+            }
+        {
+               "type":"view",
+               "name":"普通登录",
+               "url":"http://www.iyouvip.com/userlogin/"
+            },'''
     url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='+token
     req = urllib2.Request(url, post)
     response = urllib2.urlopen(req)
@@ -1087,5 +1098,29 @@ def useruploadfile(request):
         #return render_to_response('404_9.html')
         return HttpResponse("请用管理员账户登录！")
     return render_to_response('upload.html')
+
+#投诉建议
+def advise(request):
+    return render_to_response('advise.html')
+
+#投诉建议action
+def adviseaction(request):
+    jyusername=request.user.username
+    jyuser = request.POST.get( 'username', None )
+    jyqq = request.POST.get( 'qqhao', None )
+    jyphone = request.POST.get( 'phonenumber', None )
+    jyinfo = request.POST.get( 'neirong', None )
+    jytime = time.time()
+    try:
+        p = jianyi(jyusername=jyusername,
+             jyuser=jyuserm,
+             jyqq=jyqq,
+             jyphone=jyphone,
+             jyinfo=jyinfo,
+             jytime=jytime)
+        p.save()
+    except:
+        return render_to_response('404_9.html')
+    return HttpResponse('提交成功，管理员qq：191967821')
 
 #--------------------------上传end---------------------------------------
