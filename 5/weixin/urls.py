@@ -70,6 +70,9 @@ urlpatterns = patterns('',
     url(r'^qunfajiemian/$', 'plus86.views.qunfajiemian'),  #群发界面
     
     
+    url(r'^advise/$', 'plus86.views.advise'),  #投诉建议
+    url(r'^adviseaction/$', 'plus86.views.adviseaction'),  #投诉建议action
+    
     url(r'^uploadfile/$', 'plus86.views.uploadfile'),  #上传
     url(r'^useruploadfile/$', 'plus86.views.useruploadfile'),  #上传界面
     url(r'^checkmember/', 'plus86.views.checkmember'),
