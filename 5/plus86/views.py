@@ -1104,23 +1104,27 @@ def advise(request):
     return render_to_response('advise.html')
 
 #投诉建议action
+@csrf_exempt
 def adviseaction(request):
+    if request.META.has_key('HTTP_X_FORWARDED_FOR'):  
+        jyip =  request.META['HTTP_X_FORWARDED_FOR']  
+    else:  
+        jyip = request.META['REMOTE_ADDR']
     jyusername=request.user.username
     jyuser = request.POST.get( 'username', None )
     jyqq = request.POST.get( 'qqhao', None )
     jyphone = request.POST.get( 'phonenumber', None )
     jyinfo = request.POST.get( 'neirong', None )
-    jytime = time.time()
     try:
         p = jianyi(jyusername=jyusername,
-             jyuser=jyuserm,
+             jyuser=jyuser,
              jyqq=jyqq,
              jyphone=jyphone,
              jyinfo=jyinfo,
-             jytime=jytime)
+             jyip=jyip)
         p.save()
     except:
-        return render_to_response('404_9.html')
+        return HttpResponse('提交错误，请联系管理员qq：191967821')
     return HttpResponse('提交成功，管理员qq：191967821')
 
 #--------------------------上传end---------------------------------------

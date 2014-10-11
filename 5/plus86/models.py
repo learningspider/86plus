@@ -106,7 +106,8 @@ class jianyi(models.Model):
     jyqq=models.CharField(max_length=60,verbose_name='QQ号')
     jyphone=models.CharField(max_length=11,verbose_name='手机号')
     jyinfo=models.TextField(verbose_name='建议内容')
-    jytime=models.DateTimeField(verbose_name='时间')
+    jyip=models.CharField(max_length=60,verbose_name='IP地址')
+    jytime=models.DateTimeField(auto_now_add=True,verbose_name='时间')
     class Meta:
         #db_table = 'Product'#数据库名
         verbose_name='投诉建议列表'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'

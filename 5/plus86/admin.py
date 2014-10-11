@@ -34,7 +34,7 @@ class huodongAdmin(admin.ModelAdmin):
     search_fields = ('hdcompany',)
 
 class jianyiAdmin(admin.ModelAdmin):
-    list_display = ('id','jyusername', 'jyuser','jyqq','jyphone','jytime')
+    list_display = ('id','jyusername', 'jyuser','jyqq','jyphone','jyip','jytime')
 
 admin.site.register(memberCard)
 admin.site.unregister(User)
