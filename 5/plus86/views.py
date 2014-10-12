@@ -700,7 +700,7 @@ def fushidetail(request,offsize):
         username=request.user.username
         try:
             guanzhuinfo=guanzhuClothesModel.objects.filter(username=username,gzClothes=productFushi.clname)
-            if len(guanzhuinfo)>=0:
+            if len(guanzhuinfo)>0:
                 guanzhuok=True
         except:
             return render_to_response('404_9.html')
