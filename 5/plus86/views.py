@@ -565,7 +565,7 @@ def loginview(request):
     request.session["qianyiye"] = request.META.get('HTTP_REFERER','index2.html') 
     '''if request.user.is_authenticated():
             return render_to_response('index2.html')'''
-    return render_to_response('login.html',{'qq':request.session["qianyiye"]})
+    return render_to_response('login.html',{'userlogin':request.session["qianyiye"]})
 
 #用户登录提交
 @csrf_exempt
@@ -577,8 +577,8 @@ def loginAction(request):
         if user.is_active:  
             login(request, user) 
             #return render(request,'405.html',{'res':request.META['HTTP_USER_AGENT']})
-            #return HttpResponseRedirect(request.session["qianyiye"])  
-            return render(request,request.session["qianyiye"])
+            return HttpResponseRedirect(request.session["qianyiye"])  
+            #return render(request,request.session["qianyiye"])
 
         #return HttpResponseRedirect(request.META.get('HTTP_REFERER','/')
     else:
