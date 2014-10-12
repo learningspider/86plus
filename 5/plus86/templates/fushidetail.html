@@ -58,6 +58,16 @@ $("#xiayiye").click(function(){
 {% endblock %}
 
 {% block content %}
+{% if loginok %}
+    <p>Welcome to the weekend!</p>
+    {% if guanzhuok %}
+        <button>已经关注</button>
+    {% else %}
+    	<button>关注</button>
+    {% endif %}
+{% else %}
+    <button>登录后关注</button>
+{% endif %}
 <br>
 <p align="center">{{productFushi.clname}}</p><br>
 <p>{{productFushi.clinfo}}</p><br>

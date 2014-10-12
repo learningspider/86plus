@@ -684,6 +684,7 @@ def productfushi(request,city,offsize):
 
 #服饰细节
 def fushidetail(request,offsize):
+    guanzhuok=False
     city=request.session['city']
     offsize = int(offsize)
     cityshiji=citycity(city)
@@ -692,6 +693,17 @@ def fushidetail(request,offsize):
         productFushi=clothes.objects.get(id=offsize)
     except:
         return render_to_response('404_9.html')
+    if not request.user.is_authenticated():
+        loginok=False
+    else:
+        loginok=True
+        username=request.user.username
+        try:
+            guanzhuinfo=guanzhuClothesModel.objects.filter(username=username,gzClothes=productFushi.clname)
+            if len(guanzhuinfo)>=0:
+                guanzhuok=True
+        except:
+            return render_to_response('404_9.html')
     return render_to_response('fushidetail.html',locals())
 
 #美食相关---------START-----------------------------------------------
