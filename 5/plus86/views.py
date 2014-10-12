@@ -24,6 +24,7 @@ import urllib2,urllib,time
 import json
 from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods,huodong,jianyi
 from plus86.models import user as userlogin6
+from plus86.models import guanzhuClothesModel
 
 
 # import requests
@@ -1099,6 +1100,10 @@ def useruploadfile(request):
         return HttpResponse("请用管理员账户登录！")
     return render_to_response('upload.html')
 
+#--------------------------上传end---------------------------------------
+
+#--------------------------投诉建议start---------------------------------------
+
 #投诉建议
 def advise(request):
     return render_to_response('advise.html')
@@ -1127,4 +1132,17 @@ def adviseaction(request):
         return HttpResponse('提交错误，请联系管理员qq：191967821')
     return HttpResponse('提交成功，管理员qq：191967821')
 
-#--------------------------上传end---------------------------------------
+#--------------------------投诉建议end---------------------------------------
+
+#--------------------------订阅start---------------------------------------
+#订阅
+def subscription(request):
+    if not request.user.is_authenticated():
+            return HttpResponseRedirect('/userlogin/')
+    username=request.user.username
+    try:
+        productFushi=guanzhuClothesModel.objects.filter(username=username).order_by("gztime")
+    except:
+        return render_to_response('404_9.html')
+    return render_to_response('subscription.html',{'productFushi':productFushi})
+#--------------------------订阅end---------------------------------------
