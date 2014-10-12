@@ -565,7 +565,7 @@ def loginview(request):
     request.session["qianyiye"] = request.META.get('HTTP_REFERER','index2.html') 
     '''if request.user.is_authenticated():
             return render_to_response('index2.html')'''
-    return render_to_response('login.html',{'qq'}:request.session["qianyiye"])
+    return render_to_response('login.html',{'qq':request.session["qianyiye"]})
 
 #用户登录提交
 @csrf_exempt
