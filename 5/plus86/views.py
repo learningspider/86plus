@@ -562,9 +562,10 @@ def userregister(request):
 
 #用户登录界面
 def loginview(request):
+    request.session["qianyiye"] = request.META.get('HTTP_REFERER','index2.html') 
     '''if request.user.is_authenticated():
             return render_to_response('index2.html')'''
-    return render_to_response('login.html')
+    return render_to_response('login.html',{'qq'}:request.session["qianyiye"])
 
 #用户登录提交
 @csrf_exempt
@@ -576,10 +577,11 @@ def loginAction(request):
         if user.is_active:  
             login(request, user) 
             #return render(request,'405.html',{'res':request.META['HTTP_USER_AGENT']})
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER','index2.html')   
-            #return render(request,'index2.html')
-    else:
+            #return HttpResponseRedirect(request.session["qianyiye"])  
+            return render(request,request.session["qianyiye"])
+
         #return HttpResponseRedirect(request.META.get('HTTP_REFERER','/')
+    else:
         return render_to_response('login.html',{'userlogin':'用户名或密码不对，登录失败！'})
     
 #欢迎界面  
