@@ -575,9 +575,11 @@ def loginAction(request):
     if user is not None:
         if user.is_active:  
             login(request, user) 
-            #return render(request,'405.html',{'res':request.META['HTTP_USER_AGENT']})   
-            return render(request,'index2.html')
+            #return render(request,'405.html',{'res':request.META['HTTP_USER_AGENT']})
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER','index2.html')   
+            #return render(request,'index2.html')
     else:
+        #return HttpResponseRedirect(request.META.get('HTTP_REFERER','/')
         return render_to_response('login.html',{'userlogin':'用户名或密码不对，登录失败！'})
     
 #欢迎界面  
