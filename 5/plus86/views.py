@@ -691,6 +691,9 @@ def fushidetail(request,offsize):
     #items =chain(city, productFushi)
     try:
         productFushi=clothes.objects.get(id=offsize)
+        request.session['gzClothes']=productFushi.clname
+        request.session['gzurl']='/fushidetail/'+offsize
+        request.session['gztpurl']=productFushi.tpurl
     except:
         return render_to_response('404_9.html')
     if not request.user.is_authenticated():
@@ -1151,7 +1154,7 @@ def adviseaction(request):
 #--------------------------投诉建议end---------------------------------------
 
 #--------------------------订阅start---------------------------------------
-#订阅
+#我的订阅
 def subscription(request):
     if not request.user.is_authenticated():
             return HttpResponseRedirect('/userlogin/')
@@ -1161,4 +1164,17 @@ def subscription(request):
     except:
         return render_to_response('404_9.html')
     return render_to_response('subscription.html',{'productFushi':productFushi})
+
+#关注
+def guanzhufushi(request):
+    username=request.user.username
+    try:
+        gz = guanzhuClothesModel(username=username,
+             gzClothes=request.session['gzClothes'],
+             gzurl=request.session['gzurl'],
+             gztpurl=request.session['gztpurl'])
+        gz.save()
+    except:
+        return HttpResponse('关注失败，请联系管理员qq：191967821')
+    return HttpResponseRedirect(request.session['gzurl'])
 #--------------------------订阅end---------------------------------------

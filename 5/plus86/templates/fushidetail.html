@@ -62,10 +62,10 @@ $("#xiayiye").click(function(){
     {% if guanzhuok %}
         <button>已经关注</button>
     {% else %}
-    	<button>关注</button>
+    	<button><a href="/guanzhufushi/">关注</a></button>
     {% endif %}
 {% else %}
-    <button>登录后关注</button>
+    <button><a href="/userlogin/">登录后关注</a></button>
 {% endif %}
 <br>
 <p align="center">{{productFushi.clname}}</p><br>

@@ -73,7 +73,8 @@ urlpatterns = patterns('',
     url(r'^advise/$', 'plus86.views.advise'),  #投诉建议
     url(r'^adviseaction/$', 'plus86.views.adviseaction'),  #投诉建议action
     
-    url(r'^subscription/$', 'plus86.views.subscription'),  #订阅
+    url(r'^subscription/$', 'plus86.views.subscription'),  #我的订阅
+    url(r'^guanzhufushi/$', 'plus86.views.guanzhufushi'),  #我的订阅
     
     url(r'^uploadfile/$', 'plus86.views.uploadfile'),  #上传
     url(r'^useruploadfile/$', 'plus86.views.useruploadfile'),  #上传界面
