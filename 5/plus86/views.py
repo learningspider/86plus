@@ -19,6 +19,7 @@ from django.db import connection
 
 import hashlib,os
 import re
+import random
 import xml.etree.ElementTree as ET
 import urllib2,urllib,time
 import json
@@ -1184,16 +1185,22 @@ def guanzhufushi(request):
 #抽奖
 def choujiang(request):
     username=request.user.username
-    zhongjiang=True
-    jplevel='二等奖'
-    jp='IPHONE 6 PLUS 128G 金色'
-    '''if jplevel!="" and jp!="":
-        try:
-            jp = jiangpin(username=username,
-                 jplevel=request.session['gzClothes'],
-                 jp=request.session['gzurl'])
-            jp.save()
-        except:
-            return HttpResponse('抽奖失败，请联系管理员qq：191967821')'''
+    suiji=random.uniform(1, 10)
+    if suiji==8:
+        zhongjiang=True
+        jplevel='二等奖'
+        jp='IPHONE 6 PLUS 128G 金色'
+        '''if jplevel!="" and jp!="":
+            try:
+                jp = jiangpin(username=username,
+                     jplevel=request.session['gzClothes'],
+                     jp=request.session['gzurl'])
+                jp.save()
+            except:
+                return HttpResponse('抽奖失败，请联系管理员qq：191967821')'''
+    else:
+        jplevel=''
+        jp=''
+        zhongjiang=False
     return render_to_response('guaguaka.html',locals())
 #--------------------------中奖end---------------------------------------
