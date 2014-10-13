@@ -1184,6 +1184,7 @@ def guanzhufushi(request):
 #抽奖
 def choujiang(request):
     username=request.user.username
+    zhongjiang=True
     jplevel='二等奖'
     jp='IPHONE 6 PLUS 128G 金色'
     '''if jplevel!="" and jp!="":
