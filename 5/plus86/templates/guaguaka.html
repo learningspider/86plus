@@ -7,7 +7,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="format-detection" content="telephone=no">
 		<meta name="description" content="">
-		<title>86PLUS</title>
+		<title>抽奖</title>
 		<link href="/site_media/css/activity-style.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript">
 			document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
@@ -26,11 +26,13 @@
 		<div class="main">
 			<div class="cover">
 				<img src="/site_media/img/guaguaka/activity-scratch-card-bannerbg.png">
-				<div id="prize"> </div>
+				<div id="prize" style="display:none">谢谢参与</div>
 				<div id="scratchpad">
-					<div style="position: absolute; width: 150px; height: 40px; cursor: default;">
+					<div id="guagua" style="position: absolute; width: 150px; height: 40px; cursor: default;">
 						<canvas width="150" height="40" style="cursor: default;"></canvas>
 					</div>
+                    <div id="jiangpin" style="display:none">{{jplevel}}
+                    </div>
 				</div>
 			</div>
 			<div class="content">
@@ -39,8 +41,8 @@
 					<div class="box">
 						<div class="title-red"><span>恭喜你中奖了</span></div>
 						<div class="Detail">
-							<p>您中了 <span class="red" id="prizelevel"></span></p>
-							<p>奖品为 <span class="red" id="prizename"></span></p>
+							<p>您中了 <span class="red" id="prizelevel">{{jplevel}}</span></p>
+							<p>奖品为 <span class="red" id="prizename"></span>{{jp}}</p>
 						</div>
 					</div>
 				</div>
@@ -53,7 +55,7 @@
                             <p>活动时间：即日起至2016年12月31日</p>
                             <p>奖品设置：<font color="red"><strong>iPhone 6</strong></font> 手机 1000 部</p>
                             <p>参与方式</p>
-                            <p> 第一步：关注微信公众账号 86PLUS</p>
+                            <p> 第一步：关注微信公众账号 爱优折扣</p>
                             <p> 第二步：回复<strong> 刮刮乐 </strong>三个汉字</p>
                             <p> 第三步：点击图文消息进入刮奖页面</p>
                             <p> 第四步：刮掉涂层查看中奖结果</p>
@@ -101,12 +103,14 @@
 								//根据概率显示
 								if (win){
 									//$("#prize").text("一等奖")
-									document.getElementById('scratchpad').innerHTML = "一等奖";
-									$("#prizelevel").text("一等奖");
-									$("#prizename").text('iPhone 6');
+									//document.getElementById('scratchpad').innerHTML = "一等奖";
+									document.getElementById('guagua').style.display="none";
+									document.getElementById('jiangpin').style.display="";
+									//$("#prizelevel").text("一等奖");
+									//$("#prizename").text('iPhone 6');
 									$("#winprize").slideToggle(500);
 								}else {
-									document.getElementById('prize').innerHTML="谢谢参与";
+									document.getElementById('prize').style.display="";
 								}
 							}
 							display = true;
