@@ -28,8 +28,11 @@
 				<img src="/site_media/img/guaguaka/activity-scratch-card-bannerbg.png">
 				<div id="prize" style="display:none">谢谢参与</div>
 				<div id="scratchpad">
-					<div id="guagua" style="position: absolute; width: 150px; height: 40px; cursor: default;">
-						<canvas width="150" height="40" style="cursor: default;">{{jplevel}}</canvas>
+					<div id="guagua" style="position: absolute; width: 150px; height: 40px; z-index:1000 cursor: default;">
+						<canvas width="150" height="40" style="cursor: default;"></canvas>
+					</div>
+                    <div id="guagua2" style="position: absolute; width: 150px; height: 40px; z-index:900 cursor: default; font: 14px/1.5 Microsoft YaHei, Helvitica, Verdana, Arial, san-serif;
+font-family: 'Microsoft YaHei', Helvitica, Verdana, Arial, san-serif;">{{jplevel}}
 					</div>
 				</div>
 			</div>
