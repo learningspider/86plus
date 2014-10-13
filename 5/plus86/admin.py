@@ -1,3 +1,5 @@
+# -*- coding: utf8 -*-
+
 from django.contrib import admin
 from django.contrib.auth.models import User
 from plus86.models import memberCard,UserProfile,clothes,gonggao,huodong,riqiqiandao,guanzhuClothesModel

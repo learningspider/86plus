@@ -29,10 +29,8 @@
 				<div id="prize" style="display:none">谢谢参与</div>
 				<div id="scratchpad">
 					<div id="guagua" style="position: absolute; width: 150px; height: 40px; cursor: default;">
-						<canvas width="150" height="40" style="cursor: default;"></canvas>
+						<canvas width="150" height="40" style="cursor: default;">{{jplevel}}</canvas>
 					</div>
-                    <div id="jiangpin" style="display:none">{{jplevel}}
-                    </div>
 				</div>
 			</div>
 			<div class="content">
@@ -104,8 +102,7 @@
 								if (win){
 									//$("#prize").text("一等奖")
 									//document.getElementById('scratchpad').innerHTML = "一等奖";
-									document.getElementById('guagua').style.display="none";
-									document.getElementById('jiangpin').style.display="";
+									
 									//$("#prizelevel").text("一等奖");
 									//$("#prizename").text('iPhone 6');
 									$("#winprize").slideToggle(500);
