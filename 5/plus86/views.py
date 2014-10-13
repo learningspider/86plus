@@ -685,6 +685,7 @@ def productfushi(request,city,offsize):
 #服饰细节
 def fushidetail(request,offsize):
     guanzhuok=False
+    number=offsize
     city=request.session['city']
     offsize = int(offsize)
     cityshiji=citycity(city)
@@ -692,7 +693,7 @@ def fushidetail(request,offsize):
     try:
         productFushi=clothes.objects.get(id=offsize)
         request.session['gzClothes']=productFushi.clname
-        request.session['gzurl']='/fushidetail/'+offsize
+        request.session['gzurl']='/fushidetail/'+number
         request.session['gztpurl']=productFushi.tpurl
     except:
         return render_to_response('404_9.html')
