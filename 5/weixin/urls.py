@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     url(r'^userlogin/', 'plus86.views.loginview'),  #用户登录界面
     url(r'^userloginaction/', 'plus86.views.loginAction'),  #用户登录动作
     url(r'^welcome/', 'plus86.views.welcome'),  #欢迎界面
-    url(r'^guaguaka/', 'plus86.views.guaguaka'),  #刮刮卡界面
+    url(r'^guaguaka/', 'plus86.views.choujiang'),  #刮刮卡界面
     
     #服饰聚焦相关
     url(r'^productfushi/([a-z]*)/([1-2])/$', 'plus86.views.productfushi'),  #服饰界面

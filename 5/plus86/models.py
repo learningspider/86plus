@@ -115,6 +115,20 @@ class jianyi(models.Model):
     
     def __unicode__(self):
         return self.jyusername
+  
+ #中奖列表
+class jiangpin(models.Model):
+    username=models.CharField(max_length=60,verbose_name='用户名')
+    jplevel=models.CharField(max_length=60,verbose_name='奖品等级')
+    jp=models.CharField(max_length=100,verbose_name='奖品')
+    jptime=models.DateTimeField(auto_now_add=True,verbose_name='时间')
+    class Meta:
+        #db_table = 'Product'#数据库名
+        verbose_name='奖品列表'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
+        verbose_name_plural='奖品'#修改管理级页面显示
+    
+    def __unicode__(self):
+        return self.username 
     
 #日期签到
 class riqiqiandao(models.Model):

@@ -24,7 +24,7 @@ import urllib2,urllib,time
 import json
 from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods,huodong,jianyi
 from plus86.models import user as userlogin6
-from plus86.models import guanzhuClothesModel
+from plus86.models import guanzhuClothesModel,jiangpin
 
 
 # import requests
@@ -589,8 +589,8 @@ def welcome(request):
     return render_to_response('welcome.html')
 
 #刮刮卡界面
-def guaguaka(request):
-    return render_to_response('guaguaka.html')
+'''def guaguaka(request):
+    return render_to_response('guaguaka.html')'''
 #服饰下一页
 def xiayiye(request):
     number=request.session['num']
@@ -1179,3 +1179,20 @@ def guanzhufushi(request):
         return HttpResponse('关注失败，请联系管理员qq：191967821')
     return HttpResponseRedirect(request.session['gzurl'])
 #--------------------------订阅end---------------------------------------
+
+#--------------------------中奖start---------------------------------------
+#抽奖
+def choujiang(request):
+    username=request.user.username
+    jplevel='二等奖'
+    jp='IPHONE 6 PLUS 128G 金色'
+    '''if jplevel!="" and jp!="":
+        try:
+            jp = jiangpin(username=username,
+                 jplevel=request.session['gzClothes'],
+                 jp=request.session['gzurl'])
+            jp.save()
+        except:
+            return HttpResponse('抽奖失败，请联系管理员qq：191967821')'''
+    return render_to_response('guaguaka.html',locals())
+#--------------------------中奖end---------------------------------------
