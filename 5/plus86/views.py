@@ -824,7 +824,8 @@ def riqiqiandaoa(request):
         rqname=request.user.username 
         yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         if len(yonghu)==0 or len(yonghu)>1:
-            return render_to_response('404_9.html')
+            qiandao = riqiqiandao(yonghu=rqname,tianshu=1)
+            qiandao.save()
         riqi=time.strftime('%d',time.localtime(time.time()))
         cursor = connection.cursor()
         riqichange='h'+riqi
@@ -861,13 +862,12 @@ def riqiqiandaoaction(request):
     try:
         riqihave=riqiqiandao.objects.filter(yonghu=rqname)
         if len(riqihave)!=1:
-            qiandao = riqiqiandao(yonghu=rqname,tianshu=1)
-            qiandao.save()
+            '''
             #riqi=time.strftime('%d',time.localtime(time.time()))
             cursor = connection.cursor()
             riqichange='h'+riqi
             sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu ='%s'"""%(riqichange,rqname)
-            cursor.execute(sqlyuju)
+            cursor.execute(sqlyuju)'''
         else:
             t=0
             for a in riqihava:
