@@ -8,8 +8,8 @@ import os
 
 #monkey.patch()
 
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('周超', '1161192890@qq.com'),
