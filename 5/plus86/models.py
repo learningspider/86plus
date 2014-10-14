@@ -164,6 +164,7 @@ class riqiqiandao(models.Model):
     h29=models.CharField(max_length=2)
     h30=models.CharField(max_length=2)
     h31=models.CharField(max_length=2) 
+    tianshu=models.IntegerField(default=1)
     class Meta:
         #db_table = 'Product'#数据库名
         verbose_name='签到详情'#修改从管理级'产品中心'进入后的页面显示，显示为'产品'
