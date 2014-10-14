@@ -859,19 +859,14 @@ def riqiqiandaoaction(request):
     if rq=='1' and rqshi<=5:
         return HttpResponse('每月1日6时前不允许签到！！！')
     rqname=request.user.username
-    try:
+    '''try:
         riqihave=riqiqiandao.objects.filter(yonghu=rqname)
         if len(riqihave)!=1:
-            '''
-            #riqi=time.strftime('%d',time.localtime(time.time()))
-            cursor = connection.cursor()
-            riqichange='h'+riqi
-            sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu ='%s'"""%(riqichange,rqname)
-            cursor.execute(sqlyuju)'''
+            b=1
         else:
             t=0
-            for a in riqihava:
-                t=a.tianshu
+            for a in riqihave:
+                t=int(a.tianshu)
             t=t+1
             cursor = connection.cursor()
             riqichange='h'+riqi
@@ -879,16 +874,16 @@ def riqiqiandaoaction(request):
             cursor.execute(sqlyuju)
         #transaction.commit_unless_managed()
     except:
-        return render_to_response('404.html')
-    '''riqihave=riqiqiandao.objects.filter(yonghu=rqname)
+        return render_to_response('404.html')'''
+    riqihave=riqiqiandao.objects.filter(yonghu=rqname)
     t=0
-    for a in riqihava:
-        t=a.tianshu
+    for a in riqihave:
+        t=int(a.tianshu)
     t=t+1
     cursor = connection.cursor()
     riqichange='h'+riqi
     sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1',tianshu=%d WHERE yonghu ='%s'"""%(riqichange,t,rqname)
-    cursor.execute(sqlyuju)'''
+    cursor.execute(sqlyuju)
     return HttpResponseRedirect("/riqiqiandao/")
     #return render_to_response('qiandao.html')
 
