@@ -824,15 +824,15 @@ def riqiqiandaoa(request):
         rqname=request.user.username 
         yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         if len(yonghu)==0 or len(yonghu)>1:
-            qiandao = riqiqiandao(yonghu=rqname,tianshu=1)
+            qiandao = riqiqiandao(yonghu=rqname)
             qiandao.save()
         riqi=time.strftime('%d',time.localtime(time.time()))
-        cursor = connection.cursor()
-        riqichange='h'+riqi
-        sqlyuju="""select %s from plus86_riqiqiandao WHERE yonghu ='%s'"""%(riqichange,rqname)
-        cursor.execute(sqlyuju)
-        row = cursor.fetchone()
         try:
+            cursor = connection.cursor()
+            riqichange='h'+riqi
+            sqlyuju="""select %s from plus86_riqiqiandao WHERE yonghu ='%s'"""%(riqichange,rqname)
+            cursor.execute(sqlyuju)
+            row = cursor.fetchone()
             row1=row[0]
         except:
             return render_to_response('404_9.html')
@@ -871,7 +871,7 @@ def riqiqiandaoaction(request):
         else:
             t=0
             for a in riqihava:
-                t=riqihave.tianshu
+                t=a.tianshu
             t=t+1
             cursor = connection.cursor()
             riqichange='h'+riqi
@@ -880,6 +880,15 @@ def riqiqiandaoaction(request):
         #transaction.commit_unless_managed()
     except:
         return render_to_response('404.html')
+    '''riqihave=riqiqiandao.objects.filter(yonghu=rqname)
+    t=0
+    for a in riqihava:
+        t=a.tianshu
+    t=t+1
+    cursor = connection.cursor()
+    riqichange='h'+riqi
+    sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1',tianshu=%d WHERE yonghu ='%s'"""%(riqichange,t,rqname)
+    cursor.execute(sqlyuju)'''
     return HttpResponseRedirect("/riqiqiandao/")
     #return render_to_response('qiandao.html')
 
