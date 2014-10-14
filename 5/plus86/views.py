@@ -883,8 +883,8 @@ def riqiqiandaoaction(request):
     cursor = connection.cursor()
     riqichange='h'+rq
     sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1',tianshu=%d WHERE yonghu ='%s'"""%(riqichange,t,rqname)
-    cursor.execute(sqlyuju)
-    return HttpResponseRedirect("/riqiqiandao/")'''
+    cursor.execute(sqlyuju)'''
+    return HttpResponseRedirect("/riqiqiandao/")
     #return render_to_response('qiandao.html')
 
 #公告
