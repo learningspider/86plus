@@ -1185,7 +1185,7 @@ def guanzhufushi(request):
 #抽奖
 def choujiang(request):
     username=request.user.username
-    suiji=random.uniform(1, 2)
+    suiji=random.randint(0,3)
     if suiji==1:
         zhongjiang=True
         jplevel='二等奖'
