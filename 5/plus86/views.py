@@ -853,13 +853,30 @@ def riqiqiandaoa(request):
 
 #日历签到action
 def riqiqiandaoaction(request):
+    rq=time.strftime('%d',time.localtime(time.time()))
+    rqshi=int(time.strftime('%H',time.localtime(time.time())))
+    if rq=='1' and rqshi<=5:
+        return HttpResponse('每月1日6时前不允许签到！！！')
     rqname=request.user.username
     try:
-        riqi=time.strftime('%d',time.localtime(time.time()))
-        cursor = connection.cursor()
-        riqichange='h'+riqi
-        sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu ='%s'"""%(riqichange,rqname)
-        cursor.execute(sqlyuju)
+        riqihave=riqiqiandao.objects.filter(yonghu=rqname)
+        if len(riqihave)!=1:
+            qiandao = riqiqiandao(yonghu=rqname,tianshu=1)
+            qiandao.save()
+            #riqi=time.strftime('%d',time.localtime(time.time()))
+            cursor = connection.cursor()
+            riqichange='h'+riqi
+            sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1' WHERE yonghu ='%s'"""%(riqichange,rqname)
+            cursor.execute(sqlyuju)
+        else:
+            t=0
+            for a in riqihava:
+                t=riqihave.tianshu
+            t=t+1
+            cursor = connection.cursor()
+            riqichange='h'+riqi
+            sqlyuju="""UPDATE plus86_riqiqiandao SET %s = '1',tianshu=%d WHERE yonghu ='%s'"""%(riqichange,t,rqname)
+            cursor.execute(sqlyuju)
         #transaction.commit_unless_managed()
     except:
         return render_to_response('404.html')

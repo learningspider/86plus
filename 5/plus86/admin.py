@@ -41,6 +41,10 @@ class jianyiAdmin(admin.ModelAdmin):
 #奖品   
 class jiangpinAdmin(admin.ModelAdmin):
     list_display = ('id','username', 'jplevel','jp','jptime')
+    
+#日期签到   
+class riqiqiandaoAdmin(admin.ModelAdmin):
+    list_display = ('id','yonghu', 'tianshu')
 
 admin.site.register(memberCard)
 admin.site.unregister(User)
@@ -49,7 +53,7 @@ admin.site.register(clothes,clothesAdmin)
 admin.site.register(foods,foodsAdmin)
 admin.site.register(gonggao,gonggaoAdmin)
 admin.site.register(huodong,huodongAdmin)
-admin.site.register(riqiqiandao)
+admin.site.register(riqiqiandao,riqiqiandaoAdmin)
 admin.site.register(guanzhuClothesModel,guanzhuClothesAdmin)
 admin.site.register(jianyi,jianyiAdmin)
 admin.site.register(jiangpin,jiangpinAdmin)
