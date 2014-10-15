@@ -20,7 +20,7 @@ class gonggaoAdmin(admin.ModelAdmin):
     search_fields = ('ggname',)
 
 class clothesAdmin(admin.ModelAdmin):
-    list_display = ('id','clname', 'clcity', 'clshi')
+    list_display = ('id','clname', 'clcity', 'clshi','cltime')
     search_fields = ('clname',)
 
 class foodsAdmin(admin.ModelAdmin):
