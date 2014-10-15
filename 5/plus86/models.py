@@ -24,6 +24,7 @@ class clothes(models.Model):
     clshi=models.CharField(max_length=60,verbose_name='市',blank=True)
     tpurl=models.CharField(max_length=100,verbose_name='图片地址')
     clinfo=models.TextField(verbose_name='服饰详情')
+    cltime=models.DateTimeField(verbose_name='创建时间')
     
     class Meta:
         #db_table = 'Product'#数据库名
