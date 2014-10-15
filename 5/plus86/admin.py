@@ -3,7 +3,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from plus86.models import memberCard,UserProfile,clothes,gonggao,huodong,riqiqiandao,guanzhuClothesModel
-from plus86.models import foods,huodong,jianyi,jiangpin,riqiqiandopre
+from plus86.models import foods,huodong,jianyi,jiangpin,riqiqiandaopre
 from django.contrib.auth.admin import UserAdmin
 
 class UserProfileInline(admin.StackedInline):
