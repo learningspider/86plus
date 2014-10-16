@@ -735,6 +735,31 @@ def productfoods(request,city,offsize):
 
 #美食细节
 def foodsdetail(request,offsize):
+    guanzhuok=False
+    number=offsize
+    city=request.session['city']
+    offsize = int(offsize)
+    cityshiji=citycity(city)
+    #items =chain(city, productFushi)
+    try:
+        productFushi=foods.objects.get(id=offsize)
+        request.session['gzClothes']=productFushi.fdname
+        request.session['gzurl']='/foodsdetail/'+number
+        request.session['gztpurl']=productFushi.tpurl
+    except:
+        return render_to_response('404_9.html')
+    if not request.user.is_authenticated():
+        loginok=False
+    else:
+        loginok=True
+        username=request.user.username
+        try:
+            guanzhuinfo=guanzhuClothesModel.objects.filter(username=username,gzClothes=productFushi.fdname)
+            if len(guanzhuinfo)>0:
+                guanzhuok=True
+        except:
+            return render_to_response('404_9.html')
+    '''
     city=request.session['city']
     offsize = int(offsize)
     cityshiji=citycity(city)
@@ -742,7 +767,7 @@ def foodsdetail(request,offsize):
     try:
         productFushi=foods.objects.get(id=offsize)
     except:
-        return render_to_response('404_9.html')
+        return render_to_response('404_9.html')'''
     return render_to_response('foodsdetail.html',locals())
 
 #改变城市美食

@@ -58,9 +58,18 @@ $("#xiayiye").click(function(){
 {% endblock %}
 
 {% block content %}
+{% if loginok %}
+    {% if guanzhuok %}
+        <button>已经关注</button>
+    {% else %}
+    	<button><a href="/guanzhufushi/">关注</a></button>
+    {% endif %}
+{% else %}
+    <button><a href="/userlogin/">登录后关注</a></button>
+{% endif %}
 <br>
-<p align="center">{{productFushi.clname}}</p><br>
-<p>{{productFushi.clinfo}}</p><br>
+<p align="center">{{productFushi.fdname}}</p><br>
+<p>{{productFushi.fdinfo}}</p><br>
         
 {% endblock %}
 
