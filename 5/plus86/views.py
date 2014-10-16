@@ -1210,11 +1210,11 @@ def choujiangjiemian(request):
         return render_to_response('guaguakajiemian.html',locals())
     username=request.user.username
     denglu=True
-    year=time.strftime('%Y',time.localtime(time.time()))
-    month=time.strftime('%m',time.localtime(time.time()))
-    if month=='1':
-        month='12'
-        year=str(int(year)-1)
+    year=int(time.strftime('%Y',time.localtime(time.time())))
+    month=int(time.strftime('%m',time.localtime(time.time())))
+    if month==1:
+        month=12
+        year=year-1
     tianshupre=calendar.monthrange(year, month)[1]
     
     try:
