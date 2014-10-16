@@ -17,7 +17,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.db import connection
 
-import hashlib,os
+import hashlib,os,calendar
 import re
 import random
 import xml.etree.ElementTree as ET
@@ -25,7 +25,7 @@ import urllib2,urllib,time
 import json
 from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods,huodong,jianyi
 from plus86.models import user as userlogin6
-from plus86.models import guanzhuClothesModel,jiangpin
+from plus86.models import guanzhuClothesModel,jiangpin,riqiqiandaopre
 
 
 # import requests
@@ -1207,25 +1207,27 @@ def guanzhufushi(request):
 def choujiangjiemian(request):
     if not request.user.is_authenticated():
         denglu=False
-            return render_to_response('guaguakajiemian.html',locals())
+        return render_to_response('guaguakajiemian.html',locals())
     username=request.user.username
+    denglu=True
+    year=time.strftime('%Y',time.localtime(time.time()))
+    month=time.strftime('%m',time.localtime(time.time()))
+    if month=='1':
+        month='12'
+        year=str(int(year)-1)
+    tianshupre=calendar.monthrange(year, month)[1]
     
-    if suiji==1:
-        zhongjiang=True
-        jplevel='二等奖'
-        jp='IPHONE 6 PLUS 128G 金色'
-        '''if jplevel!="" and jp!="":
-            try:
-                jp = jiangpin(username=username,
-                     jplevel=request.session['gzClothes'],
-                     jp=request.session['gzurl'])
-                jp.save()
-            except:
-                return HttpResponse('抽奖失败，请联系管理员qq：191967821')'''
+    try:
+        choujianginfo=riqiqiandaopre.objects.filter(yonghu=username)
+        for a in choujianginfo:
+            tianshu=a.tianshu
+            choujiang=a.ischoujiang
+    except:
+        return HttpResponse('失败，请联系管理员qq：191967821')
+    if tianshu==tianshupre:
+        qiandao=True
     else:
-        jplevel=''
-        jp=''
-        zhongjiang=False
+        qiandao=False
     return render_to_response('guaguakajiemian.html',locals())
 
 #抽奖
