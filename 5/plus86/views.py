@@ -1222,12 +1222,13 @@ def choujiangjiemian(request):
         for a in choujianginfo:
             tianshu=a.tianshu
             choujiang=a.ischoujiang
+            if tianshu==tianshupre:
+                qiandao=True
+            else:
+                qiandao=False
     except:
         return HttpResponse('失败，请联系管理员qq：191967821')
-    if tianshu==tianshupre:
-        qiandao=True
-    else:
-        qiandao=False
+    
     return render_to_response('guaguakajiemian.html',locals())
 
 #抽奖
