@@ -72,8 +72,12 @@
 
 {% ifequal denglu %}
 	{% if qiandao %}
-        <button><a href="/guaguaka/">确认抽奖</a></button>
+    	{% if choujiang %}
+        <button>本月您已经抽奖</button>
         {% else %}
+        <button><a href="/guaguaka/">确认抽奖</a></button>
+        {% endif %}
+    {% else %}
         <button>每月签到满才可抽奖</button>
     {% endif %}
 {% else %}
