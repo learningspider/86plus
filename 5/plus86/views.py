@@ -1203,6 +1203,31 @@ def guanzhufushi(request):
 #--------------------------订阅end---------------------------------------
 
 #--------------------------中奖start---------------------------------------
+#抽奖界面
+def choujiangjiemian(request):
+    if not request.user.is_authenticated():
+        denglu=False
+            return render_to_response('guaguakajiemian.html',locals())
+    username=request.user.username
+    
+    if suiji==1:
+        zhongjiang=True
+        jplevel='二等奖'
+        jp='IPHONE 6 PLUS 128G 金色'
+        '''if jplevel!="" and jp!="":
+            try:
+                jp = jiangpin(username=username,
+                     jplevel=request.session['gzClothes'],
+                     jp=request.session['gzurl'])
+                jp.save()
+            except:
+                return HttpResponse('抽奖失败，请联系管理员qq：191967821')'''
+    else:
+        jplevel=''
+        jp=''
+        zhongjiang=False
+    return render_to_response('guaguakajiemian.html',locals())
+
 #抽奖
 def choujiang(request):
     username=request.user.username
