@@ -73,16 +73,16 @@
 {% if denglu %}
 	{% if qiandao %}
     	{% if choujiang %}
-        <button>本月您已经抽奖</button>
+        <div align="center"><button>本月您已经抽奖</button></div>
         {% else %}
-        <button><a href="/guaguaka/">确认抽奖</a></button>
+        <div align="center"><button><a href="/guaguaka/">确认抽奖</a></button></div>
         {% endif %}
     {% else %}
-        <button>每月签到满才可抽奖</button>
+        <div align="center"><button>每月签到满才可抽奖</button></div>
     {% endif %}
 {% else %}
 
-<button><a href="/userlogin/">请登录后抽奖</a></button>
+<div align="center"><button><a href="/userlogin/">请登录后抽奖</a></button></div>
 
 {% endif %}
 	</body></html>
