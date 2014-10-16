@@ -50,7 +50,7 @@ class riqiqiandaoAdmin(admin.ModelAdmin):
 
 #上月日期签到   
 class riqiqiandaopreAdmin(admin.ModelAdmin):
-    list_display = ('id','yonghu', 'tianshu')
+    list_display = ('id','yonghu', 'tianshu','ischoujiang')
     search_fields = ('yonghu',)
 
 admin.site.register(memberCard)
