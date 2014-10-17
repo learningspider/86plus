@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-#! /usr/bin/env python
+#!/usr/bin/env python
 
 import MySQLdb,time,os
 
@@ -23,7 +23,9 @@ def dbopt():
         time.sleep(5)
         cur.execute('create table plus86_riqiqiandaopre as select * from plus86_riqiqiandao')
         time.sleep(5)
-        cur.execute('delete from plus86_riqiqiandao')
+        cur.execute('drop table plus86_riqiqiandao')
+        time.sleep(5)
+        cur.execute('create table plus86_riqiqiandao as select * from plus86_riqiqiandaopre where 1=2')
         cur.close()
         conn.close()
     except MySQLdb.Error,e:
