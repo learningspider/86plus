@@ -8,12 +8,12 @@ def dbopt():
     if not os.path.exists(mkdir_dir): 
         os.mkdir(mkdir_dir) 
         print 'Successfully created directory', mkdir_dir 
-    today_sql=mkdir_dir+'app_86plus'+'_'+time.strftime('%Y%m%d')+'.sql'
+    today_sql=mkdir_dir+'app_86plus'+'_'+time.strftime('%Y%m%d%H%M%S')+'.sql'
     sql_comm="/usr/bin/mysqldump -u %s -p'%s' %s > %s"%('root','zhouchao1850','app_86plus',today_sql) 
     if os.system(sql_comm) == 0: 
-        print 'app_86plus is backup successfully!'‍ 
+        print 'app_86plus is backup successfully'
     else: 
-        print 'app_86plus is backup Failed!!'
+        print 'app_86plus is backup Failed'
     time.sleep(5) 
 
     try:
@@ -23,7 +23,7 @@ def dbopt():
         time.sleep(5)
         cur.execute('create table plus86_riqiqiandaopre as select * from plus86_riqiqiandao')
         time.sleep(5)
-        cur.execute('delete * from plus86_riqiqiandao')
+        cur.execute('delete from plus86_riqiqiandao')
         cur.close()
         conn.close()
     except MySQLdb.Error,e:
