@@ -849,7 +849,7 @@ def riqiqiandaoa(request):
         rqname=request.user.username 
         yonghu=riqiqiandao.objects.filter(yonghu=rqname)
         if len(yonghu)==0 or len(yonghu)>1:
-            qiandao = riqiqiandao(yonghu=rqname)
+            qiandao = riqiqiandao(yonghu=rqname,ischoujiang=False)
             qiandao.save()
         riqi=time.strftime('%d',time.localtime(time.time()))
         try:
