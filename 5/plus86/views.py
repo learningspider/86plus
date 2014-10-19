@@ -239,7 +239,7 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"刮刮卡",
-               "url":"http://www.iyouvip.com/choujiangjiemian/"
+               "url":"http://www.iyouvip.com/guaguakajiemian/"
             },
             {
                "type":"view",
