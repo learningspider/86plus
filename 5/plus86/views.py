@@ -239,7 +239,7 @@ def creatmenu(request):
            {
                "type":"view",
                "name":"刮刮卡",
-               "url":"http://www.iyouvip.com/guaguaka/"
+               "url":"http://www.iyouvip.com/choujiangjiemian/"
             },
             {
                "type":"view",
@@ -1258,6 +1258,9 @@ def choujiangjiemian(request):
 
 #抽奖
 def choujiang(request):
+    if not request.user.is_authenticated():
+        denglu=False
+        return render_to_response('guaguakajiemian.html',locals())
     username=request.user.username
     suiji=random.randint(0,3)
     if suiji==1:
