@@ -1287,7 +1287,7 @@ def choujiang(request):
 
 #--------------------------验证码start---------------------------------------
 
-def get_check_code_image(request):    
+def getcheckcodeimage(request):    
     image='/site_media/img/checkcode.gif'   
     im = Image.open(image)    
     draw = ImageDraw.Draw(im)    
