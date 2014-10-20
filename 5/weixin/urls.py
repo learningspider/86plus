@@ -97,7 +97,7 @@ urlpatterns = patterns('',
     
     
     #验证码
-    url(r'^get_check_code_image/$', 'get_check_code_image'),  #验证码  
+    url(r'^get_check_code_image/$', 'plus86.view.get_check_code_image'),  #验证码  
     #url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
 
