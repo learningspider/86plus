@@ -27,8 +27,8 @@ from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foo
 from plus86.models import user as userlogin6
 from plus86.models import guanzhuClothesModel,jiangpin,riqiqiandaopre
 from datetime import datetime
-import md5,cStringIO
-import Image, ImageDraw, ImageFont, random
+import md5,cStringIO,random
+from PIL import Image, ImageDraw, ImageFont
 
 
 # import requests
