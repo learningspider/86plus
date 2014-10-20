@@ -1285,7 +1285,7 @@ def choujiang(request):
 #--------------------------验证码start---------------------------------------
 
 def get_check_code_image(request,image='site_media/img/checkcode.gif'):      
-    import Image, ImageDraw, ImageFont, random      
+    import Image, ImageDraw, ImageFont, random,md5    
     im = Image.open(image)      
     draw = ImageDraw.Draw(im)      
     mp = md5.new()      
