@@ -1284,22 +1284,6 @@ def choujiang(request):
 
 #--------------------------验证码start---------------------------------------
 
-def get_check_code_image(request,image='site_media/img/checkcode.gif'):      
-    import Image, ImageDraw, ImageFont, random,md5    
-    im = Image.open(image)      
-    draw = ImageDraw.Draw(im)      
-    mp = md5.new()      
-    mp_src = mp.update(str(datetime.now()))      
-    mp_src = mp.hexdigest()      
-    rand_str = mp_src[0:4]         
-    draw.text((10,10), rand_str[0], font=ImageFont.truetype("ARIAL.TTF", random.randrange(25,50)))      
-    draw.text((48,10), rand_str[1], font=ImageFont.truetype("ARIAL.TTF", random.randrange(25,50)))      
-    draw.text((85,10), rand_str[2], font=ImageFont.truetype("ARIAL.TTF", random.randrange(25,50)))      
-    draw.text((120,10), rand_str[3], font=ImageFont.truetype("ARIAL.TTF", random.randrange(25,50)))      
-    del draw      
-    request.session['checkcode'] = rand_str      
-    buf = cStringIO.StringIO()      
-    im.save(buf, 'gif')      
-    return HttpResponse(buf.getvalue(),'image/gif')  
+
 
 #--------------------------验证码end---------------------------------------
