@@ -95,8 +95,7 @@ urlpatterns = patterns('',
     url(r'^foodsxiayiyesearch/', 'plus86.views.foodsxiayiyesearch'),  #下一页search美食
     url(r'^foodssearch/', 'plus86.views.foodssearch'),  #美食搜索
     
-    #验证码
-    url(r'^get_check_code_image/$', 'get_check_code_image'),#验证码
+    
     #url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
 
