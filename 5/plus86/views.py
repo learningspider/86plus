@@ -544,11 +544,23 @@ def userregister(request):
     if checkcd!=checkcode:
         return render_to_response('registeruser.html',{'userhave':'验证码错误！'})
     IDcard = request.POST.get( 'IDcard', None )
+    if IDcard==None:
+        return render_to_response('registeruser.html',{'userhave':'请输入身份证号！'})
     username = request.POST.get( 'username', None )
+    if username==None:
+        return render_to_response('registeruser.html',{'userhave':'请输入用户名！'})
     email = request.POST.get( 'email', None)
+    if email==None:
+        return render_to_response('registeruser.html',{'userhave':'请输入邮箱地址！'})
     phonenum = request.POST.get( 'phonenumber', None)
+    if phonenum==None:
+        return render_to_response('registeruser.html',{'userhave':'请输入电话号码！'})
     yourpw = request.POST.get( 'yourpw', None)
+    if yourpw==None:
+        return render_to_response('registeruser.html',{'userhave':'请输入密码！'})
     xingming = request.POST.get( 'xingming', None)
+    if xingming==None:
+        return render_to_response('registeruser.html',{'userhave':'请输入姓名！'})
     try:
         userhave=User.objects.filter(username=username)
         if len(userhave)==0:      
