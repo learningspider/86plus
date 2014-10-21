@@ -37,7 +37,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def current_datetime(request):
-    return render_to_response('gonggaodetail.html')
+    return render_to_response('basehuiyuanka.html')
 
 def responseMsg(request):
     recvmsg = smart_str(request.body)
