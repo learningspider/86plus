@@ -539,6 +539,10 @@ def userregistershow(request):
 #用户注册
 @csrf_exempt
 def userregister(request):
+    checkcd=request.session['checkcode']
+    checkcode = request.POST.get( 'yanzheng', None)
+    if checkcd!=checkcode:
+        return render_to_response('registeruser.html',{'userhave':'验证码错误！'})
     IDcard = request.POST.get( 'IDcard', None )
     username = request.POST.get( 'username', None )
     email = request.POST.get( 'email', None)
