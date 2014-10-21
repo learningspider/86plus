@@ -561,7 +561,8 @@ def userregister(request):
     xingming = request.POST.get( 'xingming', None)
     if xingming==None:
         return render_to_response('registeruser.html',{'userhave':'请输入姓名！'})
-    try:
+    #try:
+    if checkcd==checkcode:
         userhave=User.objects.filter(username=username)
         if len(userhave)==0:      
             user1 = User.objects.create_user(username=username, 
@@ -569,14 +570,16 @@ def userregister(request):
             u1=user1.get_profile()
             #u = User.objects.get(username=username)
             #u1 = UserProfile.objects.get(user_id=u.id)
+            u1.user_id=user1.id
+            u1.username=username
             u1.phonenumber=phonenum
             u1.IDcard=IDcard
             #u1.save()
             user1.save()
         else:
             return render_to_response('registeruser.html',{'userhave':'用户名已经存在！'})
-    except:
-        return render_to_response('404_9.html')
+    #except:
+        #return render_to_response('404_9.html')
     return render_to_response('index2.html')
 
 
