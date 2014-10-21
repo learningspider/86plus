@@ -567,7 +567,7 @@ def userregister(request):
         if len(userhave)==0:      
             user1 = User.objects.create_user(username=username, 
                     email=email, password=yourpw,first_name=xingming) 
-            user1.UserProfile.phonenumber=phonenum
+            #user1.UserProfile.phonenumber=phonenum
             user1.UserProfile.IDcard=IDcard
             user1.save()
             '''#u1=user1.get_profile()
