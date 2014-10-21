@@ -53,18 +53,23 @@
 {% endblock %}
       <div id="vip" style=""> 
       {% block neirong %}<small><em>尊贵会员, 尽享如下特权:</em></small> {% endblock %}
-      {% block content %}<form name="form" action="/reg/"  onSubmit="return checkdata()" method="post""> 
-<p>身份证号: <input type="text" name="IDcard" maxlength="18" /></p>
-<p>姓&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="username" maxlength="10" /></p>
-  <p>手机号&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="phonenumber" maxlength="11"  /></p>
-  <p>邮&nbsp;&nbsp;&nbsp;&nbsp;箱&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="email" maxlength="60" /></p>
- <input type="hidden" name="ExPws" value="{{openid}}">
-  <input type="submit" value="Submit" align="middle" />
-
-</form> 
+      {% block content %}<form name="form" action="/userregisteraction/"  onSubmit="return checkdata()" method="post""> 
+      <p><small><em><a href="#">会员开通</a>&nbsp;&nbsp;&nbsp;&nbsp;</em><em><a href="#">支付教学</a></em></small></p>
+ <p><small><em>爱优折扣功能介绍:</em></small></p>
+ <p>
+ 爱优折扣汇聚了名品服饰、特色美食的最新资讯，并提供相应折扣服务，还有会员签到抽奖等着你噢！~ 请关注微信公众号：<font color="#FF0000">爱优折扣</font></p>
+<p>&nbsp;</p>
+      </form> 
 {% endblock %}
       </div>
     </div>
-<!- #include virtual="footer.html" ->
+<div class="w">
+  <div class="copyright" style="text-align:center">北京市公安局分局备案编号???????&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备14049754号-1&nbsp;&nbsp;|&nbsp;&nbsp;<br>
+	&nbsp;&nbsp;Copyright&nbsp;&copy;&nbsp;2014-2014&nbsp;&nbsp;爱优折扣&nbsp;版权所有<br />
+		</div>
+		
+	</div>
+</div><!-- footer end -->
+
   </body>
 </html>
