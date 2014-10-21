@@ -66,6 +66,9 @@ urlpatterns = patterns('',
     
     url(r'^zhifujiaoxue/$', 'plus86.views.zhifujiaoxue'),  #支付教学
     url(r'^zhaoshang/$', 'plus86.views.zhaoshang'),  #招商
+
+    #验证码
+    url(r'^getcheck/$', 'plus86.views.getcheck'),  #验证码 
     
     #群发相关
     url(r'^qunfa/$', 'plus86.views.qunfa'),  #群发
@@ -96,8 +99,7 @@ urlpatterns = patterns('',
     url(r'^foodssearch/', 'plus86.views.foodssearch'),  #美食搜索
     
     
-    #验证码
-    url(r'^getcheckcodeimage/$', 'plus86.view.getcheckcodeimage'),  #验证码  
+     
     #url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
     
 
