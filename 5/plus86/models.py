@@ -219,9 +219,9 @@ class riqiqiandaopre(models.Model):
     
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    phonenumber = models.CharField(max_length=11,unique=True)
-    IDcard = models.CharField(max_length=18,unique=True)
-    openid = models.CharField(max_length=60,unique=True)
+    phonenumber = models.CharField(max_length=11)
+    IDcard = models.CharField(max_length=18)
+    openid = models.CharField(max_length=60)
     
 def create_user_profile(sender, instance, created, **kwargs):  
     if created:  
