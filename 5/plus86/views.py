@@ -1212,6 +1212,10 @@ def advise(request):
 #投诉建议action
 @csrf_exempt
 def adviseaction(request):
+    checkcd=request.session['checkcode']
+    checkcode = request.POST.get( 'yanzheng', None)
+    if checkcd!=checkcode:
+        return render_to_response('advise.html',{'userhave':'验证码错误！'})
     if request.META.has_key('HTTP_X_FORWARDED_FOR'):  
         jyip =  request.META['HTTP_X_FORWARDED_FOR']  
     else:  

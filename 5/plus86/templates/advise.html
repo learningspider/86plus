@@ -53,10 +53,12 @@
       <div id="vip" style=""> 
       <small><em>尊贵会员, 尽享如下特权:</em></small> 
       <form name="form" action="/adviseaction/"  onSubmit="return checkdatajianyi()" method="post""> 
+      <p>{{userhave}}</p>
  <p>联系人&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="username" maxlength="60" />
  </p>
 <p>qq&nbsp;&nbsp;&nbsp;&nbsp;号&nbsp;&nbsp;&nbsp;&nbsp;:  <input type="text" name="qqhao" maxlength="60" /></p>
   <p>手机号&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="phonenumber" maxlength="11"  /></p>
+  <p><input type="text" name="yanzheng" maxlength="60" /><img onClick="this.setAttribute('src','/getcheck/?nocache='+Math.random());" src="/getcheck/" alt="CheckCode"/></p>
   <p>您的意见对我们很重要:</p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="neirong" clos="25" rows="6" maxlength="1000">
 请将意见输入此区域
