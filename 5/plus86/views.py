@@ -569,11 +569,11 @@ def userregister(request):
             email=email, password=yourpw,first_name=xingming)
             user1.save()
         
-            u = User.objects.get(username=username)
+            '''u = User.objects.get(username=username)
             u1 = UserProfile.objects.get(user_id=u.id)
             u1.phonenumber=phonenum
             u1.IDcard=IDcard
-            u1.save()    
+            u1.save()  '''  
             '''user1 = User.objects.create_user(username=username, 
                     email=email, password=yourpw,first_name=xingming) 
             user1.UserProfile.phonenumber=phonenum
