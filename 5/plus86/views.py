@@ -1295,10 +1295,10 @@ def getcheck(request):
     mp_src = mp.update(str(datetime.now()))    
     mp_src = mp.hexdigest()    
     rand_str = mp_src[0:4]       
-    draw.text((10,10), rand_str[0], font=ImageFont.truetype("ARIAL.TTF", random.randrange(25,50)))    
-    draw.text((48,10), rand_str[1], font=ImageFont.truetype("ARIAL.TTF", random.randrange(25,50)))    
-    draw.text((85,10), rand_str[2], font=ImageFont.truetype("ARIAL.TTF", random.randrange(25,50)))    
-    draw.text((120,10), rand_str[3], font=ImageFont.truetype("ARIAL.TTF", random.randrange(25,50)))    
+    draw.text((10,10), rand_str[0], font=None)    
+    draw.text((48,10), rand_str[1], font=None)    
+    draw.text((85,10), rand_str[2], font=None)    
+    draw.text((120,10), rand_str[3], font=None)    
     del draw    
     request.session['checkcode'] = rand_str    
     buf = cStringIO.StringIO()    
