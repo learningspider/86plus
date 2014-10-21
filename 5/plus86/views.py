@@ -564,13 +564,22 @@ def userregister(request):
     #try:
     if checkcd==checkcode:
         userhave=User.objects.filter(username=username)
-        if len(userhave)==0:      
+        if len(userhave)==0:  
             user1 = User.objects.create_user(username=username, 
+            email=email, password=yourpw,first_name=xingming)
+            user1.save()
+        
+            u = User.objects.get(username=username)
+            u1 = UserProfile.objects.get(user_id=u.id)
+            u1.phonenumber=phonenum
+            u1.IDcard=IDcard
+            u1.save()    
+            '''user1 = User.objects.create_user(username=username, 
                     email=email, password=yourpw,first_name=xingming) 
-            #user1.UserProfile.phonenumber=phonenum
+            user1.UserProfile.phonenumber=phonenum
             user1.UserProfile.IDcard=IDcard
             user1.save()
-            '''#u1=user1.get_profile()
+            '#u1=user1.get_profile()
             u = User.objects.get(username=username)
             #u1 = UserProfile.objects.get(user_id=u.id)
             u1.user_id=user1.id
