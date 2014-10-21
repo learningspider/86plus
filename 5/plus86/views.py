@@ -567,15 +567,18 @@ def userregister(request):
         if len(userhave)==0:      
             user1 = User.objects.create_user(username=username, 
                     email=email, password=yourpw,first_name=xingming) 
-            u1=user1.get_profile()
-            #u = User.objects.get(username=username)
+            user1.UserProfile.phonenumber=phonenum
+            user1.UserProfile.IDcard=IDcard
+            user1.save()
+            '''#u1=user1.get_profile()
+            u = User.objects.get(username=username)
             #u1 = UserProfile.objects.get(user_id=u.id)
             u1.user_id=user1.id
             u1.username=username
             u1.phonenumber=phonenum
             u1.IDcard=IDcard
-            #u1.save()
-            user1.save()
+            #u1.save()'''
+            
         else:
             return render_to_response('registeruser.html',{'userhave':'用户名已经存在！'})
     #except:
