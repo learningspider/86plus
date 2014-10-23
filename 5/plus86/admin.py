@@ -3,7 +3,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from plus86.models import memberCard,UserProfile,clothes,gonggao,huodong,riqiqiandao,guanzhuClothesModel
-from plus86.models import foods,huodong,jianyi,jiangpin,riqiqiandaopre
+from plus86.models import foods,huodong,jianyi,jiangpin,riqiqiandaopre,memberCardActive
 from django.contrib.auth.admin import UserAdmin
 
 class UserProfileInline(admin.StackedInline):
@@ -53,6 +53,11 @@ class riqiqiandaopreAdmin(admin.ModelAdmin):
     list_display = ('id','yonghu', 'tianshu','ischoujiang')
     search_fields = ('yonghu',)
 
+#在用会员卡    
+class memberCardActiveAdmin(admin.ModelAdmin):
+    list_display = ('id','username', 'cardNo','creattime', 'begintime','endtime')
+    search_fields = ('username',)
+
 admin.site.register(memberCard)
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
@@ -65,3 +70,4 @@ admin.site.register(riqiqiandaopre,riqiqiandaopreAdmin)
 admin.site.register(guanzhuClothesModel,guanzhuClothesAdmin)
 admin.site.register(jianyi,jianyiAdmin)
 admin.site.register(jiangpin,jiangpinAdmin)
+admin.site.register(memberCardActive,memberCardActiveAdmin)
