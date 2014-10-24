@@ -329,16 +329,17 @@ def huiyuanka(request):
             return HttpResponseRedirect('/userlogin/')
     #userinfo=request.user
     username=request.user.username
-    u1=memberCardActive.objects.filter(username=open)
-    if len(u1)!=1:
+    huiyuan=memberCardActive.objects.filter(username=username)
+    if len(huiyuan)!=1:
         return render_to_response('buyhuiyuanka.html')
-    for blog in list(u1):
+    for blog in list(huiyuan):
         dic={}
         dic['username']=username
         dic['cardNo']=str(blog.cardNo)
         dic['begintime']=str(blog.begintime)
         dic['endtime]=str(blog.endtime)
-    return render_to_response('huiyuanka.html',{'u':dic})
+    u1=User.objects.get(username=username)
+    return render_to_response('huiyuanka.html',locals())
     #return render_to_response('405.html',{'u':dic})
 
 
