@@ -337,7 +337,7 @@ def huiyuanka(request):
         dic['username']=username
         dic['cardNo']=str(blog.cardNo)
         dic['begintime']=str(blog.begintime)
-        dic['endtime]=str(blog.endtime)
+        dic['endtime']=str(blog.endtime)
     u1=User.objects.get(username=username)
     return render_to_response('huiyuanka.html',locals())
     #return render_to_response('405.html',{'u':dic})
