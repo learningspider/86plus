@@ -25,7 +25,7 @@ import urllib2,urllib,time
 import json
 from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods,huodong,jianyi
 from plus86.models import user as userlogin6
-from plus86.models import guanzhuClothesModel,jiangpin,riqiqiandaopre
+from plus86.models import guanzhuClothesModel,jiangpin,riqiqiandaopre,memberCardActive
 from datetime import datetime
 import md5,cStringIO,random
 from PIL import Image, ImageDraw, ImageFont
@@ -321,6 +321,24 @@ def membercard(request):
         dic['IDcard']=str(blog.IDcard)
         dic['username']=str(blog.username)
     return render_to_response('index2.html',{'u':dic})
+    #return render_to_response('405.html',{'u':dic})
+
+@csrf_exempt
+def huiyuanka(request):
+    if not request.user.is_authenticated():
+            return HttpResponseRedirect('/userlogin/')
+    #userinfo=request.user
+    username=request.user.username
+    u1=memberCardActive.objects.filter(username=open)
+    if len(u1)!=1:
+        return render_to_response('buyhuiyuanka.html')
+    for blog in list(u1):
+        dic={}
+        dic['username']=username
+        dic['cardNo']=str(blog.cardNo)
+        dic['begintime']=str(blog.begintime)
+        dic['endtime]=str(blog.endtime)
+    return render_to_response('huiyuanka.html',{'u':dic})
     #return render_to_response('405.html',{'u':dic})
 
 
