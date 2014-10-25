@@ -26,7 +26,7 @@ import json
 from plus86.models import memberCard,UserProfile,clothes,riqiqiandao,gonggao,foods,huodong,jianyi
 from plus86.models import user as userlogin6
 from plus86.models import guanzhuClothesModel,jiangpin,riqiqiandaopre,memberCardActive
-from datetime import datetime
+import datetime
 import md5,cStringIO,random
 from PIL import Image, ImageDraw, ImageFont
 
@@ -353,16 +353,16 @@ def buyhuiyuankaaction(request,offsize):
     '''huiyuan=memberCardActive.objects.filter(username=username)
     if len(huiyuan)!=1:
         return render_to_response('buyhuiyuanka.html')'''
-    createtime=datetime.now()
+    createtime=datetime.datetime.now()
     createtime=createtime.strftime('%Y-%m-%d %H:%M:%S')
-    createtime = datetime.strptime(createtime, '%Y-%m-%d %H:%M:%S')
-    begintime=datetime.now()
+    createtime = datetime.datetime.strptime(createtime, '%Y-%m-%d %H:%M:%S')
+    begintime=datetime.datetime.now()
     begintime=begintime.strftime('%Y-%m-%d %H:%M:%S')
-    begintime = datetime.strptime(begintime, '%Y-%m-%d %H:%M:%S')
+    begintime = datetime.datetime.strptime(begintime, '%Y-%m-%d %H:%M:%S')
     delta = datetime.timedelta(days=30)
-    endtime=datetime.now()+delta
+    endtime=datetime.datetime.now()+delta
     endtime=endtime.strftime('%Y-%m-%d %H:%M:%S')
-    endtime = datetime.strptime(endtime, '%Y-%m-%d %H:%M:%S')
+    endtime = datetime.datetime.strptime(endtime, '%Y-%m-%d %H:%M:%S')
     cardNo='8888888888'
     huiyuan = memberCardActive(username=username,
          cardNo=cardNo,
@@ -1382,8 +1382,8 @@ def getcheck(request):
     image='/data/www/weixin/site_media/img/checkcode.gif'   
     im = Image.open(image)    
     draw = ImageDraw.Draw(im)    
-    mp = md5.new()    
-    mp_src = mp.update(str(datetime.now()))    
+    #mp = md5.new()
+    #mp_src = mp.update(str(datetime.datetime.now()))
     mp_src = mp.hexdigest()    
     rand_str = mp_src[0:4]       
     draw.text((10,10), rand_str[0], font=None)    
