@@ -344,7 +344,7 @@ def huiyuanka(request):
     #return render_to_response('405.html',{'u':dic})
 
 #会员卡购买服务
-@csrf_exempt
+
 def buyhuiyuankaaction(request,offsize):
     if not request.user.is_authenticated():
             return HttpResponseRedirect('/userlogin/')
@@ -353,22 +353,22 @@ def buyhuiyuankaaction(request,offsize):
     '''huiyuan=memberCardActive.objects.filter(username=username)
     if len(huiyuan)!=1:
         return render_to_response('buyhuiyuanka.html')'''
-    createtime=datetime.datetime.now()
-    createtime=createtime.strftime('%Y-%m-%d %H:%M:%S')
+    cctime=datetime.datetime.now()
+    ctime=cctime.strftime('%Y-%m-%d %H:%M:%S')
     #createtime = datetime.datetime.strptime(createtime, '%Y-%m-%d %H:%M:%S')
     begintime=datetime.datetime.now()
-    begintime=begintime.strftime('%Y-%m-%d %H:%M:%S')
+    btime=begintime.strftime('%Y-%m-%d %H:%M:%S')
     #begintime = datetime.datetime.strptime(begintime, '%Y-%m-%d %H:%M:%S')
     delta = datetime.timedelta(days=30)
     endtime=datetime.datetime.now()+delta
-    endtime=endtime.strftime('%Y-%m-%d %H:%M:%S')
+    etime=endtime.strftime('%Y-%m-%d %H:%M:%S')
     #endtime = datetime.datetime.strptime(endtime, '%Y-%m-%d %H:%M:%S')
     cardNo='8888888888'
     huiyuan = memberCardActive(username=username,
          cardNo=cardNo,
-         createtime=createtime,
-         begintime=begintime,
-         endtime=endtime)
+         createtime=ctime,
+         begintime=btime,
+         endtime=etime)
     huiyuan.save()
     '''for blog in list(huiyuan):
         dic={}
