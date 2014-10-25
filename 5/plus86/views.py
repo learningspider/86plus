@@ -353,9 +353,16 @@ def buyhuiyuankaaction(request,offsize):
     '''huiyuan=memberCardActive.objects.filter(username=username)
     if len(huiyuan)!=1:
         return render_to_response('buyhuiyuanka.html')'''
-    createtime=datetime.datetime.now()
-    begintime=datetime.datetime.now()
-    endtime=datetime.datetime.now()
+    createtime=datetime.now()
+    createtime.strftime('%Y-%m-%d %H:%M:%S')
+    createtime = datetime.strptime(createtime, '%Y-%m-%d %H:%M:%S')
+    begintime=datetime.now()
+    begintime.strftime('%Y-%m-%d %H:%M:%S')
+    begintime = datetime.strptime(begintime, '%Y-%m-%d %H:%M:%S')
+    delta = datetime.timedelta(days=30)
+    endtime=datetime.now()+delta
+    endtime.strftime('%Y-%m-%d %H:%M:%S')
+    endtime = datetime.strptime(endtime, '%Y-%m-%d %H:%M:%S')
     cardNo='8888888888'
     huiyuan = memberCardActive(username=username,
          cardNo=cardNo,
