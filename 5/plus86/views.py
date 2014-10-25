@@ -355,14 +355,14 @@ def buyhuiyuankaaction(request,offsize):
         return render_to_response('buyhuiyuanka.html')'''
     createtime=datetime.datetime.now()
     createtime=createtime.strftime('%Y-%m-%d %H:%M:%S')
-    createtime = datetime.datetime.strptime(createtime, '%Y-%m-%d %H:%M:%S')
+    #createtime = datetime.datetime.strptime(createtime, '%Y-%m-%d %H:%M:%S')
     begintime=datetime.datetime.now()
     begintime=begintime.strftime('%Y-%m-%d %H:%M:%S')
-    begintime = datetime.datetime.strptime(begintime, '%Y-%m-%d %H:%M:%S')
+    #begintime = datetime.datetime.strptime(begintime, '%Y-%m-%d %H:%M:%S')
     delta = datetime.timedelta(days=30)
     endtime=datetime.datetime.now()+delta
     endtime=endtime.strftime('%Y-%m-%d %H:%M:%S')
-    endtime = datetime.datetime.strptime(endtime, '%Y-%m-%d %H:%M:%S')
+    #endtime = datetime.datetime.strptime(endtime, '%Y-%m-%d %H:%M:%S')
     cardNo='8888888888'
     huiyuan = memberCardActive(username=username,
          cardNo=cardNo,
