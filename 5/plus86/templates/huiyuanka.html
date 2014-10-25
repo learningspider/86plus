@@ -22,7 +22,7 @@
                   <p class="addr">广东省深圳市南山区滨海大道深圳湾体育中心</p>
                   <p class="tel"><a class="autotel" href="tel:075586280000">0755-86280000</a></p>
                 </div>
-                <p class="keywords">爱优折扣</p>
+                <p class="keywords">{{u1.first_name}}</p>
               </figure>
             </div>
           </div>
@@ -31,10 +31,11 @@
 {% endblock %}
 {% block neirong %}<small><em>尊贵会员,爱优折扣会员卡:</em></small> {% endblock %}
 {% block content %}
-<p>会员姓名：{{u1.first_name]}}</p>
-<p>会员电话：{{u1.UserProfile.phonenumber]}}</p>
-<p>会员卡开通日期：{{begintime}}</p>
-<p>会员卡结束日期：{{endtime}}</p>
+
+<li>会员姓名：{{u1.first_name}}</li><br>
+<li>会员电话：{{huiyuaninfo.phonenumber}}</li><br>
+<li>会员卡开通日期：{{begintime}}</li><br>
+<li>会员卡结束日期：{{endtime}}</li><br>
 
 
 {% endblock %}

@@ -338,6 +338,7 @@ def huiyuanka(request):
         begintime=blog.begintime
         endtime=blog.endtime
     u1=User.objects.get(username=username)
+    huiyuaninfo=s=u1.get_profile()
     return render_to_response('huiyuanka.html',locals())
     #return render_to_response('405.html',{'u':dic})
 
