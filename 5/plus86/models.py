@@ -15,7 +15,7 @@ class memberCard(models.Model):
 class memberCardActive(models.Model):
     username = models.CharField(max_length=60,unique=True,verbose_name='用户名')
     cardNo = models.CharField(max_length=60,unique=True,verbose_name='会员卡号')
-    creattime=models.CharField(max_length=60,verbose_name='创建时间')
+    cctime=models.CharField(max_length=60,verbose_name='创建时间')
     begintime=models.CharField(max_length=60,verbose_name='会员开始时间')
     endtime=models.CharField(max_length=60,verbose_name='会员开始时间')
 
