@@ -18,15 +18,15 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^$', 'plus86.views.current_datetime'),
-    
+
     #菜单相关
     url(r'^create/createmenu$', 'plus86.views.creatmenu'),
     url(r'^create/deletemenu$', 'plus86.views.deletemenu'),
-    
-    
+
+
     url(r'^membercard/', 'plus86.views.membercard'),
     url(r'^huiyuanka/$', 'plus86.views.huiyuanka'),#会员卡
-    url(r'^buyhuiyuankaaction/(\d+)/$', 'plus86.views.buyhuiyuankaaction),#购买会员卡服务
+    url(r'^buyhuiyuankaaction/(\d+)/$', 'plus86.views.buyhuiyuankaaction'),#购买会员卡服务
 
     url(r'^register', 'plus86.views.register'),
     url(r'^userregister/', 'plus86.views.userregistershow'),
@@ -34,10 +34,10 @@ urlpatterns = patterns('',
     url(r'^userlogin/', 'plus86.views.loginview'),  #用户登录界面
     url(r'^userloginaction/', 'plus86.views.loginAction'),  #用户登录动作
     url(r'^welcome/', 'plus86.views.welcome'),  #欢迎界面
-    
+
     url(r'^guaguaka/', 'plus86.views.choujiang'),  #刮刮卡
     url(r'^guaguakajiemian/', 'plus86.views.choujiangjiemian'),  #刮刮卡界面
-    
+
     #服饰聚焦相关
     url(r'^productfushi/([a-z]*)/([1-2])/$', 'plus86.views.productfushi'),  #服饰界面
     url(r'^fushidetail/(\d+)/$', 'plus86.views.fushidetail'),  #服饰细节
@@ -45,45 +45,45 @@ urlpatterns = patterns('',
     url(r'^xiayiye/', 'plus86.views.xiayiye'),  #下一页
     url(r'^xiayiyesearch/', 'plus86.views.xiayiyesearch'),  #下一页search
     url(r'^fushisearch/', 'plus86.views.fushisearch'),  #服饰搜索
-    
+
     #公益相关
     url(r'^gongyi/', 'plus86.views.gongyi'),  #公益界面
     url(r'^gongyidetail/(\d+)/$', 'plus86.views.gongyidetail'),  #公益细节
     url(r'^yincang/', 'plus86.views.yincang'),  #隐藏测试
-    
+
     #签到相关
     url(r'^qiandao/$', 'plus86.views.qiandao'),  #日历签到
     url(r'^riqiqiandao/$', 'plus86.views.riqiqiandaoa'),  #日历签到xin
     url(r'^riqiqiandaoaction/$', 'plus86.views.riqiqiandaoaction'),  #日历签到xin
-    
+
     #公告相关
     url(r'^gonggao/$', 'plus86.views.gonggaoa'),  #公告
     url(r'^gonggaolishi/$', 'plus86.views.gonggaoalishi'),  #历史公告
     url(r'^gonggaodetail/(\d+)/$', 'plus86.views.gonggaodetail'),  #公告细节
-    
+
     #活动相关
     url(r'^huodong/$', 'plus86.views.huodongview'),  #活动
     url(r'^huodongsearch/$', 'plus86.views.huodongsearch'),  #活动search
     url(r'^huodongdetail/(\d+)/$', 'plus86.views.huodongdetail'),  #活动细节
-    
-    
+
+
     url(r'^zhifujiaoxue/$', 'plus86.views.zhifujiaoxue'),  #支付教学
     url(r'^zhaoshang/$', 'plus86.views.zhaoshang'),  #招商
 
     #验证码
-    url(r'^getcheck/$', 'plus86.views.getcheck'),  #验证码 
-    
+    url(r'^getcheck/$', 'plus86.views.getcheck'),  #验证码
+
     #群发相关
     url(r'^qunfa/$', 'plus86.views.qunfa'),  #群发
     url(r'^qunfajiemian/$', 'plus86.views.qunfajiemian'),  #群发界面
-    
-    
+
+
     url(r'^advise/$', 'plus86.views.advise'),  #投诉建议
     url(r'^adviseaction/$', 'plus86.views.adviseaction'),  #投诉建议action
-    
+
     url(r'^subscription/$', 'plus86.views.subscription'),  #我的订阅
     url(r'^guanzhufushi/$', 'plus86.views.guanzhufushi'),  #我的订阅
-    
+
     url(r'^uploadfile/$', 'plus86.views.uploadfile'),  #上传
     url(r'^useruploadfile/$', 'plus86.views.useruploadfile'),  #上传界面
     url(r'^checkmember/', 'plus86.views.checkmember'),
@@ -92,7 +92,7 @@ urlpatterns = patterns('',
     url(r'^createproduct/', 'plus86.views.createproduct'),
     url(r'^queryproductstatus/', 'plus86.views.queryproductstatus'),
     url(r'^plus86admin/', include(admin.site.urls)),
-    
+
     #美食相关
     url(r'^productfoods/([a-z]*)/([1-2])/$', 'plus86.views.productfoods'),  #美食界面
     url(r'^foodsdetail/(\d+)/$', 'plus86.views.foodsdetail'),  #美食细节
@@ -100,11 +100,11 @@ urlpatterns = patterns('',
     url(r'^foodsxiayiye/', 'plus86.views.foodsxiayiye'),  #下一页美食
     url(r'^foodsxiayiyesearch/', 'plus86.views.foodsxiayiyesearch'),  #下一页search美食
     url(r'^foodssearch/', 'plus86.views.foodssearch'),  #美食搜索
-    
-    
-     
+
+
+
     #url(r'^site_media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT}),
-    
+
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
