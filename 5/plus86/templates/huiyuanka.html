@@ -12,7 +12,7 @@
                 <figcaption class="fc">
                   <span class="cname" style="color:#957426;">微信会员卡</span>
                   <span class="t" style="color:#aaa;text-shadow:#000 0 -1px;"></span>
-                  <span class="n" style="color: rgb(170, 170, 170); text-shadow: rgb(0, 0, 0) 0px -1px; ">{{dic['cardNo']}}</span>
+                  <span class="n" style="color: rgb(170, 170, 170); text-shadow: rgb(0, 0, 0) 0px -1px; ">{{cardNo}}</span>
                 </figcaption>
               </figure>
             </div>
@@ -33,8 +33,8 @@
 {% block content %}
 <p>会员姓名：{{u1.firstname]}}</p>
 <p>会员电话：{{u1.UserProfile.phonenumber]}}</p>
-<p>会员卡开通日期：{{dic['begintime']}}</p>
-<p>会员卡结束日期：{{dic['endtime']}}</p>
+<p>会员卡开通日期：{{begintime}}</p>
+<p>会员卡结束日期：{{endtime}}</p>
 
 
 {% endblock %}

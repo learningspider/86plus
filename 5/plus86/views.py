@@ -333,12 +333,10 @@ def huiyuanka(request):
     huiyuan=memberCardActive.objects.filter(username=username)
     if len(huiyuan)!=1:
         return render_to_response('buyhuiyuanka.html')
-    for blog in list(huiyuan):
-        dic={}
-        dic['username']=username
-        dic['cardNo']=str(blog.cardNo)
-        dic['begintime']=str(blog.begintime)
-        dic['endtime']=str(blog.endtime)
+    for blog in huiyuan:
+        cardNo=blog.cardNo
+        begintime=blog.begintime
+        endtime=blog.endtime
     u1=User.objects.get(username=username)
     return render_to_response('huiyuanka.html',locals())
     #return render_to_response('405.html',{'u':dic})
