@@ -176,6 +176,9 @@ INSTALLED_APPS = (
     'plus86',
     'django.contrib.admin',
 )
+
+AUTH_PROFILE_MODULE = 'plus86.UserProfile'     #app名称.类名
+
 ALLOWED_HOSTS = '*'
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
