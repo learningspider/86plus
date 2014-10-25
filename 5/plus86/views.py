@@ -323,6 +323,7 @@ def membercard(request):
     return render_to_response('index2.html',{'u':dic})
     #return render_to_response('405.html',{'u':dic})
 
+#会员卡显示
 @csrf_exempt
 def huiyuanka(request):
     if not request.user.is_authenticated():
@@ -341,6 +342,35 @@ def huiyuanka(request):
     u1=User.objects.get(username=username)
     return render_to_response('huiyuanka.html',locals())
     #return render_to_response('405.html',{'u':dic})
+
+#会员卡购买服务
+@csrf_exempt
+def buyhuiyuankaaction(request,offsize):
+    if not request.user.is_authenticated():
+            return HttpResponseRedirect('/userlogin/')
+    #userinfo=request.user
+    username=request.user.username
+    '''huiyuan=memberCardActive.objects.filter(username=username)
+    if len(huiyuan)!=1:
+        return render_to_response('buyhuiyuanka.html')'''
+    createtime=datetime.datetime.now()
+    begintime=datetime.datetime.now()
+    endtime=datetime.datetime.now()
+    cardNo='8888888888'
+    huiyuan = memberCardActive(username=username,
+         cardNo=cardNo,
+         createtime=createtime,
+         begintime=begintime,
+         endtime=endtime)
+    huiyuan.save()
+    '''for blog in list(huiyuan):
+        dic={}
+        dic['username']=username
+        dic['cardNo']=str(blog.cardNo)
+        dic['begintime']=str(blog.begintime)
+        dic['endtime']=str(blog.endtime)
+    u1=User.objects.get(username=username)'''
+    return render_to_response('huiyuanka.html',locals())
 
 
 @csrf_exempt 

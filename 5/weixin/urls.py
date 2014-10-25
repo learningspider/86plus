@@ -25,7 +25,9 @@ urlpatterns = patterns('',
     
     
     url(r'^membercard/', 'plus86.views.membercard'),
-    url(r'^huiyuanka/', 'plus86.views.huiyuanka'),#会员卡
+    url(r'^huiyuanka/$', 'plus86.views.huiyuanka'),#会员卡
+    url(r'^buyhuiyuankaaction/(\d+)/$', 'plus86.views.buyhuiyuankaaction),#购买会员卡服务
+
     url(r'^register', 'plus86.views.register'),
     url(r'^userregister/', 'plus86.views.userregistershow'),
     url(r'^userregisteraction/', 'plus86.views.userregister'),

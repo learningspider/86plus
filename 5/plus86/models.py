@@ -18,6 +18,13 @@ class memberCardActive(models.Model):
     creattime=models.DateTimeField(verbose_name='创建时间')
     begintime=models.DateTimeField(verbose_name='会员开始时间')
     endtime=models.DateTimeField(verbose_name='会员开始时间')
+
+    class Meta:
+        verbose_name='会员列表'
+        verbose_name_plural='会员'
+
+    def __unicode__(self):
+        return self.username
     
 class user(models.Model):
     username = models.CharField(max_length=60,primary_key=True)
