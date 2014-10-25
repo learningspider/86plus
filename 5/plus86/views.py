@@ -366,7 +366,7 @@ def buyhuiyuankaaction(request,offsize):
     cardNo='8888888888'
     huiyuan = memberCardActive(username=username,
          cardNo=cardNo,
-         createtime=ctime,
+         cctime=ctime,
          begintime=btime,
          endtime=etime)
     huiyuan.save()
