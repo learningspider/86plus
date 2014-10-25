@@ -35,7 +35,12 @@
 <li>会员姓名：{{u1.first_name}}</li><br>
 <li>会员电话：{{huiyuaninfo.phonenumber}}</li><br>
 <li>会员卡开通日期：{{begintime}}</li><br>
-<li>会员卡结束日期：{{endtime}}</li><br>
+{% if qixian %}
+    <li>会员卡结束日期：{{endtime}}</li><br>
+{% else %}
+	<li><font color="#CC0000">会员卡结束日期：{{endtime}}</p></li><br>
+{% endif %}
+
 
 
 {% endblock %}

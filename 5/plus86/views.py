@@ -337,6 +337,15 @@ def huiyuanka(request):
         cardNo=blog.cardNo
         begintime=blog.begintime
         endtime=blog.endtime
+    cctime=datetime.datetime.now()
+    ctime=cctime.strftime('%Y-%m-%d %H:%M:%S')
+    currenttime = datetime.datetime.strptime(ctime, '%Y-%m-%d %H:%M:%S')
+    cztime=datetime.datetime.strptime(endtime, '%Y-%m-%d %H:%M:%S')
+    shijiancha=cztime-currenttime
+    if shijiancha.days>=0 and shijiancha.seconds>0:
+        qixian=True
+    else:
+        qixian=False
     u1=User.objects.get(username=username)
     huiyuaninfo=s=u1.get_profile()
     return render_to_response('huiyuanka.html',locals())
