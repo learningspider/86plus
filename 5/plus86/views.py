@@ -351,6 +351,13 @@ def huiyuanka(request):
     return render_to_response('huiyuanka.html',locals())
     #return render_to_response('405.html',{'u':dic})
 
+
+#购买会员卡界面
+def huiyuankajiemian(request):
+    return render_to_response('buyhuiyuanka.html')
+
+
+
 #会员卡购买服务
 
 def buyhuiyuankaaction(request,offsize):

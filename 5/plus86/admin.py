@@ -55,7 +55,7 @@ class riqiqiandaopreAdmin(admin.ModelAdmin):
 
 #在用会员卡    
 class memberCardActiveAdmin(admin.ModelAdmin):
-    list_display = ('id','username', 'cardNo','creattime', 'begintime','endtime')
+    list_display = ('id','username', 'cardNo','cctime', 'begintime','endtime')
     search_fields = ('username',)
 
 admin.site.register(memberCard)
